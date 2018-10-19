@@ -76,12 +76,7 @@
 		EB3D126C217A9EBE00FD4CF6 /* The-Dark-Place */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */,
-				EB3D126F217A9EBE00FD4CF6 /* ViewController.swift */,
-				EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */,
-				EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */,
-				EB3D1276217A9EBF00FD4CF6 /* Info.plist */,
-				EB3D1277217A9EBF00FD4CF6 /* The_Dark_Place.entitlements */,
+				EB3D128B217A9FF000FD4CF6 /* OtherFiles */,
 			);
 			path = "The-Dark-Place";
 			sourceTree = "<group>";
@@ -93,6 +88,19 @@
 				EB3D1282217A9EBF00FD4CF6 /* Info.plist */,
 			);
 			path = "The-Dark-PlaceTests";
+			sourceTree = "<group>";
+		};
+		EB3D128B217A9FF000FD4CF6 /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */,
+				EB3D126F217A9EBE00FD4CF6 /* ViewController.swift */,
+				EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */,
+				EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */,
+				EB3D1276217A9EBF00FD4CF6 /* Info.plist */,
+				EB3D1277217A9EBF00FD4CF6 /* The_Dark_Place.entitlements */,
+			);
+			path = OtherFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,10 +357,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "The-Dark-Place/The_Dark_Place.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "The-Dark-Place/OtherFiles/The_Dark_Place.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "The-Dark-Place/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/The-Dark-Place/OtherFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -367,10 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "The-Dark-Place/The_Dark_Place.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "The-Dark-Place/OtherFiles/The_Dark_Place.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "The-Dark-Place/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/The-Dark-Place/OtherFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
