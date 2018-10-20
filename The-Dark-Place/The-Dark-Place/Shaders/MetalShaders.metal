@@ -1,19 +1,18 @@
 #include <metal_stdlib>
 using namespace metal;
 
-struct Vertex {
-    float3 position;
+struct VertexIn {
+    float3 position [[ attribute(0) ]];
 };
 
 struct RasterizerData {
     float4 position [[ position ]];
 };
 
-vertex RasterizerData basic_vertex_shader(constant Vertex *vertices [[ buffer(0) ]],
-                                          const uint vertexID [[ vertex_id ]]) {
+vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]]) {
     RasterizerData rd;
     
-    rd.position = float4(vertices[vertexID].position, 1.0);
+    rd.position = float4(vertexIn.position, 1.0);
     
     return rd;
 }
