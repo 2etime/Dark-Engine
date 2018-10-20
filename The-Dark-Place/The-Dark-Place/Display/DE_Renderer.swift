@@ -1,6 +1,19 @@
 import MetalKit
 
 class DERenderer: NSObject {
+    private var _vertexDescriptor: MTLVertexDescriptor {
+        let vertexDescriptor = MTLVertexDescriptor()
+        
+        //Position
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].offset = 0
+        
+        vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
+        
+        return vertexDescriptor
+    }
+    
     private var _renderPipelineState: MTLRenderPipelineState!
     private var _renderPipelineDescriptor: MTLRenderPipelineDescriptor {
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
@@ -10,6 +23,7 @@ class DERenderer: NSObject {
         let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
         
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.vertexDescriptor = _vertexDescriptor
         renderPipelineDescriptor.vertexFunction = vertexFunction
         renderPipelineDescriptor.fragmentFunction = fragmentFunction
         
