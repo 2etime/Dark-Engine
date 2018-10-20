@@ -11,10 +11,12 @@
 		EB3D1272217A9EBF00FD4CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
-		EB3D128E217AAEED00FD4CF6 /* DEGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D128D217AAEED00FD4CF6 /* DEGameView.swift */; };
-		EB3D1290217AB6CB00FD4CF6 /* DERendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D128F217AB6CB00FD4CF6 /* DERendering.swift */; };
+		EB3D128E217AAEED00FD4CF6 /* DE_GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D128D217AAEED00FD4CF6 /* DE_GameView.swift */; };
+		EB3D1290217AB6CB00FD4CF6 /* DE_Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D128F217AB6CB00FD4CF6 /* DE_Renderer.swift */; };
 		EB3D1293217AB76E00FD4CF6 /* DarkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1292217AB76E00FD4CF6 /* DarkEngine.swift */; };
-		EB3D1296217AB95D00FD4CF6 /* DEColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1295217AB95D00FD4CF6 /* DEColor.swift */; };
+		EB3D1296217AB95D00FD4CF6 /* DE_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1295217AB95D00FD4CF6 /* DE_Color.swift */; };
+		EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1298217AC49000FD4CF6 /* Types.swift */; };
+		EB3D129C217ACA6400FD4CF6 /* MetalShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB3D129B217ACA6400FD4CF6 /* MetalShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +39,12 @@
 		EB3D127C217A9EBF00FD4CF6 /* The-Dark-PlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-Dark-PlaceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Dark_PlaceTests.swift; sourceTree = "<group>"; };
 		EB3D1282217A9EBF00FD4CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB3D128D217AAEED00FD4CF6 /* DEGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEGameView.swift; sourceTree = "<group>"; };
-		EB3D128F217AB6CB00FD4CF6 /* DERendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DERendering.swift; sourceTree = "<group>"; };
+		EB3D128D217AAEED00FD4CF6 /* DE_GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DE_GameView.swift; sourceTree = "<group>"; };
+		EB3D128F217AB6CB00FD4CF6 /* DE_Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DE_Renderer.swift; sourceTree = "<group>"; };
 		EB3D1292217AB76E00FD4CF6 /* DarkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkEngine.swift; sourceTree = "<group>"; };
-		EB3D1295217AB95D00FD4CF6 /* DEColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEColor.swift; sourceTree = "<group>"; };
+		EB3D1295217AB95D00FD4CF6 /* DE_Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DE_Color.swift; sourceTree = "<group>"; };
+		EB3D1298217AC49000FD4CF6 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		EB3D129B217ACA6400FD4CF6 /* MetalShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D1291217AB76200FD4CF6 /* Core */,
+				EB3D129A217ACA5100FD4CF6 /* Shaders */,
 				EB3D1294217AB95000FD4CF6 /* Extensions */,
 				EB3D128C217AAEC000FD4CF6 /* Display */,
 				EB3D128B217A9FF000FD4CF6 /* OtherFiles */,
@@ -114,8 +119,8 @@
 		EB3D128C217AAEC000FD4CF6 /* Display */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D128D217AAEED00FD4CF6 /* DEGameView.swift */,
-				EB3D128F217AB6CB00FD4CF6 /* DERendering.swift */,
+				EB3D128F217AB6CB00FD4CF6 /* DE_Renderer.swift */,
+				EB3D128D217AAEED00FD4CF6 /* DE_GameView.swift */,
 			);
 			path = Display;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D1292217AB76E00FD4CF6 /* DarkEngine.swift */,
+				EB3D1298217AC49000FD4CF6 /* Types.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -131,9 +137,17 @@
 		EB3D1294217AB95000FD4CF6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D1295217AB95D00FD4CF6 /* DEColor.swift */,
+				EB3D1295217AB95D00FD4CF6 /* DE_Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EB3D129A217ACA5100FD4CF6 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D129B217ACA6400FD4CF6 /* MetalShaders.metal */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,11 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB3D128E217AAEED00FD4CF6 /* DEGameView.swift in Sources */,
+				EB3D128E217AAEED00FD4CF6 /* DE_GameView.swift in Sources */,
 				EB3D1293217AB76E00FD4CF6 /* DarkEngine.swift in Sources */,
+				EB3D129C217ACA6400FD4CF6 /* MetalShaders.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
-				EB3D1296217AB95D00FD4CF6 /* DEColor.swift in Sources */,
-				EB3D1290217AB6CB00FD4CF6 /* DERendering.swift in Sources */,
+				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
+				EB3D1296217AB95D00FD4CF6 /* DE_Color.swift in Sources */,
+				EB3D1290217AB6CB00FD4CF6 /* DE_Renderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
