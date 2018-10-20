@@ -1,6 +1,6 @@
 import MetalKit
 
-class DERenderer: NSObject {
+class Renderer: NSObject {
     private var _vertexDescriptor: MTLVertexDescriptor {
         let vertexDescriptor = MTLVertexDescriptor()
         
@@ -54,7 +54,7 @@ class DERenderer: NSObject {
     
 }
 
-extension DERenderer: MTKViewDelegate {
+extension Renderer: MTKViewDelegate {
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         //TODO: update when screen is resized.
