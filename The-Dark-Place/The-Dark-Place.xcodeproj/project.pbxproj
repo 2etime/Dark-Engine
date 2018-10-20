@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
-		EB3D1270217A9EBE00FD4CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126F217A9EBE00FD4CF6 /* ViewController.swift */; };
 		EB3D1272217A9EBF00FD4CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
+		EB3D128E217AAEED00FD4CF6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D128D217AAEED00FD4CF6 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +27,6 @@
 /* Begin PBXFileReference section */
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB3D126F217A9EBE00FD4CF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB3D1276217A9EBF00FD4CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		EB3D127C217A9EBF00FD4CF6 /* The-Dark-PlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-Dark-PlaceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Dark_PlaceTests.swift; sourceTree = "<group>"; };
 		EB3D1282217A9EBF00FD4CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3D128D217AAEED00FD4CF6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +76,7 @@
 		EB3D126C217A9EBE00FD4CF6 /* The-Dark-Place */ = {
 			isa = PBXGroup;
 			children = (
+				EB3D128C217AAEC000FD4CF6 /* GameView */,
 				EB3D128B217A9FF000FD4CF6 /* OtherFiles */,
 			);
 			path = "The-Dark-Place";
@@ -94,13 +95,20 @@
 			isa = PBXGroup;
 			children = (
 				EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */,
-				EB3D126F217A9EBE00FD4CF6 /* ViewController.swift */,
 				EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */,
 				EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */,
 				EB3D1276217A9EBF00FD4CF6 /* Info.plist */,
 				EB3D1277217A9EBF00FD4CF6 /* The_Dark_Place.entitlements */,
 			);
 			path = OtherFiles;
+			sourceTree = "<group>";
+		};
+		EB3D128C217AAEC000FD4CF6 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D128D217AAEED00FD4CF6 /* GameView.swift */,
+			);
+			path = GameView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB3D1270217A9EBE00FD4CF6 /* ViewController.swift in Sources */,
+				EB3D128E217AAEED00FD4CF6 /* GameView.swift in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
