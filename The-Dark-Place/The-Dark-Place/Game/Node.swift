@@ -3,6 +3,8 @@ import MetalKit
 
 class Node {
     private var _position: float3 = float3(0)
+    private var _scale: float3 = float3(1)
+    private var _rotation: float3 = float3(0)
 
     private var _modelConstants = ModelConstants()
     private var _children: [Node] = []
@@ -10,6 +12,8 @@ class Node {
     var modelMatrix: matrix_float4x4{
         var modelMatrix = matrix_identity_float4x4
         modelMatrix.translate(_position)
+        modelMatrix.rotate(_rotation)
+        modelMatrix.scale(_scale)
         return modelMatrix
     }
     
@@ -21,15 +25,15 @@ class Node {
         self._modelConstants.modelMatrix = self.modelMatrix
     }
     
-    func update(_ deltaTime: Float){
+    func update(){
         for child in _children {
-            child.update(deltaTime)
+            child.update()
         }
-        onUpdate(deltaTime)
+        onUpdate()
         updateModelConstants()
     }
     
-    func onUpdate(_ deltaTime: Float){
+    func onUpdate(){
         //Override using this function
     }
     
@@ -59,4 +63,31 @@ extension Node {
     func moveX(_ delta: Float){ self._position.x += delta }
     func moveY(_ delta: Float){ self._position.y += delta }
     func moveZ(_ delta: Float){ self._position.z += delta }
+    
+    //Rotating
+    func setRotation(_ rotation: float3) { self._rotation = rotation }
+    func setRotationX(_ xRotation: Float) { self._rotation.x = xRotation }
+    func setRotationY(_ yRotation: Float) { self._rotation.y = yRotation }
+    func setRotationZ(_ zRotation: Float) { self._rotation.z = zRotation }
+    func getRotation()->float3 { return self._rotation }
+    func getRotationX()->Float { return self._rotation.x }
+    func getRotationY()->Float { return self._rotation.y }
+    func getRotationZ()->Float { return self._rotation.z }
+    func rotateX(_ delta: Float){ self._rotation.x += delta }
+    func rotateY(_ delta: Float){ self._rotation.y += delta }
+    func rotateZ(_ delta: Float){ self._rotation.z += delta }
+    
+    //Scaling
+    func setScale(_ scale: float3){ self._scale = scale }
+    func setScale(_ scale: Float){setScale(float3(scale))}
+    func setScaleX(_ scaleX: Float){ self._scale.x = scaleX }
+    func setScaleY(_ scaleY: Float){ self._scale.y = scaleY }
+    func setScaleZ(_ scaleZ: Float){ self._scale.z = scaleZ }
+    func getScale()->float3 { return self._scale }
+    func getScaleX()->Float { return self._scale.x }
+    func getScaleY()->Float { return self._scale.y }
+    func getScaleZ()->Float { return self._scale.z }
+    func scaleX(_ delta: Float){ self._scale.x += delta }
+    func scaleY(_ delta: Float){ self._scale.y += delta }
+    func scaleZ(_ delta: Float){ self._scale.z += delta }
 }
