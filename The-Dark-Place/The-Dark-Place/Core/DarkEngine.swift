@@ -12,6 +12,8 @@ class DarkEngine {
         self._defaultLibrary = device.makeDefaultLibrary()
         
         Graphics.Initialize()
+        
+        Entities.Initialize()
     }
     
 }

@@ -1,7 +1,7 @@
 import MetalKit
 
 class Renderer: NSObject {
-    var gameObject = GameObject()
+    var gameObject = CustomGameObject(.Triangle)
 }
 
 extension Renderer: MTKViewDelegate {
