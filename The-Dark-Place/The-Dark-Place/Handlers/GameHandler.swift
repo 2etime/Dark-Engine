@@ -10,9 +10,11 @@ class GameHandler {
     }
     
     public static func TickGame(_ renderCommandEncoder: MTLRenderCommandEncoder, _ deltaTime: Float){
+        GameTime.UpdateTime(deltaTime)
         
-        _sceneManager.tickCurrentScene(renderCommandEncoder, deltaTime)
-        
+        _sceneManager.tickCurrentScene(renderCommandEncoder)
     }
     
 }
+
+

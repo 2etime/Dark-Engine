@@ -39,6 +39,7 @@
 		EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12EB217D24B800FD4CF6 /* Triangle.swift */; };
 		EB3D12F1217D257900FD4CF6 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F0217D257900FD4CF6 /* Math.swift */; };
 		EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */; };
+		EB3D12F8217D2EC700FD4CF6 /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		EB3D12EB217D24B800FD4CF6 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		EB3D12F0217D257900FD4CF6 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_float4x4.swift; sourceTree = "<group>"; };
+		EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D1292217AB76E00FD4CF6 /* DarkEngine.swift */,
+				EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */,
 				EB3D1298217AC49000FD4CF6 /* Types.swift */,
 			);
 			path = Core;
@@ -229,7 +232,6 @@
 				EB3D12B5217AF22A00FD4CF6 /* Node.swift */,
 				EB3D12E5217D1DE900FD4CF6 /* scenes */,
 				EB3D12BA217AF32100FD4CF6 /* game-objects */,
-				EB3D12B7217AF2B300FD4CF6 /* protocols */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -247,6 +249,7 @@
 			children = (
 				EB3D12EE217D24CA00FD4CF6 /* types */,
 				EB3D12ED217D24BE00FD4CF6 /* objects */,
+				EB3D12B7217AF2B300FD4CF6 /* protocols */,
 			);
 			path = "game-objects";
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3D12F8217D2EC700FD4CF6 /* GameTime.swift in Sources */,
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* GameView.swift in Sources */,

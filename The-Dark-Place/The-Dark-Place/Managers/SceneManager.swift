@@ -16,16 +16,16 @@ class SceneManager {
         }
     }
     
-    private func updateScene(_ deltaTime: Float){
-        _currentScene.update(deltaTime)
+    private func updateScene(){
+        _currentScene.update()
     }
     
     private func renderScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
         _currentScene.render(renderCommandEncoder)
     }
     
-    public func tickCurrentScene(_ renderCommandEncoder: MTLRenderCommandEncoder, _ deltaTime: Float){
-        updateScene(deltaTime)
+    public func tickCurrentScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        updateScene()
         renderScene(renderCommandEncoder)
     }
 
