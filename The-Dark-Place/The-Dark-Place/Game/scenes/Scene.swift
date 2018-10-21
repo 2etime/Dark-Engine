@@ -46,6 +46,7 @@ class Scene: Node {
     
     private func updateSceneConstants(){
         _sceneConstants.viewMatrix = self._currentCamera.viewMatrix
+        _sceneConstants.projectionMatrix = self._currentCamera.projectionMatrix
     }
     
     override func update() {
@@ -55,6 +56,7 @@ class Scene: Node {
     }
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 1)
         super.render(renderCommandEncoder)
     }

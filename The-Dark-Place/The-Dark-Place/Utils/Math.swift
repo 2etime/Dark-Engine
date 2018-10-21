@@ -12,6 +12,14 @@ public var Z_AXIS: float3{
     return float3(0,0,1)
 }
 
+public func toRadians(_ degrees: Float)->Float{
+    return (degrees / 180) * Float.pi
+}
+
+public func toDegrees(_ radians: Float) -> Float{
+    return radians * (180 / Float.pi)
+}
+
 class Math {
     
     static var randomZeroToOne: Float{
