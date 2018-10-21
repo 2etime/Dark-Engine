@@ -1,7 +1,7 @@
 import MetalKit
 
 class Renderer: NSObject {
-    var gameObject = CustomGameObject(.Triangle)
+    
 }
 
 extension Renderer: MTKViewDelegate {
@@ -15,8 +15,8 @@ extension Renderer: MTKViewDelegate {
         let commandBuffer = DarkEngine.CommandQueue.makeCommandBuffer()
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: passDescriptor)
         
-        gameObject.render(renderCommandEncoder!)
-        
+        GameHandler.TickGame(renderCommandEncoder!)
+
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)
         commandBuffer?.commit()
