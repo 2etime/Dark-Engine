@@ -9,10 +9,12 @@ class PlaygroundScene: Scene {
         addChild(_object)
     }
     
+    override func setupCameras() {
+        setCurrentCamera(.Debug)
+    }
+    
     override func onUpdate() {
-        _object.setRotationZ(cos(GameTime.TotalGameTime))
         _object.setPositionX(cos(GameTime.TotalGameTime))
-        _object.setScale(cos(GameTime.TotalGameTime))
     }
     
 }

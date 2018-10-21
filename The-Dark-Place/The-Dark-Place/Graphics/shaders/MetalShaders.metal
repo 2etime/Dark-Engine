@@ -13,15 +13,22 @@ struct ModelConstants {
     float4x4 modelMatrix;
 };
 
+struct SceneConstants {
+    float4x4 viewMatrix;
+};
+
 struct RasterizerData {
     float4 position [[ position ]];
 };
 
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
-                                          constant ModelConstants &modelConstants [[ buffer(1) ]]) {
+                                          constant SceneConstants &sceneConstants [[ buffer(1) ]],
+                                          constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     RasterizerData rd;
     
-    rd.position = modelConstants.modelMatrix * float4(vertexIn.position, 1.0);
+    float4x4 mvMatrix = sceneConstants.viewMatrix * modelConstants.modelMatrix;
+    
+    rd.position = mvMatrix * float4(vertexIn.position, 1.0);
     
     return rd;
 }

@@ -26,7 +26,7 @@ extension matrix_float4x4 {
         self.rotate(angle: angle.z, axis: Z_AXIS)
     }
 
-    private mutating func rotate(angle: Float, axis: float3){
+    mutating func rotate(angle: Float, axis: float3){
         var result = matrix_identity_float4x4
         
         let x: Float = axis.x

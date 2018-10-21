@@ -43,7 +43,7 @@ class Node {
         }
         
         if let renderable = self as? Renderable {
-            renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
+            renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 2)
             renderable.doRender(renderCommandEncoder)
         }
     }

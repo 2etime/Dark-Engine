@@ -21,3 +21,7 @@ struct Material: sizeable {
 struct ModelConstants: sizeable {
     var modelMatrix = matrix_identity_float4x4
 }
+
+struct SceneConstants: sizeable {
+    var viewMatrix = matrix_identity_float4x4
+}

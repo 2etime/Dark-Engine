@@ -40,6 +40,8 @@
 		EB3D12F1217D257900FD4CF6 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F0217D257900FD4CF6 /* Math.swift */; };
 		EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */; };
 		EB3D12F8217D2EC700FD4CF6 /* GameTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */; };
+		EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12FB217D352400FD4CF6 /* Camera.swift */; };
+		EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		EB3D12F0217D257900FD4CF6 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_float4x4.swift; sourceTree = "<group>"; };
 		EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTime.swift; sourceTree = "<group>"; };
+		EB3D12FB217D352400FD4CF6 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera_Debug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +192,7 @@
 		EB3D1294217AB95000FD4CF6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D12A7217AD94D00FD4CF6 /* Library.swift */,
+				EB3D12FD217D353400FD4CF6 /* types */,
 				EB3D1295217AB95D00FD4CF6 /* Colors.swift */,
 				EB3D12F0217D257900FD4CF6 /* Math.swift */,
 				EB3D12F2217D28CD00FD4CF6 /* extensions */,
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12B5217AF22A00FD4CF6 /* Node.swift */,
+				EB3D12FE217D3A5500FD4CF6 /* cameras */,
 				EB3D12E5217D1DE900FD4CF6 /* scenes */,
 				EB3D12BA217AF32100FD4CF6 /* game-objects */,
 			);
@@ -347,6 +352,23 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		EB3D12FD217D353400FD4CF6 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D12A7217AD94D00FD4CF6 /* Library.swift */,
+			);
+			path = types;
+			sourceTree = "<group>";
+		};
+		EB3D12FE217D3A5500FD4CF6 /* cameras */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D12FB217D352400FD4CF6 /* Camera.swift */,
+				EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */,
+			);
+			path = cameras;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +484,7 @@
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* CustomMeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
+				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* CustomGameObject.swift in Sources */,
@@ -474,6 +497,7 @@
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,
+				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */,
