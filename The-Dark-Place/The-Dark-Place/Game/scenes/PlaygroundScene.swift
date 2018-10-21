@@ -3,10 +3,13 @@ import MetalKit
 
 class PlaygroundScene: Scene {
 
-    private var _gameObject = CustomGameObject(.Triangle)
-    
+    private var _object = Triangle()
+
     override func buildScene() {
-        addChild(_gameObject)
+        
+        _object.setColor(Colors.random)
+        
+        addChild(_object)
     }
     
 }

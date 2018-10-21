@@ -18,7 +18,7 @@ public class CustomMesh: Mesh{
     }
     
     private func generateBuffers(){
-        vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertexCount, options: [])
+        vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices, length: Vertex.stride(vertexCount), options: [])
     }
     
     internal func addVertex(position: float3 = float3(1.0)){

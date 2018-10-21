@@ -35,6 +35,6 @@ class Basic_VertexDescriptor: VertexDescriptor {
         vertexDescriptor.attributes[0].format = .float3
         vertexDescriptor.attributes[0].offset = 0
         
-        vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
+        vertexDescriptor.layouts[0].stride = Vertex.stride
     }
 }

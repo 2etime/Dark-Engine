@@ -10,7 +10,7 @@ class GameView: MTKView {
         
         DarkEngine.Ignite(self.device!)
         
-        self.clearColor = Color.ClearColors.FOREST_GREEN
+        self.clearColor = Colors.ClearColors.FOREST_GREEN
         
         self.colorPixelFormat = .bgr10a2Unorm
         
