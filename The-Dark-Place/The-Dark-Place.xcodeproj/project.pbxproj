@@ -38,6 +38,7 @@
 		EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12E8217D207100FD4CF6 /* GameHandler.swift */; };
 		EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12EB217D24B800FD4CF6 /* Triangle.swift */; };
 		EB3D12F1217D257900FD4CF6 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F0217D257900FD4CF6 /* Math.swift */; };
+		EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		EB3D12E8217D207100FD4CF6 /* GameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
 		EB3D12EB217D24B800FD4CF6 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		EB3D12F0217D257900FD4CF6 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_float4x4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				EB3D12A7217AD94D00FD4CF6 /* Library.swift */,
 				EB3D1295217AB95D00FD4CF6 /* Colors.swift */,
 				EB3D12F0217D257900FD4CF6 /* Math.swift */,
+				EB3D12F2217D28CD00FD4CF6 /* extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -333,6 +336,14 @@
 			path = "custom-game-objects";
 			sourceTree = "<group>";
 		};
+		EB3D12F2217D28CD00FD4CF6 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -454,6 +465,7 @@
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
 				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
+				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,

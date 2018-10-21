@@ -15,7 +15,8 @@ extension Renderer: MTKViewDelegate {
         let commandBuffer = DarkEngine.CommandQueue.makeCommandBuffer()
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: passDescriptor)
         
-        GameHandler.TickGame(renderCommandEncoder!)
+        let deltaTime = 1 / Float(view.preferredFramesPerSecond)
+        GameHandler.TickGame(renderCommandEncoder!, deltaTime)
 
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

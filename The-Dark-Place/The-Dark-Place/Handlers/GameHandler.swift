@@ -9,9 +9,9 @@ class GameHandler {
         self._sceneManager = SceneManager(.Playground)
     }
     
-    public static func TickGame(_ renderCommandEncoder: MTLRenderCommandEncoder){
+    public static func TickGame(_ renderCommandEncoder: MTLRenderCommandEncoder, _ deltaTime: Float){
         
-        _sceneManager.tickCurrentScene(renderCommandEncoder)
+        _sceneManager.tickCurrentScene(renderCommandEncoder, deltaTime)
         
     }
     
