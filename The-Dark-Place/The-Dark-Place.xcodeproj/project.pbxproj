@@ -32,6 +32,10 @@
 		EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */; };
 		EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */; };
 		EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12D1217D10E900FD4CF6 /* Entities.swift */; };
+		EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12DF217D1D6900FD4CF6 /* SceneManager.swift */; };
+		EB3D12E4217D1DE600FD4CF6 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12E3217D1DE600FD4CF6 /* Scene.swift */; };
+		EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12E6217D1F5200FD4CF6 /* PlaygroundScene.swift */; };
+		EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12E8217D207100FD4CF6 /* GameHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D12D1217D10E900FD4CF6 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		EB3D12DF217D1D6900FD4CF6 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		EB3D12E3217D1DE600FD4CF6 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		EB3D12E6217D1F5200FD4CF6 /* PlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundScene.swift; sourceTree = "<group>"; };
+		EB3D12E8217D207100FD4CF6 /* GameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D1291217AB76200FD4CF6 /* Core */,
+				EB3D12DE217D1D5B00FD4CF6 /* Managers */,
 				EB3D12C0217D0ACD00FD4CF6 /* Entities */,
 				EB3D129E217AD21100FD4CF6 /* Graphics */,
 				EB3D12B4217AF21300FD4CF6 /* Game */,
@@ -209,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12B5217AF22A00FD4CF6 /* Node.swift */,
+				EB3D12E5217D1DE900FD4CF6 /* scenes */,
 				EB3D12BA217AF32100FD4CF6 /* game-objects */,
 				EB3D12B7217AF2B300FD4CF6 /* protocols */,
 			);
@@ -273,6 +283,24 @@
 				EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */,
 			);
 			path = "custom-meshes";
+			sourceTree = "<group>";
+		};
+		EB3D12DE217D1D5B00FD4CF6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D12E8217D207100FD4CF6 /* GameHandler.swift */,
+				EB3D12DF217D1D6900FD4CF6 /* SceneManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		EB3D12E5217D1DE900FD4CF6 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D12E3217D1DE600FD4CF6 /* Scene.swift */,
+				EB3D12E6217D1F5200FD4CF6 /* PlaygroundScene.swift */,
+			);
+			path = scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,11 +404,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
+				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* GameView.swift in Sources */,
+				EB3D12E4217D1DE600FD4CF6 /* Scene.swift in Sources */,
 				EB3D1293217AB76E00FD4CF6 /* DarkEngine.swift in Sources */,
 				EB3D129C217ACA6400FD4CF6 /* MetalShaders.metal in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
+				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* CustomMeshLibrary.swift in Sources */,
@@ -391,6 +422,7 @@
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Color.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
+				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,
