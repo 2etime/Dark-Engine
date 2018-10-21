@@ -9,14 +9,19 @@ struct Material {
     float4 color;
 };
 
+struct ModelConstants {
+    float4x4 modelMatrix;
+};
+
 struct RasterizerData {
     float4 position [[ position ]];
 };
 
-vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]]) {
+vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
+                                          constant ModelConstants &modelConstants [[ buffer(1) ]]) {
     RasterizerData rd;
     
-    rd.position = float4(vertexIn.position, 1.0);
+    rd.position = modelConstants.modelMatrix * float4(vertexIn.position, 1.0);
     
     return rd;
 }
