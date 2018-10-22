@@ -2,12 +2,16 @@ import MetalKit
 
 class Renderer: NSObject {
     
+    init(_ view: MTKView) {
+        GameHandler.UpdateGameView(Float(view.drawableSize.width / view.drawableSize.height))
+    }
+    
 }
 
 extension Renderer: MTKViewDelegate {
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        //TODO: update when screen is resized.
+        GameHandler.UpdateGameView(Float(size.width / size.height))
     }
     
     func draw(in view: MTKView) {
@@ -16,7 +20,9 @@ extension Renderer: MTKViewDelegate {
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: passDescriptor)
         
         let deltaTime = 1 / Float(view.preferredFramesPerSecond)
-        GameHandler.TickGame(renderCommandEncoder!, deltaTime)
+        GameHandler.UpdateGameTime(deltaTime)
+        
+        GameHandler.TickGame(renderCommandEncoder!)
 
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

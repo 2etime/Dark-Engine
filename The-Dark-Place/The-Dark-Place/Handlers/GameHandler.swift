@@ -9,9 +9,15 @@ class GameHandler {
         self._sceneManager = SceneManager(.Playground)
     }
     
-    public static func TickGame(_ renderCommandEncoder: MTLRenderCommandEncoder, _ deltaTime: Float){
+    public static func UpdateGameView(_ aspectRatio: Float) {
+        GameView.AspectRatio = aspectRatio
+    }
+    
+    public static func UpdateGameTime(_ deltaTime: Float) {
         GameTime.UpdateTime(deltaTime)
-        
+    }
+    
+    public static func TickGame(_ renderCommandEncoder: MTLRenderCommandEncoder){
         _sceneManager.tickCurrentScene(renderCommandEncoder)
     }
     

@@ -1,6 +1,6 @@
 import MetalKit
 
-class GameView: MTKView {
+class MainView: MTKView {
 
     private var _renderer: Renderer!
     required init(coder: NSCoder) {
@@ -16,7 +16,7 @@ class GameView: MTKView {
         
         self.depthStencilPixelFormat = .depth32Float
         
-        self._renderer = Renderer()
+        self._renderer = Renderer(self)
         
         self.delegate = _renderer
     }
