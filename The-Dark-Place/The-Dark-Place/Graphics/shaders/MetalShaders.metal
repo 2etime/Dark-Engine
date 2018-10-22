@@ -3,6 +3,7 @@ using namespace metal;
 
 struct VertexIn {
     float3 position [[ attribute(0) ]];
+    float3 normal [[ attribute(1) ]];
 };
 
 struct Material {
@@ -20,6 +21,7 @@ struct SceneConstants {
 
 struct RasterizerData {
     float4 position [[ position ]];
+    float3 surfaceNormal;
 };
 
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
@@ -30,6 +32,7 @@ vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
     float4x4 mvpMatrix = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * modelConstants.modelMatrix;
     
     rd.position = mvpMatrix * float4(vertexIn.position, 1.0);
+    rd.surfaceNormal = vertexIn.normal;
     
     return rd;
 }

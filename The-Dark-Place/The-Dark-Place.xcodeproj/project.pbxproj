@@ -44,6 +44,8 @@
 		EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */; };
 		EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1301217D43E200FD4CF6 /* DepthStencilStateLibrary.swift */; };
 		EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1307217D49DF00FD4CF6 /* GameView.swift */; };
+		EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1309217D4D1100FD4CF6 /* Cube_CustomMesh.swift */; };
+		EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130B217D4D2600FD4CF6 /* Cube.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera_Debug.swift; sourceTree = "<group>"; };
 		EB3D1301217D43E200FD4CF6 /* DepthStencilStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthStencilStateLibrary.swift; sourceTree = "<group>"; };
 		EB3D1307217D49DF00FD4CF6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		EB3D1309217D4D1100FD4CF6 /* Cube_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube_CustomMesh.swift; sourceTree = "<group>"; };
+		EB3D130B217D4D2600FD4CF6 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +301,7 @@
 			children = (
 				EB3D12CA217D0DD000FD4CF6 /* CustomMesh.swift */,
 				EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */,
+				EB3D1309217D4D1100FD4CF6 /* Cube_CustomMesh.swift */,
 			);
 			path = "custom-meshes";
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12EB217D24B800FD4CF6 /* Triangle.swift */,
+				EB3D130B217D4D2600FD4CF6 /* Cube.swift */,
 			);
 			path = "custom-game-objects";
 			sourceTree = "<group>";
@@ -500,12 +506,14 @@
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,
 				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
 				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,
+				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
+				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */,

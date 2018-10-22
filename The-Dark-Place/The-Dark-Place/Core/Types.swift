@@ -12,6 +12,7 @@ extension float3: sizeable { }
 
 struct Vertex: sizeable {
     var position: float3
+    var normal: float3
 }
 
 struct Material: sizeable {

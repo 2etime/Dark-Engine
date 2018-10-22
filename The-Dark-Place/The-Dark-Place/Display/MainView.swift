@@ -10,7 +10,7 @@ class MainView: MTKView {
         
         DarkEngine.Ignite(self.device!)
         
-        self.clearColor = Colors.ClearColors.FOREST_GREEN
+        self.clearColor = Colors.ClearColors.DARK_GRAY
         
         self.colorPixelFormat = .bgr10a2Unorm
         

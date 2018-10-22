@@ -7,7 +7,7 @@ class CustomGameObject: Node {
     
     init(_ customMeshType: CustomMeshTypes) {
         super.init()
-        self._mesh = Entities.CustomMeshes[.Triangle]
+        self._mesh = Entities.CustomMeshes[customMeshType]
     }
     
 }

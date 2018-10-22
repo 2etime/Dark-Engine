@@ -35,6 +35,11 @@ class Basic_VertexDescriptor: VertexDescriptor {
         vertexDescriptor.attributes[0].format = .float3
         vertexDescriptor.attributes[0].offset = 0
         
+        //Normal
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].format = .float3
+        vertexDescriptor.attributes[1].offset = float3.stride
+        
         vertexDescriptor.layouts[0].stride = Vertex.stride
     }
 }

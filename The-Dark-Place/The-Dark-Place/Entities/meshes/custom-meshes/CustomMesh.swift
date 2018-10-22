@@ -21,8 +21,8 @@ public class CustomMesh: Mesh{
         vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices, length: Vertex.stride(vertexCount), options: [])
     }
     
-    internal func addVertex(position: float3 = float3(1.0)){
-        vertices.append(Vertex(position: position))
+    internal func addVertex(position: float3 = float3(1.0), normal: float3 = float3(0,1,0)){
+        vertices.append(Vertex(position: position, normal: normal))
     }
     
     public func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder){
