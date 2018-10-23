@@ -16,8 +16,8 @@ class Scene: Node {
 
     override init() {
         super.init()
-        buildScene()
         setupCameras()
+        buildScene()
     }
     
     internal func buildScene(){

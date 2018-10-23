@@ -53,7 +53,7 @@ fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
     
     LightData lightData;
     lightData.color = float3(1,1,1);
-    lightData.position = float3(0,0,2);
+    lightData.position = float3(-4,0,2);
     lightData.ambientIntensity = 1.0;
     lightData.diffuseIntensity = 0.5;
     
