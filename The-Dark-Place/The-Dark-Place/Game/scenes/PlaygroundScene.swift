@@ -19,8 +19,7 @@ class PlaygroundScene: Scene {
         
         let lightThing = Cube()
         lightThing.setScale(0.02)
-        lightThing.setPositionZ(-3)
-        lightThing.setPositionY(0.2)
+        lightThing.setPosition(float3(0,0.2,-3))
         addChild(lightThing)
     }
     

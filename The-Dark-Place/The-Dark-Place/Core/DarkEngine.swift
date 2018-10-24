@@ -1,7 +1,6 @@
 import MetalKit
 
 class DarkEngine {
-    
     private static var _device: MTLDevice!
     private static var _commandQueue: MTLCommandQueue!
     private static var _defaultLibrary: MTLLibrary!

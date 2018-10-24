@@ -48,6 +48,8 @@
 		EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130B217D4D2600FD4CF6 /* Cube.swift */; };
 		EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */; };
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
+		EB7AFAF2218004A8001D8172 /* RenderPassDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */; };
+		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		EB3D130B217D4D2600FD4CF6 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPassDescriptorLibrary.swift; sourceTree = "<group>"; };
+		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D1292217AB76E00FD4CF6 /* DarkEngine.swift */,
+				EB7AFAF3218008B1001D8172 /* Options.swift */,
 				EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */,
 				EB3D1298217AC49000FD4CF6 /* Types.swift */,
 				EB3D1307217D49DF00FD4CF6 /* GameView.swift */,
@@ -230,6 +235,7 @@
 				EB3D12AC217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift */,
 				EB3D129F217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift */,
 				EB3D1301217D43E200FD4CF6 /* DepthStencilStateLibrary.swift */,
+				EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
+				EB7AFAF2218004A8001D8172 /* RenderPassDescriptorLibrary.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
@@ -514,6 +521,7 @@
 				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
 				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
+				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,

@@ -8,6 +8,7 @@ class Graphics {
     public static var VertexShaders: VertexShaderLibrary!
     public static var FragmentShaders: FragmentShaderLibrary!
     public static var DepthStencilStates: DepthStencilStateLibrary!
+    public static var RenderPassDescriptors: RenderPassDescriptorLibrary!
 
     public static func Initialize(){
         self.VertexShaders = VertexShaderLibrary()
@@ -16,6 +17,7 @@ class Graphics {
         self.RenderPipelineDescriptors = RenderPipelineDescriptorLibrary()
         self.RenderPipelineStates = RenderPipelineStateLibrary()
         self.DepthStencilStates = DepthStencilStateLibrary()
+        self.RenderPassDescriptors = RenderPassDescriptorLibrary()
     }
     
 }
