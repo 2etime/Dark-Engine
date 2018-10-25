@@ -2,8 +2,10 @@ import MetalKit
 
 class Renderer: NSObject {
     
+    var gameHandler: GameHandler!
     init(_ view: MTKView) {
-        GameHandler.UpdateGameView(Float(view.drawableSize.width / view.drawableSize.height))
+        gameHandler = GameHandler(view)
+        gameHandler.updateGameView(Float(view.drawableSize.width), Float(view.drawableSize.height))
     }
     
 }
@@ -11,7 +13,7 @@ class Renderer: NSObject {
 extension Renderer: MTKViewDelegate {
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        GameHandler.UpdateGameView(Float(size.width / size.height))
+        gameHandler.updateGameView(Float(size.width), Float(size.height))
     }
     
     func draw(in view: MTKView) {
@@ -20,9 +22,9 @@ extension Renderer: MTKViewDelegate {
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: passDescriptor)
         
         let deltaTime = 1 / Float(view.preferredFramesPerSecond)
-        GameHandler.UpdateGameTime(deltaTime)
+        gameHandler.updateGameTime(deltaTime)
         
-        GameHandler.TickGame(renderCommandEncoder!)
+        gameHandler.tickGame(renderCommandEncoder!)
 
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

@@ -60,3 +60,29 @@ class Shadow_RenderPassDescriptor: RenderPassDescriptor {
         
     }
 }
+
+class GBuffer_RenderPassDescriptor: RenderPassDescriptor {
+    var name: String = "GBuffer Render Pass Descriptor"
+    var renderPassDescriptor: MTLRenderPassDescriptor!
+    var texture: MTLTexture!
+    init() {
+        generateTexture()
+        renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.depthAttachment.texture = texture
+        renderPassDescriptor.depthAttachment.loadAction = .clear
+        renderPassDescriptor.depthAttachment.storeAction = .store
+        renderPassDescriptor.depthAttachment.clearDepth = 1.0
+    }
+    
+    private func generateTexture(){
+        let shadowTextureDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .depth32Float,
+                                                                               width: 2048,
+                                                                               height: 2048,
+                                                                               mipmapped: false)
+        shadowTextureDescriptor.resourceOptions = .storageModePrivate
+        shadowTextureDescriptor.usage = [.renderTarget, .shaderRead]
+        texture = DarkEngine.Device.makeTexture(descriptor: shadowTextureDescriptor)
+        texture.label = "Shadow Map"
+        
+    }
+}

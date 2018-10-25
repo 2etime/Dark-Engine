@@ -12,8 +12,6 @@ class DarkEngine {
         
         Graphics.Initialize()
         Entities.Initialize()
-        
-        GameHandler.Initialize()
     }
     
 }

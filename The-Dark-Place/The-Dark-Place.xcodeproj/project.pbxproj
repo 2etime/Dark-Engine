@@ -50,6 +50,7 @@
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
 		EB7AFAF2218004A8001D8172 /* RenderPassDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
+		EB7AFAF621801942001D8172 /* TextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF521801942001D8172 /* TextureLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPassDescriptorLibrary.swift; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		EB7AFAF521801942001D8172 /* TextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				EB3D129F217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift */,
 				EB3D1301217D43E200FD4CF6 /* DepthStencilStateLibrary.swift */,
 				EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */,
+				EB7AFAF521801942001D8172 /* TextureLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* CustomGameObject.swift in Sources */,
+				EB7AFAF621801942001D8172 /* TextureLibrary.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
