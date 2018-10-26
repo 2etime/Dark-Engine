@@ -8,9 +8,6 @@ class MainView: MTKView {
         
         self.device = MTLCreateSystemDefaultDevice()
         
-        self._renderer = Renderer(self)
-        
-        self.delegate = _renderer
         
         DarkEngine.Ignite(self.device!)
         
@@ -20,6 +17,9 @@ class MainView: MTKView {
         
         self.depthStencilPixelFormat = .depth32Float
         
+        self._renderer = Renderer(self)
+        
+        self.delegate = _renderer
     }
     
 }

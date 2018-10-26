@@ -1,4 +1,5 @@
 #include <metal_stdlib>
+#include "SharedMetal.metal"
 
 using namespace metal;
 
@@ -11,15 +12,6 @@ struct Material {
     float4 color;
     float ambientIntensity;
     float diffuseIntensity;
-};
-
-struct ModelConstants {
-    float4x4 modelMatrix;
-};
-
-struct SceneConstants {
-    float4x4 viewMatrix;
-    float4x4 projectionMatrix;
 };
 
 struct LightData {
@@ -74,3 +66,4 @@ fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
     color = float4(ambientColor + diffuseColor, color.a);
     return half4(color.r, color.g, color.b, color.a);
 }
+

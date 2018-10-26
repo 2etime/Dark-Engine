@@ -4,7 +4,7 @@ class Renderer: NSObject {
     
     var gameHandler: GameHandler!
     init(_ view: MTKView) {
-        gameHandler = GameHandler(view)
+        gameHandler = GameHandler()
         gameHandler.updateGameView(Float(view.drawableSize.width), Float(view.drawableSize.height))
     }
     

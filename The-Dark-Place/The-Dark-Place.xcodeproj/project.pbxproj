@@ -48,9 +48,9 @@
 		EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130B217D4D2600FD4CF6 /* Cube.swift */; };
 		EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */; };
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
-		EB7AFAF2218004A8001D8172 /* RenderPassDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */; };
+		EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */; };
+		EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
-		EB7AFAF621801942001D8172 /* TextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF521801942001D8172 /* TextureLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,9 +110,9 @@
 		EB3D130B217D4D2600FD4CF6 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
-		EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPassDescriptorLibrary.swift; sourceTree = "<group>"; };
+		EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SkyboxShader.metal; sourceTree = "<group>"; };
+		EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SharedMetal.metal; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
-		EB7AFAF521801942001D8172 /* TextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,9 @@
 		EB3D129A217ACA5100FD4CF6 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */,
 				EB3D129B217ACA6400FD4CF6 /* MetalShaders.metal */,
+				EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -237,8 +239,6 @@
 				EB3D12AC217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift */,
 				EB3D129F217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift */,
 				EB3D1301217D43E200FD4CF6 /* DepthStencilStateLibrary.swift */,
-				EB7AFAF1218004A8001D8172 /* RenderPassDescriptorLibrary.swift */,
-				EB7AFAF521801942001D8172 /* TextureLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -497,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3D12F8217D2EC700FD4CF6 /* GameTime.swift in Sources */,
+				EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */,
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* MainView.swift in Sources */,
@@ -506,8 +507,8 @@
 				EB3D129C217ACA6400FD4CF6 /* MetalShaders.metal in Sources */,
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
+				EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
-				EB7AFAF2218004A8001D8172 /* RenderPassDescriptorLibrary.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
@@ -517,7 +518,6 @@
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* CustomGameObject.swift in Sources */,
-				EB7AFAF621801942001D8172 /* TextureLibrary.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
