@@ -3,11 +3,6 @@
 
 using namespace metal;
 
-struct VertexIn {
-    float3 position [[ attribute(0) ]];
-    float3 normal [[ attribute(1) ]];
-};
-
 struct Material {
     float4 color;
     float ambientIntensity;
@@ -25,8 +20,6 @@ struct RasterizerData {
     float4 position [[ position ]];
     float3 surfaceNormal;
 };
-
-
 
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
                                           constant SceneConstants &sceneConstants [[ buffer(1) ]],

@@ -2,6 +2,7 @@ import MetalKit
 
 enum RenderPipelineStateTypes {
     case Basic
+    case Skybox
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -10,6 +11,7 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
 
     override func fillLibrary() {
         library.updateValue(Basic_RenderPipelineState(), forKey: .Basic)
+        library.updateValue(Skybox_RenderPipelineState(), forKey: .Skybox)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -35,5 +37,15 @@ class Basic_RenderPipelineState: RenderPipelineState {
         }
     }
 }
-
-
+class Skybox_RenderPipelineState: RenderPipelineState {
+    var name: String = "Skybox Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Skybox])
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}

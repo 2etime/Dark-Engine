@@ -6,7 +6,7 @@ class Camera_Debug: Camera {
     
     var zoom: Float  = 90.0
     var aspectRatio: Float {
-        return GameView.AspectRatio
+        return 16 / 9
     }
     var near: Float = 0.1
     var far: Float = 1000.0

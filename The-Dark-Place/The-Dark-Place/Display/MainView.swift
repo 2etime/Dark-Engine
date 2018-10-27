@@ -8,7 +8,6 @@ class MainView: MTKView {
         
         self.device = MTLCreateSystemDefaultDevice()
         
-        
         DarkEngine.Ignite(self.device!)
         
         self.clearColor = Colors.ClearColors.DARK_GRAY

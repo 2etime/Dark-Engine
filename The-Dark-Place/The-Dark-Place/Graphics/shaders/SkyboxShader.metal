@@ -1,10 +1,9 @@
- #include <metal_stdlib>
 #include "SharedMetal.metal"
 using namespace metal;
 
 struct SkyboxVertex {
     float4 position [[ attribute(0) ]];
-    float3 normal [[ attribute(1) ]];
+    float2 textureCoordinate [[ attribute(2) ]];
 };
 
 struct SkyboxRasterizerData {
@@ -13,11 +12,10 @@ struct SkyboxRasterizerData {
 };
 
 vertex SkyboxRasterizerData skybox_vertex(SkyboxVertex vertexIn [[ stage_in ]],
-                                          constant SceneConstants &sceneConstants [[ buffer(0) ]],
-                                          constant ModelConstants &modelConstants [[ buffer(1) ]]) {
+                                          constant SceneConstants &sceneConstants [[ buffer(1) ]]) {
     SkyboxRasterizerData rd;
-    
-    
+    rd.position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * vertexIn.position;
+    rd.textureCoordinate = vertexIn.position.xyz;
     return rd;
 }
 
@@ -29,7 +27,7 @@ fragment half4 skybox_fragment(SkyboxRasterizerData rd [[ stage_in ]],
                             mag_filter::linear,
                             min_filter::linear);
     
-    float4 color = skyboxTexture.sample(linearSampler, rd.textureCoordinate);
+    float4 color = skyboxTexture.sample(linearSampler, float3(rd.textureCoordinate.x, rd.textureCoordinate.y, rd.textureCoordinate.z));
     
     return half4(color.r, color.g, color.b, color.a);
 }

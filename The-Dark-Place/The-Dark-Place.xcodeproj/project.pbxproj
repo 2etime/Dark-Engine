@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
-		EB3D1272217A9EBF00FD4CF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
 		EB3D128E217AAEED00FD4CF6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D128D217AAEED00FD4CF6 /* MainView.swift */; };
@@ -50,6 +49,14 @@
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
 		EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */; };
 		EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */; };
+		EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */; };
+		EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FF82184E03C0036DB93 /* Assets.xcassets */; };
+		EB6A10022184F86A0036DB93 /* sky_front.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFC2184F8690036DB93 /* sky_front.png */; };
+		EB6A10032184F86A0036DB93 /* sky_left.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFD2184F8690036DB93 /* sky_left.png */; };
+		EB6A10042184F86A0036DB93 /* sky_right.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFE2184F8690036DB93 /* sky_right.png */; };
+		EB6A10052184F86A0036DB93 /* sky_back.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFF2184F8690036DB93 /* sky_back.png */; };
+		EB6A10062184F86A0036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A10002184F8690036DB93 /* sky_bottom.png */; };
+		EB6A10072184F86A0036DB93 /* sky_top.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A10012184F8690036DB93 /* sky_top.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +73,6 @@
 /* Begin PBXFileReference section */
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB3D1276217A9EBF00FD4CF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB3D1277217A9EBF00FD4CF6 /* The_Dark_Place.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = The_Dark_Place.entitlements; sourceTree = "<group>"; };
@@ -112,6 +118,14 @@
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SkyboxShader.metal; sourceTree = "<group>"; };
 		EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SharedMetal.metal; sourceTree = "<group>"; };
+		EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyboxGameObject.swift; sourceTree = "<group>"; };
+		EB6A0FF82184E03C0036DB93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		EB6A0FFC2184F8690036DB93 /* sky_front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_front.png; sourceTree = "<group>"; };
+		EB6A0FFD2184F8690036DB93 /* sky_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_left.png; sourceTree = "<group>"; };
+		EB6A0FFE2184F8690036DB93 /* sky_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_right.png; sourceTree = "<group>"; };
+		EB6A0FFF2184F8690036DB93 /* sky_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_back.png; sourceTree = "<group>"; };
+		EB6A10002184F8690036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
+		EB6A10012184F8690036DB93 /* sky_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_top.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +168,7 @@
 		EB3D126C217A9EBE00FD4CF6 /* The-Dark-Place */ = {
 			isa = PBXGroup;
 			children = (
+				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
 				EB3D12EA217D230500FD4CF6 /* Handlers */,
 				EB3D12DE217D1D5B00FD4CF6 /* Managers */,
@@ -179,8 +194,8 @@
 		EB3D128B217A9FF000FD4CF6 /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				EB6A0FF82184E03C0036DB93 /* Assets.xcassets */,
 				EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */,
-				EB3D1271217A9EBF00FD4CF6 /* Assets.xcassets */,
 				EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */,
 				EB3D1276217A9EBF00FD4CF6 /* Info.plist */,
 				EB3D1277217A9EBF00FD4CF6 /* The_Dark_Place.entitlements */,
@@ -357,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12BB217AF34C00FD4CF6 /* CustomGameObject.swift */,
+				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -394,6 +410,27 @@
 				EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */,
 			);
 			path = cameras;
+			sourceTree = "<group>";
+		};
+		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB6A0FFB2184F8360036DB93 /* Sky */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EB6A0FFB2184F8360036DB93 /* Sky */ = {
+			isa = PBXGroup;
+			children = (
+				EB6A0FFF2184F8690036DB93 /* sky_back.png */,
+				EB6A10002184F8690036DB93 /* sky_bottom.png */,
+				EB6A0FFC2184F8690036DB93 /* sky_front.png */,
+				EB6A0FFD2184F8690036DB93 /* sky_left.png */,
+				EB6A0FFE2184F8690036DB93 /* sky_right.png */,
+				EB6A10012184F8690036DB93 /* sky_top.png */,
+			);
+			path = Sky;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,8 +514,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB3D1272217A9EBF00FD4CF6 /* Assets.xcassets in Resources */,
+				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
+				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
+				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
+				EB6A10062184F86A0036DB93 /* sky_bottom.png in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
+				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
+				EB6A10032184F86A0036DB93 /* sky_left.png in Resources */,
+				EB6A10022184F86A0036DB93 /* sky_front.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +573,7 @@
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,
+				EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
