@@ -28,7 +28,6 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
     override subscript(_ type: MeshTypes) -> Mesh {
         return (library[type])!
     }
-    
 }
 
 public class AppleMesh: Mesh{

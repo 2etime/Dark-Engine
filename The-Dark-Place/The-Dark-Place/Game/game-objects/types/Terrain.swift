@@ -28,14 +28,12 @@ class Terrain: Node {
     
 
     private func generateTerrain() {
-    
-        
         for z in 0..<_vertexCount{
             for x in 0..<_vertexCount{
                 //Position
                 var pX: Float = Float(x) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
                 pX -= Float(_vertexCount / 2) - Float(_gridSize) //Center on x-axis
-                var pY: Float = 0.0
+                let pY: Float = 0.0
                 var pZ: Float = Float(z) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
                 pZ -= Float(_vertexCount / 2) - Float(_gridSize) //Center on z-axis
                 let position: float3 = float3(pX, pY, pZ)

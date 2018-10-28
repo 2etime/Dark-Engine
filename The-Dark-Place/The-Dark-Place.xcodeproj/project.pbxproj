@@ -65,6 +65,9 @@
 		EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AE21859D590021E67E /* KeyCodes.swift */; };
 		EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0E8218617A20021E67E /* Terrain.swift */; };
 		EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */; };
+		EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */; };
+		EBF0E0F0218643920021E67E /* TextureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EF218643920021E67E /* TextureGenerator.swift */; };
+		EBF0E0F4218645B30021E67E /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF0E0F3218645B30021E67E /* grass.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +144,9 @@
 		EBF0E0AE21859D590021E67E /* KeyCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 		EBF0E0E8218617A20021E67E /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
 		EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = TerrainShaders.metal; sourceTree = "<group>"; };
+		EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLibrary.swift; sourceTree = "<group>"; };
+		EBF0E0EF218643920021E67E /* TextureGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureGenerator.swift; sourceTree = "<group>"; };
+		EBF0E0F3218645B30021E67E /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,7 @@
 				EBF0E0AB21859D450021E67E /* Input */,
 				EB3D12EA217D230500FD4CF6 /* Handlers */,
 				EB3D12DE217D1D5B00FD4CF6 /* Managers */,
+				EBF0E0EE2186437A0021E67E /* Generators */,
 				EB3D12C0217D0ACD00FD4CF6 /* Entities */,
 				EB3D129E217AD21100FD4CF6 /* Graphics */,
 				EB3D12B4217AF21300FD4CF6 /* Game */,
@@ -326,8 +333,9 @@
 		EB3D12C3217D0AEF00FD4CF6 /* libraries */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */,
+				EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */,
 				EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */,
+				EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -434,7 +442,8 @@
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB6A0FFB2184F8360036DB93 /* Sky */,
+				EBF0E0F22186449E0021E67E /* Textures */,
+				EBF0E0F1218644900021E67E /* Cube_Maps */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -460,6 +469,30 @@
 				EBF0E0AC21859D590021E67E /* Mouse.swift */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		EBF0E0EE2186437A0021E67E /* Generators */ = {
+			isa = PBXGroup;
+			children = (
+				EBF0E0EF218643920021E67E /* TextureGenerator.swift */,
+			);
+			path = Generators;
+			sourceTree = "<group>";
+		};
+		EBF0E0F1218644900021E67E /* Cube_Maps */ = {
+			isa = PBXGroup;
+			children = (
+				EB6A0FFB2184F8360036DB93 /* Sky */,
+			);
+			path = Cube_Maps;
+			sourceTree = "<group>";
+		};
+		EBF0E0F22186449E0021E67E /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				EBF0E0F3218645B30021E67E /* grass.png */,
+			);
+			path = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +579,7 @@
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
+				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
 				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
@@ -579,6 +613,8 @@
 				EB3D12E4217D1DE600FD4CF6 /* Scene.swift in Sources */,
 				EB3D1293217AB76E00FD4CF6 /* DarkEngine.swift in Sources */,
 				EB3D129C217ACA6400FD4CF6 /* MetalShaders.metal in Sources */,
+				EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */,
+				EBF0E0F0218643920021E67E /* TextureGenerator.swift in Sources */,
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
 				EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */,
