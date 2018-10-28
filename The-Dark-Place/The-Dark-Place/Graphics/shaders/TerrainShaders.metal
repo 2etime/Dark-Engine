@@ -42,7 +42,8 @@ fragment half4 terrain_textured_fragment_shader(TerrainRasterizerData rd [[ stag
     
     constexpr sampler linearSampler(mip_filter::linear,
                                     mag_filter::linear,
-                                    min_filter::linear);
+                                    min_filter::linear,
+                                    address::repeat);
     
     LightData lightData;
     lightData.color = float3(1,1,1);

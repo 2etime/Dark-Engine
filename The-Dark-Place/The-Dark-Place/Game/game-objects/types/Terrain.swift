@@ -3,24 +3,18 @@ import MetalKit
 
 class Terrain: Node {
     
-    private var _material = Material()
+    internal var material: Material! = Material()
     var vertices: [Vertex] = []
     var indices: [UInt32] = []
     var vertexBuffer: MTLBuffer!
     var indexBuffer: MTLBuffer!
     
-    private var _gridSize: Int = 0
     private var _vertexCount: Int = 0
     
-    init(gridSize: Int, cellCount: Int) {
+    init(cellCount: Int) {
         super.init(name: "Terrain")
         self._vertexCount = cellCount + 1
-        self._gridSize = gridSize
         generateTerrain()
-        
-        //Center the terrain
-//        self.moveX(-(Float(gridSize) / 2.0))
-//        self.moveZ(-(Float(gridSize) / 2.0))
         
         vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
         indexBuffer = DarkEngine.Device.makeBuffer(bytes: indices, length: UInt32.stride(indices.count), options: [])
@@ -31,16 +25,16 @@ class Terrain: Node {
         for z in 0..<_vertexCount{
             for x in 0..<_vertexCount{
                 //Position
-                var pX: Float = Float(x) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
-                pX -= (Float(_gridSize) / 2.0) //Center on x-axis
+                var pX: Float = Float(x) / Float(Float(_vertexCount) - Float(1))
+                pX -= 0.5 //Center on x-axis
                 let pY: Float = 0.0
-                var pZ: Float = Float(z) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
-                pZ -= (Float(_gridSize) / 2.0) //Center on z-axis
+                var pZ: Float = Float(z) / Float(Float(_vertexCount) - Float(1))
+                pZ -= 0.5 //Center on z-axis
                 let position: float3 = float3(pX, pY, pZ)
                 
                 //TextureCoords
-                let tX: Float = fmod(Float(x), 2.0)
-                let tZ: Float = fmod(Float(z), 2.0)
+                let tX: Float = Float(x)
+                let tZ: Float = Float(z)
                 let textureCoordinate: float2  = float2(tX, tZ)
                 
                 //Normals
@@ -78,8 +72,8 @@ extension Terrain: Renderable {
 //        renderCommandEncoder.setTriangleFillMode(.lines)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
-        renderCommandEncoder.setFragmentBytes(&_material, length: Material.stride, index: 0)
-        renderCommandEncoder.setFragmentTexture(Entities.Textures[.Face], index: 0)
+        renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
+        renderCommandEncoder.setFragmentTexture(Entities.Textures[.Grass], index: 0)
         
         renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
                                                    indexCount: indices.count,
@@ -91,10 +85,4 @@ extension Terrain: Renderable {
 }
 
 //Material Getters / Setters
-extension Terrain {
-    func setColor(_ colorValue: float4){ self._material.color = colorValue }
-    func getColor()->float4{ return self._material.color }
-    
-    func setAmbientIntensity(_ ambientValue: Float){ self._material.ambientIntensity = ambientValue }
-    func getAmbientIntensity()->Float { return self._material.ambientIntensity }
-}
+extension Terrain: Materialable { }

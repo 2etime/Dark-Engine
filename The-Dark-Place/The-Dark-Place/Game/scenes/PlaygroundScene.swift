@@ -10,23 +10,33 @@ class PlaygroundScene: Scene {
     }
     
     let skybox = SkyboxGameObject(.Sky)
-    let object = Cube()
-    let terrain = Terrain(gridSize: 1, cellCount: 2)
+    var terrain = Terrain(cellCount: 100)
     override func buildScene() {
-//        skybox.setScale(1000)
-        skybox.setPositionY(-20)
+        skybox.setPositionY(20)
         addChild(skybox)
         
+        terrain.setScale(100)
+        terrain.setAmbientIntensity(0.4)
         addChild(terrain)
         
-        currentCamera.setPositionZ(2)
-        currentCamera.setPositionY(1)
-        currentCamera.setPitch(0.2)
+        currentCamera.setPositionZ(40)
+        currentCamera.setPositionY(5)
+        
+        let gap: Float = 2
+        for x in -20..<20{
+            for z in -20..<20{
+                var object = Cube()
+//                object.setRotationY(Math.randomZeroToOne)
+                object.setPosition(float3((Float(x) * gap),0.5,(Float(z) * gap)))
+                object.setColor(Colors.random)
+                object.setAmbientIntensity(0.4)
+                addChild(object)
+            }
+        }
+        
     }
-    
+
     override func onUpdate() {
-//        object.rotateY(GameTime.DeltaTime)
-//        object.rotateX(GameTime.DeltaTime)
         skybox.rotateY(GameTime.DeltaTime / 20)
     }
     

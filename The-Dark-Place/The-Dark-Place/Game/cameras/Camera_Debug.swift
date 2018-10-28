@@ -4,9 +4,9 @@ import MetalKit
 
 class Camera_Debug: Camera {
     
-    var zoom: Float  = 90.0
+    var zoom: Float  = 60.0
     var aspectRatio: Float {
-        return 16 / 9
+        return GameView.AspectRatio
     }
     var near: Float = 0.1
     var far: Float = 10000.0
