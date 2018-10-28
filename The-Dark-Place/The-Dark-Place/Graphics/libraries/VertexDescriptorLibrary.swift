@@ -42,6 +42,11 @@ class Basic_VertexDescriptor: VertexDescriptor {
         vertexDescriptor.attributes[1].format = .float3
         vertexDescriptor.attributes[1].offset = float3.stride
         
+        //Texture Coordinate
+        vertexDescriptor.attributes[2].bufferIndex = 0
+        vertexDescriptor.attributes[2].format = .float2
+        vertexDescriptor.attributes[2].offset = float3.stride + float3.stride
+        
         vertexDescriptor.layouts[0].stride = Vertex.stride
     }
 }
@@ -58,26 +63,5 @@ class MDLMesh_VertexDescriptor: VertexDescriptor {
                                   inwardNormals: false,
                                   allocator: bufferAllocator)
         vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mesh.vertexDescriptor)
-    }
-}
-
-class Skybox_VertexDescriptor: VertexDescriptor {
-    var name: String = "Basic Vertex Descriptor"
-    var vertexDescriptor: MTLVertexDescriptor!
-    
-    init() {
-        vertexDescriptor = MTLVertexDescriptor()
-        
-        //Position
-        vertexDescriptor.attributes[0].bufferIndex = 0
-        vertexDescriptor.attributes[0].format = .float3
-        vertexDescriptor.attributes[0].offset = 0
-        
-        //Normal
-        vertexDescriptor.attributes[1].bufferIndex = 0
-        vertexDescriptor.attributes[1].format = .float3
-        vertexDescriptor.attributes[1].offset = float3.stride
-        
-        vertexDescriptor.layouts[0].stride = Vertex.stride
     }
 }

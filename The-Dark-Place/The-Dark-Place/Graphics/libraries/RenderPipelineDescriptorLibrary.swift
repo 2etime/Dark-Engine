@@ -48,7 +48,7 @@ class Skybox_RenderPipelineDescriptor: RenderPipelineDescriptor {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
         renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
-        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.MDLMesh]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Skybox]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Skybox]
     }

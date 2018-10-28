@@ -4,6 +4,7 @@ using namespace metal;
 struct VertexIn {
     float3 position [[ attribute(0) ]];
     float3 normal [[ attribute(1) ]];
+    float2 textureCoordinate [[ attribute(2) ]];
 };
 
 struct ModelConstants {

@@ -46,7 +46,7 @@ public class AppleMesh: Mesh{
         var mesh: MDLMesh!
         switch meshType {
         case .CubeForSkybox_Apple:
-            mesh = MDLMesh.newBox(withDimensions: float3(1),
+            mesh = MDLMesh.newBox(withDimensions: float3(150),
                                   segments: vector_uint3(1, 1, 1),
                                   geometryType: MDLGeometryType.triangles,
                                   inwardNormals: true,

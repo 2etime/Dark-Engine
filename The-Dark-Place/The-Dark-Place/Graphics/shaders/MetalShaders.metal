@@ -19,6 +19,7 @@ struct LightData {
 struct RasterizerData {
     float4 position [[ position ]];
     float3 surfaceNormal;
+    float2 textureCoordinate;
 };
 
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
@@ -30,6 +31,7 @@ vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
     float4 position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * worldPosition;
     rd.position = position;
     rd.surfaceNormal = (sceneConstants.viewMatrix * (modelConstants.modelMatrix * float4(vertexIn.normal, 0.0))).xyz;
+    rd.textureCoordinate = vertexIn.textureCoordinate;
     
     return rd;
 }
