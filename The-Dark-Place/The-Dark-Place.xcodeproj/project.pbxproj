@@ -63,6 +63,7 @@
 		EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AC21859D590021E67E /* Mouse.swift */; };
 		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
 		EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AE21859D590021E67E /* KeyCodes.swift */; };
+		EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0E8218617A20021E67E /* Terrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		EBF0E0AC21859D590021E67E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		EBF0E0AE21859D590021E67E /* KeyCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
+		EBF0E0E8218617A20021E67E /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +387,7 @@
 			children = (
 				EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */,
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
+				EBF0E0E8218617A20021E67E /* Terrain.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				EB3D129C217ACA6400FD4CF6 /* MetalShaders.metal in Sources */,
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
+				EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */,
 				EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,

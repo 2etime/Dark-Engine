@@ -16,11 +16,14 @@ class PlaygroundScene: Scene {
         skybox.setPositionY(100)
         addChild(skybox)
         
-        object.setScale(0.5)
-        addChild(object)
+        let terrain = Terrain(gridX: 0, gridZ: 0)
+        addChild(terrain)
+        
         
         
         currentCamera.setPositionZ(2)
+        currentCamera.setPositionY(1)
+        currentCamera.setPitch(0.2)
     }
     
     override func onUpdate() {
