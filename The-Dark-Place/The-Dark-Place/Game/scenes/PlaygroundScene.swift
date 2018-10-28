@@ -16,9 +16,11 @@ class PlaygroundScene: Scene {
         skybox.setPositionY(100)
         addChild(skybox)
         
+        object.setScale(0.5)
         addChild(object)
         
-        currentCamera.setPositionZ(10)
+        
+        currentCamera.setPositionZ(2)
     }
     
     override func onUpdate() {
