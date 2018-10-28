@@ -32,10 +32,10 @@ class Terrain: Node {
             for x in 0..<_vertexCount{
                 //Position
                 var pX: Float = Float(x) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
-                pX -= Float(_vertexCount / 2) - Float(_gridSize) //Center on x-axis
+                pX -= (Float(_gridSize) / 2.0) //Center on x-axis
                 let pY: Float = 0.0
                 var pZ: Float = Float(z) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
-                pZ -= Float(_vertexCount / 2) - Float(_gridSize) //Center on z-axis
+                pZ -= (Float(_gridSize) / 2.0) //Center on z-axis
                 let position: float3 = float3(pX, pY, pZ)
                 
                 //TextureCoords
@@ -75,9 +75,11 @@ extension Terrain: Renderable {
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.TerrainTextured])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
+//        renderCommandEncoder.setTriangleFillMode(.lines)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
         renderCommandEncoder.setFragmentBytes(&_material, length: Material.stride, index: 0)
+        renderCommandEncoder.setFragmentTexture(Entities.Textures[.Face], index: 0)
         
         renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
                                                    indexCount: indices.count,

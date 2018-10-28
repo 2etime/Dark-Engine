@@ -71,7 +71,7 @@ class TerrainTextured_RenderPipelineState: RenderPipelineState {
     
     init() {
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Basic])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.TerrainTextured])
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }

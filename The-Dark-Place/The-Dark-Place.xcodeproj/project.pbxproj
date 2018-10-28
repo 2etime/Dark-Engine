@@ -68,6 +68,7 @@
 		EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */; };
 		EBF0E0F0218643920021E67E /* TextureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EF218643920021E67E /* TextureGenerator.swift */; };
 		EBF0E0F4218645B30021E67E /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF0E0F3218645B30021E67E /* grass.png */; };
+		EBF0E0F6218649230021E67E /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF0E0F5218649230021E67E /* face.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLibrary.swift; sourceTree = "<group>"; };
 		EBF0E0EF218643920021E67E /* TextureGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureGenerator.swift; sourceTree = "<group>"; };
 		EBF0E0F3218645B30021E67E /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		EBF0E0F5218649230021E67E /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				EBF0E0F3218645B30021E67E /* grass.png */,
+				EBF0E0F5218649230021E67E /* face.png */,
 			);
 			path = Textures;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
 				EB6A10032184F86A0036DB93 /* sky_left.png in Resources */,
 				EB6A10022184F86A0036DB93 /* sky_front.png in Resources */,
+				EBF0E0F6218649230021E67E /* face.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

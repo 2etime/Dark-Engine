@@ -11,7 +11,7 @@ class PlaygroundScene: Scene {
     
     let skybox = SkyboxGameObject(.Sky)
     let object = Cube()
-    let terrain = Terrain(gridSize: 2, cellCount: 5)
+    let terrain = Terrain(gridSize: 1, cellCount: 2)
     override func buildScene() {
 //        skybox.setScale(1000)
         skybox.setPositionY(-20)

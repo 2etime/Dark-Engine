@@ -3,6 +3,7 @@ import MetalKit
 
 enum TextureTypes {
     case Grass
+    case Face
 }
 
 class TextureLibrary: Library<TextureTypes, MTLTexture> {
@@ -11,6 +12,7 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
     
     override func fillLibrary() {
         library.updateValue(Texture("grass"), forKey: .Grass)
+        library.updateValue(Texture("face"), forKey: .Face)
     }
     
     override subscript(_ type: TextureTypes) -> MTLTexture? {
