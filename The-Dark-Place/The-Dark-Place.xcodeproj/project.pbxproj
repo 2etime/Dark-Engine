@@ -60,6 +60,9 @@
 		EB6A1019218519850036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A1018218519840036DB93 /* sky_bottom.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
 		EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */; };
+		EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AC21859D590021E67E /* Mouse.swift */; };
+		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
+		EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AE21859D590021E67E /* KeyCodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,9 @@
 		EB6A1018218519840036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTextureLibrary.swift; sourceTree = "<group>"; };
+		EBF0E0AC21859D590021E67E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
+		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		EBF0E0AE21859D590021E67E /* KeyCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,7 @@
 			children = (
 				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
+				EBF0E0AB21859D450021E67E /* Input */,
 				EB3D12EA217D230500FD4CF6 /* Handlers */,
 				EB3D12DE217D1D5B00FD4CF6 /* Managers */,
 				EB3D12C0217D0ACD00FD4CF6 /* Entities */,
@@ -439,6 +446,16 @@
 			path = Sky;
 			sourceTree = "<group>";
 		};
+		EBF0E0AB21859D450021E67E /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				EBF0E0AD21859D590021E67E /* Keyboard.swift */,
+				EBF0E0AE21859D590021E67E /* KeyCodes.swift */,
+				EBF0E0AC21859D590021E67E /* Mouse.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3D12F8217D2EC700FD4CF6 /* GameTime.swift in Sources */,
+				EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */,
 				EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */,
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
@@ -561,6 +579,7 @@
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
+				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
@@ -586,6 +605,7 @@
 				EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
+				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */,

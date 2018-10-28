@@ -25,7 +25,7 @@ extension Renderer: MTKViewDelegate {
         gameHandler.updateGameTime(deltaTime)
         
         gameHandler.tickGame(renderCommandEncoder!)
-
+        
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)
         commandBuffer?.commit()
