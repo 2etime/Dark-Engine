@@ -1,10 +1,10 @@
 
 import MetalKit
 
-class Quad: CustomGameObject {
+class Quad: GameObject {
     
     init(){
-        super.init(.Quad)
+        super.init(.Quad_Custom)
     }
     
 }

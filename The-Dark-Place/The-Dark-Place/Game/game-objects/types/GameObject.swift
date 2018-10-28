@@ -1,18 +1,17 @@
 import MetalKit
 
-class CustomGameObject: Node {
-    
+class GameObject: Node {
+    private var _mesh: Mesh!
     private var _material = Material()
-    private var _mesh: CustomMesh!
     
-    init(_ customMeshType: CustomMeshTypes) {
+    init(_ meshType: MeshTypes) {
         super.init()
-        self._mesh = Entities.CustomMeshes[customMeshType]
+        self._mesh = Entities.Meshes[meshType]
     }
     
 }
 
-extension CustomGameObject: Renderable {
+extension GameObject: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Basic])
@@ -25,7 +24,7 @@ extension CustomGameObject: Renderable {
 }
 
 //Material Getters / Setters
-extension CustomGameObject {
+extension GameObject {
     func setColor(_ colorValue: float4){ self._material.color = colorValue }
     func getColor()->float4{ return self._material.color }
     

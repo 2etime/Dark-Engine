@@ -1,10 +1,10 @@
 
 import MetalKit
 
-class Cube: CustomGameObject {
+class Cube: GameObject {
     
     init(){
-        super.init(.Cube)
+        super.init(.Cube_Custom)
     }
     
 }

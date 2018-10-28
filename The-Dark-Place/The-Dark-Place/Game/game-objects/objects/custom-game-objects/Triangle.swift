@@ -1,10 +1,10 @@
 
 import MetalKit
 
-class Triangle: CustomGameObject {
+class Triangle: GameObject {
 
     init(){
-        super.init(.Triangle)
+        super.init(.Triangle_Custom)
     }
     
 }

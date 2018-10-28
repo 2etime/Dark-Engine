@@ -25,8 +25,8 @@
 		EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12B2217AED9100FD4CF6 /* FragmentShaderLibrary.swift */; };
 		EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12B5217AF22A00FD4CF6 /* Node.swift */; };
 		EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12B8217AF2C200FD4CF6 /* Renderable.swift */; };
-		EB3D12BC217AF34C00FD4CF6 /* CustomGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12BB217AF34C00FD4CF6 /* CustomGameObject.swift */; };
-		EB3D12BF217D09FD00FD4CF6 /* CustomMeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12BE217D09FD00FD4CF6 /* CustomMeshLibrary.swift */; };
+		EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */; };
+		EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */; };
 		EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12CA217D0DD000FD4CF6 /* CustomMesh.swift */; };
 		EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */; };
 		EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */; };
@@ -96,8 +96,8 @@
 		EB3D12B2217AED9100FD4CF6 /* FragmentShaderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentShaderLibrary.swift; sourceTree = "<group>"; };
 		EB3D12B5217AF22A00FD4CF6 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		EB3D12B8217AF2C200FD4CF6 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
-		EB3D12BB217AF34C00FD4CF6 /* CustomGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameObject.swift; sourceTree = "<group>"; };
-		EB3D12BE217D09FD00FD4CF6 /* CustomMeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMeshLibrary.swift; sourceTree = "<group>"; };
+		EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLibrary.swift; sourceTree = "<group>"; };
 		EB3D12CA217D0DD000FD4CF6 /* CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesh.swift; sourceTree = "<group>"; };
 		EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle_CustomMesh.swift; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		EB3D12C3217D0AEF00FD4CF6 /* libraries */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D12BE217D09FD00FD4CF6 /* CustomMeshLibrary.swift */,
+				EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */,
 				EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */,
 			);
 			path = libraries;
@@ -376,7 +376,7 @@
 		EB3D12EE217D24CA00FD4CF6 /* types */ = {
 			isa = PBXGroup;
 			children = (
-				EB3D12BB217AF34C00FD4CF6 /* CustomGameObject.swift */,
+				EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */,
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
 			);
 			path = types;
@@ -562,12 +562,12 @@
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
-				EB3D12BF217D09FD00FD4CF6 /* CustomMeshLibrary.swift in Sources */,
+				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
 				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
-				EB3D12BC217AF34C00FD4CF6 /* CustomGameObject.swift in Sources */,
+				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
