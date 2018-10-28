@@ -15,11 +15,11 @@ vertex SkyboxRasterizerData skybox_vertex(SkyboxVertex vertexIn [[ stage_in ]],
                                           constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                           constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     SkyboxRasterizerData rd;
-    float4x4 viewMatrix = sceneConstants.viewMatrix * modelConstants.modelMatrix;
+    float4x4 viewMatrix = sceneConstants.viewMatrix;
     viewMatrix[3][0] = 0;
     viewMatrix[3][1] = 0;
     viewMatrix[3][2] = 0;
-    rd.position = sceneConstants.projectionMatrix * viewMatrix * vertexIn.position;
+    rd.position = sceneConstants.projectionMatrix * viewMatrix * modelConstants.modelMatrix * vertexIn.position;
     rd.textureCoordinate = vertexIn.position.xyz;
     return rd;
 }
