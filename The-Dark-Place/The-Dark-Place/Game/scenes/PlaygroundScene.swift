@@ -22,6 +22,8 @@ class PlaygroundScene: Scene {
         currentCamera.setPositionZ(2)
         currentCamera.setPositionY(1)
         currentCamera.setPitch(0.2)
+        
+        terrain.addChild(object)
     }
     
     override func onUpdate() {

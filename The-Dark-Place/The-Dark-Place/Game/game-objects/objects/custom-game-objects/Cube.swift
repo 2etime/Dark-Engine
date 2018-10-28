@@ -7,8 +7,9 @@ class Cube: GameObject {
         return Graphics.RenderPipelineStates[.MDLMesh]
     }
     
-    init(){
+    init(name: String = "Cube"){
         super.init(.CubeBasic_Apple)
+        self.setName(name)
     }
     
 }

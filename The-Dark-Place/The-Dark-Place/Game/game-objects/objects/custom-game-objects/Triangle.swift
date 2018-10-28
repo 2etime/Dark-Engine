@@ -3,8 +3,9 @@ import MetalKit
 
 class Triangle: GameObject {
 
-    init(){
+    init(name: String = "Triangle"){
         super.init(.Triangle_Custom)
+        self.setName(name)
     }
     
 }
