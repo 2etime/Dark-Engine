@@ -6,6 +6,8 @@ class Node {
     private var _position: float3 = float3(0)
     private var _scale: float3 = float3(1)
     private var _rotation: float3 = float3(0)
+    
+    public var parentModelMatrix = matrix_identity_float4x4
 
     private var _modelConstants = ModelConstants()
     private var _children: [Node] = []
@@ -15,7 +17,7 @@ class Node {
         modelMatrix.translate(_position)
         modelMatrix.rotate(_rotation)
         modelMatrix.scale(_scale)
-        return modelMatrix
+        return matrix_multiply(parentModelMatrix, modelMatrix)
     }
     
     init() {
@@ -36,6 +38,7 @@ class Node {
     
     func update(){
         for child in _children {
+            child.parentModelMatrix = self.modelMatrix
             child.update()
         }
         onUpdate()

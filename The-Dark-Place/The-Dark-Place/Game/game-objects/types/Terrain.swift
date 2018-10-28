@@ -19,8 +19,8 @@ class Terrain: Node {
         generateTerrain()
         
         //Center the terrain
-        self.moveX(-(Float(gridSize) / 2.0))
-        self.moveZ(-(Float(gridSize) / 2.0))
+//        self.moveX(-(Float(gridSize) / 2.0))
+//        self.moveZ(-(Float(gridSize) / 2.0))
         
         vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
         indexBuffer = DarkEngine.Device.makeBuffer(bytes: indices, length: UInt32.stride(indices.count), options: [])
@@ -28,12 +28,16 @@ class Terrain: Node {
     
 
     private func generateTerrain() {
+    
+        
         for z in 0..<_vertexCount{
             for x in 0..<_vertexCount{
                 //Position
-                let pX: Float = Float(x) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
-                let pY: Float = 0.0
-                let pZ: Float = Float(z) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
+                var pX: Float = Float(x) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
+                pX -= Float(_vertexCount / 2) - Float(_gridSize) //Center on x-axis
+                var pY: Float = 0.0
+                var pZ: Float = Float(z) / Float(Float(_vertexCount) - Float(1)) * Float(_gridSize)
+                pZ -= Float(_vertexCount / 2) - Float(_gridSize) //Center on z-axis
                 let position: float3 = float3(pX, pY, pZ)
                 
                 //TextureCoords
@@ -71,7 +75,7 @@ class Terrain: Node {
 extension Terrain: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
- renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.TerrainTextured])
+        renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.TerrainTextured])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
