@@ -2,6 +2,7 @@
 import MetalKit
 
 class Node {
+    private var _name: String = ""
     private var _position: float3 = float3(0)
     private var _scale: float3 = float3(1)
     private var _rotation: float3 = float3(0)
@@ -15,6 +16,14 @@ class Node {
         modelMatrix.rotate(_rotation)
         modelMatrix.scale(_scale)
         return modelMatrix
+    }
+    
+    init() {
+        self._name = "Node"
+    }
+    
+    init(name: String){
+        self._name = name
     }
     
     func addChild(_ child: Node) {
@@ -38,22 +47,26 @@ class Node {
     }
     
     func render(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        renderCommandEncoder.pushDebugGroup("Rendering \(_name)")
         for child in _children {
             child.render(renderCommandEncoder)
         }
         
         if let renderable = self as? Renderable {
-            renderCommandEncoder.pushDebugGroup("Pushing Model Constants")
             renderCommandEncoder.setTriangleFillMode(.fill)
             renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 2)
-            renderCommandEncoder.popDebugGroup()
             renderable.doRender(renderCommandEncoder)
         }
+        renderCommandEncoder.popDebugGroup()
     }
     
 }
 
 extension Node {
+    //Naming
+    func setName(_ name: String){ self._name = name }
+    func getName()->String{ return _name }
+    
     //Positioning and Movement
     func setPosition(_ position: float3){ self._position = position }
     func setPositionX(_ xPosition: Float) { self._position.x = xPosition }

@@ -9,7 +9,7 @@ class GameObject: Node {
     }
     
     init(_ meshType: MeshTypes) {
-        super.init()
+        super.init(name: "Game Object")
         self._mesh = Entities.Meshes[meshType]
     }
     
@@ -18,11 +18,9 @@ class GameObject: Node {
 extension GameObject: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.pushDebugGroup("Drawing Game Object")
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setFragmentBytes(&_material, length: Material.stride, index: 0)
         _mesh.drawPrimitives(renderCommandEncoder)
-        renderCommandEncoder.popDebugGroup()
     }
     
 }

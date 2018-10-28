@@ -64,6 +64,7 @@
 		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
 		EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AE21859D590021E67E /* KeyCodes.swift */; };
 		EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0E8218617A20021E67E /* Terrain.swift */; };
+		EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		EBF0E0AE21859D590021E67E /* KeyCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
 		EBF0E0E8218617A20021E67E /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
+		EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = TerrainShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */,
 				EB3D129B217ACA6400FD4CF6 /* MetalShaders.metal */,
 				EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */,
+				EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
+				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */,

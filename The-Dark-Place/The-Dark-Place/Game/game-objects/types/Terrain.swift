@@ -13,7 +13,7 @@ class Terrain: Node {
     private var _vertexCount: Int = 0
     
     init(gridSize: Int, cellCount: Int) {
-        super.init()
+        super.init(name: "Terrain")
         self._vertexCount = cellCount + 1
         self._gridSize = gridSize
         generateTerrain()
@@ -71,10 +71,12 @@ class Terrain: Node {
 extension Terrain: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Basic])
+ renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.TerrainTextured])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        
         renderCommandEncoder.setFragmentBytes(&_material, length: Material.stride, index: 0)
+        
         renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
                                                    indexCount: indices.count,
                                                    indexType: .uint32,

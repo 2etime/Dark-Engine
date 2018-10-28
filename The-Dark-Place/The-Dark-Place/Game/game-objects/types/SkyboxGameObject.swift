@@ -5,7 +5,7 @@ class SkyboxGameObject: Node {
     private var _skyMap: MTLTexture!
     
     init(_ cubeTextureType: CubeTextureTypes) {
-        super.init()
+        super.init(name: "Skybox")
         _mesh = Entities.Meshes[.CubeForSkybox_Apple]
         _skyMap = Entities.CubeTextures[cubeTextureType]
     }
@@ -14,7 +14,6 @@ class SkyboxGameObject: Node {
 extension SkyboxGameObject: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.pushDebugGroup("Rendering Skybox")
         
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Skybox])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.DontWrite])
@@ -25,7 +24,6 @@ extension SkyboxGameObject: Renderable {
         
         _mesh.drawPrimitives(renderCommandEncoder)
         
-        renderCommandEncoder.popDebugGroup()
     }
     
 }
