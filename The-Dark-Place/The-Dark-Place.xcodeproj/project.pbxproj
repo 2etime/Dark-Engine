@@ -59,6 +59,7 @@
 		EB6A1009218502050036DB93 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A1008218502050036DB93 /* NSImage.swift */; };
 		EB6A1019218519850036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A1018218519840036DB93 /* sky_bottom.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
+		EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		EB6A1008218502050036DB93 /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		EB6A1018218519840036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTextureLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12BE217D09FD00FD4CF6 /* CustomMeshLibrary.swift */,
+				EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */,
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
+				EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* MainView.swift in Sources */,
 				EB3D12F1217D257900FD4CF6 /* Math.swift in Sources */,
 				EB3D12E4217D1DE600FD4CF6 /* Scene.swift in Sources */,
