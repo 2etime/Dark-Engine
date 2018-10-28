@@ -43,7 +43,9 @@ class Node {
         }
         
         if let renderable = self as? Renderable {
+            renderCommandEncoder.pushDebugGroup("Pushing Model Constants")
             renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 2)
+            renderCommandEncoder.popDebugGroup()
             renderable.doRender(renderCommandEncoder)
         }
     }

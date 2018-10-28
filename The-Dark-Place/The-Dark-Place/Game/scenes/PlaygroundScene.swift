@@ -9,21 +9,22 @@ class PlaygroundScene: Scene {
         setCurrentCamera(.Debug)
     }
     
+    let skybox = SkyboxGameObject(.Sky)
+    let object = Cube()
     override func buildScene() {
-        let skybox = SkyboxGameObject(.Sky)
-//        addChild(_object)
-        
         skybox.setScale(1000)
         skybox.setPositionY(100)
         addChild(skybox)
+        
+        addChild(object)
+        
+        currentCamera.setPositionZ(10)
     }
     
     override func onUpdate() {
-//        currentCamera.setPositionX(cos(GameTime.TotalGameTime))
-//        currentCamera.doYaw(GameTime.DeltaTime / 4)
-//        skybox.rotateY(GameTime.DeltaTime / 20)
-//        _object.rotateY(GameTime.DeltaTime)
-//        _object.rotateX(GameTime.DeltaTime)
+        object.rotateY(GameTime.DeltaTime)
+        object.rotateX(GameTime.DeltaTime)
+        skybox.rotateY(GameTime.DeltaTime / 20)
     }
     
 }

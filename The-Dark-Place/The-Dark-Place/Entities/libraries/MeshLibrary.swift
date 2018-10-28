@@ -6,7 +6,7 @@ public enum MeshTypes {
     case Cube_Custom
     case Quad_Custom
     
-    case Cube_Apple
+    case CubeForSkybox_Apple
 }
 
 class MeshLibrary: Library<MeshTypes, Mesh> {
@@ -20,7 +20,7 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         library.updateValue(Quad_CustomMesh(), forKey: .Quad_Custom)
         
         //Apple Meshes
-        library.updateValue(AppleMesh(.Cube_Apple), forKey: .Cube_Apple)
+        library.updateValue(AppleMesh(.CubeForSkybox_Apple), forKey: .CubeForSkybox_Apple)
     }
     
     override subscript(_ type: MeshTypes) -> Mesh {
@@ -43,7 +43,7 @@ public class AppleMesh: Mesh{
         let bufferAllocator = MTKMeshBufferAllocator(device: DarkEngine.Device)
         var mesh: MDLMesh!
         switch meshType {
-        case .Cube_Apple:
+        case .CubeForSkybox_Apple:
             mesh = MDLMesh.newBox(withDimensions: float3(1),
                                   segments: vector_uint3(1, 1, 1),
                                   geometryType: MDLGeometryType.triangles,
@@ -61,6 +61,7 @@ public class AppleMesh: Mesh{
     }
     
     public func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        renderCommandEncoder.pushDebugGroup("Drawing Mesh Primitives")
         for mesh in meshes {
             let vertexBuffer = mesh.vertexBuffers[0]
             renderCommandEncoder.setVertexBuffer(vertexBuffer.buffer, offset: vertexBuffer.offset, index: 0)
@@ -73,6 +74,7 @@ public class AppleMesh: Mesh{
                                                            indexBufferOffset: submesh.indexBuffer.offset)
             }
         }
+        renderCommandEncoder.popDebugGroup()
     }
     
 }

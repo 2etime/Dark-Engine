@@ -56,9 +56,11 @@ class Scene: Node {
     }
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        renderCommandEncoder.pushDebugGroup("Rendering Scene")
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 1)
         super.render(renderCommandEncoder)
+        renderCommandEncoder.popDebugGroup()
     }
 
 }
