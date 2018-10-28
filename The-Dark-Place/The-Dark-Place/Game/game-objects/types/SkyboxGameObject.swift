@@ -16,45 +16,21 @@ class SkyboxGameObject: Node {
     }
     
     private func createSkyMap(){
-        let textureLoader = MTKTextureLoader(device: DarkEngine.Device)
-        let textureLoaderOptions = [
-            MTKTextureLoader.Option.origin: MTKTextureLoader.Origin.topLeft
-            //            MTKTextureLoader.Option.textureStorageMode : MTLStorageMode.private
+        let imageNames = [
+            "sky_right.png", //py //right
+            "sky_left.png", //px //left
+            "sky_top.png", //nx //top
+            "sky_bottom.png", //nz //bottom
+            "sky_back.png", //ny//back
+            "sky_front.png" //pz//front
         ]
-        do{
-            _skyMap = try textureLoader.newTexture(name: "Sky",
-                                                   scaleFactor: 1.0,
-                                                   bundle: nil,
-                                                   options: textureLoaderOptions)
-        }catch{
-            print(error)
-        }
-        
-        let imageNames = ["sky_back.png",
-                          "sky_bottom.png",
-                          "sky_front.png",
-                          "sky_left.png",
-                          "sky_right.png",
-                          "sky_top.png"]
-        let _ = textureCubeWithImagesNamed(imageNameArray: imageNames)
-        
-//        NSArray *imageNames = @[@"px", @"nx", @"py", @"ny", @"pz", @"nz"];
-//        self.cubeTexture = [MBETextureLoader textureCubeWithImagesNamed:imageNames device:self.device];
+        _skyMap = textureCubeWithImagesNamed(imageNameArray: imageNames)
     }
     
     
     private func createMesh(){
         let bufferAllocator = MTKMeshBufferAllocator(device: DarkEngine.Device)
-//        let mesh = MDLMesh.newEllipsoid(withRadii: float3(150),
-//                                                 radialSegments: 20,
-//                                                 verticalSegments: 20,
-//                                                 geometryType: .triangles,
-//                                                 inwardNormals: true,
-//                                                 hemisphere: false,
-//                                                 allocator: bufferAllocator)
-//
-//
-        let mesh = MDLMesh.newBox(withDimensions: float3(1),
+        let mesh = MDLMesh.newBox(withDimensions: float3(2),
                                   segments: vector_uint3(1, 1, 1),
                                   geometryType: MDLGeometryType.triangles,
                                   inwardNormals: true,
@@ -63,14 +39,6 @@ class SkyboxGameObject: Node {
             try meshes = [MTKMesh.init(mesh: mesh, device: DarkEngine.Device)]
         } catch let error {
             print("Unable to load mesh for new box: \(error)")
-        }
-        
-        let pipelineStateDescriptor = createPipelineStateDescriptor(vertex: "skybox_vertex", fragment: "skybox_fragment")
-        pipelineStateDescriptor.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mesh.vertexDescriptor)
-        do{
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
-        }catch{
-            
         }
     }
     
@@ -90,95 +58,58 @@ class SkyboxGameObject: Node {
     }
     
     func textureCubeWithImagesNamed(imageNameArray: [String])->MTLTexture?{
+        //Grab the first texture to generate a texture descriptor
+        let firstTexture = createTexture(textureName: imageNameArray.first!)
+        let cubeSize = firstTexture?.width ?? 0
+        let textureDescritpor = MTLTextureDescriptor.textureCubeDescriptor(pixelFormat: .bgra8Unorm, size: cubeSize, mipmapped: false)
+        let result = DarkEngine.Device.makeTexture(descriptor: textureDescritpor)
+ 
+        for slice in 0..<6 {
+            let imageName = imageNameArray[slice]
+            let texture = createTexture(textureName: imageName)
+            let height = texture?.height
+            let width = texture?.width
+    
+            let rowBytes = width! * 4
+            let length = rowBytes * height!
+            let bgraBytes = [UInt8](repeating: 0, count: length)
+            let region = MTLRegionMake2D(0, 0, width!, height!) //Grab the whole texture. ex: start at origin (0,0), go to width/height (1024,1024)
+            texture?.getBytes(UnsafeMutableRawPointer(mutating: bgraBytes), bytesPerRow: rowBytes, from: region, mipmapLevel: 0)
+            
+            result?.replace(region: MTLRegionMake2D(0, 0, cubeSize, cubeSize),
+                            mipmapLevel: 0,
+                            slice: slice,
+                            withBytes: bgraBytes,
+                            bytesPerRow: rowBytes,
+                            bytesPerImage: bgraBytes.count)
+        }
         
-        
-        return nil
+        return result
     }
-    
-//    + (id<MTLTexture>)textureCubeWithImagesNamed:(NSArray *)imageNameArray device:(id<MTLDevice>)device
-//    {
-//    NSAssert(imageNameArray.count == 6, @"Cube texture can only be created from exactly six images");
-//
-//    UIImage *firstImage = [UIImage imageNamed:[imageNameArray firstObject]];
-//    const CGFloat cubeSize = firstImage.size.width * firstImage.scale;
-//
-//    const NSUInteger bytesPerPixel = 4;
-//    const NSUInteger bytesPerRow = bytesPerPixel * cubeSize;
-//    const NSUInteger bytesPerImage = bytesPerRow * cubeSize;
-//
-//    MTLRegion region = MTLRegionMake2D(0, 0, cubeSize, cubeSize);
-//
-//    MTLTextureDescriptor *textureDescriptor = [MTLTextureDescriptor textureCubeDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm
-//    size:cubeSize
-//    mipmapped:NO];
-//
-//    id<MTLTexture> texture = [device newTextureWithDescriptor:textureDescriptor];
-//
-//    for (size_t slice = 0; slice < 6; ++slice)
-//    {
-//    NSString *imageName = imageNameArray[slice];
-//    UIImage *image = [UIImage imageNamed:imageName];
-//    uint8_t *imageData = [self dataForImage:image];
-//
-//    NSAssert(image.size.width == cubeSize && image.size.height == cubeSize, @"Cube map images must be square and uniformly-sized");
-//
-//    [texture replaceRegion:region
-//    mipmapLevel:0
-//    slice:slice
-//    withBytes:imageData
-//    bytesPerRow:bytesPerRow
-//    bytesPerImage:bytesPerImage];
-//    free(imageData);
-//    }
-//
-//    return texture;
-//    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public func createTexture(textureName: String)->MTLTexture?{
+        var result: MTLTexture?
+        
+        let url = Bundle.main.url(forResource: textureName, withExtension: nil)
+        let textureLoader = MTKTextureLoader(device: DarkEngine.Device)
+        
+        let options = [MTKTextureLoader.Option.origin : MTKTextureLoader.Origin.topLeft]
+        
+        do{
+            result = try textureLoader.newTexture(URL: url!, options: options)
+        }catch let error as NSError {
+            print("ERROR::CREATE::TEXTURE::__\(textureName)__::\(error)")
+            
+        }
+        
+        return result
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 extension SkyboxGameObject: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setRenderPipelineState(renderPipelineState)
+        renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Skybox])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.DontWrite])
         renderCommandEncoder.setFrontFacing(.clockwise)
         renderCommandEncoder.setCullMode(.front)

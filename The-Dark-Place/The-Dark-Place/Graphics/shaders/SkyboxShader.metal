@@ -12,9 +12,14 @@ struct SkyboxRasterizerData {
 };
 
 vertex SkyboxRasterizerData skybox_vertex(SkyboxVertex vertexIn [[ stage_in ]],
-                                          constant SceneConstants &sceneConstants [[ buffer(1) ]]) {
+                                          constant SceneConstants &sceneConstants [[ buffer(1) ]],
+                                          constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     SkyboxRasterizerData rd;
-    rd.position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * vertexIn.position;
+    float4x4 viewMatrix = sceneConstants.viewMatrix * modelConstants.modelMatrix;
+    viewMatrix[3][0] = 0;
+    viewMatrix[3][1] = 0;
+    viewMatrix[3][2] = 0;
+    rd.position = sceneConstants.projectionMatrix * viewMatrix * vertexIn.position;
     rd.textureCoordinate = vertexIn.position.xyz;
     return rd;
 }
@@ -24,10 +29,10 @@ fragment half4 skybox_fragment(SkyboxRasterizerData rd [[ stage_in ]],
     
     
     constexpr sampler linearSampler(mip_filter::linear,
-                            mag_filter::linear,
-                            min_filter::linear);
+                                    mag_filter::linear,
+                                    min_filter::linear);
     
-    float4 color = skyboxTexture.sample(linearSampler, float3(rd.textureCoordinate.x, rd.textureCoordinate.y, rd.textureCoordinate.z));
+    float4 color = skyboxTexture.sample(linearSampler, float3(rd.textureCoordinate.x, rd.textureCoordinate.y, -rd.textureCoordinate.z));
     
     return half4(color.r, color.g, color.b, color.a);
 }

@@ -55,8 +55,9 @@
 		EB6A10032184F86A0036DB93 /* sky_left.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFD2184F8690036DB93 /* sky_left.png */; };
 		EB6A10042184F86A0036DB93 /* sky_right.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFE2184F8690036DB93 /* sky_right.png */; };
 		EB6A10052184F86A0036DB93 /* sky_back.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A0FFF2184F8690036DB93 /* sky_back.png */; };
-		EB6A10062184F86A0036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A10002184F8690036DB93 /* sky_bottom.png */; };
 		EB6A10072184F86A0036DB93 /* sky_top.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A10012184F8690036DB93 /* sky_top.png */; };
+		EB6A1009218502050036DB93 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A1008218502050036DB93 /* NSImage.swift */; };
+		EB6A1019218519850036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A1018218519840036DB93 /* sky_bottom.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,8 +125,9 @@
 		EB6A0FFD2184F8690036DB93 /* sky_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_left.png; sourceTree = "<group>"; };
 		EB6A0FFE2184F8690036DB93 /* sky_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_right.png; sourceTree = "<group>"; };
 		EB6A0FFF2184F8690036DB93 /* sky_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_back.png; sourceTree = "<group>"; };
-		EB6A10002184F8690036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB6A10012184F8690036DB93 /* sky_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_top.png; sourceTree = "<group>"; };
+		EB6A1008218502050036DB93 /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
+		EB6A1018218519840036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -391,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */,
+				EB6A1008218502050036DB93 /* NSImage.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -424,8 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				EB6A0FFF2184F8690036DB93 /* sky_back.png */,
-				EB6A10002184F8690036DB93 /* sky_bottom.png */,
 				EB6A0FFC2184F8690036DB93 /* sky_front.png */,
+				EB6A1018218519840036DB93 /* sky_bottom.png */,
 				EB6A0FFD2184F8690036DB93 /* sky_left.png */,
 				EB6A0FFE2184F8690036DB93 /* sky_right.png */,
 				EB6A10012184F8690036DB93 /* sky_top.png */,
@@ -517,8 +520,8 @@
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
-				EB6A10062184F86A0036DB93 /* sky_bottom.png in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
+				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
 				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
 				EB6A10032184F86A0036DB93 /* sky_left.png in Resources */,
 				EB6A10022184F86A0036DB93 /* sky_front.png in Resources */,
@@ -562,6 +565,7 @@
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* CustomGameObject.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
+				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,

@@ -9,7 +9,7 @@ class Camera_Debug: Camera {
         return 16 / 9
     }
     var near: Float = 0.1
-    var far: Float = 1000.0
+    var far: Float = 10000.0
     
     override var projectionMatrix: matrix_float4x4 {
         return matrix_float4x4.perspective(degreesFov: zoom, aspectRatio: aspectRatio, near: near, far: far)
