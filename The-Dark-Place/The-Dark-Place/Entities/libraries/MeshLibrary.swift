@@ -7,6 +7,7 @@ public enum MeshTypes {
     case Quad_Custom
     
     case CubeForSkybox_Apple
+    case CubeBasic_Apple
 }
 
 class MeshLibrary: Library<MeshTypes, Mesh> {
@@ -21,6 +22,7 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         
         //Apple Meshes
         library.updateValue(AppleMesh(.CubeForSkybox_Apple), forKey: .CubeForSkybox_Apple)
+        library.updateValue(AppleMesh(.CubeBasic_Apple), forKey: .CubeBasic_Apple)
     }
     
     override subscript(_ type: MeshTypes) -> Mesh {
@@ -48,6 +50,12 @@ public class AppleMesh: Mesh{
                                   segments: vector_uint3(1, 1, 1),
                                   geometryType: MDLGeometryType.triangles,
                                   inwardNormals: true,
+                                  allocator: bufferAllocator)
+        case .CubeBasic_Apple:
+            mesh = MDLMesh.newBox(withDimensions: float3(1),
+                                  segments: vector_uint3(1, 1, 1),
+                                  geometryType: MDLGeometryType.triangles,
+                                  inwardNormals: false,
                                   allocator: bufferAllocator)
         default:
             break;

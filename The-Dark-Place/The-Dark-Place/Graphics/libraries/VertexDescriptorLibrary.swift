@@ -2,6 +2,7 @@ import MetalKit
 
 enum VertexDescriptorTypes {
     case Basic
+    case MDLMesh
 }
 
 class VertexDescriptorLibrary: Library<VertexDescriptorTypes, MTLVertexDescriptor> {
@@ -10,6 +11,7 @@ class VertexDescriptorLibrary: Library<VertexDescriptorTypes, MTLVertexDescripto
     
     override func fillLibrary() {
         library.updateValue(Basic_VertexDescriptor(), forKey: .Basic)
+        library.updateValue(MDLMesh_VertexDescriptor(), forKey: .MDLMesh)
     }
     
     override subscript(_ type: VertexDescriptorTypes) -> MTLVertexDescriptor {
@@ -41,6 +43,21 @@ class Basic_VertexDescriptor: VertexDescriptor {
         vertexDescriptor.attributes[1].offset = float3.stride
         
         vertexDescriptor.layouts[0].stride = Vertex.stride
+    }
+}
+
+class MDLMesh_VertexDescriptor: VertexDescriptor {
+    var name: String = "MDLMesh Vertex Descriptor"
+    var vertexDescriptor: MTLVertexDescriptor!
+    
+    init() {
+        let bufferAllocator = MTKMeshBufferAllocator(device: DarkEngine.Device)
+        let mesh = MDLMesh.newBox(withDimensions: float3(1),
+                                  segments: vector_uint3(1, 1, 1),
+                                  geometryType: MDLGeometryType.triangles,
+                                  inwardNormals: false,
+                                  allocator: bufferAllocator)
+        vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(mesh.vertexDescriptor)
     }
 }
 

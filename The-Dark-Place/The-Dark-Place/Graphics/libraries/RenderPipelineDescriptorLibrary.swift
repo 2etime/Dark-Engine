@@ -3,6 +3,7 @@ import MetalKit
 enum RenderPipelineDescriptorTypes {
     case Basic
     case Skybox
+    case MDLMesh
 }
 
 class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MTLRenderPipelineDescriptor> {
@@ -11,6 +12,7 @@ class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MT
     override func fillLibrary() {
         library.updateValue(Basic_RenderPipelineDescriptor(), forKey: .Basic)
         library.updateValue(Skybox_RenderPipelineDescriptor(), forKey: .Skybox)
+        library.updateValue(MDLMesh_RenderPipelineDescriptor(), forKey: .MDLMesh)
     }
     
     override subscript(_ type: RenderPipelineDescriptorTypes) -> MTLRenderPipelineDescriptor {
@@ -49,6 +51,20 @@ class Skybox_RenderPipelineDescriptor: RenderPipelineDescriptor {
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Skybox]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Skybox]
+    }
+}
+
+class MDLMesh_RenderPipelineDescriptor: RenderPipelineDescriptor {
+    var name: String = "Basic Render Pipeline Descriptor"
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.MDLMesh]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Basic]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
     }
     
 }

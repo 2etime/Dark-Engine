@@ -2,7 +2,7 @@
 using namespace metal;
 
 struct SkyboxVertex {
-    float4 position [[ attribute(0) ]];
+    float3 position [[ attribute(0) ]];
     float2 textureCoordinate [[ attribute(2) ]];
 };
 
@@ -19,7 +19,7 @@ vertex SkyboxRasterizerData skybox_vertex(SkyboxVertex vertexIn [[ stage_in ]],
     viewMatrix[3][0] = 0;
     viewMatrix[3][1] = 0;
     viewMatrix[3][2] = 0;
-    rd.position = sceneConstants.projectionMatrix * viewMatrix * modelConstants.modelMatrix * vertexIn.position;
+    rd.position = sceneConstants.projectionMatrix * viewMatrix * modelConstants.modelMatrix * float4(vertexIn.position, 1.0);
     rd.textureCoordinate = vertexIn.position.xyz;
     return rd;
 }
