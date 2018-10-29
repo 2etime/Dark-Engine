@@ -72,6 +72,7 @@
 		EBF0E0F821864F730021E67E /* Materialable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0F721864F730021E67E /* Materialable.swift */; };
 		EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF0E0F921866F690021E67E /* standing_grass.png */; };
 		EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FB218680B50021E67E /* StandingGrass.swift */; };
+		EBF0E0FE218691000021E67E /* float4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FD218691000021E67E /* float4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		EBF0E0F721864F730021E67E /* Materialable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Materialable.swift; sourceTree = "<group>"; };
 		EBF0E0F921866F690021E67E /* standing_grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standing_grass.png; sourceTree = "<group>"; };
 		EBF0E0FB218680B50021E67E /* StandingGrass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingGrass.swift; sourceTree = "<group>"; };
+		EBF0E0FD218691000021E67E /* float4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = float4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +430,7 @@
 			children = (
 				EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */,
 				EB6A1008218502050036DB93 /* NSImage.swift */,
+				EBF0E0FD218691000021E67E /* float4.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
+				EBF0E0FE218691000021E67E /* float4.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,

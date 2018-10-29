@@ -22,6 +22,8 @@ struct Material: sizeable {
     var color: float4 = float4(0.5)  //Initialize to gray
     var ambientIntensity: Float = 0.5
     var diffuseIntensity: Float = 1.0
+    var specularIntensity: Float = 0.1 // 0->1
+    var shininess: Float = 2.0
 }
 
 struct ModelConstants: sizeable {
@@ -31,6 +33,7 @@ struct ModelConstants: sizeable {
 struct SceneConstants: sizeable {
     var viewMatrix = matrix_identity_float4x4
     var projectionMatrix = matrix_identity_float4x4
+    var inverseViewMatrix = matrix_identity_float4x4
 }
 
 struct LightData: sizeable {

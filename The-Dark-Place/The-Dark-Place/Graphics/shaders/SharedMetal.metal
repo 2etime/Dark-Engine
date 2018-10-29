@@ -14,4 +14,13 @@ struct ModelConstants {
 struct SceneConstants {
     float4x4 viewMatrix;
     float4x4 projectionMatrix;
+    float4x4 inverseViewMatrix;
+};
+
+struct Material {
+    float4 color;
+    float ambientIntensity;
+    float diffuseIntensity;
+    float specularIntensity;
+    float shininess;
 };

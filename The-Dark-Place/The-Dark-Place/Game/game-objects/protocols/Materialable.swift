@@ -16,4 +16,12 @@ extension Materialable {
     mutating func setDiffuseIntensity(_ diffuseValue: Float){ self.material.diffuseIntensity = diffuseValue }
     mutating func getDiffuseIntensity()->Float { return self.material.diffuseIntensity }
     mutating func increaseDiffuseIntensity(_ value: Float) { self.material.diffuseIntensity += value }
+    
+    mutating func setSpecularIntensity(_ specularValue: Float){ self.material.specularIntensity = specularValue }
+    mutating func getSpecularIntensity()->Float { return self.material.specularIntensity }
+    mutating func increaseSpecularIntensity(_ value: Float) { self.material.specularIntensity += value }
+    
+    mutating func setShininess(_ shininess: Float){ self.material.shininess = shininess }
+    mutating func getShininess()->Float { return self.material.shininess }
+    mutating func increaseShininess(_ value: Float) { self.material.shininess += value }
 }

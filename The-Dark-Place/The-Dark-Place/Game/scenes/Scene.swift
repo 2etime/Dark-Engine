@@ -47,6 +47,7 @@ class Scene: Node {
     
     private func updateSceneConstants(){
         _sceneConstants.viewMatrix = self._currentCamera.viewMatrix
+        _sceneConstants.inverseViewMatrix = simd_inverse(self.currentCamera.viewMatrix) 
         _sceneConstants.projectionMatrix = self._currentCamera.projectionMatrix
     }
     
