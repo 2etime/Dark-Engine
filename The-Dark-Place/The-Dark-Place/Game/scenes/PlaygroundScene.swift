@@ -16,17 +16,12 @@ class PlaygroundScene: Scene {
         skybox.setPositionY(20)
         addChild(skybox)
         
-        let grass = StandingGrass()
-        grass.setPositionY(4)
-        grass.setPositionZ(-1)
-        addChild(grass)
-        
         terrain.setScale(100)
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
         
-        currentCamera.setPositionZ(5)
-        currentCamera.setPositionY(4)
+        currentCamera.setPositionZ(20)
+        currentCamera.setPositionY(6)
 //        currentCamera.setPitch(0.05)
         
         lightThing.setScale(0.2)
@@ -34,13 +29,15 @@ class PlaygroundScene: Scene {
         addChild(lightThing)
         
         lightData.color = lightThing.getColor().xyz
-        let gap: Float = 2
-        for x in -20..<20{
-            for z in -20..<20{
-                var object = Cube()
+        
+        for _ in -10..<10{
+            for _ in -10..<10{
+                var object = StandingGrass()
+                let posX = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
+                let posZ = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
 //                object.setRotationY(Math.randomZeroToOne)
-                object.setPosition(float3((Float(x) * gap),0.5,(Float(z) * gap)))
-                object.setColor(float4(0.2))
+                object.setPosition(float3(posX, 0.4, posZ))
+                object.setScale(0.6)
                 object.setSpecularIntensity(0.7)
                 object.setShininess(200)
                 object.setAmbientIntensity(0.2)

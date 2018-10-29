@@ -17,9 +17,4 @@ class StandingGrass: GameObject {
         
         self.setRotationY(0.4)
     }
-    
-    override func onUpdate() {
-        self.rotateY(GameTime.DeltaTime)
-    }
-    
 }

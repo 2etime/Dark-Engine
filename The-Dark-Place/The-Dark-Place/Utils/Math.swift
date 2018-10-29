@@ -26,5 +26,9 @@ class Math {
         return Float(arc4random()) / Float(UINT32_MAX)
     }
     
+    static func randomBounded(lowerBound: Int, upperBound: Int) -> Int {
+        return lowerBound + Int(arc4random_uniform(UInt32(upperBound - lowerBound)))
+    }
+    
 }
 
