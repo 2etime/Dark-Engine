@@ -8,7 +8,7 @@ class Terrain: Node {
 
     init(cellCount: Int) {
         super.init(name: "Terrain")
-        terrainMesh = TerrainGenerator.GenerateTerrainMesh(cellCount: cellCount)
+        terrainMesh = TerrainLoader.GenerateTerrainMesh(cellCount: cellCount)
     }
 
 }

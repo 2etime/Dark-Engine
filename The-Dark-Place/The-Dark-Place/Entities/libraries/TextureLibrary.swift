@@ -28,6 +28,6 @@ class Texture {
     var texture: MTLTexture!
     
     init(_ textureName: String, ext: String = "png"){
-        self.texture = TextureGenerator.CreateTexture(textureName: textureName, ext: ext)
+        self.texture = TextureLoader.CreateTexture(textureName: textureName, ext: ext)
     }
 }

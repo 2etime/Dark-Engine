@@ -1,7 +1,7 @@
 
 import MetalKit
 
-class TerrainGenerator {
+class TerrainLoader {
     public static func GenerateTerrainMesh(cellCount: Int)->Mesh {
         let vertexCount: Int = cellCount + 1
         var vertices: [Vertex] = []

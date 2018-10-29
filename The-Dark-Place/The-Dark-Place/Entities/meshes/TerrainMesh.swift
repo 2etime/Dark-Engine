@@ -16,6 +16,7 @@ class TerrainMesh: Mesh {
     
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+//        renderCommandEncoder.setTriangleFillMode(.lines)
         renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
                                                    indexCount: indexCount,
                                                    indexType: .uint32,

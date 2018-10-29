@@ -1,7 +1,7 @@
 
 import MetalKit
 
-class TextureGenerator {
+class TextureLoader {
 
     public static func CreateTexture(textureName: String, ext: String)->MTLTexture?{
        
