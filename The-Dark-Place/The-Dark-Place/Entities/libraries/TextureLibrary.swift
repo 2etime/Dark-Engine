@@ -2,6 +2,7 @@
 import MetalKit
 
 enum TextureTypes {
+    case None
     case Grass
     case Face
     case StandingGrass

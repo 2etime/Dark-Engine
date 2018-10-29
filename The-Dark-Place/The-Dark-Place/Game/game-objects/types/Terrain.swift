@@ -4,13 +4,10 @@ import MetalKit
 class Terrain: Node {
     
     internal var material: Material! = Material()
-    var terrainMesh: Mesh!
-    
-    private var _vertexCount: Int = 0
-    
+    private var terrainMesh: Mesh!
+
     init(cellCount: Int) {
         super.init(name: "Terrain")
-        self._vertexCount = cellCount + 1
         terrainMesh = TerrainGenerator.GenerateTerrainMesh(cellCount: cellCount)
     }
 

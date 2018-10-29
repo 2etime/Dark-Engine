@@ -16,11 +16,16 @@ class PlaygroundScene: Scene {
         skybox.setPositionY(20)
         addChild(skybox)
         
+        let grass = StandingGrass()
+        grass.setPositionY(4)
+        grass.setPositionZ(-1)
+        addChild(grass)
+        
         terrain.setScale(100)
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
         
-        currentCamera.setPositionZ(15)
+        currentCamera.setPositionZ(5)
         currentCamera.setPositionY(4)
 //        currentCamera.setPitch(0.05)
         

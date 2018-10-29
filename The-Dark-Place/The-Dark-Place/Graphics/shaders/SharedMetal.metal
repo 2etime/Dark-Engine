@@ -19,6 +19,7 @@ struct SceneConstants {
 
 struct Material {
     float4 color;
+    bool useTexture;
     float ambientIntensity;
     float diffuseIntensity;
     float specularIntensity;

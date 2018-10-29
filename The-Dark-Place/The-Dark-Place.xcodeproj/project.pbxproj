@@ -422,10 +422,10 @@
 		EB3D12EF217D24DC00FD4CF6 /* custom-game-objects */ = {
 			isa = PBXGroup;
 			children = (
+				EBF0E0FB218680B50021E67E /* StandingGrass.swift */,
 				EB3D12EB217D24B800FD4CF6 /* Triangle.swift */,
 				EB3D130B217D4D2600FD4CF6 /* Cube.swift */,
 				EB3D130F217EC2B500FD4CF6 /* Quad.swift */,
-				EBF0E0FB218680B50021E67E /* StandingGrass.swift */,
 			);
 			path = "custom-game-objects";
 			sourceTree = "<group>";

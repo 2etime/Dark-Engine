@@ -20,6 +20,7 @@ struct Vertex: sizeable {
 
 struct Material: sizeable {
     var color: float4 = float4(0.5)  //Initialize to gray
+    var useTexture: Bool = false
     var ambientIntensity: Float = 0.5
     var diffuseIntensity: Float = 1.0
     var specularIntensity: Float = 0.1 // 0->1
