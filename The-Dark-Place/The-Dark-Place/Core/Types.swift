@@ -32,3 +32,10 @@ struct SceneConstants: sizeable {
     var viewMatrix = matrix_identity_float4x4
     var projectionMatrix = matrix_identity_float4x4
 }
+
+struct LightData: sizeable {
+    var color: float3 = float3(1)
+    var position: float3 = float3(0)
+    var ambientIntensity: Float = 0.5
+    var diffuseIntensity: Float = 0.5
+ }

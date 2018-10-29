@@ -7,6 +7,7 @@ enum CameraTypes {
 
 class Scene: Node {
     private var _sceneConstants = SceneConstants()
+    var lightData = LightData()
     
     private var _cameras: [CameraTypes : Camera] = [:]
     private var _currentCamera: Camera!
@@ -58,7 +59,7 @@ class Scene: Node {
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 1)
+        renderCommandEncoder.setFragmentBytes(&lightData, length: LightData.stride, index: 1)
         super.render(renderCommandEncoder)
     }
-
 }

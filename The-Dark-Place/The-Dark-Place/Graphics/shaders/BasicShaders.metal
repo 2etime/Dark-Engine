@@ -20,6 +20,7 @@ struct RasterizerData {
     float4 position [[ position ]];
     float3 surfaceNormal;
     float2 textureCoordinate;
+    float3 worldPosition;
 };
 
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
@@ -37,13 +38,8 @@ vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
 }
 
 fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
-                                     constant Material &material [[ buffer(0) ]]){
-    
-    LightData lightData;
-    lightData.color = float3(1,1,1);
-    lightData.position = float3(0,1,3);
-    lightData.ambientIntensity = 1.0;
-    lightData.diffuseIntensity = 0.5;
+                                     constant Material &material [[ buffer(0) ]],
+                                     constant LightData &lightData [[ buffer(1) ]]){
     
     float4 color = material.color;
     float3 toLightVector = lightData.position - rd.surfaceNormal;

@@ -3,9 +3,16 @@ import MetalKit
 class GameObject: Node {
     private var _mesh: Mesh!
     internal var material: Material! = Material()
+    internal var texture: MTLTexture!
     
     var renderPipelineState: MTLRenderPipelineState {
-        return Graphics.RenderPipelineStates[.Basic]
+        var rps: MTLRenderPipelineState
+        if(texture != nil){
+            rps = Graphics.RenderPipelineStates[.Basic]
+        }else {
+            rps = Graphics.RenderPipelineStates[.Basic]
+        }
+        return rps
     }
     
     init(_ meshType: MeshTypes) {

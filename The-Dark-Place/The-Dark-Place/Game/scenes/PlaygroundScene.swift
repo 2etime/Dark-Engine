@@ -22,6 +22,8 @@ class PlaygroundScene: Scene {
         currentCamera.setPositionZ(40)
         currentCamera.setPositionY(5)
         
+        
+        
         let gap: Float = 2
         for x in -20..<20{
             for z in -20..<20{
@@ -38,6 +40,7 @@ class PlaygroundScene: Scene {
 
     override func onUpdate() {
         skybox.rotateY(GameTime.DeltaTime / 20)
+        lightData.position.y = cos(GameTime.TotalGameTime) * 10
     }
     
 }

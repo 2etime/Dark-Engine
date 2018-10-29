@@ -38,18 +38,13 @@ vertex TerrainRasterizerData terrain_vertex_shader(VertexIn vertexIn [[ stage_in
 
 fragment half4 terrain_textured_fragment_shader(TerrainRasterizerData rd [[ stage_in ]],
                                                 constant Material &material [[ buffer(0) ]],
+                                                constant LightData &lightData [[ buffer(1) ]],
                                                 texture2d<float> texture [[ texture(0) ]]){
     
     constexpr sampler linearSampler(mip_filter::linear,
                                     mag_filter::linear,
                                     min_filter::linear,
                                     address::repeat);
-    
-    LightData lightData;
-    lightData.color = float3(1,1,1);
-    lightData.position = float3(0,0,3);
-    lightData.ambientIntensity = 0.5;
-    lightData.diffuseIntensity = 0.5;
     
     float4 color = texture.sample(linearSampler, rd.textureCoordinate);
     float3 toLightVector = lightData.position - rd.surfaceNormal;
