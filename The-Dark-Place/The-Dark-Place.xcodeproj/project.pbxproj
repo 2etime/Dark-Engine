@@ -73,6 +73,8 @@
 		EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF0E0F921866F690021E67E /* standing_grass.png */; };
 		EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FB218680B50021E67E /* StandingGrass.swift */; };
 		EBF0E0FE218691000021E67E /* float4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FD218691000021E67E /* float4.swift */; };
+		EBF0E1002186A0620021E67E /* TerrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FF2186A0620021E67E /* TerrainGenerator.swift */; };
+		EBF0E1022186A2B20021E67E /* TerrainMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E1012186A2B20021E67E /* TerrainMesh.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,8 @@
 		EBF0E0F921866F690021E67E /* standing_grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standing_grass.png; sourceTree = "<group>"; };
 		EBF0E0FB218680B50021E67E /* StandingGrass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingGrass.swift; sourceTree = "<group>"; };
 		EBF0E0FD218691000021E67E /* float4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = float4.swift; sourceTree = "<group>"; };
+		EBF0E0FF2186A0620021E67E /* TerrainGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainGenerator.swift; sourceTree = "<group>"; };
+		EBF0E1012186A2B20021E67E /* TerrainMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainMesh.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */,
+				EBF0E1012186A2B20021E67E /* TerrainMesh.swift */,
 				EB3D12D0217D0EA800FD4CF6 /* custom-meshes */,
 			);
 			path = meshes;
@@ -488,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				EBF0E0EF218643920021E67E /* TextureGenerator.swift */,
+				EBF0E0FF2186A0620021E67E /* TerrainGenerator.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -641,6 +647,7 @@
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
+				EBF0E1002186A0620021E67E /* TerrainGenerator.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
@@ -672,6 +679,7 @@
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
+				EBF0E1022186A2B20021E67E /* TerrainMesh.swift in Sources */,
 				EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
