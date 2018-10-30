@@ -48,6 +48,7 @@
 		EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */; };
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
 		EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */; };
+		EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */; };
 		EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */; };
 		EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */; };
 		EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */; };
@@ -135,6 +136,7 @@
 		EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGameObject.swift; sourceTree = "<group>"; };
+		EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ModelShaders.metal; sourceTree = "<group>"; };
 		EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SkyboxShader.metal; sourceTree = "<group>"; };
 		EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SharedMetal.metal; sourceTree = "<group>"; };
 		EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyboxGameObject.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				EB3D129B217ACA6400FD4CF6 /* BasicShaders.metal */,
 				EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */,
 				EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */,
+				EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */,
+				EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
 				EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */,

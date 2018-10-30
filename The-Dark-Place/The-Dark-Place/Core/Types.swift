@@ -11,11 +11,19 @@ extension sizeable{
 extension UInt32: sizeable { }
 extension float2: sizeable { }
 extension float3: sizeable { }
+extension float4: sizeable { }
 
 struct Vertex: sizeable {
     var position: float3
     var normal: float3
     var textureCoordinate: float2
+}
+
+struct ModelVertex: sizeable {
+    var position: float3
+    var color: float4
+    var normal: float3
+    var textureCoordinates: float2
 }
 
 struct Material: sizeable {

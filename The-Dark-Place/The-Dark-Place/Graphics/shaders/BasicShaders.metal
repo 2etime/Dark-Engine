@@ -10,14 +10,6 @@ struct LightData {
     float diffuseIntensity;
 };
 
-struct RasterizerData {
-    float4 position [[ position ]];
-    float3 surfaceNormal;
-    float2 textureCoordinate;
-    float3 worldPosition;
-    float3 toCameraVector;
-};
-
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
                                           constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                           constant ModelConstants &modelConstants [[ buffer(2) ]]) {

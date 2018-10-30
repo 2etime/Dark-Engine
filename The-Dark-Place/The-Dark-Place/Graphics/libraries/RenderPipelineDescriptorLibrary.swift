@@ -5,6 +5,7 @@ enum RenderPipelineDescriptorTypes {
     case Skybox
     case MDLMesh
     case TerrainTextured
+    case Model
 }
 
 class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MTLRenderPipelineDescriptor> {
@@ -15,6 +16,7 @@ class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MT
         library.updateValue(Skybox_RenderPipelineDescriptor(), forKey: .Skybox)
         library.updateValue(MDLMesh_RenderPipelineDescriptor(), forKey: .MDLMesh)
         library.updateValue(TerrainTextured_RenderPipelineDescriptor(), forKey: .TerrainTextured)
+        library.updateValue(Model_RenderPipelineDescriptor(), forKey: .Model)
     }
     
     override subscript(_ type: RenderPipelineDescriptorTypes) -> MTLRenderPipelineDescriptor {
@@ -81,6 +83,20 @@ class TerrainTextured_RenderPipelineDescriptor: RenderPipelineDescriptor {
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Terrain]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.TerrainTextured]
+    }
+}
+
+class Model_RenderPipelineDescriptor: RenderPipelineDescriptor {
+    var name: String = "Model Render Pipeline Descriptor"
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Model]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Model]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
     }
 }
 

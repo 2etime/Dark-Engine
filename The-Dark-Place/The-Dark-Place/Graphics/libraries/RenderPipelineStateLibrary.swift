@@ -5,6 +5,7 @@ enum RenderPipelineStateTypes {
     case Skybox
     case MDLMesh
     case TerrainTextured
+    case Model
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -16,6 +17,7 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(Skybox_RenderPipelineState(), forKey: .Skybox)
         library.updateValue(MDLMesh_RenderPipelineState(), forKey: .MDLMesh)
         library.updateValue(TerrainTextured_RenderPipelineState(), forKey: .TerrainTextured)
+        library.updateValue(Model_RenderPipelineState(), forKey: .Model)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -72,6 +74,18 @@ class TerrainTextured_RenderPipelineState: RenderPipelineState {
     init() {
         do {
             renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.TerrainTextured])
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+class Model_RenderPipelineState: RenderPipelineState {
+    var name: String = "Model Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Model])
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }

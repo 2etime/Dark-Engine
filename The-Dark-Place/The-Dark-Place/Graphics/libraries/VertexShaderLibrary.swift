@@ -4,6 +4,7 @@ enum VertexShaderTypes {
     case Basic
     case Skybox
     case Terrain
+    case Model
 }
 
 class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
@@ -19,6 +20,9 @@ class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Terrain Vertex Shader",
                                    functionName: "terrain_vertex_shader"),
                             forKey: .Terrain)
+        library.updateValue(Shader(label: "Model Vertex Shader",
+                                   functionName: "model_vertex_shader"),
+                            forKey: .Model)
     }
     
     override subscript(_ type: VertexShaderTypes) -> MTLFunction {

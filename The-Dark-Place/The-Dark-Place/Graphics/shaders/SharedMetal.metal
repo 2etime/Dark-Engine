@@ -25,3 +25,11 @@ struct Material {
     float specularIntensity;
     float shininess;
 };
+
+struct RasterizerData {
+    float4 position [[ position ]];
+    float3 surfaceNormal;
+    float2 textureCoordinate;
+    float3 worldPosition;
+    float3 toCameraVector;
+};
