@@ -8,6 +8,8 @@ public enum MeshTypes {
     
     case CubeForSkybox_Apple
     case CubeBasic_Apple
+    
+    case PirateShipModel
 }
 
 class MeshLibrary: Library<MeshTypes, Mesh> {
@@ -23,6 +25,9 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         //Apple Meshes
         library.updateValue(AppleMesh(.CubeForSkybox_Apple), forKey: .CubeForSkybox_Apple)
         library.updateValue(AppleMesh(.CubeBasic_Apple), forKey: .CubeBasic_Apple)
+        
+        //Models
+        library.updateValue(ModelMesh(modelName: "pirate_ship"), forKey: .PirateShipModel)
     }
     
     override subscript(_ type: MeshTypes) -> Mesh {

@@ -30,6 +30,9 @@ class PlaygroundScene: Scene {
         
         lightData.color = lightThing.getColor().xyz
         
+        let ship = PirateShip()
+        addChild(ship)
+        
         for _ in -10..<10{
             for _ in -10..<10{
                 var object = StandingGrass()

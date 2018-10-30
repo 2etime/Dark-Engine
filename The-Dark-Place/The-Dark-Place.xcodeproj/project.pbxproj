@@ -49,6 +49,8 @@
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
 		EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */; };
 		EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */; };
+		EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF9821880758000E30B4 /* ModelMesh.swift */; };
+		EB5AFF9E2188083B000E30B4 /* PirateShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF9D2188083A000E30B4 /* PirateShip.swift */; };
 		EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */; };
 		EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */; };
 		EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */; };
@@ -137,6 +139,8 @@
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGameObject.swift; sourceTree = "<group>"; };
 		EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ModelShaders.metal; sourceTree = "<group>"; };
+		EB5AFF9821880758000E30B4 /* ModelMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMesh.swift; sourceTree = "<group>"; };
+		EB5AFF9D2188083A000E30B4 /* PirateShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateShip.swift; sourceTree = "<group>"; };
 		EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SkyboxShader.metal; sourceTree = "<group>"; };
 		EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SharedMetal.metal; sourceTree = "<group>"; };
 		EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyboxGameObject.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 			children = (
 				EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */,
 				EBF0E1012186A2B20021E67E /* TerrainMesh.swift */,
+				EB5AFF9821880758000E30B4 /* ModelMesh.swift */,
 				EB3D12D0217D0EA800FD4CF6 /* custom-meshes */,
 			);
 			path = meshes;
@@ -409,6 +414,7 @@
 		EB3D12ED217D24BE00FD4CF6 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				EB5AFF9A21880810000E30B4 /* model-game-objects */,
 				EB3D12EF217D24DC00FD4CF6 /* custom-game-objects */,
 			);
 			path = objects;
@@ -461,6 +467,14 @@
 				EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */,
 			);
 			path = cameras;
+			sourceTree = "<group>";
+		};
+		EB5AFF9A21880810000E30B4 /* model-game-objects */ = {
+			isa = PBXGroup;
+			children = (
+				EB5AFF9D2188083A000E30B4 /* PirateShip.swift */,
+			);
+			path = "model-game-objects";
 			sourceTree = "<group>";
 		};
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
@@ -651,6 +665,7 @@
 				EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */,
 				EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
+				EB5AFF9E2188083B000E30B4 /* PirateShip.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
@@ -672,6 +687,7 @@
 				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
+				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
