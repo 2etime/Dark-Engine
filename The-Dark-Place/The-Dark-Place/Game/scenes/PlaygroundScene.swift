@@ -13,6 +13,7 @@ class PlaygroundScene: Scene {
     var terrain = Terrain(cellCount: 100)
     var lightThing = Cube()
     let armadillo = Armadillo()
+    let pirateShip = PirateShip()
     override func buildScene() {
         skybox.setPositionY(20)
         addChild(skybox)
@@ -21,7 +22,7 @@ class PlaygroundScene: Scene {
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
         
-        currentCamera.setPositionZ(5)
+        currentCamera.setPositionZ(10)
         currentCamera.setPositionY(2)
 //        currentCamera.setPitch(0.05)
         
@@ -32,7 +33,12 @@ class PlaygroundScene: Scene {
         lightData.color = lightThing.getColor().xyz
         
         armadillo.setPositionY(1)
+        armadillo.setPositionX(2)
         addChild(armadillo)
+        
+        pirateShip.setScale(0.5)
+        pirateShip.setPositionX(-2)
+        addChild(pirateShip)
         
 //        for _ in -10..<10{
 //            for _ in -10..<10{
@@ -56,6 +62,7 @@ class PlaygroundScene: Scene {
         lightData.position.y = abs((cos(GameTime.TotalGameTime * 0.3) * 10))
         lightThing.setPosition(lightData.position)
         armadillo.rotateY(GameTime.DeltaTime)
+        pirateShip.rotateY(GameTime.DeltaTime)
     }
     
 }

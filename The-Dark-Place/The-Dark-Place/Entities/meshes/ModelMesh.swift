@@ -5,7 +5,7 @@ class ModelMesh: Mesh {
     var meshes: [Any?] = []
     
     init(modelName: String){
-        loadModel(modelName: "armadillo")
+        loadModel(modelName: modelName)
     }
     
     func loadModel(modelName: String) {

@@ -7,7 +7,7 @@ class ModelGameObject: Node {
     
     init(meshType: MeshTypes){
         super.init(name: "Model Game Object")
-        _modelMesh = Entities.Meshes[.Armadillo] as? ModelMesh
+        _modelMesh = Entities.Meshes[meshType] as? ModelMesh
     }
 
 }
@@ -17,9 +17,7 @@ extension ModelGameObject: Renderable {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Model])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         
-        
-        
-        
+
         _modelMesh.drawPrimitives(renderCommandEncoder)
     }
 }
