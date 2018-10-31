@@ -62,23 +62,18 @@ class Model_VertexDescriptor: VertexDescriptor {
         
         //Position
         vertexDescriptor.attributes[0].bufferIndex = 0
-        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].format = .float4
         vertexDescriptor.attributes[0].offset = 0
-        
-        //Color
-        vertexDescriptor.attributes[1].bufferIndex = 0
-        vertexDescriptor.attributes[1].format = .float4
-        vertexDescriptor.attributes[1].offset = 0
-        
+    
         //Normal
-        vertexDescriptor.attributes[2].bufferIndex = 0
-        vertexDescriptor.attributes[2].format = .float3
-        vertexDescriptor.attributes[2].offset = float3.stride + float4.stride
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].format = .float3
+        vertexDescriptor.attributes[1].offset = float4.stride
         
         //Texture Coordinate
-        vertexDescriptor.attributes[3].bufferIndex = 0
-        vertexDescriptor.attributes[3].format = .float2
-        vertexDescriptor.attributes[3].offset = float3.stride + float4.stride + float3.stride
+        vertexDescriptor.attributes[2].bufferIndex = 0
+        vertexDescriptor.attributes[2].format = .float2
+        vertexDescriptor.attributes[2].offset = float3.stride + float4.stride
         
         vertexDescriptor.layouts[0].stride = ModelVertex.stride
     }

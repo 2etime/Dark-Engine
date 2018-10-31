@@ -20,8 +20,7 @@ struct Vertex: sizeable {
 }
 
 struct ModelVertex: sizeable {
-    var position: float3
-    var color: float4
+    var position: float4
     var normal: float3
     var textureCoordinates: float2
 }

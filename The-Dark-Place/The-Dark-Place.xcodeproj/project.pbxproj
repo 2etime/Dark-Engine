@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5C9218A127F008E1DC4 /* armadillo.obj */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -50,7 +51,7 @@
 		EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */; };
 		EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */; };
 		EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF9821880758000E30B4 /* ModelMesh.swift */; };
-		EB5AFF9E2188083B000E30B4 /* PirateShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF9D2188083A000E30B4 /* PirateShip.swift */; };
+		EB5AFF9E2188083B000E30B4 /* Armadillo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF9D2188083A000E30B4 /* Armadillo.swift */; };
 		EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */; };
 		EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */; };
 		EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB08F5C9218A127F008E1DC4 /* armadillo.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = armadillo.obj; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 		EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGameObject.swift; sourceTree = "<group>"; };
 		EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ModelShaders.metal; sourceTree = "<group>"; };
 		EB5AFF9821880758000E30B4 /* ModelMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMesh.swift; sourceTree = "<group>"; };
-		EB5AFF9D2188083A000E30B4 /* PirateShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateShip.swift; sourceTree = "<group>"; };
+		EB5AFF9D2188083A000E30B4 /* Armadillo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armadillo.swift; sourceTree = "<group>"; };
 		EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SkyboxShader.metal; sourceTree = "<group>"; };
 		EB6A0FF22182ADCD0036DB93 /* SharedMetal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SharedMetal.metal; sourceTree = "<group>"; };
 		EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyboxGameObject.swift; sourceTree = "<group>"; };
@@ -472,7 +474,7 @@
 		EB5AFF9A21880810000E30B4 /* model-game-objects */ = {
 			isa = PBXGroup;
 			children = (
-				EB5AFF9D2188083A000E30B4 /* PirateShip.swift */,
+				EB5AFF9D2188083A000E30B4 /* Armadillo.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -480,6 +482,7 @@
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
 				EBF0E0F22186449E0021E67E /* Textures */,
 				EBF0E0F1218644900021E67E /* Cube_Maps */,
 			);
@@ -620,6 +623,7 @@
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
+				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
@@ -665,7 +669,7 @@
 				EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */,
 				EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
-				EB5AFF9E2188083B000E30B4 /* PirateShip.swift in Sources */,
+				EB5AFF9E2188083B000E30B4 /* Armadillo.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
