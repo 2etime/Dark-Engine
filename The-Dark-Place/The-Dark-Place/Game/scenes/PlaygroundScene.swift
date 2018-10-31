@@ -40,20 +40,20 @@ class PlaygroundScene: Scene {
         pirateShip.setPositionX(-2)
         addChild(pirateShip)
         
-//        for _ in -10..<10{
-//            for _ in -10..<10{
-//                var object = StandingGrass()
-//                let posX = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
-//                let posZ = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
-////                object.setRotationY(Math.randomZeroToOne)
-//                object.setPosition(float3(posX, 0.4, posZ))
-//                object.setScale(0.6)
-//                object.setSpecularIntensity(0.7)
-//                object.setShininess(200)
-//                object.setAmbientIntensity(0.2)
-//                addChild(object)
-//            }
-//        }
+        for _ in -10..<10{
+            for _ in -10..<10{
+                var object = StandingGrass()
+                let posX = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
+                let posZ = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
+//                object.setRotationY(Math.randomZeroToOne)
+                object.setPosition(float3(posX, 0.4, posZ))
+                object.setScale(0.6)
+                object.setSpecularIntensity(0.7)
+                object.setShininess(200)
+                object.setAmbientIntensity(0.2)
+                addChild(object)
+            }
+        }
         
     }
 

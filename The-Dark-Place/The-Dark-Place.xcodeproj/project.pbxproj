@@ -10,6 +10,7 @@
 		EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5C9218A127F008E1DC4 /* armadillo.obj */; };
 		EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */; };
 		EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */; };
+		EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -98,6 +99,7 @@
 		EB08F5C9218A127F008E1DC4 /* armadillo.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = armadillo.obj; sourceTree = "<group>"; };
 		EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pirate_ship.obj; sourceTree = "<group>"; };
 		EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateShip.swift; sourceTree = "<group>"; };
+		EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pirate_ship.mtl; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
+				EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */,
 				EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */,
 				EBF0E0F22186449E0021E67E /* Textures */,
 				EBF0E0F1218644900021E67E /* Cube_Maps */,
@@ -628,6 +631,7 @@
 			files = (
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
+				EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
