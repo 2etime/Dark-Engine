@@ -11,6 +11,11 @@
 		EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */; };
 		EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */; };
 		EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */; };
+		EB08F5D2218A9824008E1DC4 /* suzanne.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5D1218A9823008E1DC4 /* suzanne.obj */; };
+		EB08F5D4218A983C008E1DC4 /* Suzanne.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5D3218A983C008E1DC4 /* Suzanne.swift */; };
+		EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5D5218AA18B008E1DC4 /* cruiser.obj */; };
+		EB08F5D8218AA1A0008E1DC4 /* cruiser.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */; };
+		EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -100,6 +105,11 @@
 		EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pirate_ship.obj; sourceTree = "<group>"; };
 		EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateShip.swift; sourceTree = "<group>"; };
 		EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pirate_ship.mtl; sourceTree = "<group>"; };
+		EB08F5D1218A9823008E1DC4 /* suzanne.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = suzanne.obj; sourceTree = "<group>"; };
+		EB08F5D3218A983C008E1DC4 /* Suzanne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suzanne.swift; sourceTree = "<group>"; };
+		EB08F5D5218AA18B008E1DC4 /* cruiser.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cruiser.obj; sourceTree = "<group>"; };
+		EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = cruiser.bmp; sourceTree = "<group>"; };
+		EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cruiser.swift; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -482,6 +492,8 @@
 			children = (
 				EB5AFF9D2188083A000E30B4 /* Armadillo.swift */,
 				EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */,
+				EB08F5D3218A983C008E1DC4 /* Suzanne.swift */,
+				EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -489,6 +501,8 @@
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EB08F5D5218AA18B008E1DC4 /* cruiser.obj */,
+				EB08F5D1218A9823008E1DC4 /* suzanne.obj */,
 				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
 				EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */,
 				EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */,
@@ -541,6 +555,7 @@
 		EBF0E0F22186449E0021E67E /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */,
 				EBF0E0F921866F690021E67E /* standing_grass.png */,
 				EBF0E0F3218645B30021E67E /* grass.png */,
 				EBF0E0F5218649230021E67E /* face.png */,
@@ -630,6 +645,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
+				EB08F5D8218AA1A0008E1DC4 /* cruiser.bmp in Resources */,
+				EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
@@ -637,6 +654,7 @@
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
+				EB08F5D2218A9824008E1DC4 /* suzanne.obj in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
 				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
@@ -688,6 +706,7 @@
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
+				EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */,
 				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
@@ -710,6 +729,7 @@
 				EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */,
+				EB08F5D4218A983C008E1DC4 /* Suzanne.swift in Sources */,
 				EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,

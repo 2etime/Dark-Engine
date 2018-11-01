@@ -6,6 +6,7 @@ enum TextureTypes {
     case Grass
     case Face
     case StandingGrass
+    case Cruiser
 }
 
 class TextureLibrary: Library<TextureTypes, MTLTexture> {
@@ -16,6 +17,7 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         library.updateValue(Texture("grass"), forKey: .Grass)
         library.updateValue(Texture("face"), forKey: .Face)
         library.updateValue(Texture("standing_grass"), forKey: .StandingGrass)
+        library.updateValue(Texture("cruiser", ext: ".bmp"), forKey: .Cruiser)
     }
     
     override subscript(_ type: TextureTypes) -> MTLTexture? {

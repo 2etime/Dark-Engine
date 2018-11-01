@@ -11,6 +11,8 @@ public enum MeshTypes {
     
     case Armadillo
     case PirateShip
+    case Suzanne
+    case Cruiser
 }
 
 class MeshLibrary: Library<MeshTypes, Mesh> {
@@ -30,6 +32,9 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         //Models
         library.updateValue(ModelMesh(modelName: "armadillo"), forKey: .Armadillo)
         library.updateValue(ModelMesh(modelName: "pirate_ship"), forKey: .PirateShip)
+        library.updateValue(ModelMesh(modelName: "suzanne"), forKey: .Suzanne)
+        library.updateValue(ModelMesh(modelName: "cruiser"), forKey: .Cruiser)
+
     }
     
     override subscript(_ type: MeshTypes) -> Mesh {

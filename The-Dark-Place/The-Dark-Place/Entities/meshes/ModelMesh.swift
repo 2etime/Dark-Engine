@@ -5,10 +5,18 @@ class ModelMesh: Mesh {
     var meshes: [Any?] = []
     private var _materials: [Material] = [Material]()
     private var _asset: MDLAsset!
+    private var _hasMTLMaterial: Bool = false
+    private var _hasTexture: Bool = false
+    private var _texture: MTLTexture!
     
     init(modelName: String){
         loadModel(modelName: modelName)
         generateMaterial()
+    }
+    
+    func setTexture(textureTypes: TextureTypes){
+        self._hasTexture = true
+        self._texture = Entities.Textures[textureTypes]
     }
     
     func loadModel(modelName: String) {
@@ -52,31 +60,27 @@ class ModelMesh: Mesh {
         } catch {
             print("mesh error")
         }
-        
-        
         for i in 0..<mdlMeshes.count {
             let mdlMesh: MDLMesh! = mdlMeshes[i]
             let count: Int = mdlMesh!.submeshes?.count ?? 0
             
             for j in 0..<count{
                 let mdlSubmeshes = mdlMesh.submeshes as? [MDLSubmesh]
-                let ambient = float3(0.5)
-                let color = mdlSubmeshes![j].material?.property(with: MDLMaterialSemantic.baseColor)?.color
+//                let ambient = float3(0.5)
+                let color = mdlSubmeshes![j].material?.properties(with: MDLMaterialSemantic.baseColor).first?.float3Value
+                let specular = mdlSubmeshes![j].material?.properties(with: MDLMaterialSemantic.specular).first?.float3Value
+                if(color?.x != 0 || color?.y != 0 || color?.z != 0){
+                    _hasMTLMaterial = true
+                }
                 var material = Material()
-                material.color = getColor(color: color!)
+                material.color = float4(color!.x, color!.y, color!.z, 1.0)
+                material.specularIntensity = specular!.x
                 _materials.append(material)
             }
         }
     }
-    
-    func getColor(color: CGColor)->float4 {
-        let components = color.components
-        let r = components?[0]
-        let g = components?[1]
-        let b = components?[2]
-        return float4(Float(r ?? 0),Float(g ?? 0),Float(b ?? 0), 1)
-    }
-    
+
+
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         guard let meshes = meshes as? [MTKMesh], meshes.count > 0 else { return }
         for mesh in meshes {
@@ -86,7 +90,11 @@ class ModelMesh: Mesh {
                                                  index: 0)
             for  i in 0..<mesh.submeshes.count {
                 let submesh = mesh.submeshes[i]
-                renderCommandEncoder.setFragmentBytes(&_materials[i], length: Material.stride, index: 0)
+                if(_hasTexture){
+                    renderCommandEncoder.setFragmentTexture(_texture, index: 0)
+                }else if(_hasMTLMaterial){
+                    renderCommandEncoder.setFragmentBytes(&_materials[i], length: Material.stride, index: 0)
+                }
                 renderCommandEncoder.drawIndexedPrimitives(type: submesh.primitiveType,
                                                              indexCount: submesh.indexCount,
                                                              indexType: submesh.indexType,
