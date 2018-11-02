@@ -45,6 +45,7 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
 public class AppleMesh: Mesh{
     var vertexBuffer: MTLBuffer!
     var vertexCount: Int! = 0
+    var instanceCount: Int = 1
     
     var meshes: [MTKMesh] = Array()
     
@@ -90,7 +91,8 @@ public class AppleMesh: Mesh{
                                                            indexCount: submesh.indexCount,
                                                            indexType: submesh.indexType,
                                                            indexBuffer: submesh.indexBuffer.buffer,
-                                                           indexBufferOffset: submesh.indexBuffer.offset)
+                                                           indexBufferOffset: submesh.indexBuffer.offset,
+                                                           instanceCount: instanceCount)
             }
         }
         renderCommandEncoder.popDebugGroup()

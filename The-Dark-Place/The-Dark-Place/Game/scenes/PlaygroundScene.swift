@@ -16,13 +16,14 @@ class PlaygroundScene: Scene {
     let pirateShip = PirateShip()
     let suzanne = Suzanne()
     let cruiser = Cruiser()
+    var instancedGrass = GrassPatch(patchWidth: 40, patchHeight: 40, grassCount: 100)
     override func buildScene() {
         skybox.setPositionY(20)
         addChild(skybox)
         
         terrain.setScale(100)
         terrain.setDiffuseIntensity(0.4)
-        addChild(terrain)
+//        addChild(terrain)
         
         currentCamera.setPositionZ(7)
         currentCamera.setPositionY(2)
@@ -38,36 +39,38 @@ class PlaygroundScene: Scene {
         armadillo.setPositionY(1)
         armadillo.setPositionX(3)
         armadillo.setColor(float4(1,0,0,1))
-        addChild(armadillo)
+//        addChild(armadillo)
         
         pirateShip.setScale(0.5)
         pirateShip.setPositionX(-3)
-        addChild(pirateShip)
+//        addChild(pirateShip)
         
 //        pirateShip.setScale(0.5)
         suzanne.setPositionY(1)
         suzanne.setPositionX(0)
-        addChild(suzanne)
+//        addChild(suzanne)
         
         cruiser.setPositionY(4)
         cruiser.setPositionX(0)
         cruiser.setRotationZ(0.7)
-        addChild(cruiser)
+//        addChild(cruiser)
         
-        for _ in -10..<10{
-            for _ in -10..<10{
-                var object = StandingGrass()
-                let posX = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
-                let posZ = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
-//                object.setRotationY(Math.randomZeroToOne)
-                object.setPosition(float3(posX, 0.4, posZ))
-                object.setScale(0.6)
-                object.setSpecularIntensity(0.7)
-                object.setShininess(200)
-                object.setAmbientIntensity(0.2)
-                addChild(object)
-            }
-        }
+        addChild(instancedGrass)
+        
+//        for _ in -10..<10{
+//            for _ in -10..<10{
+//                var object = StandingGrass()
+//                let posX = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
+//                let posZ = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
+////                object.setRotationY(Math.randomZeroToOne)
+//                object.setPosition(float3(posX, 0.4, posZ))
+//                object.setScale(0.6)
+//                object.setSpecularIntensity(0.7)
+//                object.setShininess(200)
+//                object.setAmbientIntensity(0.2)
+//                addChild(object)
+//            }
+//        }
         
     }
 

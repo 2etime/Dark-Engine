@@ -6,6 +6,7 @@ class TerrainMesh: Mesh {
     var indexBuffer: MTLBuffer!
     var vertexCount: Int!
     var indexCount: Int!
+    var instanceCount: Int = 1
     
     init(vertices: [Vertex], indices: [UInt32]){
         self.vertexCount = vertices.count
@@ -21,6 +22,7 @@ class TerrainMesh: Mesh {
                                                    indexCount: indexCount,
                                                    indexType: .uint32,
                                                    indexBuffer: indexBuffer,
-                                                   indexBufferOffset: 0)
+                                                   indexBufferOffset: 0,
+                                                   instanceCount: instanceCount)
     }
 }

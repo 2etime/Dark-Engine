@@ -39,7 +39,7 @@ class CubeTextureMap {
     
     func textureCubeWithImagesNamed(ext: String)->MTLTexture?{
         //Grab the first texture to generate a texture descriptor
-        let firstTexture = TextureLoader.CreateTexture(textureName: textureNames.first!, ext: ext) 
+        let firstTexture = TextureLoader.CreateTexture(textureName: textureNames.first!, ext: ext)
         let cubeSize = firstTexture?.width ?? 0
         let textureDescritpor = MTLTextureDescriptor.textureCubeDescriptor(pixelFormat: .bgra8Unorm, size: cubeSize, mipmapped: false)
         let result = DarkEngine.Device.makeTexture(descriptor: textureDescritpor)

@@ -73,6 +73,8 @@
 		EB6A1019218519850036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A1018218519840036DB93 /* sky_bottom.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
 		EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */; };
+		EBC3CD49218BE7C700E905FA /* InstancedShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */; };
+		EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */; };
 		EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */; };
 		EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AC21859D590021E67E /* Mouse.swift */; };
 		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
@@ -173,6 +175,8 @@
 		EB6A1018218519840036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancedGameObject.swift; sourceTree = "<group>"; };
+		EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstancedShaders.metal; sourceTree = "<group>"; };
+		EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassPatch.swift; sourceTree = "<group>"; };
 		EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTextureLibrary.swift; sourceTree = "<group>"; };
 		EBF0E0AC21859D590021E67E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				EB6A0FF02182AB920036DB93 /* SkyboxShader.metal */,
 				EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */,
 				EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */,
+				EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -446,8 +451,8 @@
 				EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */,
 				EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */,
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
-				EBF0E0E8218617A20021E67E /* Terrain.swift */,
 				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
+				EBF0E0E8218617A20021E67E /* Terrain.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */,
 				EB08F5D3218A983C008E1DC4 /* Suzanne.swift */,
 				EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */,
+				EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -692,6 +698,7 @@
 				EBF0E0F821864F730021E67E /* Materialable.swift in Sources */,
 				EB3D12E4217D1DE600FD4CF6 /* Scene.swift in Sources */,
 				EB3D1293217AB76E00FD4CF6 /* DarkEngine.swift in Sources */,
+				EBC3CD49218BE7C700E905FA /* InstancedShaders.metal in Sources */,
 				EB3D129C217ACA6400FD4CF6 /* BasicShaders.metal in Sources */,
 				EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */,
 				EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */,
@@ -711,6 +718,7 @@
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
 				EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */,
 				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
+				EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */,
 				EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */,
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,

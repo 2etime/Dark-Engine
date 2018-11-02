@@ -8,6 +8,7 @@ class ModelMesh: Mesh {
     private var _hasMTLMaterial: Bool = false
     private var _hasTexture: Bool = false
     private var _texture: MTLTexture!
+    internal var instanceCount: Int = 1
     
     init(modelName: String){
         loadModel(modelName: modelName)
@@ -80,7 +81,6 @@ class ModelMesh: Mesh {
         }
     }
 
-
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         guard let meshes = meshes as? [MTKMesh], meshes.count > 0 else { return }
         for mesh in meshes {
@@ -99,7 +99,8 @@ class ModelMesh: Mesh {
                                                              indexCount: submesh.indexCount,
                                                              indexType: submesh.indexType,
                                                              indexBuffer: submesh.indexBuffer.buffer,
-                                                             indexBufferOffset: submesh.indexBuffer.offset)
+                                                             indexBufferOffset: submesh.indexBuffer.offset,
+                                                             instanceCount: instanceCount)
             }
         }
     }

@@ -6,6 +6,7 @@ enum RenderPipelineStateTypes {
     case MDLMesh
     case TerrainTextured
     case Model
+    case Instanced
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -18,6 +19,7 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(MDLMesh_RenderPipelineState(), forKey: .MDLMesh)
         library.updateValue(TerrainTextured_RenderPipelineState(), forKey: .TerrainTextured)
         library.updateValue(Model_RenderPipelineState(), forKey: .Model)
+        library.updateValue(Instanced_RenderPipelineState(), forKey: .Instanced)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -86,6 +88,19 @@ class Model_RenderPipelineState: RenderPipelineState {
     init() {
         do {
             renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Model])
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+
+class Instanced_RenderPipelineState: RenderPipelineState {
+    var name: String = "Instanced Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Instanced])
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }

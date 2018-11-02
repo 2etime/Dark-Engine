@@ -1,12 +1,13 @@
 import MetalKit
 
 public class CustomMesh: Mesh{
-    
+
     private var vertices: [Vertex] = []
     var vertexBuffer: MTLBuffer!
     var vertexCount: Int! {
         return vertices.count
     }
+    var instanceCount: Int = 1
     
     init(){
         createVertices()
@@ -30,7 +31,7 @@ public class CustomMesh: Mesh{
     public func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
-        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount)
+        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount, instanceCount: instanceCount)
     }
     
 }
