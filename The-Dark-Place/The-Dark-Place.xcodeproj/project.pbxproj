@@ -72,6 +72,7 @@
 		EB6A1009218502050036DB93 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A1008218502050036DB93 /* NSImage.swift */; };
 		EB6A1019218519850036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A1018218519840036DB93 /* sky_bottom.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
+		EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */; };
 		EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */; };
 		EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AC21859D590021E67E /* Mouse.swift */; };
 		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
@@ -171,6 +172,7 @@
 		EB6A1008218502050036DB93 /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		EB6A1018218519840036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancedGameObject.swift; sourceTree = "<group>"; };
 		EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTextureLibrary.swift; sourceTree = "<group>"; };
 		EBF0E0AC21859D590021E67E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */,
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
 				EBF0E0E8218617A20021E67E /* Terrain.swift */,
+				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
 				EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */,
 				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
+				EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */,
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
