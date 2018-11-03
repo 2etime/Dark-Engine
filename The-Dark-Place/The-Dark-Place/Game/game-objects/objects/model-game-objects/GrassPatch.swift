@@ -16,7 +16,7 @@ class GrassPatch: InstancedGameObject {
         
         for count in 0..<grassCount{
             let object = _nodes[count]
-            let grass = 
+    
             let posX = Float(Math.randomBounded(lowerBound: Int(-halfWide), upperBound: Int(halfWide)))
             let posZ = Float(Math.randomBounded(lowerBound: Int(-halfBack), upperBound: Int(halfBack)))
             object.setPosition(float3(posX, 0.4, posZ))

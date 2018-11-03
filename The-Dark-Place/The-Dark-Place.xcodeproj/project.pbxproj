@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB01C729218CFD6000C99461 /* StandingGrass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01C728218CFD6000C99461 /* StandingGrass.swift */; };
 		EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5C9218A127F008E1DC4 /* armadillo.obj */; };
 		EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */; };
 		EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */; };
@@ -105,7 +104,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB01C728218CFD6000C99461 /* StandingGrass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingGrass.swift; sourceTree = "<group>"; };
 		EB08F5C9218A127F008E1DC4 /* armadillo.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = armadillo.obj; sourceTree = "<group>"; };
 		EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pirate_ship.obj; sourceTree = "<group>"; };
 		EB08F5CD218A16E8008E1DC4 /* PirateShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PirateShip.swift; sourceTree = "<group>"; };
@@ -505,7 +503,6 @@
 				EB08F5D3218A983C008E1DC4 /* Suzanne.swift */,
 				EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */,
 				EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */,
-				EB01C728218CFD6000C99461 /* StandingGrass.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -696,7 +693,6 @@
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
 				EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */,
-				EB01C729218CFD6000C99461 /* StandingGrass.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* MainView.swift in Sources */,
 				EB3D12F1217D257900FD4CF6 /* Math.swift in Sources */,
 				EBF0E0F821864F730021E67E /* Materialable.swift in Sources */,
