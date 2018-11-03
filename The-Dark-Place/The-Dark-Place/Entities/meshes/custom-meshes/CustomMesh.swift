@@ -31,7 +31,10 @@ public class CustomMesh: Mesh{
     public func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
-        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount, instanceCount: instanceCount)
+        renderCommandEncoder.drawPrimitives(type: .triangle,
+                                            vertexStart: 0,
+                                            vertexCount: vertexCount,
+                                            instanceCount: instanceCount)
     }
     
 }

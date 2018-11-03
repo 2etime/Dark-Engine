@@ -16,14 +16,14 @@ class PlaygroundScene: Scene {
     let pirateShip = PirateShip()
     let suzanne = Suzanne()
     let cruiser = Cruiser()
-    var instancedGrass = GrassPatch(patchWidth: 40, patchHeight: 40, grassCount: 100)
+    var instancedGrass = GrassPatch(patchWidth: 100, patchDepth: 100, grassCount: 100)
     override func buildScene() {
         skybox.setPositionY(20)
         addChild(skybox)
         
         terrain.setScale(100)
         terrain.setDiffuseIntensity(0.4)
-//        addChild(terrain)
+        addChild(terrain)
         
         currentCamera.setPositionZ(7)
         currentCamera.setPositionY(2)
@@ -39,21 +39,21 @@ class PlaygroundScene: Scene {
         armadillo.setPositionY(1)
         armadillo.setPositionX(3)
         armadillo.setColor(float4(1,0,0,1))
-//        addChild(armadillo)
+        addChild(armadillo)
         
         pirateShip.setScale(0.5)
         pirateShip.setPositionX(-3)
-//        addChild(pirateShip)
+        addChild(pirateShip)
         
 //        pirateShip.setScale(0.5)
         suzanne.setPositionY(1)
         suzanne.setPositionX(0)
-//        addChild(suzanne)
+        addChild(suzanne)
         
         cruiser.setPositionY(4)
         cruiser.setPositionX(0)
         cruiser.setRotationZ(0.7)
-//        addChild(cruiser)
+        addChild(cruiser)
         
         addChild(instancedGrass)
         

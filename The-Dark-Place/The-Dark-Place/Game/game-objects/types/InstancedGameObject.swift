@@ -9,12 +9,11 @@ class InstancedGameObject: Node {
     var material: Material! = Material()
     private var _texture: MTLTexture!
     
-    init(meshType: MeshTypes, textureType: TextureTypes, instanceCount: Int){
+    init(meshType: MeshTypes, instanceCount: Int){
         super.init()
         self._instanceCount = instanceCount
         _mesh = Entities.Meshes[meshType]
         _mesh.setInstanceCount(instanceCount)
-        _texture = Entities.Textures[textureType]
         generateInstances()
         createBuffer()
     }
@@ -31,6 +30,7 @@ class InstancedGameObject: Node {
     
     func setTexture(textureType: TextureTypes){
         self.material.useTexture = true
+        _texture = Entities.Textures[textureType]
     }
 
     
