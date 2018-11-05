@@ -27,11 +27,9 @@ class PlaygroundScene: Scene {
         
         currentCamera.setPositionZ(7)
         currentCamera.setPositionY(2)
-//        currentCamera.setPitch(0.05)
-        
+
         lightThing.setScale(0.2)
         lightThing.setPositionZ(-2)
-//        lightThing.setColor(float4(0.4,0.7,0.6,1.0))
         addChild(lightThing)
         
         lightData.color = lightThing.getColor().xyz
@@ -44,8 +42,7 @@ class PlaygroundScene: Scene {
         pirateShip.setScale(0.5)
         pirateShip.setPositionX(-3)
         addChild(pirateShip)
-        
-//        pirateShip.setScale(0.5)
+
         suzanne.setPositionY(1)
         suzanne.setPositionX(0)
         addChild(suzanne)
@@ -56,21 +53,6 @@ class PlaygroundScene: Scene {
         addChild(cruiser)
         
         addChild(instancedGrass)
-        
-//        for _ in -10..<10{
-//            for _ in -10..<10{
-//                var object = StandingGrass()
-//                let posX = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
-//                let posZ = Float(Math.randomBounded(lowerBound: -40, upperBound: 40))
-////                object.setRotationY(Math.randomZeroToOne)
-//                object.setPosition(float3(posX, 0.4, posZ))
-//                object.setScale(0.6)
-//                object.setSpecularIntensity(0.7)
-//                object.setShininess(200)
-//                object.setAmbientIntensity(0.2)
-//                addChild(object)
-//            }
-//        }
         
     }
 
