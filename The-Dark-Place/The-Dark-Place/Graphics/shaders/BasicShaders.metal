@@ -62,7 +62,9 @@ fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
     float3 specularColor = (dampedFactor * specularness * lightData.color);
     
     color = float4(ambientColor + diffuseColor + specularColor, color.a);
-    if(color.a <= 0.1) discard_fragment();
+    if(color.a <= 0.01){
+        discard_fragment();
+    }
     
     return half4(color.r, color.g, color.b, color.a);
 }

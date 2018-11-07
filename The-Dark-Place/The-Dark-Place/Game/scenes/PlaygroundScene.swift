@@ -14,9 +14,10 @@ class PlaygroundScene: Scene {
     var lightThing = Cube()
     var armadillo = Armadillo()
     let pirateShip = PirateShip()
-    let suzanne = Suzanne()
+    var globe = Globe()
     let cruiser = Cruiser()
     var instancedGrass = GrassPatch(patchWidth: 100, patchDepth: 100, grassCount: 100)
+    var card = Card()
     override func buildScene() {
         skybox.setPositionY(20)
         addChild(skybox)
@@ -43,9 +44,7 @@ class PlaygroundScene: Scene {
         pirateShip.setPositionX(-3)
         addChild(pirateShip)
 
-        suzanne.setPositionY(1)
-        suzanne.setPositionX(0)
-        addChild(suzanne)
+        addChild(globe)
         
         cruiser.setPositionY(4)
         cruiser.setPositionX(0)
@@ -54,6 +53,9 @@ class PlaygroundScene: Scene {
         
         addChild(instancedGrass)
         
+        card.setPositionZ(5)
+        card.setPositionY(2)
+        addChild(card)
     }
 
     override func onUpdate() {
@@ -62,7 +64,7 @@ class PlaygroundScene: Scene {
         lightThing.setPosition(lightData.position)
         armadillo.rotateY(GameTime.DeltaTime)
         pirateShip.rotateY(GameTime.DeltaTime)
-        suzanne.rotateY(GameTime.DeltaTime)
+        globe.rotateY(GameTime.DeltaTime)
         cruiser.rotateY(GameTime.DeltaTime)
     }
     

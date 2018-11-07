@@ -13,6 +13,8 @@ public enum MeshTypes {
     case PirateShip
     case Suzanne
     case Cruiser
+    case Statue
+    case Globe
 }
 
 class MeshLibrary: Library<MeshTypes, Mesh> {
@@ -34,6 +36,8 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         library.updateValue(ModelMesh(modelName: "pirate_ship"), forKey: .PirateShip)
         library.updateValue(ModelMesh(modelName: "suzanne"), forKey: .Suzanne)
         library.updateValue(ModelMesh(modelName: "cruiser"), forKey: .Cruiser)
+        library.updateValue(ModelMesh(modelName: "statue"), forKey: .Statue)
+        library.updateValue(ModelMesh(modelName: "globe"), forKey: .Globe)
 
     }
     

@@ -72,6 +72,13 @@
 		EB6A1009218502050036DB93 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A1008218502050036DB93 /* NSImage.swift */; };
 		EB6A1019218519850036DB93 /* sky_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB6A1018218519840036DB93 /* sky_bottom.png */; };
 		EB7AFAF4218008B1001D8172 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7AFAF3218008B1001D8172 /* Options.swift */; };
+		EB7EA6AB219270E9009135E7 /* statue.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB7EA6AA219270E9009135E7 /* statue.obj */; };
+		EB7EA6AD219271B6009135E7 /* Statue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7EA6AC219271B6009135E7 /* Statue.swift */; };
+		EB7EA6AF21927336009135E7 /* globe.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB7EA6AE21927336009135E7 /* globe.obj */; };
+		EB7EA6B121927399009135E7 /* Globe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7EA6B021927399009135E7 /* Globe.swift */; };
+		EB7EA6B321927521009135E7 /* globe_moon.mat in Resources */ = {isa = PBXBuildFile; fileRef = EB7EA6B221927521009135E7 /* globe_moon.mat */; };
+		EB7EA6BA219275A1009135E7 /* globe_compass.mat in Resources */ = {isa = PBXBuildFile; fileRef = EB7EA6B5219275A0009135E7 /* globe_compass.mat */; };
+		EB7EA6BF2192775D009135E7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7EA6BE2192775D009135E7 /* Card.swift */; };
 		EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */; };
 		EBC3CD49218BE7C700E905FA /* InstancedShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */; };
 		EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */; };
@@ -174,6 +181,13 @@
 		EB6A1008218502050036DB93 /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		EB6A1018218519840036DB93 /* sky_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sky_bottom.png; sourceTree = "<group>"; };
 		EB7AFAF3218008B1001D8172 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		EB7EA6AA219270E9009135E7 /* statue.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = statue.obj; sourceTree = "<group>"; };
+		EB7EA6AC219271B6009135E7 /* Statue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statue.swift; sourceTree = "<group>"; };
+		EB7EA6AE21927336009135E7 /* globe.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = globe.obj; sourceTree = "<group>"; };
+		EB7EA6B021927399009135E7 /* Globe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globe.swift; sourceTree = "<group>"; };
+		EB7EA6B221927521009135E7 /* globe_moon.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = globe_moon.mat; sourceTree = "<group>"; };
+		EB7EA6B5219275A0009135E7 /* globe_compass.mat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = globe_compass.mat; sourceTree = "<group>"; };
+		EB7EA6BE2192775D009135E7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancedGameObject.swift; sourceTree = "<group>"; };
 		EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstancedShaders.metal; sourceTree = "<group>"; };
 		EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassPatch.swift; sourceTree = "<group>"; };
@@ -503,6 +517,9 @@
 				EB08F5D3218A983C008E1DC4 /* Suzanne.swift */,
 				EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */,
 				EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */,
+				EB7EA6AC219271B6009135E7 /* Statue.swift */,
+				EB7EA6B021927399009135E7 /* Globe.swift */,
+				EB7EA6BE2192775D009135E7 /* Card.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -513,7 +530,11 @@
 				EB08F5D5218AA18B008E1DC4 /* cruiser.obj */,
 				EB08F5D1218A9823008E1DC4 /* suzanne.obj */,
 				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
+				EB7EA6B221927521009135E7 /* globe_moon.mat */,
+				EB7EA6B5219275A0009135E7 /* globe_compass.mat */,
 				EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */,
+				EB7EA6AA219270E9009135E7 /* statue.obj */,
+				EB7EA6AE21927336009135E7 /* globe.obj */,
 				EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */,
 				EBF0E0F22186449E0021E67E /* Textures */,
 				EBF0E0F1218644900021E67E /* Cube_Maps */,
@@ -653,6 +674,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7EA6AF21927336009135E7 /* globe.obj in Resources */,
+				EB7EA6BA219275A1009135E7 /* globe_compass.mat in Resources */,
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB08F5D8218AA1A0008E1DC4 /* cruiser.bmp in Resources */,
 				EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */,
@@ -666,6 +689,8 @@
 				EB08F5D2218A9824008E1DC4 /* suzanne.obj in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
+				EB7EA6AB219270E9009135E7 /* statue.obj in Resources */,
+				EB7EA6B321927521009135E7 /* globe_moon.mat in Resources */,
 				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
 				EB6A10032184F86A0036DB93 /* sky_left.png in Resources */,
 				EB6A10022184F86A0036DB93 /* sky_front.png in Resources */,
@@ -705,6 +730,7 @@
 				EBF0E0F0218643920021E67E /* TextureLoader.swift in Sources */,
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
+				EB7EA6AD219271B6009135E7 /* Statue.swift in Sources */,
 				EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */,
 				EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
@@ -733,6 +759,7 @@
 				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
+				EB7EA6B121927399009135E7 /* Globe.swift in Sources */,
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
@@ -749,6 +776,7 @@
 				EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
+				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EBF0E1022186A2B20021E67E /* TerrainMesh.swift in Sources */,
