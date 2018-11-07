@@ -38,14 +38,15 @@ class Basic_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-//        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
-//        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
-//        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
-//        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .source1Alpha
-//        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .source1Alpha
-//        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
-//        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
-        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Basic]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
@@ -60,7 +61,8 @@ class Skybox_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.MDLMesh]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Skybox]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Skybox]
@@ -74,7 +76,8 @@ class MDLMesh_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.MDLMesh]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Basic]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
@@ -88,7 +91,8 @@ class TerrainTextured_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Terrain]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.TerrainTextured]
@@ -102,7 +106,8 @@ class Model_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Model]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Model]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
@@ -116,7 +121,15 @@ class Instanced_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Instanced]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]

@@ -53,9 +53,9 @@ class PlaygroundScene: Scene {
         
         addChild(instancedGrass)
         
-        card.setPositionZ(5)
-        card.setPositionY(2)
-        addChild(card)
+//        card.setPositionZ(5)
+//        card.setPositionY(2)
+//        addChild(card)
     }
 
     override func onUpdate() {

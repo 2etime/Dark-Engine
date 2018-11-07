@@ -14,7 +14,7 @@ class MainView: MTKView {
         
         self.colorPixelFormat = .bgr10a2Unorm
         
-        self.depthStencilPixelFormat = .depth32Float
+        self.depthStencilPixelFormat = .depth32Float_stencil8
         
         self._renderer = Renderer(self)
         
