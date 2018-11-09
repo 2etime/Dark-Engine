@@ -56,7 +56,7 @@ extension InstancedGameObject: Renderable {
 
         renderCommandEncoder.setVertexBuffer(_modelConstantBuffer, offset: 0, index: 2)
 
-        renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 1)
+        renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
         
         renderCommandEncoder.setFragmentTexture(_texture, index: 0)
         

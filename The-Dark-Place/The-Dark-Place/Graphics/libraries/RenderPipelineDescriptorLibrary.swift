@@ -39,12 +39,8 @@ class Basic_RenderPipelineDescriptor: RenderPipelineDescriptor {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
         renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
-        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
-        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
-        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
-        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
-        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
-        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .oneMinusSourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .sourceAlpha
         renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
@@ -106,6 +102,13 @@ class Model_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
         renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Model]

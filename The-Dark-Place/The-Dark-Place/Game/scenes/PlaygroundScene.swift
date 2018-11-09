@@ -22,10 +22,13 @@ class PlaygroundScene: Scene {
         skybox.setPositionY(20)
         addChild(skybox)
         
+
         terrain.setScale(100)
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
         
+        addChild(instancedGrass)
+
         currentCamera.setPositionZ(7)
         currentCamera.setPositionY(2)
 
@@ -51,11 +54,11 @@ class PlaygroundScene: Scene {
         cruiser.setRotationZ(0.7)
         addChild(cruiser)
         
-        addChild(instancedGrass)
         
-//        card.setPositionZ(5)
-//        card.setPositionY(2)
-//        addChild(card)
+        card.setPositionZ(5)
+        card.setPositionY(2)
+        card.setColor(float4(1,1,1,0.2))
+        addChild(card)
     }
 
     override func onUpdate() {
