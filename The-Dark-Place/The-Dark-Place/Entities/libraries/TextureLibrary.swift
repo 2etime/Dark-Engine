@@ -20,8 +20,18 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         library.updateValue(Texture("cruiser", ext: "bmp"), forKey: .Cruiser)
     }
     
-    public func addTexture(_ textureType: TextureTypes){
-        
+    ///Dynamically add textures to the library
+    public func addTexture(_ texture: MTLTexture, _ textureType: TextureTypes){
+        library.updateValue(Texture(texture), forKey: textureType)
+    }
+    
+    ///Update texture in library to be a new image.  Useful for storing drawable textures.
+    public func UpdateTexture(textureType: TextureTypes, texture: MTLTexture){
+        if(library.keys.contains(textureType)){
+            library[textureType]?.setTexture(texture)
+        }else{
+            addTexture(texture, textureType)
+        }
     }
     
     override subscript(_ type: TextureTypes) -> MTLTexture? {
@@ -35,6 +45,14 @@ class Texture {
     
     init(_ textureName: String, ext: String = "png"){
         let textureLoader = TextureLoader(textureName: textureName, textureExtension: ext)
-        self.texture = textureLoader.loadTextureFromBundle()
+        setTexture(textureLoader.loadTextureFromBundle())
+    }
+    
+    init(_ texture: MTLTexture){
+        self.setTexture(texture)
+    }
+    
+    func setTexture(_ texture: MTLTexture){
+        self.texture = texture
     }
 }

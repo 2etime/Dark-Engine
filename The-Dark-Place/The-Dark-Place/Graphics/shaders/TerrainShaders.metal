@@ -40,7 +40,6 @@ fragment half4 terrain_textured_fragment_shader(TerrainRasterizerData rd [[ stag
                                                 sampler sampler2d [[ sampler(0) ]],
                                                 texture2d<float> texture [[ texture(0) ]]){
     
-    
     float4 color = texture.sample(sampler2d, rd.textureCoordinate);
 
     float gammaCorrection = 1 / 2.2;
