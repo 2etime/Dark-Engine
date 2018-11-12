@@ -7,6 +7,8 @@ enum TextureTypes {
     case Face
     case StandingGrass
     case Cruiser
+    
+    case Depth
 }
 
 class TextureLibrary: Library<TextureTypes, MTLTexture> {

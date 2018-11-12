@@ -10,8 +10,8 @@ class DarkEngine {
         self._commandQueue = device.makeCommandQueue()
         self._defaultLibrary = device.makeDefaultLibrary()
         
-        Graphics.Initialize()
         Entities.Initialize()
+        Graphics.Initialize()
     }
     
 }

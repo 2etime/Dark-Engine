@@ -25,12 +25,30 @@ class ModelMesh: Mesh {
             fatalError("Asset \(modelName) does not exist.")
         }
         
-        let descriptor = MTKModelIOVertexDescriptorFromMetal(Graphics.VertexDescriptors[.Model])
+        let vertexDescriptor = MTLVertexDescriptor()
+        
+        //Position
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].format = .float4
+        vertexDescriptor.attributes[0].offset = 0
+        
+        //Normal
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.attributes[1].format = .float3
+        vertexDescriptor.attributes[1].offset = float4.stride
+        
+        //Texture Coordinate
+        vertexDescriptor.attributes[2].bufferIndex = 0
+        vertexDescriptor.attributes[2].format = .float2
+        vertexDescriptor.attributes[2].offset = float3.stride + float4.stride
+        
+        vertexDescriptor.layouts[0].stride = ModelVertex.stride
+        
+        let descriptor = MTKModelIOVertexDescriptorFromMetal(vertexDescriptor)
         
         let attributePosition = descriptor.attributes[0] as! MDLVertexAttribute
         attributePosition.name = MDLVertexAttributePosition
         descriptor.attributes[0] = attributePosition
-        
         
         let attributeNormal = descriptor.attributes[1] as! MDLVertexAttribute
         attributeNormal.name = MDLVertexAttributeNormal
