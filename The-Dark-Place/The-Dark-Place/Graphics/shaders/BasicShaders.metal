@@ -3,13 +3,6 @@
 
 using namespace metal;
 
-struct LightData {
-    float3 color;
-    float3 position;
-    float ambientIntensity;
-    float diffuseIntensity;
-};
-
 vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
                                           constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                           constant ModelConstants &modelConstants [[ buffer(2) ]]) {
@@ -45,7 +38,7 @@ fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
     float3 lightDirection = -unitLightVector;
     
     //Ambient
-    float ambientFactor = (lightData.ambientIntensity * material.ambientIntensity) / 2;
+    float ambientFactor = (lightData.ambientIntensity * material.ambientIntensity);
     float3 ambientColor = mix(color.xyz, lightData.color, ambientFactor);
     
     //Diffuse

@@ -33,3 +33,11 @@ struct RasterizerData {
     float3 worldPosition;
     float3 toCameraVector;
 };
+
+struct LightData {
+    float3 color;
+    float3 position;
+    float ambientIntensity;
+    float diffuseIntensity;
+    float3 attenuation;
+};
