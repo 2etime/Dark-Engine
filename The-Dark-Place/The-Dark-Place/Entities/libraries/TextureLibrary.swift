@@ -17,7 +17,11 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         library.updateValue(Texture("grass"), forKey: .Grass)
         library.updateValue(Texture("face"), forKey: .Face)
         library.updateValue(Texture("standing_grass"), forKey: .StandingGrass)
-        library.updateValue(Texture("cruiser", ext: ".bmp"), forKey: .Cruiser)
+        library.updateValue(Texture("cruiser", ext: "bmp"), forKey: .Cruiser)
+    }
+    
+    public func addTexture(_ textureType: TextureTypes){
+        
     }
     
     override subscript(_ type: TextureTypes) -> MTLTexture? {
@@ -30,6 +34,7 @@ class Texture {
     var texture: MTLTexture!
     
     init(_ textureName: String, ext: String = "png"){
-        self.texture = TextureLoader.CreateTexture(textureName: textureName, ext: ext)
+        let textureLoader = TextureLoader(textureName: textureName, textureExtension: ext)
+        self.texture = textureLoader.loadTextureFromBundle()
     }
 }

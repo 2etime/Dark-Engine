@@ -37,14 +37,15 @@ vertex TerrainRasterizerData terrain_vertex_shader(VertexIn vertexIn [[ stage_in
 fragment half4 terrain_textured_fragment_shader(TerrainRasterizerData rd [[ stage_in ]],
                                                 constant Material &material [[ buffer(0) ]],
                                                 constant LightData &lightData [[ buffer(1) ]],
+                                                sampler sampler2d [[ sampler(0) ]],
                                                 texture2d<float> texture [[ texture(0) ]]){
     
-    constexpr sampler linearSampler(mip_filter::linear,
-                                    mag_filter::linear,
-                                    min_filter::linear,
-                                    address::repeat);
     
-    float4 color = texture.sample(linearSampler, rd.textureCoordinate);
+    float4 color = texture.sample(sampler2d, rd.textureCoordinate);
+
+    float gammaCorrection = 1 / 2.2;
+    color = float4(pow(color.r, gammaCorrection), pow(color.g, gammaCorrection), pow(color.b, gammaCorrection), 1.0);
+    
     float3 toLightVector = lightData.position - rd.worldPosition;
     float3 toCameraVector = rd.toCameraVector;
     float3 unitLightVector = normalize(toLightVector);

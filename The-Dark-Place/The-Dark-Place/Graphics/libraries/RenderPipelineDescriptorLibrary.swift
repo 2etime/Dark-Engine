@@ -38,7 +38,7 @@ class Basic_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = false
         renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .oneMinusSourceAlpha
         renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .sourceAlpha
         renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
@@ -102,7 +102,7 @@ class Model_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = false
         renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
         renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
         renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha

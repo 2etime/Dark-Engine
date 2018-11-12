@@ -28,6 +28,7 @@ extension GameObject: Renderable {
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
+        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Nearest], index: 0)
         renderCommandEncoder.setFragmentTexture(texture, index: 0)
         renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
         renderCommandEncoder.setCullMode(.none)

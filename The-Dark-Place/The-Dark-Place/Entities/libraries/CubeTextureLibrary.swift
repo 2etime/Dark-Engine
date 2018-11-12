@@ -39,22 +39,24 @@ class CubeTextureMap {
     
     func textureCubeWithImagesNamed(ext: String)->MTLTexture?{
         //Grab the first texture to generate a texture descriptor
-        let firstTexture = TextureLoader.CreateTexture(textureName: textureNames.first!, ext: ext)
-        let cubeSize = firstTexture?.width ?? 0
+        let textureLoader = TextureLoader(textureName: textureNames.first!)
+        let firstTexture = textureLoader.loadTextureFromBundle()
+        let cubeSize = firstTexture.width
         let textureDescritpor = MTLTextureDescriptor.textureCubeDescriptor(pixelFormat: .bgra8Unorm, size: cubeSize, mipmapped: false)
         let result = DarkEngine.Device.makeTexture(descriptor: textureDescritpor)
         
         for slice in 0..<6 {
             let imageName = textureNames[slice]
-            let texture = TextureLoader.CreateTexture(textureName: imageName, ext: ext)
-            let height = texture?.height
-            let width = texture?.width
+            let textureLoader = TextureLoader(textureName: imageName)
+            let texture = textureLoader.loadTextureFromBundle()
+            let height = texture.height
+            let width = texture.width
             
-            let rowBytes = width! * 4
-            let length = rowBytes * height!
+            let rowBytes = width * 4
+            let length = rowBytes * height
             let bgraBytes = [UInt8](repeating: 0, count: length)
-            let region = MTLRegionMake2D(0, 0, width!, height!) //Grab the whole texture. ex: start at origin (0,0), go to width/height (1024,1024)
-            texture?.getBytes(UnsafeMutableRawPointer(mutating: bgraBytes), bytesPerRow: rowBytes, from: region, mipmapLevel: 0)
+            let region = MTLRegionMake2D(0, 0, width, height) //Grab the whole texture. ex: start at origin (0,0), go to width/height (1024,1024)
+            texture.getBytes(UnsafeMutableRawPointer(mutating: bgraBytes), bytesPerRow: rowBytes, from: region, mipmapLevel: 0)
             
             result?.replace(region: MTLRegionMake2D(0, 0, cubeSize, cubeSize),
                             mipmapLevel: 0,

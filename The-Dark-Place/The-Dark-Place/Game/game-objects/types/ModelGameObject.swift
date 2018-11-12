@@ -21,7 +21,6 @@ extension ModelGameObject: Renderable {
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Model])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
-        
         renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
         
         _modelMesh.drawPrimitives(renderCommandEncoder)

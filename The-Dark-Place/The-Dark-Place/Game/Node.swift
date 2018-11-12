@@ -57,6 +57,7 @@ class Node {
         
         if let renderable = self as? Renderable {
             renderCommandEncoder.setTriangleFillMode(.fill)
+            renderCommandEncoder.setCullMode(.none)
             renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 2)
             renderable.doRender(renderCommandEncoder)
         }

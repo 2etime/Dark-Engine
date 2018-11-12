@@ -58,6 +58,7 @@ extension InstancedGameObject: Renderable {
 
         renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
         
+        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Nearest], index: 0)
         renderCommandEncoder.setFragmentTexture(_texture, index: 0)
         
         _mesh.drawPrimitives(renderCommandEncoder)
