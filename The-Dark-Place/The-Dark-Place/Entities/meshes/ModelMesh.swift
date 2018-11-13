@@ -9,6 +9,8 @@ class ModelMesh: Mesh {
     private var _hasTexture: Bool = false
     private var _texture: MTLTexture!
     internal var instanceCount: Int = 1
+    internal var maxBounds: float3 = float3(0)
+    internal var minBounds: float3 = float3(0)
     
     init(modelName: String){
         loadModel(modelName: modelName)
@@ -81,6 +83,8 @@ class ModelMesh: Mesh {
         }
         for i in 0..<mdlMeshes.count {
             let mdlMesh: MDLMesh! = mdlMeshes[i]
+            self.minBounds = mdlMesh.boundingBox.minBounds
+            self.maxBounds = mdlMesh.boundingBox.maxBounds
             let count: Int = mdlMesh!.submeshes?.count ?? 0
             
             for j in 0..<count{
@@ -101,6 +105,7 @@ class ModelMesh: Mesh {
 
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         guard let meshes = meshes as? [MTKMesh], meshes.count > 0 else { return }
+        
         for mesh in meshes {
             let vertexBuffer = mesh.vertexBuffers[0]
             renderCommandEncoder.setVertexBuffer(vertexBuffer.buffer,

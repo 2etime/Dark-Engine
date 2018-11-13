@@ -15,6 +15,11 @@ public enum MeshTypes {
     case Cruiser
     case Statue
     case Globe
+    
+    case TentPoles1
+    case Tent1
+    case MushroomRed1
+    case Campfire1
 }
 
 class MeshLibrary: Library<MeshTypes, Mesh> {
@@ -38,7 +43,11 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         library.updateValue(ModelMesh(modelName: "cruiser"), forKey: .Cruiser)
         library.updateValue(ModelMesh(modelName: "statue"), forKey: .Statue)
         library.updateValue(ModelMesh(modelName: "globe"), forKey: .Globe)
-
+        
+        library.updateValue(ModelMesh(modelName: "Tent_Poles_01"), forKey: .TentPoles1)
+        library.updateValue(ModelMesh(modelName: "Tent_01"), forKey: .Tent1)
+        library.updateValue(ModelMesh(modelName: "Mushroom_Red_01"), forKey: .MushroomRed1)
+        library.updateValue(ModelMesh(modelName: "Campfire_01"), forKey: .Campfire1)
     }
     
     override subscript(_ type: MeshTypes) -> Mesh {
@@ -50,6 +59,8 @@ public class AppleMesh: Mesh{
     var vertexBuffer: MTLBuffer!
     var vertexCount: Int! = 0
     var instanceCount: Int = 1
+    var minBounds: float3 = float3(0)
+    var maxBounds: float3 = float3(0)
     
     var meshes: [MTKMesh] = Array()
     

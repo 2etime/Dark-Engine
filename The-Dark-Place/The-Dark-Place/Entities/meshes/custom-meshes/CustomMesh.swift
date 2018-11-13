@@ -8,6 +8,8 @@ public class CustomMesh: Mesh{
         return vertices.count
     }
     var instanceCount: Int = 1
+    var minBounds: float3 = float3(0)
+    var maxBounds: float3 = float3(0)
     
     init(){
         createVertices()

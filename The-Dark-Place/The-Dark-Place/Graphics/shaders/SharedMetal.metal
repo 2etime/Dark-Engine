@@ -9,6 +9,7 @@ struct VertexIn {
 
 struct ModelConstants {
     float4x4 modelMatrix;
+    float3 offset;
 };
 
 struct SceneConstants {

@@ -7,6 +7,8 @@ class TerrainMesh: Mesh {
     var vertexCount: Int!
     var indexCount: Int!
     var instanceCount: Int = 1
+    var minBounds: float3 = float3(0)
+    var maxBounds: float3 = float3(0)
     
     init(vertices: [Vertex], indices: [UInt32]){
         self.vertexCount = vertices.count
@@ -17,7 +19,6 @@ class TerrainMesh: Mesh {
     
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-//        renderCommandEncoder.setTriangleFillMode(.lines)
         renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
                                                    indexCount: indexCount,
                                                    indexType: .uint32,

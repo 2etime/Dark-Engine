@@ -61,6 +61,8 @@
 		EB4EA35C219A415100C34DAB /* grassy2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA35B219A415100C34DAB /* grassy2.png */; };
 		EB4EA35E219A415800C34DAB /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA35D219A415800C34DAB /* path.png */; };
 		EB4EA360219A417700C34DAB /* grassFlowers.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA35F219A417700C34DAB /* grassFlowers.png */; };
+		EB5287F0219A894F00EC7EAF /* Tent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5287EF219A894F00EC7EAF /* Tent.swift */; };
+		EB5287F2219A8A6500EC7EAF /* Campfire.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5287F1219A8A6500EC7EAF /* Campfire.swift */; };
 		EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */; };
 		EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */; };
 		EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5AFF9821880758000E30B4 /* ModelMesh.swift */; };
@@ -92,6 +94,15 @@
 		EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */; };
 		EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */; };
 		EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */; };
+		EBEACBA1219A7F45001577B5 /* Tent_Poles_01.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBA0219A7F44001577B5 /* Tent_Poles_01.obj */; };
+		EBEACBA3219A7F4C001577B5 /* Tent_Poles_01.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBA2219A7F4C001577B5 /* Tent_Poles_01.mtl */; };
+		EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBA4219A7F59001577B5 /* Campfire_01.obj */; };
+		EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBA5219A7F59001577B5 /* Campfire_01.mtl */; };
+		EBEACBAA219A7F63001577B5 /* Mushroom_Red_01.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBA8219A7F63001577B5 /* Mushroom_Red_01.mtl */; };
+		EBEACBAB219A7F63001577B5 /* Mushroom_Red_01.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBA9219A7F63001577B5 /* Mushroom_Red_01.obj */; };
+		EBEACBAE219A7F71001577B5 /* Tent_01.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBAC219A7F71001577B5 /* Tent_01.obj */; };
+		EBEACBAF219A7F71001577B5 /* Tent_01.mtl in Resources */ = {isa = PBXBuildFile; fileRef = EBEACBAD219A7F71001577B5 /* Tent_01.mtl */; };
+		EBEACBB1219A804E001577B5 /* TentPoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACBB0219A804E001577B5 /* TentPoles.swift */; };
 		EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */; };
 		EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AC21859D590021E67E /* Mouse.swift */; };
 		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
@@ -180,6 +191,8 @@
 		EB4EA35B219A415100C34DAB /* grassy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grassy2.png; sourceTree = "<group>"; };
 		EB4EA35D219A415800C34DAB /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 		EB4EA35F219A417700C34DAB /* grassFlowers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grassFlowers.png; sourceTree = "<group>"; };
+		EB5287EF219A894F00EC7EAF /* Tent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tent.swift; sourceTree = "<group>"; };
+		EB5287F1219A8A6500EC7EAF /* Campfire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campfire.swift; sourceTree = "<group>"; };
 		EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelGameObject.swift; sourceTree = "<group>"; };
 		EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ModelShaders.metal; sourceTree = "<group>"; };
 		EB5AFF9821880758000E30B4 /* ModelMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMesh.swift; sourceTree = "<group>"; };
@@ -211,6 +224,15 @@
 		EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTerrainTexture.swift; sourceTree = "<group>"; };
 		EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTextureTerrain.swift; sourceTree = "<group>"; };
 		EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextureTerrain.swift; sourceTree = "<group>"; };
+		EBEACBA0219A7F44001577B5 /* Tent_Poles_01.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tent_Poles_01.obj; sourceTree = "<group>"; };
+		EBEACBA2219A7F4C001577B5 /* Tent_Poles_01.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tent_Poles_01.mtl; sourceTree = "<group>"; };
+		EBEACBA4219A7F59001577B5 /* Campfire_01.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Campfire_01.obj; sourceTree = "<group>"; };
+		EBEACBA5219A7F59001577B5 /* Campfire_01.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Campfire_01.mtl; sourceTree = "<group>"; };
+		EBEACBA8219A7F63001577B5 /* Mushroom_Red_01.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mushroom_Red_01.mtl; sourceTree = "<group>"; };
+		EBEACBA9219A7F63001577B5 /* Mushroom_Red_01.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mushroom_Red_01.obj; sourceTree = "<group>"; };
+		EBEACBAC219A7F71001577B5 /* Tent_01.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tent_01.obj; sourceTree = "<group>"; };
+		EBEACBAD219A7F71001577B5 /* Tent_01.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tent_01.mtl; sourceTree = "<group>"; };
+		EBEACBB0219A804E001577B5 /* TentPoles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TentPoles.swift; sourceTree = "<group>"; };
 		EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTextureLibrary.swift; sourceTree = "<group>"; };
 		EBF0E0AC21859D590021E67E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -544,6 +566,9 @@
 				EB7EA6AC219271B6009135E7 /* Statue.swift */,
 				EB7EA6B021927399009135E7 /* Globe.swift */,
 				EB7EA6BE2192775D009135E7 /* Card.swift */,
+				EBEACBB0219A804E001577B5 /* TentPoles.swift */,
+				EB5287EF219A894F00EC7EAF /* Tent.swift */,
+				EB5287F1219A8A6500EC7EAF /* Campfire.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -558,7 +583,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EB6A0FFB2184F8360036DB93 /* Sky */ = {
+		EB6A0FFB2184F8360036DB93 /* sky */ = {
 			isa = PBXGroup;
 			children = (
 				EB6A0FFF2184F8690036DB93 /* sky_back.png */,
@@ -568,7 +593,7 @@
 				EB6A0FFE2184F8690036DB93 /* sky_right.png */,
 				EB6A10012184F8690036DB93 /* sky_top.png */,
 			);
-			path = Sky;
+			path = sky;
 			sourceTree = "<group>";
 		};
 		EBEACB94219A7956001577B5 /* terrain_game_objects */ = {
@@ -635,6 +660,10 @@
 				EB7EA6B221927521009135E7 /* globe_moon.mat */,
 				EB7EA6B5219275A0009135E7 /* globe_compass.mat */,
 				EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */,
+				EBEACBA2219A7F4C001577B5 /* Tent_Poles_01.mtl */,
+				EBEACBA5219A7F59001577B5 /* Campfire_01.mtl */,
+				EBEACBAD219A7F71001577B5 /* Tent_01.mtl */,
+				EBEACBA8219A7F63001577B5 /* Mushroom_Red_01.mtl */,
 			);
 			path = materials;
 			sourceTree = "<group>";
@@ -642,6 +671,10 @@
 		EBEACB9F219A7E55001577B5 /* obj-files */ = {
 			isa = PBXGroup;
 			children = (
+				EBEACBAC219A7F71001577B5 /* Tent_01.obj */,
+				EBEACBA9219A7F63001577B5 /* Mushroom_Red_01.obj */,
+				EBEACBA4219A7F59001577B5 /* Campfire_01.obj */,
+				EBEACBA0219A7F44001577B5 /* Tent_Poles_01.obj */,
 				EB08F5D5218AA18B008E1DC4 /* cruiser.obj */,
 				EB08F5D1218A9823008E1DC4 /* suzanne.obj */,
 				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
@@ -674,7 +707,7 @@
 		EBF0E0F1218644900021E67E /* cube_mapping-textures */ = {
 			isa = PBXGroup;
 			children = (
-				EB6A0FFB2184F8360036DB93 /* Sky */,
+				EB6A0FFB2184F8360036DB93 /* sky */,
 			);
 			path = "cube_mapping-textures";
 			sourceTree = "<group>";
@@ -769,13 +802,21 @@
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EB4EA358219A413900C34DAB /* blendMap.png in Resources */,
 				EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */,
+				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
+				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
+				EBEACBAB219A7F63001577B5 /* Mushroom_Red_01.obj in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
+				EBEACBAE219A7F71001577B5 /* Tent_01.obj in Resources */,
+				EBEACBAA219A7F63001577B5 /* Mushroom_Red_01.mtl in Resources */,
+				EBEACBA1219A7F45001577B5 /* Tent_Poles_01.obj in Resources */,
 				EB08F5D2218A9824008E1DC4 /* suzanne.obj in Resources */,
+				EBEACBA3219A7F4C001577B5 /* Tent_Poles_01.mtl in Resources */,
+				EBEACBAF219A7F71001577B5 /* Tent_01.mtl in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
 				EB4EA35E219A415800C34DAB /* path.png in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
@@ -807,6 +848,7 @@
 				EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */,
 				EB6A0FF32182ADCD0036DB93 /* SharedMetal.metal in Sources */,
 				EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */,
+				EB5287F0219A894F00EC7EAF /* Tent.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
 				EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* MainView.swift in Sources */,
@@ -816,7 +858,9 @@
 				EB3D1293217AB76E00FD4CF6 /* DarkEngine.swift in Sources */,
 				EBC3CD49218BE7C700E905FA /* InstancedShaders.metal in Sources */,
 				EB3D129C217ACA6400FD4CF6 /* BasicShaders.metal in Sources */,
+				EBEACBB1219A804E001577B5 /* TentPoles.swift in Sources */,
 				EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */,
+				EB5287F2219A8A6500EC7EAF /* Campfire.swift in Sources */,
 				EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */,
 				EBF0E0F0218643920021E67E /* TextureLoader.swift in Sources */,
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,

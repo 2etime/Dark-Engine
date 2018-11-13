@@ -12,6 +12,8 @@ class Node {
     private var _modelConstants = ModelConstants()
     private var _children: [Node] = []
     
+    var offset: float3 = float3(0)
+    
     var modelMatrix: matrix_float4x4{
         var modelMatrix = matrix_identity_float4x4
         modelMatrix.translate(_position)
@@ -34,6 +36,7 @@ class Node {
     
     private func updateModelConstants(){
         self._modelConstants.modelMatrix = self.modelMatrix
+        self._modelConstants.offset = self.offset
     }
     
     func update(){

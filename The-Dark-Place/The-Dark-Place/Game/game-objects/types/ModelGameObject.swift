@@ -4,6 +4,15 @@ import MetalKit
 class ModelGameObject: Node {
     private var _modelMesh: ModelMesh!
     internal var material: Material! = Material()
+    internal var width: Float {
+        return (self._modelMesh.maxBounds - self._modelMesh.minBounds).x
+    }
+    internal var height: Float {
+        return (self._modelMesh.maxBounds - self._modelMesh.minBounds).y
+    }
+    internal var depth: Float {
+        return (self._modelMesh.maxBounds - self._modelMesh.minBounds).z
+    }
     
     init(meshType: MeshTypes){
         super.init(name: "Model Game Object")
@@ -15,6 +24,9 @@ class ModelGameObject: Node {
         _modelMesh.setTexture(textureTypes: textureType)
     }
 
+    override func update() {
+        super.update()
+    }
 }
 
 extension ModelGameObject: Renderable {

@@ -37,6 +37,7 @@ struct Material: sizeable {
 
 struct ModelConstants: sizeable {
     var modelMatrix = matrix_identity_float4x4
+    var offset: float3 = float3(0)
 }
 
 struct SceneConstants: sizeable {
