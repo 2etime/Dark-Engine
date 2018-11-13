@@ -94,6 +94,36 @@ fragment half4 terrain_multi_textured_fragment_shader(TerrainRasterizerData rd [
     
     float4 totalColor = backgroundTextureColor + rTextureColor + gTextureColor + bTextureColor;
     float4 color = float4(pow(totalColor.r, gammaCorrection), pow(totalColor.g, gammaCorrection), pow(totalColor.b, gammaCorrection), 1.0);
+    
+    float3 toLightVector = lightData.position - rd.worldPosition;
+    float3 toCameraVector = rd.toCameraVector;
+    float3 unitLightVector = normalize(toLightVector);
+    float3 unitCameraVector = normalize(toCameraVector);
+    float3 unitNormal = normalize(rd.surfaceNormal);
+    float3 lightDirection = -unitLightVector;
+    
+    float3 attenuation = lightData.attenuation;
+    float distToLight = length(toLightVector);
+    float attFactor = attenuation.x + (attenuation.y * distToLight) + (attenuation.z * distToLight * distToLight);
+    
+    //Ambient
+    float ambientFactor = (lightData.ambientIntensity * material.ambientIntensity);
+    float3 ambientColor = mix(color.xyz, lightData.color, ambientFactor) / attFactor;
+    
+    //Diffuse
+    float3 diffuseness = material.diffuseIntensity * lightData.diffuseIntensity;
+    float nDot1 = dot(unitNormal, unitLightVector);
+    float diffuseBrightness = max(nDot1, 0.1);
+    float3 diffuseColor = (diffuseBrightness * diffuseness * lightData.color) / attFactor;
+    
+    //Specualr
+    float3 specularness = material.specularIntensity;
+    float3 reflectedLightDirection = reflect(lightDirection, unitNormal);
+    float specularFactor = max(saturate(dot(reflectedLightDirection, unitCameraVector)), 0.1);
+    float dampedFactor = pow(specularFactor, material.shininess);
+    float3 specularColor = (dampedFactor * specularness * lightData.color) / attFactor;
+    
+    color = float4(ambientColor + diffuseColor + specularColor, color.a);
 
     return half4(color.r, color.g, color.b, color.a);
 }
