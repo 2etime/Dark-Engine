@@ -89,11 +89,14 @@
 		EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */; };
 		EBC3CD49218BE7C700E905FA /* InstancedShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */; };
 		EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */; };
+		EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */; };
+		EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */; };
+		EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */; };
 		EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */; };
 		EBF0E0AF21859D590021E67E /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AC21859D590021E67E /* Mouse.swift */; };
 		EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AD21859D590021E67E /* Keyboard.swift */; };
 		EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0AE21859D590021E67E /* KeyCodes.swift */; };
-		EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0E8218617A20021E67E /* Terrain.swift */; };
+		EBF0E0E9218617A20021E67E /* TerrainGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */; };
 		EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */; };
 		EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */; };
 		EBF0E0F0218643920021E67E /* TextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0EF218643920021E67E /* TextureLoader.swift */; };
@@ -205,11 +208,14 @@
 		EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancedGameObject.swift; sourceTree = "<group>"; };
 		EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstancedShaders.metal; sourceTree = "<group>"; };
 		EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassPatch.swift; sourceTree = "<group>"; };
+		EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTerrainTexture.swift; sourceTree = "<group>"; };
+		EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTextureTerrain.swift; sourceTree = "<group>"; };
+		EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextureTerrain.swift; sourceTree = "<group>"; };
 		EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTextureLibrary.swift; sourceTree = "<group>"; };
 		EBF0E0AC21859D590021E67E /* Mouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		EBF0E0AD21859D590021E67E /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		EBF0E0AE21859D590021E67E /* KeyCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
-		EBF0E0E8218617A20021E67E /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
+		EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainGameObject.swift; sourceTree = "<group>"; };
 		EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = TerrainShaders.metal; sourceTree = "<group>"; };
 		EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLibrary.swift; sourceTree = "<group>"; };
 		EBF0E0EF218643920021E67E /* TextureLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureLoader.swift; sourceTree = "<group>"; };
@@ -312,9 +318,9 @@
 			isa = PBXGroup;
 			children = (
 				EB3D1292217AB76E00FD4CF6 /* DarkEngine.swift */,
+				EB3D1298217AC49000FD4CF6 /* Types.swift */,
 				EB7AFAF3218008B1001D8172 /* Options.swift */,
 				EB3D12F7217D2EC700FD4CF6 /* GameTime.swift */,
-				EB3D1298217AC49000FD4CF6 /* Types.swift */,
 				EB3D1307217D49DF00FD4CF6 /* GameView.swift */,
 			);
 			path = Core;
@@ -405,6 +411,7 @@
 				EB3D12D1217D10E900FD4CF6 /* Entities.swift */,
 				EB3D12C3217D0AEF00FD4CF6 /* libraries */,
 				EB3D12C9217D0DB400FD4CF6 /* meshes */,
+				EBEACB99219A7D53001577B5 /* types */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -469,6 +476,7 @@
 		EB3D12ED217D24BE00FD4CF6 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				EBEACB94219A7956001577B5 /* terrain_game_objects */,
 				EB5AFF9A21880810000E30B4 /* model-game-objects */,
 				EB3D12EF217D24DC00FD4CF6 /* custom-game-objects */,
 			);
@@ -482,7 +490,7 @@
 				EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */,
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
 				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
-				EBF0E0E8218617A20021E67E /* Terrain.swift */,
+				EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -525,18 +533,6 @@
 			path = cameras;
 			sourceTree = "<group>";
 		};
-		EB4EA356219A412800C34DAB /* MutiTexturing */ = {
-			isa = PBXGroup;
-			children = (
-				EB4EA35F219A417700C34DAB /* grassFlowers.png */,
-				EB4EA35D219A415800C34DAB /* path.png */,
-				EB4EA35B219A415100C34DAB /* grassy2.png */,
-				EB4EA359219A414600C34DAB /* mud.png */,
-				EB4EA357219A413900C34DAB /* blendMap.png */,
-			);
-			path = MutiTexturing;
-			sourceTree = "<group>";
-		};
 		EB5AFF9A21880810000E30B4 /* model-game-objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,18 +551,9 @@
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB4EA356219A412800C34DAB /* MutiTexturing */,
-				EB08F5D5218AA18B008E1DC4 /* cruiser.obj */,
-				EB08F5D1218A9823008E1DC4 /* suzanne.obj */,
-				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
-				EB7EA6B221927521009135E7 /* globe_moon.mat */,
-				EB7EA6B5219275A0009135E7 /* globe_compass.mat */,
-				EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */,
-				EB7EA6AA219270E9009135E7 /* statue.obj */,
-				EB7EA6AE21927336009135E7 /* globe.obj */,
-				EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */,
-				EBF0E0F22186449E0021E67E /* Textures */,
-				EBF0E0F1218644900021E67E /* Cube_Maps */,
+				EBEACB9D219A7E32001577B5 /* textures */,
+				EBEACB9E219A7E3D001577B5 /* materials */,
+				EBEACB9F219A7E55001577B5 /* obj-files */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -582,6 +569,87 @@
 				EB6A10012184F8690036DB93 /* sky_top.png */,
 			);
 			path = Sky;
+			sourceTree = "<group>";
+		};
+		EBEACB94219A7956001577B5 /* terrain_game_objects */ = {
+			isa = PBXGroup;
+			children = (
+				EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */,
+				EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */,
+			);
+			path = terrain_game_objects;
+			sourceTree = "<group>";
+		};
+		EBEACB99219A7D53001577B5 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */,
+			);
+			path = types;
+			sourceTree = "<group>";
+		};
+		EBEACB9A219A7DAE001577B5 /* blend-map-textures */ = {
+			isa = PBXGroup;
+			children = (
+				EB4EA357219A413900C34DAB /* blendMap.png */,
+			);
+			path = "blend-map-textures";
+			sourceTree = "<group>";
+		};
+		EBEACB9B219A7DC4001577B5 /* tiled-textures */ = {
+			isa = PBXGroup;
+			children = (
+				EB4EA35D219A415800C34DAB /* path.png */,
+				EB4EA35F219A417700C34DAB /* grassFlowers.png */,
+				EB4EA359219A414600C34DAB /* mud.png */,
+				EBF0E0F3218645B30021E67E /* grass.png */,
+				EB4EA35B219A415100C34DAB /* grassy2.png */,
+			);
+			path = "tiled-textures";
+			sourceTree = "<group>";
+		};
+		EBEACB9C219A7DEF001577B5 /* object-textures */ = {
+			isa = PBXGroup;
+			children = (
+				EBF0E0F5218649230021E67E /* face.png */,
+				EBF0E0F921866F690021E67E /* standing_grass.png */,
+				EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */,
+			);
+			path = "object-textures";
+			sourceTree = "<group>";
+		};
+		EBEACB9D219A7E32001577B5 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				EBEACB9C219A7DEF001577B5 /* object-textures */,
+				EBEACB9B219A7DC4001577B5 /* tiled-textures */,
+				EBF0E0F1218644900021E67E /* cube_mapping-textures */,
+				EBEACB9A219A7DAE001577B5 /* blend-map-textures */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
+		EBEACB9E219A7E3D001577B5 /* materials */ = {
+			isa = PBXGroup;
+			children = (
+				EB7EA6B221927521009135E7 /* globe_moon.mat */,
+				EB7EA6B5219275A0009135E7 /* globe_compass.mat */,
+				EB08F5CF218A20FA008E1DC4 /* pirate_ship.mtl */,
+			);
+			path = materials;
+			sourceTree = "<group>";
+		};
+		EBEACB9F219A7E55001577B5 /* obj-files */ = {
+			isa = PBXGroup;
+			children = (
+				EB08F5D5218AA18B008E1DC4 /* cruiser.obj */,
+				EB08F5D1218A9823008E1DC4 /* suzanne.obj */,
+				EB08F5C9218A127F008E1DC4 /* armadillo.obj */,
+				EB7EA6AA219270E9009135E7 /* statue.obj */,
+				EB7EA6AE21927336009135E7 /* globe.obj */,
+				EB08F5CB218A15B6008E1DC4 /* pirate_ship.obj */,
+			);
+			path = "obj-files";
 			sourceTree = "<group>";
 		};
 		EBF0E0AB21859D450021E67E /* Input */ = {
@@ -603,23 +671,12 @@
 			path = Loaders;
 			sourceTree = "<group>";
 		};
-		EBF0E0F1218644900021E67E /* Cube_Maps */ = {
+		EBF0E0F1218644900021E67E /* cube_mapping-textures */ = {
 			isa = PBXGroup;
 			children = (
 				EB6A0FFB2184F8360036DB93 /* Sky */,
 			);
-			path = Cube_Maps;
-			sourceTree = "<group>";
-		};
-		EBF0E0F22186449E0021E67E /* Textures */ = {
-			isa = PBXGroup;
-			children = (
-				EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */,
-				EBF0E0F921866F690021E67E /* standing_grass.png */,
-				EBF0E0F3218645B30021E67E /* grass.png */,
-				EBF0E0F5218649230021E67E /* face.png */,
-			);
-			path = Textures;
+			path = "cube_mapping-textures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -766,13 +823,15 @@
 				EBB5C69F21993E400006663F /* RenderPassDescriptorLibrary.swift in Sources */,
 				EB3D12CB217D0DD000FD4CF6 /* CustomMesh.swift in Sources */,
 				EB7EA6AD219271B6009135E7 /* Statue.swift in Sources */,
-				EBF0E0E9218617A20021E67E /* Terrain.swift in Sources */,
+				EBF0E0E9218617A20021E67E /* TerrainGameObject.swift in Sources */,
 				EB6A0FF12182AB920036DB93 /* SkyboxShader.metal in Sources */,
 				EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */,
 				EB5AFF9E2188083B000E30B4 /* Armadillo.swift in Sources */,
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
+				EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
+				EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */,
 				EBF0E1002186A0620021E67E /* TerrainLoader.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
@@ -789,6 +848,7 @@
 				EBF0E0FE218691000021E67E /* float4.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
+				EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */,
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,
 				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
 				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,

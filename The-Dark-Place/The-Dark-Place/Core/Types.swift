@@ -52,3 +52,5 @@ struct LightData: sizeable {
     var diffuseIntensity: Float = 0.5
     var attenuation: float3 = float3(1.0, 0.0, 0.0) //maxes : x y z : 3 10 4
  }
+
+

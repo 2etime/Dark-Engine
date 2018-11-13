@@ -10,7 +10,7 @@ class PlaygroundScene: Scene {
     }
     
     let skybox = SkyboxGameObject(.Sky)
-    var terrain = Terrain(cellCount: 100)
+    var terrain = SingleTextureTerrain(.Grass)
     var lightThing = Cube()
     override func buildScene() {
         skybox.setPositionY(20)
@@ -29,7 +29,7 @@ class PlaygroundScene: Scene {
         addChild(lightThing)
         
         lightData.color = lightThing.getColor().xyz
-//        lightData.attenuation = float3(0.71000016, -0.069999784, 0.08999999)
+        lightData.attenuation = float3(0.71000016, -0.069999784, 0.08999999)
         
     }
 
