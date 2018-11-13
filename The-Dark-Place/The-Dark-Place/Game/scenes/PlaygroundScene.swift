@@ -37,6 +37,22 @@ class PlaygroundScene: Scene {
         skybox.rotateY(GameTime.DeltaTime / 20)
 //        lightData.position.y = abs((cos(GameTime.TotalGameTime * 0.3) * 10))
 //        lightThing.setPosition(lightData.position)
+        
+        if(Keyboard.IsKeyPressed(.upArrow)){
+            currentCamera.moveZ(-GameTime.DeltaTime * 2)
+        }
+        
+        if(Keyboard.IsKeyPressed(.downArrow)){
+            currentCamera.moveZ(GameTime.DeltaTime * 2)
+        }
+        
+        if(Keyboard.IsKeyPressed(.leftArrow)){
+            currentCamera.moveX(-GameTime.DeltaTime * 2)
+        }
+        
+        if(Keyboard.IsKeyPressed(.rightArrow)){
+            currentCamera.moveX(GameTime.DeltaTime * 2)
+        }
     }
     
 }

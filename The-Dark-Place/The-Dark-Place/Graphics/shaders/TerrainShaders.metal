@@ -83,17 +83,19 @@ fragment half4 terrain_multi_textured_fragment_shader(TerrainRasterizerData rd [
                                                 sampler sampler2d [[ sampler(0) ]],
                                                 sampler samplerNonRepeat [[ sampler(1) ]]){
     
-    half4 color;
     float4 blendMapColor = blendMap.sample(samplerNonRepeat, rd.textureCoordinate / terrainSize);
     
-    float backTextureAmount = 1 - (blendMapColor.r + blendMapColor.g + blendMapColor.b);
-    float2 tiledCoords = rd.textureCoordinate / 40;
-    float4 backgroundTextureColor = blendMap.sample(sampler2d, rd.textureCoordinate);
+    float gammaCorrection = 1 / 2.2;
+    float backTextureAmount = 1 - (pow(blendMapColor.r, gammaCorrection) + pow(blendMapColor.g, gammaCorrection) + pow(blendMapColor.b, gammaCorrection));
+    float4 backgroundTextureColor = backgroundTexture.sample(sampler2d, rd.textureCoordinate) * backTextureAmount;
+    float4 rTextureColor = rTexture.sample(sampler2d, rd.textureCoordinate) * blendMapColor.r;
+    float4 gTextureColor = gTexture.sample(sampler2d, rd.textureCoordinate) * blendMapColor.g;
+    float4 bTextureColor = bTexture.sample(sampler2d, rd.textureCoordinate) * blendMapColor.b;
     
-    
-    color = half4(blendMapColor);
-    
-    return color;
+    float4 totalColor = backgroundTextureColor + rTextureColor + gTextureColor + bTextureColor;
+    float4 color = float4(pow(totalColor.r, gammaCorrection), pow(totalColor.g, gammaCorrection), pow(totalColor.b, gammaCorrection), 1.0);
+
+    return half4(color.r, color.g, color.b, color.a);
 }
 
 

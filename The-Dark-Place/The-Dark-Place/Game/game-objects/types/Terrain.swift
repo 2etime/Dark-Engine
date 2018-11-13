@@ -32,9 +32,9 @@ extension Terrain: Renderable {
             renderCommandEncoder.setFragmentBytes(&terrainSize, length: Int32.stride, index: 2)
             
             renderCommandEncoder.setFragmentTexture(Entities.Textures[.Grass], index: 0) //background
-            renderCommandEncoder.setFragmentTexture(Entities.Textures[.Grass], index: 1) //r
-            renderCommandEncoder.setFragmentTexture(Entities.Textures[.Grass], index: 2) //g
-            renderCommandEncoder.setFragmentTexture(Entities.Textures[.Grass], index: 3) //b
+            renderCommandEncoder.setFragmentTexture(Entities.Textures[.Mud], index: 1) //r
+            renderCommandEncoder.setFragmentTexture(Entities.Textures[.GrassFlowers], index: 2) //g
+            renderCommandEncoder.setFragmentTexture(Entities.Textures[.Path], index: 3) //b
             renderCommandEncoder.setFragmentTexture(Entities.Textures[.BlendMap], index: 4) //blend
             
             renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear_Repeat], index: 0)
