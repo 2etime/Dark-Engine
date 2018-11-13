@@ -7,6 +7,7 @@ enum RenderPipelineDescriptorTypes {
     case TerrainTextured
     case Model
     case Instanced
+    case TerrainMultiTextured
 }
 
 class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MTLRenderPipelineDescriptor> {
@@ -19,6 +20,7 @@ class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MT
         library.updateValue(TerrainTextured_RenderPipelineDescriptor(), forKey: .TerrainTextured)
         library.updateValue(Model_RenderPipelineDescriptor(), forKey: .Model)
         library.updateValue(Instanced_RenderPipelineDescriptor(), forKey: .Instanced)
+        library.updateValue(TerrainMultiTextured_RenderPipelineDescriptor(), forKey: .TerrainMultiTextured)
     }
     
     override subscript(_ type: RenderPipelineDescriptorTypes) -> MTLRenderPipelineDescriptor {
@@ -139,5 +141,22 @@ class Instanced_RenderPipelineDescriptor: RenderPipelineDescriptor {
     }
     
 }
+
+class TerrainMultiTextured_RenderPipelineDescriptor: RenderPipelineDescriptor {
+    var name: String = "Terrain Multi Textured Render Pipeline Descriptor"
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Terrain]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.TerrainMultiTextured]
+    }
+}
+
+
 
 

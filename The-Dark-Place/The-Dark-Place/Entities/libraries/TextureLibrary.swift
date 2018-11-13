@@ -8,6 +8,13 @@ enum TextureTypes {
     case StandingGrass
     case Cruiser
     
+    //Multi Texturing
+    case GrassFlowers
+    case Path
+    case Grass2
+    case Mud
+    case BlendMap
+    
     case Depth
 }
 
@@ -20,6 +27,12 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         library.updateValue(Texture("face"), forKey: .Face)
         library.updateValue(Texture("standing_grass"), forKey: .StandingGrass)
         library.updateValue(Texture("cruiser", ext: "bmp"), forKey: .Cruiser)
+        
+        library.updateValue(Texture("grassFlowers"), forKey: .GrassFlowers)
+        library.updateValue(Texture("path"), forKey: .Path)
+        library.updateValue(Texture("grassy2"), forKey: .Grass2)
+        library.updateValue(Texture("mud"), forKey: .Mud)
+        library.updateValue(Texture("blendMap"), forKey: .BlendMap)
     }
     
     ///Dynamically add textures to the library

@@ -7,6 +7,7 @@ enum RenderPipelineStateTypes {
     case TerrainTextured
     case Model
     case Instanced
+    case TerrainMultiTextured
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -20,6 +21,7 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(TerrainTextured_RenderPipelineState(), forKey: .TerrainTextured)
         library.updateValue(Model_RenderPipelineState(), forKey: .Model)
         library.updateValue(Instanced_RenderPipelineState(), forKey: .Instanced)
+        library.updateValue(TerrainMultiTextured_RenderPipelineState(), forKey: .TerrainMultiTextured)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -106,3 +108,17 @@ class Instanced_RenderPipelineState: RenderPipelineState {
         }
     }
 }
+
+class TerrainMultiTextured_RenderPipelineState: RenderPipelineState {
+    var name: String = "Terrain Multi Textured Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.TerrainMultiTextured])
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+

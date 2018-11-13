@@ -4,6 +4,7 @@ enum FragmentShaderTypes {
     case Basic
     case Skybox
     case TerrainTextured
+    case TerrainMultiTextured
 }
 
 class FragmentShaderLibrary: Library<FragmentShaderTypes, MTLFunction> {
@@ -19,6 +20,9 @@ class FragmentShaderLibrary: Library<FragmentShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Terrain Textured Fragment Shader",
                                    functionName: "terrain_textured_fragment_shader"),
                             forKey: .TerrainTextured)
+        library.updateValue(Shader(label: "Terrain Multi Textured Fragment Shader",
+                                   functionName: "terrain_multi_textured_fragment_shader"),
+                            forKey: .TerrainMultiTextured)
     }
     
     override subscript(_ type: FragmentShaderTypes) -> MTLFunction {

@@ -71,3 +71,31 @@ fragment half4 terrain_textured_fragment_shader(TerrainRasterizerData rd [[ stag
 }
 
 
+fragment half4 terrain_multi_textured_fragment_shader(TerrainRasterizerData rd [[ stage_in ]],
+                                                constant Material &material [[ buffer(0) ]],
+                                                constant LightData &lightData [[ buffer(1) ]],
+                                                constant int &terrainSize [[ buffer(2) ]],
+                                                texture2d<float> backgroundTexture [[ texture(0) ]],
+                                                texture2d<float> rTexture [[ texture(1) ]],
+                                                texture2d<float> gTexture [[ texture(2) ]],
+                                                texture2d<float> bTexture [[ texture(3) ]],
+                                                texture2d<float> blendMap [[ texture(4) ]],
+                                                sampler sampler2d [[ sampler(0) ]],
+                                                sampler samplerNonRepeat [[ sampler(1) ]]){
+    
+    half4 color;
+    float4 blendMapColor = blendMap.sample(samplerNonRepeat, rd.textureCoordinate / terrainSize);
+    
+    float backTextureAmount = 1 - (blendMapColor.r + blendMapColor.g + blendMapColor.b);
+    float2 tiledCoords = rd.textureCoordinate / 40;
+    float4 backgroundTextureColor = blendMap.sample(sampler2d, rd.textureCoordinate);
+    
+    
+    color = half4(blendMapColor);
+    
+    return color;
+}
+
+
+
+
