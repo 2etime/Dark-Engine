@@ -119,6 +119,16 @@
 		EBF0E0FE218691000021E67E /* float4.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FD218691000021E67E /* float4.swift */; };
 		EBF0E1002186A0620021E67E /* TerrainLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E0FF2186A0620021E67E /* TerrainLoader.swift */; };
 		EBF0E1022186A2B20021E67E /* TerrainMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0E1012186A2B20021E67E /* TerrainMesh.swift */; };
+		EBF6790B219BBA09004CF536 /* crate.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBF67902219BBA08004CF536 /* crate.obj */; };
+		EBF6790C219BBA09004CF536 /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF67903219BBA08004CF536 /* barrel.png */; };
+		EBF6790D219BBA09004CF536 /* barrel.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBF67904219BBA08004CF536 /* barrel.obj */; };
+		EBF6790E219BBA09004CF536 /* boulder.obj in Resources */ = {isa = PBXBuildFile; fileRef = EBF67905219BBA09004CF536 /* boulder.obj */; };
+		EBF6790F219BBA09004CF536 /* barrelNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF67906219BBA09004CF536 /* barrelNormal.png */; };
+		EBF67910219BBA09004CF536 /* boulderNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF67907219BBA09004CF536 /* boulderNormal.png */; };
+		EBF67911219BBA09004CF536 /* crateNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF67908219BBA09004CF536 /* crateNormal.png */; };
+		EBF67912219BBA09004CF536 /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF67909219BBA09004CF536 /* crate.png */; };
+		EBF67913219BBA09004CF536 /* boulder.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF6790A219BBA09004CF536 /* boulder.png */; };
+		EBF67915219BBA54004CF536 /* Barrel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF67914219BBA54004CF536 /* Barrel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +259,16 @@
 		EBF0E0FD218691000021E67E /* float4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = float4.swift; sourceTree = "<group>"; };
 		EBF0E0FF2186A0620021E67E /* TerrainLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainLoader.swift; sourceTree = "<group>"; };
 		EBF0E1012186A2B20021E67E /* TerrainMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainMesh.swift; sourceTree = "<group>"; };
+		EBF67902219BBA08004CF536 /* crate.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crate.obj; sourceTree = "<group>"; };
+		EBF67903219BBA08004CF536 /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
+		EBF67904219BBA08004CF536 /* barrel.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = barrel.obj; sourceTree = "<group>"; };
+		EBF67905219BBA09004CF536 /* boulder.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = boulder.obj; sourceTree = "<group>"; };
+		EBF67906219BBA09004CF536 /* barrelNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrelNormal.png; sourceTree = "<group>"; };
+		EBF67907219BBA09004CF536 /* boulderNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulderNormal.png; sourceTree = "<group>"; };
+		EBF67908219BBA09004CF536 /* crateNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crateNormal.png; sourceTree = "<group>"; };
+		EBF67909219BBA09004CF536 /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crate.png; sourceTree = "<group>"; };
+		EBF6790A219BBA09004CF536 /* boulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulder.png; sourceTree = "<group>"; };
+		EBF67914219BBA54004CF536 /* Barrel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -569,6 +589,7 @@
 				EBEACBB0219A804E001577B5 /* TentPoles.swift */,
 				EB5287EF219A894F00EC7EAF /* Tent.swift */,
 				EB5287F1219A8A6500EC7EAF /* Campfire.swift */,
+				EBF67914219BBA54004CF536 /* Barrel.swift */,
 			);
 			path = "model-game-objects";
 			sourceTree = "<group>";
@@ -636,9 +657,12 @@
 		EBEACB9C219A7DEF001577B5 /* object-textures */ = {
 			isa = PBXGroup;
 			children = (
+				EBF67909219BBA09004CF536 /* crate.png */,
 				EBF0E0F5218649230021E67E /* face.png */,
 				EBF0E0F921866F690021E67E /* standing_grass.png */,
 				EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */,
+				EBF6790A219BBA09004CF536 /* boulder.png */,
+				EBF67903219BBA08004CF536 /* barrel.png */,
 			);
 			path = "object-textures";
 			sourceTree = "<group>";
@@ -646,6 +670,7 @@
 		EBEACB9D219A7E32001577B5 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				EBF67916219BC1E6004CF536 /* normal-textures */,
 				EBEACB9C219A7DEF001577B5 /* object-textures */,
 				EBEACB9B219A7DC4001577B5 /* tiled-textures */,
 				EBF0E0F1218644900021E67E /* cube_mapping-textures */,
@@ -671,6 +696,9 @@
 		EBEACB9F219A7E55001577B5 /* obj-files */ = {
 			isa = PBXGroup;
 			children = (
+				EBF67905219BBA09004CF536 /* boulder.obj */,
+				EBF67902219BBA08004CF536 /* crate.obj */,
+				EBF67904219BBA08004CF536 /* barrel.obj */,
 				EBEACBAC219A7F71001577B5 /* Tent_01.obj */,
 				EBEACBA9219A7F63001577B5 /* Mushroom_Red_01.obj */,
 				EBEACBA4219A7F59001577B5 /* Campfire_01.obj */,
@@ -710,6 +738,16 @@
 				EB6A0FFB2184F8360036DB93 /* sky */,
 			);
 			path = "cube_mapping-textures";
+			sourceTree = "<group>";
+		};
+		EBF67916219BC1E6004CF536 /* normal-textures */ = {
+			isa = PBXGroup;
+			children = (
+				EBF67908219BBA09004CF536 /* crateNormal.png */,
+				EBF67906219BBA09004CF536 /* barrelNormal.png */,
+				EBF67907219BBA09004CF536 /* boulderNormal.png */,
+			);
+			path = "normal-textures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -800,14 +838,20 @@
 				EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */,
 				EB4EA360219A417700C34DAB /* grassFlowers.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
+				EBF67913219BBA09004CF536 /* boulder.png in Resources */,
 				EB4EA358219A413900C34DAB /* blendMap.png in Resources */,
 				EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */,
+				EBF6790F219BBA09004CF536 /* barrelNormal.png in Resources */,
+				EBF67910219BBA09004CF536 /* boulderNormal.png in Resources */,
 				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
+				EBF67912219BBA09004CF536 /* crate.png in Resources */,
+				EBF67911219BBA09004CF536 /* crateNormal.png in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
+				EBF6790E219BBA09004CF536 /* boulder.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
 				EBEACBAB219A7F63001577B5 /* Mushroom_Red_01.obj in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
@@ -822,10 +866,13 @@
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
 				EB7EA6AB219270E9009135E7 /* statue.obj in Resources */,
 				EB7EA6B321927521009135E7 /* globe_moon.mat in Resources */,
+				EBF6790C219BBA09004CF536 /* barrel.png in Resources */,
+				EBF6790D219BBA09004CF536 /* barrel.obj in Resources */,
 				EB6A10072184F86A0036DB93 /* sky_top.png in Resources */,
 				EB6A10032184F86A0036DB93 /* sky_left.png in Resources */,
 				EB6A10022184F86A0036DB93 /* sky_front.png in Resources */,
 				EBF0E0F6218649230021E67E /* face.png in Resources */,
+				EBF6790B219BBA09004CF536 /* crate.obj in Resources */,
 				EB4EA35A219A414600C34DAB /* mud.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,6 +898,7 @@
 				EB5287F0219A894F00EC7EAF /* Tent.swift in Sources */,
 				EB3D12E9217D207100FD4CF6 /* GameHandler.swift in Sources */,
 				EBF0E0A521856EE60021E67E /* CubeTextureLibrary.swift in Sources */,
+				EBF67915219BBA54004CF536 /* Barrel.swift in Sources */,
 				EB3D128E217AAEED00FD4CF6 /* MainView.swift in Sources */,
 				EB3D12F1217D257900FD4CF6 /* Math.swift in Sources */,
 				EBF0E0F821864F730021E67E /* Materialable.swift in Sources */,

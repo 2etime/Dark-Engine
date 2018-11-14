@@ -47,13 +47,13 @@ class ModelMesh: Mesh {
         
         // Tangents
         vertexDescriptor.attributes[3].bufferIndex = 0
-        vertexDescriptor.attributes[3].format = .float4
+        vertexDescriptor.attributes[3].format = .float3
         vertexDescriptor.attributes[3].offset = float3.stride + float4.stride + float2.stride
         
         // BitTangents
         vertexDescriptor.attributes[4].bufferIndex = 0
-        vertexDescriptor.attributes[4].format = .float4
-        vertexDescriptor.attributes[4].offset = float3.stride + float4.stride + float2.stride + float4.stride
+        vertexDescriptor.attributes[4].format = .float3
+        vertexDescriptor.attributes[4].offset = float3.stride + float4.stride + float2.stride + float3.stride
         
         vertexDescriptor.layouts[0].stride = ModelVertex.stride
         

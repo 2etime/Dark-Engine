@@ -7,8 +7,8 @@ struct ModelVertexIn {
     float4 position [[ attribute(0) ]];
     float3 normal [[ attribute(1) ]];
     float2 textureCoordinate [[ attribute(2) ]];
-    float4 tangent [[ attribute(3) ]];
-    float4 bitTangent [[ attribute(4) ]];
+    float3 tangent [[ attribute(3) ]];
+    float3 bitTangent [[ attribute(4) ]];
 };
 
 vertex RasterizerData model_vertex_shader(ModelVertexIn vertexIn [[ stage_in ]],
@@ -23,6 +23,9 @@ vertex RasterizerData model_vertex_shader(ModelVertexIn vertexIn [[ stage_in ]],
     rd.textureCoordinate = vertexIn.textureCoordinate;
     rd.worldPosition = worldPosition.xyz;
     rd.toCameraVector = (sceneConstants.inverseViewMatrix * float4(0.0,0.0,0.0,1.0)).xyz - worldPosition.xyz;
+    
+    
+    
     
     return rd;
 }

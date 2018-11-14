@@ -15,6 +15,7 @@ public enum MeshTypes {
     case Cruiser
     case Statue
     case Globe
+    case Barrel
     
     case TentPoles1
     case Tent1
@@ -43,6 +44,7 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
         library.updateValue(ModelMesh(modelName: "cruiser"), forKey: .Cruiser)
         library.updateValue(ModelMesh(modelName: "statue"), forKey: .Statue)
         library.updateValue(ModelMesh(modelName: "globe"), forKey: .Globe)
+        library.updateValue(ModelMesh(modelName: "barrel"), forKey: .Barrel)
         
         library.updateValue(ModelMesh(modelName: "Tent_Poles_01"), forKey: .TentPoles1)
         library.updateValue(ModelMesh(modelName: "Tent_01"), forKey: .Tent1)
