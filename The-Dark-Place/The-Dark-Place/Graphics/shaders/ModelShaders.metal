@@ -7,6 +7,8 @@ struct ModelVertexIn {
     float4 position [[ attribute(0) ]];
     float3 normal [[ attribute(1) ]];
     float2 textureCoordinate [[ attribute(2) ]];
+    float4 tangent [[ attribute(3) ]];
+    float4 bitTangent [[ attribute(4) ]];
 };
 
 vertex RasterizerData model_vertex_shader(ModelVertexIn vertexIn [[ stage_in ]],

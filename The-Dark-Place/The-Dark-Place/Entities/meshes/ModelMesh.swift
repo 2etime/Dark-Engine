@@ -27,6 +27,7 @@ class ModelMesh: Mesh {
             fatalError("Asset \(modelName) does not exist.")
         }
         
+        
         let vertexDescriptor = MTLVertexDescriptor()
         
         //Position
@@ -44,6 +45,16 @@ class ModelMesh: Mesh {
         vertexDescriptor.attributes[2].format = .float2
         vertexDescriptor.attributes[2].offset = float3.stride + float4.stride
         
+        // Tangents
+        vertexDescriptor.attributes[3].bufferIndex = 0
+        vertexDescriptor.attributes[3].format = .float4
+        vertexDescriptor.attributes[3].offset = float3.stride + float4.stride + float2.stride
+        
+        // BitTangents
+        vertexDescriptor.attributes[4].bufferIndex = 0
+        vertexDescriptor.attributes[4].format = .float4
+        vertexDescriptor.attributes[4].offset = float3.stride + float4.stride + float2.stride + float4.stride
+        
         vertexDescriptor.layouts[0].stride = ModelVertex.stride
         
         let descriptor = MTKModelIOVertexDescriptorFromMetal(vertexDescriptor)
@@ -60,17 +71,46 @@ class ModelMesh: Mesh {
         attributeTexture.name = MDLVertexAttributeTextureCoordinate
         descriptor.attributes[2] = attributeTexture
         
+        let attributeTangent = descriptor.attributes[3] as! MDLVertexAttribute
+        attributeTangent.name = MDLVertexAttributeTangent
+        descriptor.attributes[3] = attributeTangent
+        
+        let attributeBitTangent = descriptor.attributes[4] as! MDLVertexAttribute
+        attributeBitTangent.name = MDLVertexAttributeBitangent
+        descriptor.attributes[4] = attributeBitTangent
+
         let bufferAllocator = MTKMeshBufferAllocator(device: DarkEngine.Device)
         _asset = MDLAsset(url: assetURL,
-                             vertexDescriptor: descriptor,
-                             bufferAllocator: bufferAllocator)
+                          vertexDescriptor: descriptor,
+                          bufferAllocator: bufferAllocator)
         
+        var mdlMeshes: [MDLMesh] = []
         do {
-            meshes = try MTKMesh.newMeshes(asset: _asset,
-                                           device: DarkEngine.Device).metalKitMeshes
+            mdlMeshes = try MTKMesh.newMeshes(asset: _asset,
+                                              device: DarkEngine.Device).modelIOMeshes
         } catch {
             print("mesh error")
         }
+        
+        //Add Tangents and BitTangents
+        for mesh in mdlMeshes {
+            mesh.addTangentBasis(forTextureCoordinateAttributeNamed: MDLVertexAttributeTextureCoordinate,
+                                    normalAttributeNamed: MDLVertexAttributeNormal,
+                                    tangentAttributeNamed: MDLVertexAttributeTangent)
+            mesh.addTangentBasis(forTextureCoordinateAttributeNamed: MDLVertexAttributeTextureCoordinate,
+                                    tangentAttributeNamed: MDLVertexAttributeTangent,
+                                    bitangentAttributeNamed: MDLVertexAttributeBitangent)
+            mesh.vertexDescriptor = descriptor
+            
+            var mtkMesh: MTKMesh!
+            do {
+                mtkMesh = try MTKMesh(mesh: mesh, device: DarkEngine.Device)
+            } catch {
+                print("mesh error")
+            }
+            meshes.append(mtkMesh)
+        }
+        
     }
     
     private func generateMaterial(){
@@ -85,6 +125,7 @@ class ModelMesh: Mesh {
             let mdlMesh: MDLMesh! = mdlMeshes[i]
             self.minBounds = mdlMesh.boundingBox.minBounds
             self.maxBounds = mdlMesh.boundingBox.maxBounds
+            
             let count: Int = mdlMesh!.submeshes?.count ?? 0
             
             for j in 0..<count{
@@ -100,6 +141,8 @@ class ModelMesh: Mesh {
                 material.specularIntensity = specular!.x
                 _materials.append(material)
             }
+            
+            
         }
     }
 

@@ -24,6 +24,8 @@ struct ModelVertex: sizeable {
     var position: float4
     var normal: float3
     var textureCoordinates: float2
+    var tangent: float4
+    var bitTangent: float4
 }
 
 struct Material: sizeable {
