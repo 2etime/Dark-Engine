@@ -12,11 +12,11 @@ class PlaygroundScene: Scene {
     let skybox = SkyboxGameObject(.Sky)
     var terrain = SingleTextureTerrain(.Grass)
     var lightThing = Cube()
-    var barrel = Barrel()
+    var card = Card()
     override func buildScene() {
         
         //Setup Camera
-        currentCamera.setPositionZ(2)
+        currentCamera.setPositionZ(5)
         currentCamera.setPositionY(1)
         
         //Add Lights
@@ -36,10 +36,8 @@ class PlaygroundScene: Scene {
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
    
-        barrel.setPositionY(0.5)
-        barrel.setScale(0.1)
-        addChild(barrel)
-    
+        
+        addChild(card)
     }
 
     override func onUpdate() {

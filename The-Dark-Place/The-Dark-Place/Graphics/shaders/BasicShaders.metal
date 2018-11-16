@@ -8,7 +8,8 @@ vertex RasterizerData basic_vertex_shader(VertexIn vertexIn [[ stage_in ]],
                                           constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     RasterizerData rd;
     
-    float4 worldPosition = modelConstants.modelMatrix * float4(vertexIn.position, 1.0);
+    float4 offsetPosition = float4(vertexIn.position, 1) + float4(modelConstants.offset, 0);
+    float4 worldPosition = modelConstants.modelMatrix  * offsetPosition;
     float4 position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * worldPosition;
     rd.position = position;
     rd.surfaceNormal = (modelConstants.modelMatrix * float4(vertexIn.normal, 0.0)).xyz;
