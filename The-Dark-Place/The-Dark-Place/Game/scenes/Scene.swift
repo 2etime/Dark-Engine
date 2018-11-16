@@ -57,10 +57,19 @@ class Scene: Node {
         super.update()
     }
     
-    override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+    func setScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 1)
         renderCommandEncoder.setFragmentBytes(&lightData, length: LightData.stride, index: 1)
+    }
+    
+    override func zPassRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        setScene(renderCommandEncoder)
+        super.zPassRender(renderCommandEncoder)
+    }
+    
+    override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        setScene(renderCommandEncoder)
         super.render(renderCommandEncoder)
     }
 }

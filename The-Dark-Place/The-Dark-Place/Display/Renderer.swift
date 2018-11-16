@@ -18,17 +18,11 @@ extension Renderer: MTKViewDelegate {
     
     func draw(in view: MTKView) {
         guard let drawable = view.currentDrawable, let passDescriptor = view.currentRenderPassDescriptor  else { return }
-        let commandBuffer = DarkEngine.CommandQueue.makeCommandBuffer()
-        let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: passDescriptor)
         
         let deltaTime = 1 / Float(view.preferredFramesPerSecond)
         gameHandler.updateGameTime(deltaTime)
         
-        gameHandler.tickGame(renderCommandEncoder!)
-        
-        renderCommandEncoder?.endEncoding()
-        commandBuffer?.present(drawable)
-        commandBuffer?.commit()
+        gameHandler.tickGame(drawable, passDescriptor)
     }
     
 }

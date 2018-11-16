@@ -13,6 +13,10 @@ class SkyboxGameObject: Node {
 
 extension SkyboxGameObject: Renderable {
     
+    func doZPass(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        
+    }
+    
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Skybox])

@@ -20,13 +20,27 @@ class SceneManager {
         _currentScene.update()
     }
     
+    public func doSceneZPass(_  renderCommandEncoder: MTLRenderCommandEncoder){
+        _currentScene.zPassRender(renderCommandEncoder)
+    }
+    
     private func renderScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
         _currentScene.render(renderCommandEncoder)
     }
     
-    public func tickCurrentScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
+    public func tickCurrentScene(_ commandBuffer: MTLCommandBuffer, _ passDescriptor: MTLRenderPassDescriptor){
+        
         updateScene()
-        renderScene(renderCommandEncoder)
+        
+        let zPassRenderPassEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
+        zPassRenderPassEncoder?.label = "The Z Pass"
+        doSceneZPass(zPassRenderPassEncoder!)
+        zPassRenderPassEncoder?.endEncoding()
+        
+        let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
+        renderCommandEncoder?.label = "The Render Pass"
+        renderScene(renderCommandEncoder!)
+        renderCommandEncoder?.endEncoding()
     }
 
 }

@@ -18,8 +18,14 @@ class GameHandler {
         GameTime.UpdateTime(deltaTime)
     }
     
-    public func tickGame(_ renderCommandEncoder: MTLRenderCommandEncoder){
-        _sceneManager.tickCurrentScene(renderCommandEncoder)
+    public func tickGame(_ drawable: CAMetalDrawable, _ passDescriptor: MTLRenderPassDescriptor){
+        
+        let commandBuffer = DarkEngine.CommandQueue.makeCommandBuffer()
+        
+        _sceneManager.tickCurrentScene(commandBuffer!, passDescriptor)
+        
+        commandBuffer?.present(drawable)
+        commandBuffer?.commit()
     }
     
 }

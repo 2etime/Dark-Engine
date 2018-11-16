@@ -28,6 +28,10 @@ class TerrainGameObject: Node {
 
 extension TerrainGameObject: Renderable {
     
+    func doZPass(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+        
+    }
+    
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])

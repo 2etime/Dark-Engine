@@ -36,7 +36,7 @@ class PlaygroundScene: Scene {
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
    
-        
+        card.setTexture(textureType: .Face)
         addChild(card)
     }
 
@@ -68,6 +68,11 @@ class PlaygroundScene: Scene {
         
         if(Keyboard.IsKeyPressed(.a)){
             currentCamera.moveY(-GameTime.DeltaTime * 2)
+        }
+        
+        if(Mouse.IsMouseButtonPressed(button: .left)){
+            currentCamera.doPitch(Mouse.GetDY() * 0.05)
+            currentCamera.doYaw(Mouse.GetDX() * 0.05)
         }
     }
     

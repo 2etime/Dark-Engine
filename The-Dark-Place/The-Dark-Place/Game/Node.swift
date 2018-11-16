@@ -52,6 +52,18 @@ class Node {
         //Override using this function
     }
     
+    func zPassRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        renderCommandEncoder.pushDebugGroup("Z Passing \(_name)")
+        for child in _children {
+            child.zPassRender(renderCommandEncoder)
+        }
+        
+        if let renderable = self as? Renderable {
+            renderable.doZPass(renderCommandEncoder)
+        }
+        renderCommandEncoder.popDebugGroup()
+    }
+    
     func render(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.pushDebugGroup("Rendering \(_name)")
         for child in _children {
