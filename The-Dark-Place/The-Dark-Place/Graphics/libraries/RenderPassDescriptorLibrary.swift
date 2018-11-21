@@ -28,7 +28,6 @@ class Shadow_RenderPassDescriptor: RenderPassDescriptor {
     var renderPassDescriptor: MTLRenderPassDescriptor!
     
     init(){
-        
         let shadowTextureDesc = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .depth32Float,
                                                                          width: 2048,
                                                                          height: 2048,

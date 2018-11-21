@@ -56,6 +56,7 @@
 		EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130B217D4D2600FD4CF6 /* Cube.swift */; };
 		EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */; };
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
+		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
 		EB4EA358219A413900C34DAB /* blendMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA357219A413900C34DAB /* blendMap.png */; };
 		EB4EA35A219A414600C34DAB /* mud.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA359219A414600C34DAB /* mud.png */; };
 		EB4EA35C219A415100C34DAB /* grassy2.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA35B219A415100C34DAB /* grassy2.png */; };
@@ -129,6 +130,13 @@
 		EBF67912219BBA09004CF536 /* crate.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF67909219BBA09004CF536 /* crate.png */; };
 		EBF67913219BBA09004CF536 /* boulder.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF6790A219BBA09004CF536 /* boulder.png */; };
 		EBF67915219BBA54004CF536 /* Barrel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF67914219BBA54004CF536 /* Barrel.swift */; };
+		EBF8570E21A4F94F00D629B4 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8570D21A4F94F00D629B4 /* bird.png */; };
+		EBF8571221A5071700D629B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571121A5071700D629B4 /* Animation.swift */; };
+		EBF8571721A513F400D629B4 /* SpriteSheetLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */; };
+		EBF8571921A5156A00D629B4 /* player_spritesheet_fixed_large.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8571821A5156A00D629B4 /* player_spritesheet_fixed_large.png */; };
+		EBF8571B21A5436900D629B4 /* barbarian.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8571A21A5436900D629B4 /* barbarian.png */; };
+		EBF8571D21A5DDB300D629B4 /* AnimationLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */; };
+		EBF8572121A5E33300D629B4 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572021A5E33300D629B4 /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +204,7 @@
 		EB3D130B217D4D2600FD4CF6 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
 		EB4EA357219A413900C34DAB /* blendMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blendMap.png; sourceTree = "<group>"; };
 		EB4EA359219A414600C34DAB /* mud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mud.png; sourceTree = "<group>"; };
 		EB4EA35B219A415100C34DAB /* grassy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grassy2.png; sourceTree = "<group>"; };
@@ -269,6 +278,13 @@
 		EBF67909219BBA09004CF536 /* crate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crate.png; sourceTree = "<group>"; };
 		EBF6790A219BBA09004CF536 /* boulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulder.png; sourceTree = "<group>"; };
 		EBF67914219BBA54004CF536 /* Barrel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrel.swift; sourceTree = "<group>"; };
+		EBF8570D21A4F94F00D629B4 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		EBF8571121A5071700D629B4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteSheetLibrary.swift; sourceTree = "<group>"; };
+		EBF8571821A5156A00D629B4 /* player_spritesheet_fixed_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_spritesheet_fixed_large.png; sourceTree = "<group>"; };
+		EBF8571A21A5436900D629B4 /* barbarian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barbarian.png; sourceTree = "<group>"; };
+		EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLibrary.swift; sourceTree = "<group>"; };
+		EBF8572021A5E33300D629B4 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,12 +328,14 @@
 			children = (
 				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
+				EBF8571021A506FE00D629B4 /* Animation */,
 				EBF0E0AB21859D450021E67E /* Input */,
 				EB3D12EA217D230500FD4CF6 /* Handlers */,
 				EB3D12DE217D1D5B00FD4CF6 /* Managers */,
 				EBF0E0EE2186437A0021E67E /* Loaders */,
 				EB3D12C0217D0ACD00FD4CF6 /* Entities */,
 				EB3D129E217AD21100FD4CF6 /* Graphics */,
+				EBF8571F21A5E2CF00D629B4 /* Animations */,
 				EB3D12B4217AF21300FD4CF6 /* Game */,
 				EB3D1294217AB95000FD4CF6 /* Utils */,
 				EB3D128C217AAEC000FD4CF6 /* Display */,
@@ -388,6 +406,7 @@
 				EBF0E0EA218638AA0021E67E /* TerrainShaders.metal */,
 				EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */,
 				EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */,
+				EB46314F219FDEE600F67B66 /* DepthShaders.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -660,6 +679,7 @@
 				EBF67909219BBA09004CF536 /* crate.png */,
 				EBF0E0F5218649230021E67E /* face.png */,
 				EBF0E0F921866F690021E67E /* standing_grass.png */,
+				EBF8570D21A4F94F00D629B4 /* bird.png */,
 				EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */,
 				EBF6790A219BBA09004CF536 /* boulder.png */,
 				EBF67903219BBA08004CF536 /* barrel.png */,
@@ -670,6 +690,7 @@
 		EBEACB9D219A7E32001577B5 /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				EBF8571521A513A200D629B4 /* spritesheet_textures */,
 				EBF67916219BC1E6004CF536 /* normal-textures */,
 				EBEACB9C219A7DEF001577B5 /* object-textures */,
 				EBEACB9B219A7DC4001577B5 /* tiled-textures */,
@@ -748,6 +769,41 @@
 				EBF67907219BBA09004CF536 /* boulderNormal.png */,
 			);
 			path = "normal-textures";
+			sourceTree = "<group>";
+		};
+		EBF8571021A506FE00D629B4 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8571121A5071700D629B4 /* Animation.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		EBF8571521A513A200D629B4 /* spritesheet_textures */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8571A21A5436900D629B4 /* barbarian.png */,
+				EBF8571821A5156A00D629B4 /* player_spritesheet_fixed_large.png */,
+			);
+			path = spritesheet_textures;
+			sourceTree = "<group>";
+		};
+		EBF8571F21A5E2CF00D629B4 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8572021A5E33300D629B4 /* Animations.swift */,
+				EBF8572221A5E35D00D629B4 /* 2D */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		EBF8572221A5E35D00D629B4 /* 2D */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */,
+				EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */,
+			);
+			path = 2D;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -849,10 +905,13 @@
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EBF67912219BBA09004CF536 /* crate.png in Resources */,
 				EBF67911219BBA09004CF536 /* crateNormal.png in Resources */,
+				EBF8571B21A5436900D629B4 /* barbarian.png in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
+				EBF8570E21A4F94F00D629B4 /* bird.png in Resources */,
 				EBF6790E219BBA09004CF536 /* boulder.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
+				EBF8571921A5156A00D629B4 /* player_spritesheet_fixed_large.png in Resources */,
 				EBEACBAB219A7F63001577B5 /* Mushroom_Red_01.obj in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
 				EBEACBAE219A7F71001577B5 /* Tent_01.obj in Resources */,
@@ -909,6 +968,7 @@
 				EBEACBB1219A804E001577B5 /* TentPoles.swift in Sources */,
 				EB5AFF7C218780CD000E30B4 /* ModelGameObject.swift in Sources */,
 				EB5287F2219A8A6500EC7EAF /* Campfire.swift in Sources */,
+				EBF8571D21A5DDB300D629B4 /* AnimationLibrary.swift in Sources */,
 				EBF0E0ED218642AD0021E67E /* TextureLibrary.swift in Sources */,
 				EBF0E0F0218643920021E67E /* TextureLoader.swift in Sources */,
 				EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */,
@@ -933,6 +993,7 @@
 				EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */,
 				EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */,
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
+				EBF8571721A513F400D629B4 /* SpriteSheetLibrary.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
@@ -949,12 +1010,14 @@
 				EB7EA6B121927399009135E7 /* Globe.swift in Sources */,
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
+				EBF8571221A5071700D629B4 /* Animation.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */,
+				EBF8572121A5E33300D629B4 /* Animations.swift in Sources */,
 				EB08F5D4218A983C008E1DC4 /* Suzanne.swift in Sources */,
 				EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
@@ -962,6 +1025,7 @@
 				EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */,
 				EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */,
 				EBB5C69D219927060006663F /* SamplerStateLibrary.swift in Sources */,
+				EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,

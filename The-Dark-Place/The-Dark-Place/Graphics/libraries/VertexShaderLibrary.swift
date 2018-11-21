@@ -6,6 +6,7 @@ enum VertexShaderTypes {
     case Terrain
     case Model
     case Instanced
+    case Shadow
 }
 
 class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
@@ -27,6 +28,9 @@ class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Instanced Vertex Shader",
                                    functionName: "instanced_vertex_shader"),
                             forKey: .Instanced)
+        library.updateValue(Shader(label: "Shadow Vertex Shader",
+                                   functionName: "shadow_vertex_shader"),
+                            forKey: .Shadow)
     }
     
     override subscript(_ type: VertexShaderTypes) -> MTLFunction {

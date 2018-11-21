@@ -36,7 +36,7 @@ class PlaygroundScene: Scene {
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
    
-        card.setTexture(textureType: .Face)
+        card.setTexture(textureType: .Bird)
         addChild(card)
     }
 

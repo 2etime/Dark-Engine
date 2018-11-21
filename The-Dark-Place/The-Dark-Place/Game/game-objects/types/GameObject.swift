@@ -6,6 +6,7 @@ class GameObject: Node {
     }
     private var _mesh: Mesh!
     internal var material: Material! = Material()
+    internal var texture: MTLTexture!
     internal var textureType: TextureTypes = TextureTypes.None
 
     var renderPipelineState: MTLRenderPipelineState {
@@ -23,7 +24,11 @@ class GameObject: Node {
     
     func setTexture(textureType: TextureTypes){
         self.material.useTexture = true
-        self.textureType = textureType
+//        self.texture = Entities.Textures[textureType]
+    }
+    
+    func setTexture(_ texture: MTLTexture){
+        self.texture = texture
     }
     
 }
@@ -38,7 +43,7 @@ extension GameObject: Renderable {
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])
         renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Nearest], index: 0)
-        renderCommandEncoder.setFragmentTexture(Entities.Textures[textureType], index: 0)
+        renderCommandEncoder.setFragmentTexture(texture, index: 0)
         renderCommandEncoder.setFragmentBytes(&material, length: Material.stride, index: 0)
         renderCommandEncoder.setCullMode(.none)
         _mesh.drawPrimitives(renderCommandEncoder)

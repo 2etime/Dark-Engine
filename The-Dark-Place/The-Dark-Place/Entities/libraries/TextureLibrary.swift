@@ -15,6 +15,7 @@ enum TextureTypes {
     case Grass2
     case Mud
     case BlendMap
+    case Bird
     
     //Normal Maps
     case BarrelNormal
@@ -32,6 +33,7 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         library.updateValue(Texture("standing_grass"), forKey: .StandingGrass)
         library.updateValue(Texture("cruiser", ext: "bmp"), forKey: .Cruiser)
         library.updateValue(Texture("barrel", origin: .BottomLeft), forKey: .Barrel)
+        library.updateValue(Texture("bird"), forKey: .Bird)
         
         library.updateValue(Texture("grassFlowers"), forKey: .GrassFlowers)
         library.updateValue(Texture("path"), forKey: .Path)

@@ -40,7 +40,7 @@ class Basic_RenderPipelineDescriptor: RenderPipelineDescriptor {
     init() {
         renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
-        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = false
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
         renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .oneMinusSourceAlpha
         renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .sourceAlpha
         renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
@@ -144,6 +144,21 @@ class Instanced_RenderPipelineDescriptor: RenderPipelineDescriptor {
 
 class TerrainMultiTextured_RenderPipelineDescriptor: RenderPipelineDescriptor {
     var name: String = "Terrain Multi Textured Render Pipeline Descriptor"
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Terrain]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.TerrainMultiTextured]
+    }
+}
+
+class Shadow_RenderPipelineDescriptor: RenderPipelineDescriptor {
+    var name: String = "Shadow Render Pipeline Descriptor"
     var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
     
     init() {

@@ -12,6 +12,8 @@ class DarkEngine {
         
         Entities.Initialize()
         Graphics.Initialize()
+        
+        Animations.Initialize()
     }
     
 }
