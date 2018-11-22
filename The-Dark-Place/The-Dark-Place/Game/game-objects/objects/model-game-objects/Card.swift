@@ -10,6 +10,9 @@ class Card: GameObject {
         self.offset.y = 1
         self.setName("Card")
         self.material.color = float4(1)
+        self.setScaleX(0.5)
+        
+        
     }
     
     override func onUpdate() {

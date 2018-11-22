@@ -7,6 +7,7 @@ enum VertexShaderTypes {
     case Model
     case Instanced
     case Shadow
+    case Bounding
 }
 
 class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
@@ -31,6 +32,9 @@ class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Shadow Vertex Shader",
                                    functionName: "shadow_vertex_shader"),
                             forKey: .Shadow)
+        library.updateValue(Shader(label: "Bounding Vertex Shader",
+                                   functionName: "bounding_vertex_shader"),
+                            forKey: .Bounding)
     }
     
     override subscript(_ type: VertexShaderTypes) -> MTLFunction {

@@ -8,6 +8,8 @@ class GameObject: Node {
     internal var material: Material! = Material()
     internal var texture: MTLTexture!
     internal var textureType: TextureTypes = TextureTypes.None
+    
+    private var collisionBox: CollisionBox!
 
     var renderPipelineState: MTLRenderPipelineState {
         return Graphics.RenderPipelineStates[.Basic]
@@ -20,6 +22,8 @@ class GameObject: Node {
             self.textureType = textureType
             self.material.useTexture = true
         }
+        
+        addChild(CollisionBox(_mesh))
     }
     
     func setTexture(textureType: TextureTypes){
@@ -30,7 +34,6 @@ class GameObject: Node {
     func setTexture(_ texture: MTLTexture){
         self.texture = texture
     }
-    
 }
 
 extension GameObject: Renderable {

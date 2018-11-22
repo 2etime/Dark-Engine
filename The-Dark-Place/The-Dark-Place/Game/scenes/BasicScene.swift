@@ -1,8 +1,8 @@
 
 import MetalKit
 
-class PlaygroundScene: Scene {
-
+class BasicScene: Scene {
+    
     private var _object = Cube()
     
     override func setupCameras() {
@@ -22,7 +22,7 @@ class PlaygroundScene: Scene {
         //Add Lights
         lightData.color = lightThing.getColor().xyz
         lightData.position = float3(0,5,3)
-//        lightData.attenuation = float3(0.0, -0.069999784, 0.08999999)
+        //        lightData.attenuation = float3(0.0, -0.069999784, 0.08999999)
         
         lightThing.setScale(0.2)
         addChild(lightThing)
@@ -35,14 +35,16 @@ class PlaygroundScene: Scene {
         terrain.setScale(100)
         terrain.setDiffuseIntensity(0.4)
         addChild(terrain)
-   
+        
         card.setTexture(textureType: .Bird)
         addChild(card)
     }
-
+    
     override func onUpdate() {
         skybox.rotateY(GameTime.DeltaTime / 20)
+        //        lightData.position.y = abs((cos(GameTime.TotalGameTime * 0.3) * 10))
         lightThing.setPosition(lightData.position)
+        //        card.rotateY(GameTime.DeltaTime)
         
         
         if(Keyboard.IsKeyPressed(.upArrow)){

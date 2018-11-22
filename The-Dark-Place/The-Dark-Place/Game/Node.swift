@@ -3,11 +3,14 @@ import MetalKit
 
 class Node {
     private var _name: String = ""
+    private var id: Int = -1
+    public var isCollided: Bool = false
     private var _position: float3 = float3(0)
     private var _scale: float3 = float3(1)
     private var _rotation: float3 = float3(0)
     
     public var parentModelMatrix = matrix_identity_float4x4
+    public var parentOffset = float3(0)
 
     private var _modelConstants = ModelConstants()
     private var _children: [Node] = []
@@ -30,18 +33,24 @@ class Node {
         self._name = name
     }
     
+    func setID(_ id: Int){
+        self.id = id
+    }
+    
     func addChild(_ child: Node) {
+//        self.id = World.addObject(child)
         _children.append(child)
     }
     
     private func updateModelConstants(){
         self._modelConstants.modelMatrix = self.modelMatrix
-        self._modelConstants.offset = self.offset
+        self._modelConstants.offset = self.offset + parentOffset
     }
     
     func update(){
         for child in _children {
             child.parentModelMatrix = self.modelMatrix
+            child.parentOffset = self.offset
             child.update()
         }
         onUpdate()

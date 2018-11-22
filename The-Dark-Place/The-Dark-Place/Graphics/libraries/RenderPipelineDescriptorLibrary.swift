@@ -8,6 +8,7 @@ enum RenderPipelineDescriptorTypes {
     case Model
     case Instanced
     case TerrainMultiTextured
+    case Bounding
 }
 
 class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MTLRenderPipelineDescriptor> {
@@ -21,6 +22,7 @@ class RenderPipelineDescriptorLibrary: Library<RenderPipelineDescriptorTypes, MT
         library.updateValue(Model_RenderPipelineDescriptor(), forKey: .Model)
         library.updateValue(Instanced_RenderPipelineDescriptor(), forKey: .Instanced)
         library.updateValue(TerrainMultiTextured_RenderPipelineDescriptor(), forKey: .TerrainMultiTextured)
+        library.updateValue(Bounding_RenderPipelineDescriptor(), forKey: .Bounding)
     }
     
     override subscript(_ type: RenderPipelineDescriptorTypes) -> MTLRenderPipelineDescriptor {
@@ -51,6 +53,24 @@ class Basic_RenderPipelineDescriptor: RenderPipelineDescriptor {
     }
     
 }
+
+class Bounding_RenderPipelineDescriptor: RenderPipelineDescriptor {
+    var name: String = "Bounding Render Pipeline Descriptor"
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init() {
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Bounding]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Bounding]
+    }
+    
+}
+
+
 
 class Skybox_RenderPipelineDescriptor: RenderPipelineDescriptor {
     var name: String = "Skybox Render Pipeline Descriptor"

@@ -8,6 +8,7 @@ enum RenderPipelineStateTypes {
     case Model
     case Instanced
     case TerrainMultiTextured
+    case Bounding
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -22,6 +23,7 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(Model_RenderPipelineState(), forKey: .Model)
         library.updateValue(Instanced_RenderPipelineState(), forKey: .Instanced)
         library.updateValue(TerrainMultiTextured_RenderPipelineState(), forKey: .TerrainMultiTextured)
+        library.updateValue(Bounding_RenderPipelineState(), forKey: .Bounding)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -116,6 +118,19 @@ class TerrainMultiTextured_RenderPipelineState: RenderPipelineState {
     init() {
         do {
             renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.TerrainMultiTextured])
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+
+class Bounding_RenderPipelineState: RenderPipelineState {
+    var name: String = "Bounding Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Bounding])
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }

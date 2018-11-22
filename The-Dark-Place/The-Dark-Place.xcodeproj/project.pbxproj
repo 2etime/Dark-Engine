@@ -131,12 +131,15 @@
 		EBF67913219BBA09004CF536 /* boulder.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF6790A219BBA09004CF536 /* boulder.png */; };
 		EBF67915219BBA54004CF536 /* Barrel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF67914219BBA54004CF536 /* Barrel.swift */; };
 		EBF8570E21A4F94F00D629B4 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8570D21A4F94F00D629B4 /* bird.png */; };
-		EBF8571221A5071700D629B4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571121A5071700D629B4 /* Animation.swift */; };
 		EBF8571721A513F400D629B4 /* SpriteSheetLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */; };
-		EBF8571921A5156A00D629B4 /* player_spritesheet_fixed_large.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8571821A5156A00D629B4 /* player_spritesheet_fixed_large.png */; };
-		EBF8571B21A5436900D629B4 /* barbarian.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8571A21A5436900D629B4 /* barbarian.png */; };
 		EBF8571D21A5DDB300D629B4 /* AnimationLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */; };
 		EBF8572121A5E33300D629B4 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572021A5E33300D629B4 /* Animations.swift */; };
+		EBF8572821A5FA3B00D629B4 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8572721A5FA3B00D629B4 /* players.png */; };
+		EBF8572A21A6025400D629B4 /* BasicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572921A6025400D629B4 /* BasicScene.swift */; };
+		EBF8572E21A6034400D629B4 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572D21A6034400D629B4 /* World.swift */; };
+		EBF8573021A6073900D629B4 /* CollisionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572F21A6073900D629B4 /* CollisionBox.swift */; };
+		EBF8573221A6079800D629B4 /* CubeBoundsMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8573121A6079800D629B4 /* CubeBoundsMesh.swift */; };
+		EBF8573421A60AA900D629B4 /* BoundingShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF8573321A60AA900D629B4 /* BoundingShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,12 +282,15 @@
 		EBF6790A219BBA09004CF536 /* boulder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boulder.png; sourceTree = "<group>"; };
 		EBF67914219BBA54004CF536 /* Barrel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrel.swift; sourceTree = "<group>"; };
 		EBF8570D21A4F94F00D629B4 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
-		EBF8571121A5071700D629B4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteSheetLibrary.swift; sourceTree = "<group>"; };
-		EBF8571821A5156A00D629B4 /* player_spritesheet_fixed_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_spritesheet_fixed_large.png; sourceTree = "<group>"; };
-		EBF8571A21A5436900D629B4 /* barbarian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barbarian.png; sourceTree = "<group>"; };
 		EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLibrary.swift; sourceTree = "<group>"; };
 		EBF8572021A5E33300D629B4 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		EBF8572721A5FA3B00D629B4 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = players.png; sourceTree = "<group>"; };
+		EBF8572921A6025400D629B4 /* BasicScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScene.swift; sourceTree = "<group>"; };
+		EBF8572D21A6034400D629B4 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		EBF8572F21A6073900D629B4 /* CollisionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionBox.swift; sourceTree = "<group>"; };
+		EBF8573121A6079800D629B4 /* CubeBoundsMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeBoundsMesh.swift; sourceTree = "<group>"; };
+		EBF8573321A60AA900D629B4 /* BoundingShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BoundingShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,7 +334,6 @@
 			children = (
 				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
-				EBF8571021A506FE00D629B4 /* Animation */,
 				EBF0E0AB21859D450021E67E /* Input */,
 				EB3D12EA217D230500FD4CF6 /* Handlers */,
 				EB3D12DE217D1D5B00FD4CF6 /* Managers */,
@@ -407,6 +412,7 @@
 				EB5AFF8C2188049A000E30B4 /* ModelShaders.metal */,
 				EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */,
 				EB46314F219FDEE600F67B66 /* DepthShaders.metal */,
+				EBF8573321A60AA900D629B4 /* BoundingShaders.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				EB3D12C3217D0AEF00FD4CF6 /* libraries */,
 				EB3D12C9217D0DB400FD4CF6 /* meshes */,
 				EBEACB99219A7D53001577B5 /* types */,
+				EBF8572C21A6031400D629B4 /* spacial_partitioning */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -505,6 +512,7 @@
 				EB3D12CE217D0EA100FD4CF6 /* Triangle_CustomMesh.swift */,
 				EB3D1309217D4D1100FD4CF6 /* Cube_CustomMesh.swift */,
 				EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */,
+				EBF8573121A6079800D629B4 /* CubeBoundsMesh.swift */,
 			);
 			path = "custom-meshes";
 			sourceTree = "<group>";
@@ -522,6 +530,7 @@
 			children = (
 				EB3D12E3217D1DE600FD4CF6 /* Scene.swift */,
 				EB3D12E6217D1F5200FD4CF6 /* PlaygroundScene.swift */,
+				EBF8572921A6025400D629B4 /* BasicScene.swift */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -547,6 +556,7 @@
 		EB3D12EE217D24CA00FD4CF6 /* types */ = {
 			isa = PBXGroup;
 			children = (
+				EBF8572F21A6073900D629B4 /* CollisionBox.swift */,
 				EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */,
 				EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */,
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
@@ -771,19 +781,10 @@
 			path = "normal-textures";
 			sourceTree = "<group>";
 		};
-		EBF8571021A506FE00D629B4 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				EBF8571121A5071700D629B4 /* Animation.swift */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
 		EBF8571521A513A200D629B4 /* spritesheet_textures */ = {
 			isa = PBXGroup;
 			children = (
-				EBF8571A21A5436900D629B4 /* barbarian.png */,
-				EBF8571821A5156A00D629B4 /* player_spritesheet_fixed_large.png */,
+				EBF8572721A5FA3B00D629B4 /* players.png */,
 			);
 			path = spritesheet_textures;
 			sourceTree = "<group>";
@@ -804,6 +805,14 @@
 				EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */,
 			);
 			path = 2D;
+			sourceTree = "<group>";
+		};
+		EBF8572C21A6031400D629B4 /* spacial_partitioning */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8572D21A6034400D629B4 /* World.swift */,
+			);
+			path = spacial_partitioning;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -899,19 +908,18 @@
 				EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */,
 				EBF6790F219BBA09004CF536 /* barrelNormal.png in Resources */,
 				EBF67910219BBA09004CF536 /* boulderNormal.png in Resources */,
+				EBF8572821A5FA3B00D629B4 /* players.png in Resources */,
 				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EBF67912219BBA09004CF536 /* crate.png in Resources */,
 				EBF67911219BBA09004CF536 /* crateNormal.png in Resources */,
-				EBF8571B21A5436900D629B4 /* barbarian.png in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
 				EBF8570E21A4F94F00D629B4 /* bird.png in Resources */,
 				EBF6790E219BBA09004CF536 /* boulder.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
-				EBF8571921A5156A00D629B4 /* player_spritesheet_fixed_large.png in Resources */,
 				EBEACBAB219A7F63001577B5 /* Mushroom_Red_01.obj in Resources */,
 				EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */,
 				EBEACBAE219A7F71001577B5 /* Tent_01.obj in Resources */,
@@ -982,6 +990,8 @@
 				EB3D12E7217D1F5200FD4CF6 /* PlaygroundScene.swift in Sources */,
 				EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */,
 				EB3D12CF217D0EA100FD4CF6 /* Triangle_CustomMesh.swift in Sources */,
+				EBF8573021A6073900D629B4 /* CollisionBox.swift in Sources */,
+				EBF8573221A6079800D629B4 /* CubeBoundsMesh.swift in Sources */,
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
 				EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */,
 				EBF0E1002186A0620021E67E /* TerrainLoader.swift in Sources */,
@@ -997,20 +1007,22 @@
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
+				EBF8572A21A6025400D629B4 /* BasicScene.swift in Sources */,
 				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
 				EBF0E0FE218691000021E67E /* float4.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
 				EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */,
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,
+				EBF8572E21A6034400D629B4 /* World.swift in Sources */,
 				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
+				EBF8573421A60AA900D629B4 /* BoundingShaders.metal in Sources */,
 				EB3D12F4217D28E300FD4CF6 /* matrix_float4x4.swift in Sources */,
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
 				EB7EA6B121927399009135E7 /* Globe.swift in Sources */,
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
-				EBF8571221A5071700D629B4 /* Animation.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,

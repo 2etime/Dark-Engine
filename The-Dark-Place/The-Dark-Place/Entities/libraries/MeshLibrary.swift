@@ -58,6 +58,7 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
 }
 
 public class AppleMesh: Mesh{
+    var cubeBoundsMesh: CubeBoundsMesh!
     var vertexBuffer: MTLBuffer!
     var vertexCount: Int! = 0
     var instanceCount: Int = 1

@@ -27,6 +27,10 @@ fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
                                      constant LightData &lightData [[ buffer(1) ]]){
     
     float4 color = material.useTexture ? texture.sample(sampler2d, rd.textureCoordinate) : material.color;
+    
+//    if(rd.textureCoordinate.x < 0.007 || rd.textureCoordinate.y < 0.007 || rd.textureCoordinate.x > 0.993 || rd.textureCoordinate.y > 0.993){
+//        return half4(1,0,0,1);
+//    }
 
     if(color.a <= 0.2){
         discard_fragment();
@@ -66,7 +70,7 @@ fragment half4 basic_fragment_shader(RasterizerData rd [[ stage_in ]],
     
     color = float4(ambientColor + diffuseColor + specularColor, color.a);
     
-
+    
     
     return half4(color.r, color.g, color.b, color.a);
 }

@@ -2,6 +2,8 @@
 import MetalKit
 
 class ModelMesh: Mesh {
+    var cubeBoundsMesh: CubeBoundsMesh!
+    
     var meshes: [Any?] = []
     private var _materials: [Material] = [Material]()
     private var _asset: MDLAsset!
