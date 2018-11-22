@@ -1,16 +1,13 @@
 
 import MetalKit
 
-class PlaygroundScene: Scene {
+class CastleDefenseScene: Scene {
 
-    private var _object = Cube()
-    
     override func setupCameras() {
         setCurrentCamera(.Debug)
     }
     
     var terrain = SingleTextureTerrain(.Grass)
-    var lightThing = Cube()
     override func buildScene() {
         
         //Setup Camera
@@ -18,15 +15,17 @@ class PlaygroundScene: Scene {
         currentCamera.setPositionY(1)
         
         //Add Lights
-        lightData.color = lightThing.getColor().xyz
-        lightData.position = float3(0,500,500)
-//        lightThing.setScale(0.2)
-//        addChild(lightThing)
-        
+        lightData.color = float3(1)
+        lightData.position = float3(0,5,3)
+        //        lightData.attenuation = float3(0.0, -0.069999784, 0.08999999)
         
 
+        //Add The Terrain
+        terrain.setScale(100)
+        terrain.setDiffuseIntensity(0.4)
+        addChild(terrain)
     }
-
+    
     override func onUpdate() {
         if(Keyboard.IsKeyPressed(.upArrow)){
             currentCamera.moveZ(-GameTime.DeltaTime * 2)
@@ -59,3 +58,4 @@ class PlaygroundScene: Scene {
     }
     
 }
+

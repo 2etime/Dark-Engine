@@ -6,7 +6,7 @@ class GameHandler {
     private var _sceneManager: SceneManager!
     
     init() {
-        self._sceneManager = SceneManager(.Playground)
+        self._sceneManager = SceneManager(.CastleDefense)
     }
     
     public func updateGameView(_ width: Float, _ height: Float) {

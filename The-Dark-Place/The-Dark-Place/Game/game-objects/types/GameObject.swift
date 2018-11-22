@@ -28,7 +28,7 @@ class GameObject: Node {
     
     func setTexture(textureType: TextureTypes){
         self.material.useTexture = true
-//        self.texture = Entities.Textures[textureType]
+        self.texture = Entities.Textures[textureType]
     }
     
     func setTexture(_ texture: MTLTexture){

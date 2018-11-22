@@ -134,12 +134,14 @@
 		EBF8571721A513F400D629B4 /* SpriteSheetLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */; };
 		EBF8571D21A5DDB300D629B4 /* AnimationLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */; };
 		EBF8572121A5E33300D629B4 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572021A5E33300D629B4 /* Animations.swift */; };
-		EBF8572821A5FA3B00D629B4 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8572721A5FA3B00D629B4 /* players.png */; };
 		EBF8572A21A6025400D629B4 /* BasicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572921A6025400D629B4 /* BasicScene.swift */; };
 		EBF8572E21A6034400D629B4 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572D21A6034400D629B4 /* World.swift */; };
 		EBF8573021A6073900D629B4 /* CollisionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8572F21A6073900D629B4 /* CollisionBox.swift */; };
 		EBF8573221A6079800D629B4 /* CubeBoundsMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8573121A6079800D629B4 /* CubeBoundsMesh.swift */; };
 		EBF8573421A60AA900D629B4 /* BoundingShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBF8573321A60AA900D629B4 /* BoundingShaders.metal */; };
+		EBF8573821A736D400D629B4 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8573721A736D300D629B4 /* players.png */; };
+		EBF8573A21A739AE00D629B4 /* player_spritesheet_fixed_large.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8573921A739AE00D629B4 /* player_spritesheet_fixed_large.png */; };
+		EBF8573D21A743C900D629B4 /* CastleDefenseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8573C21A743C900D629B4 /* CastleDefenseScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,12 +287,14 @@
 		EBF8571621A513F400D629B4 /* SpriteSheetLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteSheetLibrary.swift; sourceTree = "<group>"; };
 		EBF8571C21A5DDB300D629B4 /* AnimationLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLibrary.swift; sourceTree = "<group>"; };
 		EBF8572021A5E33300D629B4 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
-		EBF8572721A5FA3B00D629B4 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = players.png; sourceTree = "<group>"; };
 		EBF8572921A6025400D629B4 /* BasicScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScene.swift; sourceTree = "<group>"; };
 		EBF8572D21A6034400D629B4 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		EBF8572F21A6073900D629B4 /* CollisionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionBox.swift; sourceTree = "<group>"; };
 		EBF8573121A6079800D629B4 /* CubeBoundsMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeBoundsMesh.swift; sourceTree = "<group>"; };
 		EBF8573321A60AA900D629B4 /* BoundingShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BoundingShaders.metal; sourceTree = "<group>"; };
+		EBF8573721A736D300D629B4 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = players.png; sourceTree = "<group>"; };
+		EBF8573921A739AE00D629B4 /* player_spritesheet_fixed_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_spritesheet_fixed_large.png; sourceTree = "<group>"; };
+		EBF8573C21A743C900D629B4 /* CastleDefenseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleDefenseScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +453,7 @@
 				EB3D12FE217D3A5500FD4CF6 /* cameras */,
 				EB3D12E5217D1DE900FD4CF6 /* scenes */,
 				EB3D12BA217AF32100FD4CF6 /* game-objects */,
+				EBF8573B21A742E100D629B4 /* CastleDefense */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -784,7 +789,8 @@
 		EBF8571521A513A200D629B4 /* spritesheet_textures */ = {
 			isa = PBXGroup;
 			children = (
-				EBF8572721A5FA3B00D629B4 /* players.png */,
+				EBF8573921A739AE00D629B4 /* player_spritesheet_fixed_large.png */,
+				EBF8573721A736D300D629B4 /* players.png */,
 			);
 			path = spritesheet_textures;
 			sourceTree = "<group>";
@@ -813,6 +819,22 @@
 				EBF8572D21A6034400D629B4 /* World.swift */,
 			);
 			path = spacial_partitioning;
+			sourceTree = "<group>";
+		};
+		EBF8573B21A742E100D629B4 /* CastleDefense */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8573E21A7449200D629B4 /* scenes */,
+			);
+			path = CastleDefense;
+			sourceTree = "<group>";
+		};
+		EBF8573E21A7449200D629B4 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8573C21A743C900D629B4 /* CastleDefenseScene.swift */,
+			);
+			path = scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -904,11 +926,12 @@
 				EB4EA360219A417700C34DAB /* grassFlowers.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EBF67913219BBA09004CF536 /* boulder.png in Resources */,
+				EBF8573A21A739AE00D629B4 /* player_spritesheet_fixed_large.png in Resources */,
 				EB4EA358219A413900C34DAB /* blendMap.png in Resources */,
 				EB08F5D0218A20FA008E1DC4 /* pirate_ship.mtl in Resources */,
 				EBF6790F219BBA09004CF536 /* barrelNormal.png in Resources */,
 				EBF67910219BBA09004CF536 /* boulderNormal.png in Resources */,
-				EBF8572821A5FA3B00D629B4 /* players.png in Resources */,
+				EBF8573821A736D400D629B4 /* players.png in Resources */,
 				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
@@ -1005,6 +1028,7 @@
 				EB3D12D2217D10E900FD4CF6 /* Entities.swift in Sources */,
 				EBF8571721A513F400D629B4 /* SpriteSheetLibrary.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
+				EBF8573D21A743C900D629B4 /* CastleDefenseScene.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EBF8572A21A6025400D629B4 /* BasicScene.swift in Sources */,

@@ -3,6 +3,7 @@ import MetalKit
 
 public enum SceneTypes {
     case Playground
+    case CastleDefense
 }
 
 class SceneManager {
@@ -13,6 +14,8 @@ class SceneManager {
         switch sceneType {
         case .Playground:
             _currentScene = PlaygroundScene()
+        case .CastleDefense:
+            _currentScene = CastleDefenseScene()
         }
     }
     

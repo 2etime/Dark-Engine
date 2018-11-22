@@ -14,7 +14,13 @@ class Animation2DLibrary: Library<AnimationTypes2D, Animation2D> {
     
     override func fillLibrary() {
         let animation = Animation2D(speed: 5, textures:
-            _spriteSheets[.Player].grabImage(col: 1, row: 1, width: 32, height: 32, rowSpan: 2)
+            _spriteSheets[.Player].grabImage(col: 1, row: 1, width: 24, height: 24, rowSpan: 2),
+            _spriteSheets[.Player].grabImage(col: 2, row: 1, width: 24, height: 24, rowSpan: 2),
+            _spriteSheets[.Player].grabImage(col: 3, row: 1, width: 24, height: 24, rowSpan: 2),
+            _spriteSheets[.Player].grabImage(col: 4, row: 1, width: 24, height: 24, rowSpan: 2),
+            _spriteSheets[.Player].grabImage(col: 5, row: 1, width: 24, height: 24, rowSpan: 2),
+            _spriteSheets[.Player].grabImage(col: 6, row: 1, width: 24, height: 24, rowSpan: 2),
+            _spriteSheets[.Player].grabImage(col: 7, row: 1, width: 24, height: 24, rowSpan: 2)
         )
         
         library.updateValue(animation, forKey: .Barbarian)

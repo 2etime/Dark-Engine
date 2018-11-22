@@ -12,6 +12,8 @@ class CubeBoundsMesh {
     init(_ mesh: Mesh) {
         self.minBounds = mesh.minBounds
         self.maxBounds = mesh.maxBounds
+//        minBounds.z = -1
+//        maxBounds.z = 1
         generateVertices()
         generateBuffers()
     }
