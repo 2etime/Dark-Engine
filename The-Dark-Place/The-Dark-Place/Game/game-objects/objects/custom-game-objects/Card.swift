@@ -7,10 +7,10 @@ class Card: GameObject {
         
         self.animation = Animations.Animation2D[.Barbarian]
 //        self.setTexture(textureType: .Face)
-        self.offset.y = 1
+//        self.offset.y = 1
         self.setName("Card")
         self.material.color = float4(1)
-        self.setScaleX(0.5)
+//        self.setScaleX(0.5)
     }
     
     override func onUpdate() {

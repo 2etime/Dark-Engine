@@ -58,6 +58,8 @@ class MeshLibrary: Library<MeshTypes, Mesh> {
 }
 
 public class AppleMesh: Mesh{
+    var offset = float3(0,0,0)
+    
     var cubeBoundsMesh: CubeBoundsMesh!
     var vertexBuffer: MTLBuffer!
     var vertexCount: Int! = 0

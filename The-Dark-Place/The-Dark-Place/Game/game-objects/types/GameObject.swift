@@ -23,7 +23,7 @@ class GameObject: Node {
             self.material.useTexture = true
         }
         
-        addChild(CollisionBox(_mesh))
+//        addChild(CollisionBox(_mesh))
     }
     
     func setTexture(textureType: TextureTypes){

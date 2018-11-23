@@ -17,12 +17,12 @@ class World {
     }
 
     public static func checkWorldCollisions(){
-        for i in 0..<_objects.count {
-            let object1 = _objects[i]
-            for j in 0..<_objects.count {
-                let object2 = _objects[j]
-                print(object2?.getPosition())
-            }
-        }
+//        for i in 0..<_objects.count {
+//            let object1 = _objects[i]
+//            for j in 0..<_objects.count {
+//                let object2 = _objects[j]
+//                print(object2?.getPosition())
+//            }
+//        }
     }
 }

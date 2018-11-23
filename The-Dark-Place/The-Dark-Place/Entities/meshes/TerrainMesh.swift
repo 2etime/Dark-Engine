@@ -3,7 +3,6 @@ import MetalKit
 
 class TerrainMesh: Mesh {
     var cubeBoundsMesh: CubeBoundsMesh!
-    
     var vertexBuffer: MTLBuffer!
     var indexBuffer: MTLBuffer!
     var vertexCount: Int!

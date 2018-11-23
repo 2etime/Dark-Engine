@@ -5,15 +5,13 @@ class CubeBoundsMesh {
     
     private var vertices: [Vertex] = []
     private var vertexBuffer: MTLBuffer!
-    private var minBounds: float3 = float3(0,0,-0.1)
-    private var maxBounds: float3 = float3(0,0,0.1)
+    private var minBounds: float3 = float3(0,0,0)
+    private var maxBounds: float3 = float3(0,0,0)
     
     
     init(_ mesh: Mesh) {
         self.minBounds = mesh.minBounds
         self.maxBounds = mesh.maxBounds
-//        minBounds.z = -1
-//        maxBounds.z = 1
         generateVertices()
         generateBuffers()
     }
@@ -80,7 +78,6 @@ class CubeBoundsMesh {
     }
     
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)

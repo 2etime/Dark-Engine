@@ -4,26 +4,22 @@ import MetalKit
 class CastleDefenseScene: Scene {
 
     override func setupCameras() {
-        setCurrentCamera(.Debug)
+        setCurrentCamera(.Ortho)
     }
     
-    var terrain = SingleTextureTerrain(.Grass)
     override func buildScene() {
-        
         //Setup Camera
         currentCamera.setPositionZ(5)
-        currentCamera.setPositionY(1)
         
         //Add Lights
         lightData.color = float3(1)
         lightData.position = float3(0,5,3)
-        //        lightData.attenuation = float3(0.0, -0.069999784, 0.08999999)
         
-
-        //Add The Terrain
-        terrain.setScale(100)
-        terrain.setDiffuseIntensity(0.4)
-        addChild(terrain)
+        var redCard = Card()
+        redCard.setColor(float4(1,0,0,1))
+        redCard.setPositionZ(1)
+        redCard.setPositionX(-0.5)
+        addChild(redCard)
     }
     
     override func onUpdate() {

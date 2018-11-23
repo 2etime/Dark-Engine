@@ -11,14 +11,20 @@ public class CustomMesh: Mesh{
     var instanceCount: Int = 1
     var minBounds: float3 = float3(0)
     var maxBounds: float3 = float3(0)
+    var offset = float3(0)
     
     init(){
+        setOffsets()
         createVertices()
         generateBuffers()
     }
 
     internal func createVertices() {
         //Override with vertices
+    }
+    
+    internal func setOffsets(){
+        //Overide with ofsets
     }
     
     private func generateBuffers(){

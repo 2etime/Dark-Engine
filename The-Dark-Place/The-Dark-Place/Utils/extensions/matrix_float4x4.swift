@@ -106,6 +106,24 @@ extension matrix_float4x4 {
         return result
     }
     
-    
+    static func orthographic(right: Float, left: Float, top: Float, bottom: Float, near: Float, far: Float)->matrix_float4x4{
+        
+        let r1c1: Float = 2.0 / (right - left)
+        let r2c2: Float = 2.0 / (top - bottom)
+        let r3c3: Float = -2.0 / (far - near)
+        
+        let r1c4: Float = -((right + left) / (right - left))
+        let r2c4: Float = -((top + bottom) / (top - bottom))
+        let r3c4: Float = -((far + near) / (far - near))
+        
+        var result = matrix_identity_float4x4
+        result.columns = (
+            float4(r1c1,  0,  0,  0),
+            float4(0,  r2c2,  0,  0),
+            float4(0,  0,  r3c3,  0),
+            float4(r1c4,  r2c4,  r3c4,  1)
+        )
+        return result
+    }
     
 }

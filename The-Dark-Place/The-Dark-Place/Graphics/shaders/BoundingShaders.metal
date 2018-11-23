@@ -28,7 +28,7 @@ fragment half4 bounding_fragment_shader(RasterizerData rd [[ stage_in ]]){
     float4 color = float4(1,0,0,1);
    
     if(rd.textureCoordinate.x < 0.007 || rd.textureCoordinate.y < 0.007 || rd.textureCoordinate.x > 0.993 || rd.textureCoordinate.y > 0.993){
-        return half4(1,0,0,1);
+        return half4(color.r,color.g,color.b,1);
     }else {
         discard_fragment();
     }

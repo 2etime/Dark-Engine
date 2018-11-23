@@ -3,6 +3,7 @@ import MetalKit
 
 enum CameraTypes {
     case Debug
+    case Ortho
 }
 
 class Scene: Node {
@@ -34,6 +35,8 @@ class Scene: Node {
             switch cameraType {
             case .Debug:
                 _cameras.updateValue(Camera_Debug(), forKey: cameraType)
+            case .Ortho:
+                _cameras.updateValue(Camera_Ortho(), forKey: cameraType)
             }
         }
         _currentCamera = _cameras[cameraType]

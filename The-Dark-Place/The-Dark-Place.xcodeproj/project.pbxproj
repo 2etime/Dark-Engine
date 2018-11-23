@@ -142,6 +142,9 @@
 		EBF8573821A736D400D629B4 /* players.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8573721A736D300D629B4 /* players.png */; };
 		EBF8573A21A739AE00D629B4 /* player_spritesheet_fixed_large.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF8573921A739AE00D629B4 /* player_spritesheet_fixed_large.png */; };
 		EBF8573D21A743C900D629B4 /* CastleDefenseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8573C21A743C900D629B4 /* CastleDefenseScene.swift */; };
+		EBF8574121A7468E00D629B4 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8574021A7468E00D629B4 /* Enemy.swift */; };
+		EBF8574321A7487900D629B4 /* Friendly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8574221A7487900D629B4 /* Friendly.swift */; };
+		EBF8574521A7B82F00D629B4 /* Camera_Ortho.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8574421A7B82F00D629B4 /* Camera_Ortho.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +298,9 @@
 		EBF8573721A736D300D629B4 /* players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = players.png; sourceTree = "<group>"; };
 		EBF8573921A739AE00D629B4 /* player_spritesheet_fixed_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_spritesheet_fixed_large.png; sourceTree = "<group>"; };
 		EBF8573C21A743C900D629B4 /* CastleDefenseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleDefenseScene.swift; sourceTree = "<group>"; };
+		EBF8574021A7468E00D629B4 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		EBF8574221A7487900D629B4 /* Friendly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friendly.swift; sourceTree = "<group>"; };
+		EBF8574421A7B82F00D629B4 /* Camera_Ortho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera_Ortho.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,10 +456,10 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12B5217AF22A00FD4CF6 /* Node.swift */,
+				EBF8573B21A742E100D629B4 /* CastleDefense */,
 				EB3D12FE217D3A5500FD4CF6 /* cameras */,
 				EB3D12E5217D1DE900FD4CF6 /* scenes */,
 				EB3D12BA217AF32100FD4CF6 /* game-objects */,
-				EBF8573B21A742E100D629B4 /* CastleDefense */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 		EB3D12EF217D24DC00FD4CF6 /* custom-game-objects */ = {
 			isa = PBXGroup;
 			children = (
+				EB7EA6BE2192775D009135E7 /* Card.swift */,
 				EBF0E0FB218680B50021E67E /* StandingGrass.swift */,
 				EB3D12EB217D24B800FD4CF6 /* Triangle.swift */,
 				EB3D130B217D4D2600FD4CF6 /* Cube.swift */,
@@ -605,6 +612,7 @@
 			children = (
 				EB3D12FB217D352400FD4CF6 /* Camera.swift */,
 				EB3D12FF217D3A7300FD4CF6 /* Camera_Debug.swift */,
+				EBF8574421A7B82F00D629B4 /* Camera_Ortho.swift */,
 			);
 			path = cameras;
 			sourceTree = "<group>";
@@ -619,7 +627,6 @@
 				EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */,
 				EB7EA6AC219271B6009135E7 /* Statue.swift */,
 				EB7EA6B021927399009135E7 /* Globe.swift */,
-				EB7EA6BE2192775D009135E7 /* Card.swift */,
 				EBEACBB0219A804E001577B5 /* TentPoles.swift */,
 				EB5287EF219A894F00EC7EAF /* Tent.swift */,
 				EB5287F1219A8A6500EC7EAF /* Campfire.swift */,
@@ -825,6 +832,7 @@
 			isa = PBXGroup;
 			children = (
 				EBF8573E21A7449200D629B4 /* scenes */,
+				EBF8573F21A7462B00D629B4 /* objects */,
 			);
 			path = CastleDefense;
 			sourceTree = "<group>";
@@ -835,6 +843,15 @@
 				EBF8573C21A743C900D629B4 /* CastleDefenseScene.swift */,
 			);
 			path = scenes;
+			sourceTree = "<group>";
+		};
+		EBF8573F21A7462B00D629B4 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8574221A7487900D629B4 /* Friendly.swift */,
+				EBF8574021A7468E00D629B4 /* Enemy.swift */,
+			);
+			path = objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1019,6 +1036,7 @@
 				EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */,
 				EBF0E1002186A0620021E67E /* TerrainLoader.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
+				EBF8574321A7487900D629B4 /* Friendly.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
 				EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */,
@@ -1030,6 +1048,7 @@
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EBF8573D21A743C900D629B4 /* CastleDefenseScene.swift in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
+				EBF8574121A7468E00D629B4 /* Enemy.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EBF8572A21A6025400D629B4 /* BasicScene.swift in Sources */,
 				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
@@ -1056,6 +1075,7 @@
 				EBF8572121A5E33300D629B4 /* Animations.swift in Sources */,
 				EB08F5D4218A983C008E1DC4 /* Suzanne.swift in Sources */,
 				EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */,
+				EBF8574521A7B82F00D629B4 /* Camera_Ortho.swift in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
 				EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */,
