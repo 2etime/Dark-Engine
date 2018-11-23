@@ -6,7 +6,7 @@ class CastleDefenseScene: Scene {
     override func setupCameras() {
         setCurrentCamera(.Ortho)
     }
-    
+    let cube = Cube()
     override func buildScene() {
         //Setup Camera
         currentCamera.setPositionZ(5)
@@ -14,12 +14,13 @@ class CastleDefenseScene: Scene {
         //Add Lights
         lightData.color = float3(1)
         lightData.position = float3(0,5,3)
+       
+//        let terrain = SingleTextureTerrain(.Grass)
+//        terrain.setPositionY(-0.2)
+//        terrain.rotateX(-0.2)
+//        addChild(terrain)
         
-        var redCard = Card()
-        redCard.setColor(float4(1,0,0,1))
-        redCard.setPositionZ(1)
-        redCard.setPositionX(-0.5)
-        addChild(redCard)
+        addChild(cube)
     }
     
     override func onUpdate() {

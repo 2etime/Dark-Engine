@@ -22,8 +22,6 @@ class PlaygroundScene: Scene {
         lightData.position = float3(0,500,500)
 //        lightThing.setScale(0.2)
 //        addChild(lightThing)
-        
-        
 
     }
 

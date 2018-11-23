@@ -13,7 +13,7 @@ class Cube: GameObject {
     }
     
     override func onUpdate() {
-        self.rotateY(GameTime.DeltaTime)
+//        self.rotateY(GameTime.DeltaTime)
     }
     
 }

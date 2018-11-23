@@ -126,4 +126,15 @@ extension matrix_float4x4 {
         return result
     }
     
+    static func orthographic(width: Float, height: Float, near: Float, far: Float)->matrix_float4x4{
+        var result = matrix_identity_float4x4
+        result.columns = (
+            float4(2.0 / width,  0,  0,  0),
+            float4(0,  2.0 / height,  0,  0),
+            float4(0,  0,  1.0 / (far - near),  0),
+            float4(0,  0,  -near / (far - near),  1)
+        )
+        return result
+    }
+    
 }
