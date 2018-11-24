@@ -8,6 +8,9 @@ class MainView: MTKView {
         
         self.device = MTLCreateSystemDefaultDevice()
         
+        GameView.Width = Float(self.bounds.width)
+        GameView.Height = Float(self.bounds.height)
+        
         DarkEngine.Ignite(self.device!)
         
         self.clearColor = Colors.ClearColors.FOREST_GREEN

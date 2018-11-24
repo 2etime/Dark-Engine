@@ -6,6 +6,7 @@ enum FragmentShaderTypes {
     case TerrainTextured
     case TerrainMultiTextured
     case Bounding
+    case BasicFont
 }
 
 class FragmentShaderLibrary: Library<FragmentShaderTypes, MTLFunction> {
@@ -27,6 +28,9 @@ class FragmentShaderLibrary: Library<FragmentShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Bounding Fragment Shader",
                                    functionName: "bounding_fragment_shader"),
                             forKey: .Bounding)
+        library.updateValue(Shader(label: "Basic Font Fragment Shader",
+                                   functionName: "basic_font_fragment"),
+                            forKey: .BasicFont)
     }
     
     override subscript(_ type: FragmentShaderTypes) -> MTLFunction {

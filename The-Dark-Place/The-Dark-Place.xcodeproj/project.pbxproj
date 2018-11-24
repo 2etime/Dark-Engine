@@ -58,6 +58,9 @@
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
 		EB41D3A421A9993500869330 /* crazyFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A221A9993400869330 /* crazyFont.fnt */; };
 		EB41D3A521A9993500869330 /* crazyFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A321A9993500869330 /* crazyFont.png */; };
+		EB41D3AE21A9A86900869330 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3AD21A9A86900869330 /* String.swift */; };
+		EB41D3C021AA07B300869330 /* FontGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3BF21AA07B300869330 /* FontGUI.swift */; };
+		EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C421AA08EE00869330 /* FontRendering.metal */; };
 		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
 		EB4EA358219A413900C34DAB /* blendMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA357219A413900C34DAB /* blendMap.png */; };
 		EB4EA35A219A414600C34DAB /* mud.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA359219A414600C34DAB /* mud.png */; };
@@ -216,6 +219,9 @@
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		EB41D3A221A9993400869330 /* crazyFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crazyFont.fnt; sourceTree = "<group>"; };
 		EB41D3A321A9993500869330 /* crazyFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crazyFont.png; sourceTree = "<group>"; };
+		EB41D3AD21A9A86900869330 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EB41D3BF21AA07B300869330 /* FontGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontGUI.swift; sourceTree = "<group>"; };
+		EB41D3C421AA08EE00869330 /* FontRendering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FontRendering.metal; sourceTree = "<group>"; };
 		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
 		EB4EA357219A413900C34DAB /* blendMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blendMap.png; sourceTree = "<group>"; };
 		EB4EA359219A414600C34DAB /* mud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mud.png; sourceTree = "<group>"; };
@@ -428,6 +434,7 @@
 				EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */,
 				EB46314F219FDEE600F67B66 /* DepthShaders.metal */,
 				EBF8573321A60AA900D629B4 /* BoundingShaders.metal */,
+				EB41D3C421AA08EE00869330 /* FontRendering.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -572,12 +579,9 @@
 		EB3D12EE217D24CA00FD4CF6 /* types */ = {
 			isa = PBXGroup;
 			children = (
-				EBF8572F21A6073900D629B4 /* CollisionBox.swift */,
-				EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */,
-				EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */,
-				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
-				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
-				EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */,
+				EB41D3C321AA084100869330 /* colliders */,
+				EB41D3C221AA082B00869330 /* game_objects */,
+				EB41D3C121AA082400869330 /* guis */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -600,6 +604,7 @@
 				EB3D12F3217D28E300FD4CF6 /* matrix_float4x4.swift */,
 				EB6A1008218502050036DB93 /* NSImage.swift */,
 				EBF0E0FD218691000021E67E /* float4.swift */,
+				EB41D3AD21A9A86900869330 /* String.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -636,6 +641,34 @@
 			children = (
 			);
 			path = TextRendering;
+			sourceTree = "<group>";
+		};
+		EB41D3C121AA082400869330 /* guis */ = {
+			isa = PBXGroup;
+			children = (
+				EB41D3BF21AA07B300869330 /* FontGUI.swift */,
+			);
+			path = guis;
+			sourceTree = "<group>";
+		};
+		EB41D3C221AA082B00869330 /* game_objects */ = {
+			isa = PBXGroup;
+			children = (
+				EB3D12BB217AF34C00FD4CF6 /* GameObject.swift */,
+				EB5AFF7B218780CD000E30B4 /* ModelGameObject.swift */,
+				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
+				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
+				EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */,
+			);
+			path = game_objects;
+			sourceTree = "<group>";
+		};
+		EB41D3C321AA084100869330 /* colliders */ = {
+			isa = PBXGroup;
+			children = (
+				EBF8572F21A6073900D629B4 /* CollisionBox.swift */,
+			);
+			path = colliders;
 			sourceTree = "<group>";
 		};
 		EB5AFF9A21880810000E30B4 /* model-game-objects */ = {
@@ -1071,6 +1104,7 @@
 				EBF8571721A513F400D629B4 /* SpriteSheetLibrary.swift in Sources */,
 				EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */,
 				EBF8573D21A743C900D629B4 /* CastleDefenseScene.swift in Sources */,
+				EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EBF8574121A7468E00D629B4 /* Enemy.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
@@ -1078,6 +1112,7 @@
 				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
 				EBF0E0FE218691000021E67E /* float4.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
+				EB41D3AE21A9A86900869330 /* String.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
 				EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */,
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,
@@ -1107,6 +1142,7 @@
 				EBB5C69D219927060006663F /* SamplerStateLibrary.swift in Sources */,
 				EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
+				EB41D3C021AA07B300869330 /* FontGUI.swift in Sources */,
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,

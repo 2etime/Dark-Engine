@@ -8,6 +8,7 @@ enum VertexShaderTypes {
     case Instanced
     case Shadow
     case Bounding
+    case BasicFont
 }
 
 class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
@@ -35,6 +36,9 @@ class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Bounding Vertex Shader",
                                    functionName: "bounding_vertex_shader"),
                             forKey: .Bounding)
+        library.updateValue(Shader(label: "Basic Font Vertex Shader",
+                                   functionName: "basic_font_vertex"),
+                            forKey: .BasicFont)
     }
     
     override subscript(_ type: VertexShaderTypes) -> MTLFunction {
