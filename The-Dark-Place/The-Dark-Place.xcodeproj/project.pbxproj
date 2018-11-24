@@ -56,6 +56,8 @@
 		EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130B217D4D2600FD4CF6 /* Cube.swift */; };
 		EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */; };
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
+		EB41D3A421A9993500869330 /* crazyFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A221A9993400869330 /* crazyFont.fnt */; };
+		EB41D3A521A9993500869330 /* crazyFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A321A9993500869330 /* crazyFont.png */; };
 		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
 		EB4EA358219A413900C34DAB /* blendMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA357219A413900C34DAB /* blendMap.png */; };
 		EB4EA35A219A414600C34DAB /* mud.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA359219A414600C34DAB /* mud.png */; };
@@ -212,6 +214,8 @@
 		EB3D130B217D4D2600FD4CF6 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		EB41D3A221A9993400869330 /* crazyFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crazyFont.fnt; sourceTree = "<group>"; };
+		EB41D3A321A9993500869330 /* crazyFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crazyFont.png; sourceTree = "<group>"; };
 		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
 		EB4EA357219A413900C34DAB /* blendMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blendMap.png; sourceTree = "<group>"; };
 		EB4EA359219A414600C34DAB /* mud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mud.png; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 		EB3D126C217A9EBE00FD4CF6 /* The-Dark-Place */ = {
 			isa = PBXGroup;
 			children = (
+				EB41D3A621A99BC200869330 /* TextRendering */,
 				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
 				EBF0E0AB21859D450021E67E /* Input */,
@@ -617,6 +622,22 @@
 			path = cameras;
 			sourceTree = "<group>";
 		};
+		EB41D3A121A998FA00869330 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				EB41D3A221A9993400869330 /* crazyFont.fnt */,
+				EB41D3A321A9993500869330 /* crazyFont.png */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		EB41D3A621A99BC200869330 /* TextRendering */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TextRendering;
+			sourceTree = "<group>";
+		};
 		EB5AFF9A21880810000E30B4 /* model-game-objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +659,7 @@
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EB41D3A121A998FA00869330 /* font */,
 				EBEACB9D219A7E32001577B5 /* textures */,
 				EBEACB9E219A7E3D001577B5 /* materials */,
 				EBEACB9F219A7E55001577B5 /* obj-files */,
@@ -967,7 +989,9 @@
 				EBEACBA1219A7F45001577B5 /* Tent_Poles_01.obj in Resources */,
 				EB08F5D2218A9824008E1DC4 /* suzanne.obj in Resources */,
 				EBEACBA3219A7F4C001577B5 /* Tent_Poles_01.mtl in Resources */,
+				EB41D3A521A9993500869330 /* crazyFont.png in Resources */,
 				EBEACBAF219A7F71001577B5 /* Tent_01.mtl in Resources */,
+				EB41D3A421A9993500869330 /* crazyFont.fnt in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
 				EB4EA35E219A415800C34DAB /* path.png in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
