@@ -42,8 +42,19 @@ class Basic_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .oneMinusSourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Basic]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Basic])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -54,8 +65,16 @@ class Skybox_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.MDLMesh]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Skybox]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Skybox]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Skybox])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -66,8 +85,16 @@ class MDLMesh_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.MDLMesh]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Basic]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.MDLMesh])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -78,8 +105,16 @@ class TerrainTextured_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Terrain]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.TerrainTextured]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.TerrainTextured])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -91,7 +126,22 @@ class Model_RenderPipelineState: RenderPipelineState {
     
     init() {
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Model])
+            let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+            renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+            renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = false
+            renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+            renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+            renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+            renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+            renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+            renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+            renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+            renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+            renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Model]
+            renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Model]
+            renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
+            
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -103,8 +153,23 @@ class Instanced_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Instanced]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Basic]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Instanced])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -116,8 +181,16 @@ class TerrainMultiTextured_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Terrain]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.TerrainMultiTextured]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.TerrainMultiTextured])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }
@@ -129,8 +202,16 @@ class Bounding_RenderPipelineState: RenderPipelineState {
     var renderPipelineState: MTLRenderPipelineState!
     
     init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Bounding]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Bounding]
+        
         do {
-            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: Graphics.RenderPipelineDescriptors[.Bounding])
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
         } catch {
             print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
         }

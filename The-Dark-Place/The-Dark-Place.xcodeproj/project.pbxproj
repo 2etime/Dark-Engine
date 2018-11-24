@@ -28,7 +28,6 @@
 		EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D129F217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift */; };
 		EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12A7217AD94D00FD4CF6 /* Library.swift */; };
 		EB3D12AA217ADFB100FD4CF6 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12A9217ADFB100FD4CF6 /* Graphics.swift */; };
-		EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12AC217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift */; };
 		EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12AE217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift */; };
 		EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12B0217AEA4100FD4CF6 /* VertexShaderLibrary.swift */; };
 		EB3D12B3217AED9100FD4CF6 /* FragmentShaderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D12B2217AED9100FD4CF6 /* FragmentShaderLibrary.swift */; };
@@ -189,7 +188,6 @@
 		EB3D129F217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
 		EB3D12A7217AD94D00FD4CF6 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		EB3D12A9217ADFB100FD4CF6 /* Graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
-		EB3D12AC217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineDescriptorLibrary.swift; sourceTree = "<group>"; };
 		EB3D12AE217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		EB3D12B0217AEA4100FD4CF6 /* VertexShaderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexShaderLibrary.swift; sourceTree = "<group>"; };
 		EB3D12B2217AED9100FD4CF6 /* FragmentShaderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentShaderLibrary.swift; sourceTree = "<group>"; };
@@ -447,7 +445,6 @@
 				EBB5C69C219927060006663F /* SamplerStateLibrary.swift */,
 				EB3D12AE217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift */,
 				EBB5C69E21993E400006663F /* RenderPassDescriptorLibrary.swift */,
-				EB3D12AC217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift */,
 				EB3D129F217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift */,
 				EB3D1301217D43E200FD4CF6 /* DepthStencilStateLibrary.swift */,
 			);
@@ -1127,7 +1124,6 @@
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
-				EB3D12AD217AE37000FD4CF6 /* RenderPipelineDescriptorLibrary.swift in Sources */,
 				EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
 				EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */,

@@ -3,7 +3,6 @@ import MetalKit
 
 class Graphics {
     public static var VertexDescriptors: VertexDescriptorLibrary!
-    public static var RenderPipelineDescriptors: RenderPipelineDescriptorLibrary!
     public static var RenderPipelineStates: RenderPipelineStateLibrary!
     public static var RenderPassDescriptors: RenderPassDescriptorLibrary!
     public static var VertexShaders: VertexShaderLibrary!
@@ -16,7 +15,6 @@ class Graphics {
         self.FragmentShaders = FragmentShaderLibrary()
         self.SamplerStates = SamplerStateLibrary()
         self.VertexDescriptors = VertexDescriptorLibrary()
-        self.RenderPipelineDescriptors = RenderPipelineDescriptorLibrary()
         self.RenderPipelineStates = RenderPipelineStateLibrary()
         self.DepthStencilStates = DepthStencilStateLibrary()
         self.RenderPassDescriptors = RenderPassDescriptorLibrary()
