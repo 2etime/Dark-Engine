@@ -9,6 +9,7 @@ enum RenderPipelineStateTypes {
     case Instanced
     case TerrainMultiTextured
     case Bounding
+    case Text
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -24,6 +25,7 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(Instanced_RenderPipelineState(), forKey: .Instanced)
         library.updateValue(TerrainMultiTextured_RenderPipelineState(), forKey: .TerrainMultiTextured)
         library.updateValue(Bounding_RenderPipelineState(), forKey: .Bounding)
+        library.updateValue(Text_RenderPipelineState(), forKey: .Text)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -209,6 +211,27 @@ class Bounding_RenderPipelineState: RenderPipelineState {
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.Bounding]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.Bounding]
+        
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+
+class Text_RenderPipelineState: RenderPipelineState {
+    var name: String = "Text Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.BasicFont]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.BasicFont]
         
         do {
             renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)

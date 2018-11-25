@@ -14,6 +14,8 @@ public class TextMesh: Mesh{
     var fontTextureType: TextureTypes!
     
     init(fontMapFileName: String, fontTextureType: TextureTypes, text: String) {
+        self.fontTextureType = fontTextureType
+        self.fontFileName = fontMapFileName
         createBuffers(text: text)
     }
     
@@ -24,8 +26,9 @@ public class TextMesh: Mesh{
     }
     
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: vertexCount)
+        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setFragmentTexture(Entities.Textures[fontTextureType], index: 0)
+        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
         
         renderCommandEncoder.drawPrimitives(type: .triangle,
                                             vertexStart: 0,
@@ -42,7 +45,9 @@ class TextMeshData {
     public var vertexCount: Int { return vertices.count }
     
     init(text: String) {
-        
+        _vertices.append(Vertex(position: float3(0,1,0), normal: float3(0), textureCoordinate: float2(0.5, 0)))
+        _vertices.append(Vertex(position: float3(-1, -1, 0), normal: float3(0), textureCoordinate: float2(0, 1)))
+        _vertices.append(Vertex(position: float3(1,-1,0), normal: float3(0), textureCoordinate: float2(1,1)))
     }
     
 }

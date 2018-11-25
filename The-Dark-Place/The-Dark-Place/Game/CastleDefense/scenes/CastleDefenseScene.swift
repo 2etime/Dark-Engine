@@ -14,16 +14,6 @@ class CastleDefenseScene: Scene {
         //Add Lights
         lightData.color = float3(1)
         lightData.position = float3(0,5,3)
-       
-        var cell1 = Card()
-        cell1.setColor(float4(1,1,0,1))
-        cell1.setPosition(float3(-1,1,0))
-        addChild(cell1)
-        
-        var cell2 = Card()
-        cell2.setColor(float4(1,0,0,1))
-        cell2.setPosition(float3(1,1,0))
-        addChild(cell2)
         
     }
     

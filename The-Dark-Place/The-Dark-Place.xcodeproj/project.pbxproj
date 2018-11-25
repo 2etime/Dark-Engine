@@ -58,7 +58,7 @@
 		EB41D3A421A9993500869330 /* crazyFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A221A9993400869330 /* crazyFont.fnt */; };
 		EB41D3A521A9993500869330 /* crazyFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A321A9993500869330 /* crazyFont.png */; };
 		EB41D3AE21A9A86900869330 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3AD21A9A86900869330 /* String.swift */; };
-		EB41D3C021AA07B300869330 /* FontGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3BF21AA07B300869330 /* FontGUI.swift */; };
+		EB41D3C021AA07B300869330 /* TextGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3BF21AA07B300869330 /* TextGUI.swift */; };
 		EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C421AA08EE00869330 /* FontRendering.metal */; };
 		EB41D3C721AA475F00869330 /* TextMeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C621AA475F00869330 /* TextMeshLibrary.swift */; };
 		EB41D3C921AA4A7F00869330 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C821AA4A7F00869330 /* TextLoader.swift */; };
@@ -221,7 +221,7 @@
 		EB41D3A221A9993400869330 /* crazyFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crazyFont.fnt; sourceTree = "<group>"; };
 		EB41D3A321A9993500869330 /* crazyFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crazyFont.png; sourceTree = "<group>"; };
 		EB41D3AD21A9A86900869330 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		EB41D3BF21AA07B300869330 /* FontGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontGUI.swift; sourceTree = "<group>"; };
+		EB41D3BF21AA07B300869330 /* TextGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGUI.swift; sourceTree = "<group>"; };
 		EB41D3C421AA08EE00869330 /* FontRendering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FontRendering.metal; sourceTree = "<group>"; };
 		EB41D3C621AA475F00869330 /* TextMeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMeshLibrary.swift; sourceTree = "<group>"; };
 		EB41D3C821AA4A7F00869330 /* TextLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLoader.swift; sourceTree = "<group>"; };
@@ -651,7 +651,7 @@
 		EB41D3C121AA082400869330 /* guis */ = {
 			isa = PBXGroup;
 			children = (
-				EB41D3BF21AA07B300869330 /* FontGUI.swift */,
+				EB41D3BF21AA07B300869330 /* TextGUI.swift */,
 			);
 			path = guis;
 			sourceTree = "<group>";
@@ -1149,7 +1149,7 @@
 				EB41D3C721AA475F00869330 /* TextMeshLibrary.swift in Sources */,
 				EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
-				EB41D3C021AA07B300869330 /* FontGUI.swift in Sources */,
+				EB41D3C021AA07B300869330 /* TextGUI.swift in Sources */,
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,
 				EB41D3CB21AA4C7800869330 /* TextMesh.swift in Sources */,

@@ -2,14 +2,14 @@
 import MetalKit
 
 public enum TextMeshTypes {
-    case CrazyFont
+    case CrazyFont_HelloWorld
 }
 
 class TextMeshLibrary: Library<TextMeshTypes, TextMesh> {
     private var library: [TextMeshTypes : TextMesh] = [:]
 
     override func fillLibrary() {
-        library.updateValue(CrazyFont("Hello World"), forKey: .CrazyFont)
+        library.updateValue(CrazyFont("Hello World"), forKey: .CrazyFont_HelloWorld)
     }
     
     override subscript(_ type: TextMeshTypes) -> TextMesh {
