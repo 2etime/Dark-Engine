@@ -5,11 +5,13 @@ class Entities {
     public static var Meshes: MeshLibrary!
     public static var Textures: TextureLibrary!
     public static var CubeTextures: CubeTextureLibrary!
+    public static var TextMesh: TextMeshLibrary!
 
     public static func Initialize(){
         self.Meshes = MeshLibrary()
         self.Textures = TextureLibrary()
         self.CubeTextures = CubeTextureLibrary()
+        self.TextMesh = TextMeshLibrary()
     }
     
 }

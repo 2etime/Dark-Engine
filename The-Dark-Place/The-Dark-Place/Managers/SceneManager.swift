@@ -35,10 +35,10 @@ class SceneManager {
         
         updateScene()
         
-        let zPassRenderPassEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: Graphics.RenderPassDescriptors[.Shadow])
-        zPassRenderPassEncoder?.label = "The Z Pass"
-        doSceneZPass(zPassRenderPassEncoder!)
-        zPassRenderPassEncoder?.endEncoding()
+//        let zPassRenderPassEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: Graphics.RenderPassDescriptors[.Shadow])
+//        zPassRenderPassEncoder?.label = "The Z Pass"
+//        doSceneZPass(zPassRenderPassEncoder!)
+//        zPassRenderPassEncoder?.endEncoding()
         
         let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
         renderCommandEncoder?.label = "The Render Pass"

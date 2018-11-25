@@ -28,22 +28,22 @@ class Shadow_RenderPassDescriptor: RenderPassDescriptor {
     var renderPassDescriptor: MTLRenderPassDescriptor!
     
     init(){
-        let shadowTextureDesc = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .depth32Float,
-                                                                         width: 2048,
-                                                                         height: 2048,
-                                                                         mipmapped: false)
-        shadowTextureDesc.resourceOptions = MTLResourceOptions.storageModePrivate
-        shadowTextureDesc.usage = [MTLTextureUsage.shaderRead, MTLTextureUsage.renderTarget]
-        
-        renderPassDescriptor = MTLRenderPassDescriptor()
-        
-        let shadowMap = DarkEngine.Device.makeTexture(descriptor: shadowTextureDesc)
-        shadowMap?.label = "Shadow Map"
-        Entities.Textures.UpdateTexture(textureType: .Depth, texture: shadowMap!)
-        
-        renderPassDescriptor.depthAttachment.texture = Entities.Textures[.Depth]
-        renderPassDescriptor.depthAttachment.loadAction = .clear
-        renderPassDescriptor.depthAttachment.storeAction = .store
-        renderPassDescriptor.depthAttachment.clearDepth = 1.0
+//        let shadowTextureDesc = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .depth32Float,
+//                                                                         width: 2048,
+//                                                                         height: 2048,
+//                                                                         mipmapped: false)
+//        shadowTextureDesc.resourceOptions = MTLResourceOptions.storageModePrivate
+//        shadowTextureDesc.usage = [MTLTextureUsage.shaderRead, MTLTextureUsage.renderTarget]
+//        
+//        renderPassDescriptor = MTLRenderPassDescriptor()
+//        
+//        let shadowMap = DarkEngine.Device.makeTexture(descriptor: shadowTextureDesc)
+//        shadowMap?.label = "Shadow Map"
+//        Entities.Textures.UpdateTexture(textureType: .Depth, texture: shadowMap!)
+//        
+//        renderPassDescriptor.depthAttachment.texture = Entities.Textures[.Depth]
+//        renderPassDescriptor.depthAttachment.loadAction = .clear
+//        renderPassDescriptor.depthAttachment.storeAction = .store
+//        renderPassDescriptor.depthAttachment.clearDepth = 1.0
     }
 }

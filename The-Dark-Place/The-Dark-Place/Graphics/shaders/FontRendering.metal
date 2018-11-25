@@ -2,16 +2,19 @@
 #include "SharedMetal.metal"
 using namespace metal;
 
-vertex RasterizerData basic_font_vertex() {
+vertex RasterizerData basic_font_vertex(VertexIn vertexIn [[ stage_in ]]) {
     RasterizerData rd;
     
-    
+    rd.position = float4(vertexIn.position, 1.0);
+    rd.textureCoordinate = vertexIn.textureCoordinate;
     
     return rd;
 }
 
-fragment half4 basic_font_fragment(RasterizerData rd [[ stage_in ]]) {
-    float4 color = float4(1,0,0,1);
+fragment half4 basic_font_fragment(RasterizerData rd [[ stage_in ]],
+                                   texture2d<float> fontTexture [[ texture(0) ]],
+                                   sampler fontSampler [[ sampler(0) ]]) {
+    float4 color = fontTexture.sample(fontSampler, rd.textureCoordinate);
     
     return half4(color.r, color.g, color.b, color.a);
 }

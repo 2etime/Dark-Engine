@@ -20,7 +20,8 @@ enum TextureTypes {
     //Normal Maps
     case BarrelNormal
     
-    case Depth
+    //Fonts
+    case CrazyFont
 }
 
 class TextureLibrary: Library<TextureTypes, MTLTexture> {
@@ -43,6 +44,9 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         
         //Normal Maps
         library.updateValue(Texture("barrelNormal", origin: .BottomLeft), forKey: .BarrelNormal)
+        
+        //Fonts
+        library.updateValue(Texture("crazyFont"), forKey: .CrazyFont)
     }
     
     ///Dynamically add textures to the library

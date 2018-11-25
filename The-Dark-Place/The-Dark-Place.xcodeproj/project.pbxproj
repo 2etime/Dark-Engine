@@ -60,6 +60,9 @@
 		EB41D3AE21A9A86900869330 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3AD21A9A86900869330 /* String.swift */; };
 		EB41D3C021AA07B300869330 /* FontGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3BF21AA07B300869330 /* FontGUI.swift */; };
 		EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C421AA08EE00869330 /* FontRendering.metal */; };
+		EB41D3C721AA475F00869330 /* TextMeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C621AA475F00869330 /* TextMeshLibrary.swift */; };
+		EB41D3C921AA4A7F00869330 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C821AA4A7F00869330 /* TextLoader.swift */; };
+		EB41D3CB21AA4C7800869330 /* TextMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3CA21AA4C7800869330 /* TextMesh.swift */; };
 		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
 		EB4EA358219A413900C34DAB /* blendMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA357219A413900C34DAB /* blendMap.png */; };
 		EB4EA35A219A414600C34DAB /* mud.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA359219A414600C34DAB /* mud.png */; };
@@ -220,6 +223,9 @@
 		EB41D3AD21A9A86900869330 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EB41D3BF21AA07B300869330 /* FontGUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontGUI.swift; sourceTree = "<group>"; };
 		EB41D3C421AA08EE00869330 /* FontRendering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FontRendering.metal; sourceTree = "<group>"; };
+		EB41D3C621AA475F00869330 /* TextMeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMeshLibrary.swift; sourceTree = "<group>"; };
+		EB41D3C821AA4A7F00869330 /* TextLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLoader.swift; sourceTree = "<group>"; };
+		EB41D3CA21AA4C7800869330 /* TextMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMesh.swift; sourceTree = "<group>"; };
 		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
 		EB4EA357219A413900C34DAB /* blendMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blendMap.png; sourceTree = "<group>"; };
 		EB4EA359219A414600C34DAB /* mud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mud.png; sourceTree = "<group>"; };
@@ -510,6 +516,7 @@
 				EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */,
 				EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */,
 				EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */,
+				EB41D3C621AA475F00869330 /* TextMeshLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -518,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */,
+				EB41D3CA21AA4C7800869330 /* TextMesh.swift */,
 				EBF0E1012186A2B20021E67E /* TerrainMesh.swift */,
 				EB5AFF9821880758000E30B4 /* ModelMesh.swift */,
 				EB3D12D0217D0EA800FD4CF6 /* custom-meshes */,
@@ -823,6 +831,7 @@
 			children = (
 				EBF0E0EF218643920021E67E /* TextureLoader.swift */,
 				EBF0E0FF2186A0620021E67E /* TerrainLoader.swift */,
+				EB41D3C821AA4A7F00869330 /* TextLoader.swift */,
 			);
 			path = Loaders;
 			sourceTree = "<group>";
@@ -1120,6 +1129,7 @@
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
 				EB7EA6B121927399009135E7 /* Globe.swift in Sources */,
+				EB41D3C921AA4A7F00869330 /* TextLoader.swift in Sources */,
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
@@ -1136,11 +1146,13 @@
 				EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */,
 				EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */,
 				EBB5C69D219927060006663F /* SamplerStateLibrary.swift in Sources */,
+				EB41D3C721AA475F00869330 /* TextMeshLibrary.swift in Sources */,
 				EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
 				EB41D3C021AA07B300869330 /* FontGUI.swift in Sources */,
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,
+				EB41D3CB21AA4C7800869330 /* TextMesh.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EBF0E1022186A2B20021E67E /* TerrainMesh.swift in Sources */,
