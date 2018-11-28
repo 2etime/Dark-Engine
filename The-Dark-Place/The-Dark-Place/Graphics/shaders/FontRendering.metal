@@ -16,5 +16,8 @@ fragment half4 basic_font_fragment(RasterizerData rd [[ stage_in ]],
                                    sampler fontSampler [[ sampler(0) ]]) {
     float4 color = fontTexture.sample(fontSampler, rd.textureCoordinate);
     
+    float gammaCorrection = 1 / 2.2;
+    color = float4(pow(color.r, gammaCorrection), pow(color.g, gammaCorrection), pow(color.b, gammaCorrection), 1.0);
+    
     return half4(color.r, color.g, color.b, color.a);
 }
