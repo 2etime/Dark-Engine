@@ -16,6 +16,9 @@
 		EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5D5218AA18B008E1DC4 /* cruiser.obj */; };
 		EB08F5D8218AA1A0008E1DC4 /* cruiser.bmp in Resources */ = {isa = PBXBuildFile; fileRef = EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */; };
 		EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */; };
+		EB20F60121AF11E20034F639 /* BufferedReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60021AF11E20034F639 /* BufferedReader.swift */; };
+		EB20F60321AF6C170034F639 /* DarkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60221AF6C170034F639 /* DarkSize.swift */; };
+		EB20F60621AFB4770034F639 /* FontCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60521AFB4770034F639 /* FontCharacter.swift */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -59,7 +62,7 @@
 		EB41D3A521A9993500869330 /* crazyFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A321A9993500869330 /* crazyFont.png */; };
 		EB41D3AE21A9A86900869330 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3AD21A9A86900869330 /* String.swift */; };
 		EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C421AA08EE00869330 /* FontRendering.metal */; };
-		EB41D3C921AA4A7F00869330 /* TextLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C821AA4A7F00869330 /* TextLoader.swift */; };
+		EB41D3C921AA4A7F00869330 /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C821AA4A7F00869330 /* FontLoader.swift */; };
 		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
 		EB4EA358219A413900C34DAB /* blendMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA357219A413900C34DAB /* blendMap.png */; };
 		EB4EA35A219A414600C34DAB /* mud.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA359219A414600C34DAB /* mud.png */; };
@@ -171,6 +174,9 @@
 		EB08F5D5218AA18B008E1DC4 /* cruiser.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cruiser.obj; sourceTree = "<group>"; };
 		EB08F5D7218AA19F008E1DC4 /* cruiser.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = cruiser.bmp; sourceTree = "<group>"; };
 		EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cruiser.swift; sourceTree = "<group>"; };
+		EB20F60021AF11E20034F639 /* BufferedReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferedReader.swift; sourceTree = "<group>"; };
+		EB20F60221AF6C170034F639 /* DarkSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSize.swift; sourceTree = "<group>"; };
+		EB20F60521AFB4770034F639 /* FontCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCharacter.swift; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,7 +225,7 @@
 		EB41D3A321A9993500869330 /* crazyFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crazyFont.png; sourceTree = "<group>"; };
 		EB41D3AD21A9A86900869330 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EB41D3C421AA08EE00869330 /* FontRendering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FontRendering.metal; sourceTree = "<group>"; };
-		EB41D3C821AA4A7F00869330 /* TextLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLoader.swift; sourceTree = "<group>"; };
+		EB41D3C821AA4A7F00869330 /* FontLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
 		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
 		EB4EA357219A413900C34DAB /* blendMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blendMap.png; sourceTree = "<group>"; };
 		EB4EA359219A414600C34DAB /* mud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mud.png; sourceTree = "<group>"; };
@@ -329,6 +335,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB20F60421AFB43A0034F639 /* FontRendering */ = {
+			isa = PBXGroup;
+			children = (
+				EB20F60021AF11E20034F639 /* BufferedReader.swift */,
+				EB41D3C821AA4A7F00869330 /* FontLoader.swift */,
+				EB20F60521AFB4770034F639 /* FontCharacter.swift */,
+			);
+			path = FontRendering;
+			sourceTree = "<group>";
+		};
 		EB3D1261217A9EBE00FD4CF6 = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +366,7 @@
 		EB3D126C217A9EBE00FD4CF6 /* The-Dark-Place */ = {
 			isa = PBXGroup;
 			children = (
-				EB41D3A621A99BC200869330 /* TextRendering */,
+				EB20F60421AFB43A0034F639 /* FontRendering */,
 				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
 				EBF0E0AB21859D450021E67E /* Input */,
@@ -610,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				EB3D12A7217AD94D00FD4CF6 /* Library.swift */,
+				EB20F60221AF6C170034F639 /* DarkSize.swift */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -631,13 +648,6 @@
 				EB41D3A321A9993500869330 /* crazyFont.png */,
 			);
 			path = font;
-			sourceTree = "<group>";
-		};
-		EB41D3A621A99BC200869330 /* TextRendering */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TextRendering;
 			sourceTree = "<group>";
 		};
 		EB41D3C121AA082400869330 /* guis */ = {
@@ -822,7 +832,6 @@
 			children = (
 				EBF0E0EF218643920021E67E /* TextureLoader.swift */,
 				EBF0E0FF2186A0620021E67E /* TerrainLoader.swift */,
-				EB41D3C821AA4A7F00869330 /* TextLoader.swift */,
 			);
 			path = Loaders;
 			sourceTree = "<group>";
@@ -1088,6 +1097,7 @@
 				EBF8573221A6079800D629B4 /* CubeBoundsMesh.swift in Sources */,
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
 				EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */,
+				EB20F60321AF6C170034F639 /* DarkSize.swift in Sources */,
 				EBF0E1002186A0620021E67E /* TerrainLoader.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EBF8574321A7487900D629B4 /* Friendly.swift in Sources */,
@@ -1120,7 +1130,7 @@
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
 				EB7EA6B121927399009135E7 /* Globe.swift in Sources */,
-				EB41D3C921AA4A7F00869330 /* TextLoader.swift in Sources */,
+				EB41D3C921AA4A7F00869330 /* FontLoader.swift in Sources */,
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
@@ -1133,12 +1143,14 @@
 				EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */,
 				EBF8574521A7B82F00D629B4 /* Camera_Ortho.swift in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
+				EB20F60621AFB4770034F639 /* FontCharacter.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
 				EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */,
 				EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */,
 				EBB5C69D219927060006663F /* SamplerStateLibrary.swift in Sources */,
 				EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */,
 				EBF0E0B021859D590021E67E /* Keyboard.swift in Sources */,
+				EB20F60121AF11E20034F639 /* BufferedReader.swift in Sources */,
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
