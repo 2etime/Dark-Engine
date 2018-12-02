@@ -26,8 +26,8 @@ class PlaygroundScene: Scene {
 //        lightThing.setScale(0.2)
 //        addChild(lightThing)
         
-        let loader = FontLoader(fontFileName: "crazyFont")
-        let vertices = loader.getFontCharacter("R", fontSize: 3)
+        let loader = FontLoader(fontFileName: "OperatorFont")
+        let vertices = loader.getFontCharacter("ABCDEFGHIJKLMNOPQRSTUVWXYZ", fontSize: 3)
         
         vertexCount = vertices.count
         vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices,
@@ -38,7 +38,7 @@ class PlaygroundScene: Scene {
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Text])
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder.setFragmentTexture(Entities.Textures[.CrazyFont], index: 0)
+        renderCommandEncoder.setFragmentTexture(Entities.Textures[.OperatorFont], index: 0)
         renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount)
         super.render(renderCommandEncoder)

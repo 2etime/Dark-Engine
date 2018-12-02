@@ -22,6 +22,7 @@ enum TextureTypes {
     
     //Fonts
     case CrazyFont
+    case OperatorFont
 }
 
 class TextureLibrary: Library<TextureTypes, MTLTexture> {
@@ -47,6 +48,7 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         
         //Fonts
         library.updateValue(Texture("crazyFont"), forKey: .CrazyFont)
+        library.updateValue(Texture("OperatorFont"), forKey: .OperatorFont)
     }
     
     ///Dynamically add textures to the library

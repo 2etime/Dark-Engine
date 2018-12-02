@@ -19,6 +19,8 @@
 		EB20F60121AF11E20034F639 /* BufferedReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60021AF11E20034F639 /* BufferedReader.swift */; };
 		EB20F60321AF6C170034F639 /* DarkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60221AF6C170034F639 /* DarkSize.swift */; };
 		EB20F60621AFB4770034F639 /* FontCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60521AFB4770034F639 /* FontCharacter.swift */; };
+		EB2F2F6B21B49C72003CE964 /* OperatorFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6921B49C72003CE964 /* OperatorFont.png */; };
+		EB2F2F6C21B49C72003CE964 /* OperatorFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6A21B49C72003CE964 /* OperatorFont.fnt */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -177,6 +179,8 @@
 		EB20F60021AF11E20034F639 /* BufferedReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferedReader.swift; sourceTree = "<group>"; };
 		EB20F60221AF6C170034F639 /* DarkSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSize.swift; sourceTree = "<group>"; };
 		EB20F60521AFB4770034F639 /* FontCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCharacter.swift; sourceTree = "<group>"; };
+		EB2F2F6921B49C72003CE964 /* OperatorFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OperatorFont.png; sourceTree = "<group>"; };
+		EB2F2F6A21B49C72003CE964 /* OperatorFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OperatorFont.fnt; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -644,6 +648,8 @@
 		EB41D3A121A998FA00869330 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				EB2F2F6A21B49C72003CE964 /* OperatorFont.fnt */,
+				EB2F2F6921B49C72003CE964 /* OperatorFont.png */,
 				EB41D3A221A9993400869330 /* crazyFont.fnt */,
 				EB41D3A321A9993500869330 /* crazyFont.png */,
 			);
@@ -1001,6 +1007,7 @@
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB08F5D8218AA1A0008E1DC4 /* cruiser.bmp in Resources */,
 				EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */,
+				EB2F2F6C21B49C72003CE964 /* OperatorFont.fnt in Resources */,
 				EB4EA360219A417700C34DAB /* grassFlowers.png in Resources */,
 				EB6A0FF92184E03C0036DB93 /* Assets.xcassets in Resources */,
 				EBF67913219BBA09004CF536 /* boulder.png in Resources */,
@@ -1013,6 +1020,7 @@
 				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
+				EB2F2F6B21B49C72003CE964 /* OperatorFont.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EBF67912219BBA09004CF536 /* crate.png in Resources */,
 				EBF67911219BBA09004CF536 /* crateNormal.png in Resources */,
