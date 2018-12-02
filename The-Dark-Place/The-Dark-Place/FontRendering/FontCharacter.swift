@@ -34,6 +34,7 @@ class FontCharacter {
     }
     
     func generateVertices(cursor: float2, fontSize: Float) {
+        print(id)
         let xPos: Float = cursor.x + (xOffset * fontSize)
         let yPos: Float = cursor.y + (yOffset * fontSize)
         let maxXPos: Float = xPos + (sizeX * fontSize)
