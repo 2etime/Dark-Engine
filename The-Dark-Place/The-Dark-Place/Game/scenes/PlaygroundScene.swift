@@ -27,7 +27,7 @@ class PlaygroundScene: Scene {
 //        addChild(lightThing)
         
         let loader = FontLoader(fontFileName: "crazyFont")
-        let vertices = loader.getFontCharacter("hello world", fontSize: 3)
+        let vertices = loader.getFontCharacter("R", fontSize: 3)
         
         vertexCount = vertices.count
         vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices,

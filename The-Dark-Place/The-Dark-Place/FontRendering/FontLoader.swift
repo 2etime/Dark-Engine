@@ -59,7 +59,7 @@ class FontLoader {
         var cursor: float2 = float2(0)
         for code in codes {
             if(code == 32){
-                cursor.x += spaceWidth * fontSize
+                cursor.x += spaceWidth * fontSize * 2
             }else {
                 let character = characterDict[code]!
                 character.generateVertices(cursor: cursor, fontSize: fontSize)

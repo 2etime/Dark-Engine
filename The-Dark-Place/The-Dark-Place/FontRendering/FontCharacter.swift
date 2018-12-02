@@ -38,39 +38,39 @@ class FontCharacter {
         let yPos: Float = cursor.y + (yOffset * fontSize)
         let maxXPos: Float = xPos + (sizeX * fontSize)
         let maxYPos: Float = yPos + (sizeY * fontSize)
-        let properXPos: Float = (2 * xPos) - 1
-        let properYPos: Float = yPos - 0.7
-        let properMaxXPos: Float = (2 * maxXPos) - 1
-        let properMaxYPos: Float = (2 * maxYPos) - 1
         
         let xTex: Float = xTextureCoord
         let yTex: Float = yTextureCoord
         let maxXTex: Float = xMaxTextureCoord
         let maxYTex: Float = yMaxTextureCoord
         
-        let position1 = float3(properXPos, properYPos, 0)
-        let textureCoord1 = float2(xTex, yTex)
+        let position1 = float3(xPos, yPos, 0)
+        let textureCoord1 = float2(xTex, maxYTex)
         let vertex1 = Vertex(position: position1, normal: float3(0), textureCoordinate: textureCoord1)
         
-        let position2 = float3(properXPos, properMaxYPos, 0)
-        let textureCoord2 = float2(xTex, maxYTex)
+        let position2 = float3(xPos, maxYPos, 0)
+        let textureCoord2 = float2(xTex, yTex)
         let vertex2 = Vertex(position: position2, normal: float3(0), textureCoordinate: textureCoord2)
         
-        let position3 = float3(properMaxXPos, properMaxYPos, 0)
-        let textureCoord3 = float2(maxXTex, maxYTex)
+        let position3 = float3(maxXPos, maxYPos, 0)
+        let textureCoord3 = float2(maxXTex, yTex)
         let vertex3 = Vertex(position: position3, normal: float3(0), textureCoordinate: textureCoord3)
 
-        let position4 = float3(properMaxXPos, properMaxYPos, 0)
-        let textureCoord4 = float2(maxXTex, maxYTex)
+        let position4 = float3(maxXPos, maxYPos, 0)
+        let textureCoord4 = float2(maxXTex, yTex)
         let vertex4 = Vertex(position: position4, normal: float3(0), textureCoordinate: textureCoord4)
         
-        let position5 = float3(properMaxXPos, properYPos, 0)
-        let textureCoord5 = float2(maxXTex, yTex)
+        let position5 = float3(xPos, yPos, 0)
+        let textureCoord5 = float2(xTex, maxYTex)
         let vertex5 = Vertex(position: position5, normal: float3(0), textureCoordinate: textureCoord5)
 
-        let position6 = float3(properXPos, properYPos, 0)
-        let textureCoord6 = float2(xTex, yTex)
+        let position6 = float3(maxXPos, yPos, 0)
+        let textureCoord6 = float2(maxXTex, maxYTex)
         let vertex6 = Vertex(position: position6, normal: float3(0), textureCoordinate: textureCoord6)
+        
+//        print("1: \(position1)  2: \(position2)  3: \(position3) \n  4: \(position4)  5: \(position5)  6: \(position6) ")
+        print("1: \(textureCoord1)  2: \(textureCoord2)  3: \(textureCoord3) \n  4: \(textureCoord4)  5: \(textureCoord5)  6: \(textureCoord6) ")
+
 
         vertices.append(contentsOf: [vertex1, vertex2, vertex3, vertex4, vertex5, vertex6])
     }
