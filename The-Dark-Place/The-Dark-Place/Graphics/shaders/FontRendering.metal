@@ -2,10 +2,12 @@
 #include "SharedMetal.metal"
 using namespace metal;
 
-vertex RasterizerData basic_font_vertex(VertexIn vertexIn [[ stage_in ]]) {
+vertex RasterizerData basic_font_vertex(VertexIn vertexIn [[ stage_in ]],
+                                        constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     RasterizerData rd;
     
-    rd.position = float4(vertexIn.position, 1.0);
+    float4 offsetPosition = float4(vertexIn.position, 1) + float4(modelConstants.offset, 0);
+    rd.position = modelConstants.modelMatrix * offsetPosition;
     rd.textureCoordinate = vertexIn.textureCoordinate;
     
     return rd;
