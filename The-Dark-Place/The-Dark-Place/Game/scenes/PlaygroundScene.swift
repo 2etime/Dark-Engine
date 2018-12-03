@@ -31,10 +31,10 @@ class PlaygroundScene: Scene {
     }
     
     var gameTime: Float = 0
-    var time: Int = 10
+    var time: Int = 12
     override func onUpdate() {
         gameTime += GameTime.DeltaTime
-        if(gameTime.remainder(dividingBy: 10) >= 1){
+        if(gameTime.remainder(dividingBy: 10) >= 0){
             time += 1
             gameTime = 0
             textObject.updateText(String(time))

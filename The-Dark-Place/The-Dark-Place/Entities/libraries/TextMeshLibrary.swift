@@ -6,7 +6,7 @@ class TextMeshLibrary: Library<String, TextMesh>  {
     private var library: [String : TextMesh] = [:]
     
     override func fillLibrary() {
-        
+
     }
     
     override subscript(_ index: String) -> TextMesh {
@@ -17,7 +17,6 @@ class TextMeshLibrary: Library<String, TextMesh>  {
         var result: TextMesh? = library[text]
         if(result == nil){
             result = TextMesh(text: text, fontType: fontType, fontSize: fontSize)
-            library.updateValue(result!, forKey: text)
         }
         return result!
     }
@@ -32,7 +31,7 @@ class TextMesh: Mesh {
     
     var vertexCount: Int = 0
     var vertexBuffer: MTLBuffer!
-    var vertices: [Vertex] = []
+    var vertices: [Vertex]!
     
     var spaceWidth: Float!
     var font: Font!
@@ -43,6 +42,7 @@ class TextMesh: Mesh {
     }
     
     func generateText(text: String, fontType: FontTypes, fontSize: Float) {
+        vertices = []
         font = Entities.Fonts[fontType]
         self.spaceWidth = font.spaceWidth
         var cursor: float2 = float2(0)
@@ -51,8 +51,7 @@ class TextMesh: Mesh {
                 cursor.x += spaceWidth * fontSize
             }else {
                 let character = font.getCharacter(String(stringCharacter))
-                character.generateVertices(cursor: cursor, fontSize: fontSize)
-                vertices.append(contentsOf: character.vertices)
+                vertices.append(contentsOf: character.generateVertices(cursor: cursor, fontSize: fontSize))
                 cursor.x += character.xAdvance * fontSize
             }
         }

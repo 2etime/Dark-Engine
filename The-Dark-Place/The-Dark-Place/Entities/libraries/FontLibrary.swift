@@ -166,7 +166,6 @@ public class CharacterData {
     var sizeX: Float!
     var sizeY: Float!
     var xAdvance: Float!
-    var vertices: [Vertex] = []
     
     init(id: Int,
          xTextureCoord: Float, yTextureCoord: Float,
@@ -186,7 +185,7 @@ public class CharacterData {
         self.xAdvance = xAdvance
     }
     
-    func generateVertices(cursor: float2, fontSize: Float) {
+    func generateVertices(cursor: float2, fontSize: Float)->[Vertex] {
         let xPos: Float = cursor.x + (xOffset * fontSize)
         let yPos: Float = cursor.y + (yOffset * fontSize)
         let maxXPos: Float = xPos + (sizeX * fontSize)
@@ -220,8 +219,8 @@ public class CharacterData {
         let position6 = float3(maxXPos, yPos, 0)
         let textureCoord6 = float2(maxXTex, maxYTex)
         let vertex6 = Vertex(position: position6, normal: float3(0), textureCoordinate: textureCoord6)
-        
-        vertices.append(contentsOf: [vertex1, vertex2, vertex3, vertex4, vertex5, vertex6])
+    
+        return [vertex1, vertex2, vertex3, vertex4, vertex5, vertex6]
     }
     
     
