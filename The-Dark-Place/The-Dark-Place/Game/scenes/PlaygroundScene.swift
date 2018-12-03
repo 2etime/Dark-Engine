@@ -11,8 +11,8 @@ class PlaygroundScene: Scene {
     
     var terrain = SingleTextureTerrain(.Grass)
     var lightThing = Cube()
-    var vertexBuffer: MTLBuffer!
-    var vertexCount: Int = 0
+
+    var textMesh: TextMesh!
     
     override func buildScene() {
         
@@ -26,24 +26,14 @@ class PlaygroundScene: Scene {
 //        lightThing.setScale(0.2)
 //        addChild(lightThing)
         
-        let loader = FontLoader(fontFileName: "OperatorFont")
-        let vertices = loader.getFontCharacter("ABCDEFGHIJKLMNOPQRSTUVWXYZ", fontSize: 3)
-        
-        vertexCount = vertices.count
-        vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices,
-                                                    length: Vertex.stride(vertices.count),
-                                                    options: [])
+        textMesh = Entities.TextMeshes["Alphabet"] as! TextMesh
     }
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Text])
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder.setFragmentTexture(Entities.Textures[.OperatorFont], index: 0)
-        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
-        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount)
-        super.render(renderCommandEncoder)
+        textMesh.drawPrimitives(renderCommandEncoder)
+        super.render(renderCommandEncoder   )
     }
-
+    
     override func onUpdate() {
         if(Keyboard.IsKeyPressed(.upArrow)){
             currentCamera.moveZ(-GameTime.DeltaTime * 2)

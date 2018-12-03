@@ -10,7 +10,7 @@ class Library<T, K> {
         //Override this function
     }
     
-    subscript(index: T) -> K? {
+    subscript(_ index: T) -> K? {
         return nil
     }
     

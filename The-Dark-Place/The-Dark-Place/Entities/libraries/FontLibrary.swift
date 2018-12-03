@@ -1,7 +1,24 @@
-import simd
-import Foundation
 
-class FontLoader {
+import MetalKit
+
+public enum FontTypes {
+    case OperatorFont
+}
+
+class FontLibrary: Library<FontTypes, Font> {
+    
+    private var library: [FontTypes : Font] = [:]
+    
+    override func fillLibrary() {
+        library.updateValue(Font("OperatorFont"), forKey: .OperatorFont)
+    }
+    
+    override subscript(_ type: FontTypes) -> Font {
+        return (library[type])!
+    }
+}
+
+class Font {
     private let DESIRED_PADDING: Int = 3
     
     private let PAD_TOP: Int = 0
@@ -20,17 +37,18 @@ class FontLoader {
     private var paddingWidth: Int = 0
     private var paddingHeight: Int = 0
     
-    private var spaceWidth: Float = 0
+    var spaceWidth: Float = 0
+    var texture: MTLTexture!
     
     private var verticalPerPixelSize: Float = 0
     private var horizontalPerPixelSize: Float = 0
     
-    private var characterDict: [Int:FontCharacter] = [:]
-
-    init(fontFileName: String) {
-        
+    private var characterDict: [Int:CharacterMesh] = [:]
+   
+    init(_ fontFileName: String) {
+        texture = Entities.Textures[.OperatorFont]
         let reader = BufferedFileReader(bundleFileName: fontFileName)
-    
+        
         while(reader.hasNextLine){
             let fontLineData = FontLineData(reader.nextLine()!)
             switch fontLineData.name.lowercased() {
@@ -53,23 +71,6 @@ class FontLoader {
         }
     }
     
-    public func getFontCharacter(_ word: String, fontSize: Float)->[Vertex]{
-        let codes = word.asciiCodes
-        var vertices: [Vertex] = []
-        var cursor: float2 = float2(0)
-        for code in codes {
-            if(code == 32){
-                cursor.x += spaceWidth * fontSize * 2
-            }else {
-                let character = characterDict[code]!
-                character.generateVertices(cursor: cursor, fontSize: fontSize)
-                cursor.x += character.xAdvance * fontSize
-                vertices.append(contentsOf: character.vertices)
-            }
-        }
-        return vertices
-    }
-    
     private func loadLineSizes(fontLineData: FontLineData) {
         let defaultLineHeight: Float = 0.03
         
@@ -90,7 +91,7 @@ class FontLoader {
         self.paddingHeight = self.paddingTop + self.paddingBottom
     }
     
-    private func loadCharacterData(fontLineData: FontLineData)->FontCharacter? {
+    private func loadCharacterData(fontLineData: FontLineData)->CharacterMesh? {
         let id = fontLineData["id"]!.intValue
         if(id == 32) {
             self.spaceWidth = Float(fontLineData["xadvance"]!.intValue - paddingWidth) * Float(horizontalPerPixelSize)
@@ -111,8 +112,8 @@ class FontLoader {
         let yOffset = Float(fontLineData["yoffset"]!.intValue + paddingTop - DESIRED_PADDING) * Float(verticalPerPixelSize)
         
         let xAdvance = Float(fontLineData["xadvance"]!.intValue - paddingWidth) * horizontalPerPixelSize
-
-        return FontCharacter(id: id,
+        
+        return CharacterMesh(id: id,
                              xTextureCoord: xTex, yTextureCoord: yTex,
                              xTextureSize: xTexSize, yTextureSize: yTexSize,
                              xOffset: xOffset, yOffset: yOffset,
@@ -120,11 +121,13 @@ class FontLoader {
                              xAdvance: xAdvance)
     }
     
+    public func getCharacter(_ char: String)->CharacterMesh {
+        let code = char.asciiCode
+        return characterDict[code]!
+    }
 }
 
 private class FontLineData {
-    //Key=char value
-    //Value=attribute value
     private var _name: String = "No Name"
     public var name: String {
         return _name

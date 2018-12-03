@@ -18,9 +18,12 @@
 		EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */; };
 		EB20F60121AF11E20034F639 /* BufferedReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60021AF11E20034F639 /* BufferedReader.swift */; };
 		EB20F60321AF6C170034F639 /* DarkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60221AF6C170034F639 /* DarkSize.swift */; };
-		EB20F60621AFB4770034F639 /* FontCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60521AFB4770034F639 /* FontCharacter.swift */; };
+		EB2E6AC421B4C1FD009DD045 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC321B4C1FD009DD045 /* FontLibrary.swift */; };
+		EB2E6AC621B4CCAB009DD045 /* TextMeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC521B4CCAB009DD045 /* TextMeshLibrary.swift */; };
+		EB2E6AC821B4CE4E009DD045 /* CharacterMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC721B4CE4E009DD045 /* CharacterMesh.swift */; };
 		EB2F2F6F21B4A087003CE964 /* OperatorFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6D21B4A087003CE964 /* OperatorFont.png */; };
 		EB2F2F7021B4A087003CE964 /* OperatorFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */; };
+		EB2F2F7821B4B8B3003CE964 /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F2F7721B4B8B3003CE964 /* TextObject.swift */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -64,7 +67,6 @@
 		EB41D3A521A9993500869330 /* crazyFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A321A9993500869330 /* crazyFont.png */; };
 		EB41D3AE21A9A86900869330 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3AD21A9A86900869330 /* String.swift */; };
 		EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C421AA08EE00869330 /* FontRendering.metal */; };
-		EB41D3C921AA4A7F00869330 /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C821AA4A7F00869330 /* FontLoader.swift */; };
 		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
 		EB4EA358219A413900C34DAB /* blendMap.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA357219A413900C34DAB /* blendMap.png */; };
 		EB4EA35A219A414600C34DAB /* mud.png in Resources */ = {isa = PBXBuildFile; fileRef = EB4EA359219A414600C34DAB /* mud.png */; };
@@ -178,9 +180,12 @@
 		EB08F5D9218AA30F008E1DC4 /* Cruiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cruiser.swift; sourceTree = "<group>"; };
 		EB20F60021AF11E20034F639 /* BufferedReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferedReader.swift; sourceTree = "<group>"; };
 		EB20F60221AF6C170034F639 /* DarkSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSize.swift; sourceTree = "<group>"; };
-		EB20F60521AFB4770034F639 /* FontCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCharacter.swift; sourceTree = "<group>"; };
+		EB2E6AC321B4C1FD009DD045 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLibrary.swift; sourceTree = "<group>"; };
+		EB2E6AC521B4CCAB009DD045 /* TextMeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMeshLibrary.swift; sourceTree = "<group>"; };
+		EB2E6AC721B4CE4E009DD045 /* CharacterMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMesh.swift; sourceTree = "<group>"; };
 		EB2F2F6D21B4A087003CE964 /* OperatorFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OperatorFont.png; sourceTree = "<group>"; };
 		EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OperatorFont.fnt; sourceTree = "<group>"; };
+		EB2F2F7721B4B8B3003CE964 /* TextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObject.swift; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -229,7 +234,6 @@
 		EB41D3A321A9993500869330 /* crazyFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crazyFont.png; sourceTree = "<group>"; };
 		EB41D3AD21A9A86900869330 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EB41D3C421AA08EE00869330 /* FontRendering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FontRendering.metal; sourceTree = "<group>"; };
-		EB41D3C821AA4A7F00869330 /* FontLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLoader.swift; sourceTree = "<group>"; };
 		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
 		EB4EA357219A413900C34DAB /* blendMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blendMap.png; sourceTree = "<group>"; };
 		EB4EA359219A414600C34DAB /* mud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mud.png; sourceTree = "<group>"; };
@@ -343,8 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				EB20F60021AF11E20034F639 /* BufferedReader.swift */,
-				EB41D3C821AA4A7F00869330 /* FontLoader.swift */,
-				EB20F60521AFB4770034F639 /* FontCharacter.swift */,
 			);
 			path = FontRendering;
 			sourceTree = "<group>";
@@ -530,6 +532,8 @@
 				EBF0E0EC218642AD0021E67E /* TextureLibrary.swift */,
 				EBF0E0A421856EE60021E67E /* CubeTextureLibrary.swift */,
 				EB3D12BE217D09FD00FD4CF6 /* MeshLibrary.swift */,
+				EB2E6AC321B4C1FD009DD045 /* FontLibrary.swift */,
+				EB2E6AC521B4CCAB009DD045 /* TextMeshLibrary.swift */,
 			);
 			path = libraries;
 			sourceTree = "<group>";
@@ -540,6 +544,7 @@
 				EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */,
 				EBF0E1012186A2B20021E67E /* TerrainMesh.swift */,
 				EB5AFF9821880758000E30B4 /* ModelMesh.swift */,
+				EB2E6AC721B4CE4E009DD045 /* CharacterMesh.swift */,
 				EB3D12D0217D0EA800FD4CF6 /* custom-meshes */,
 			);
 			path = meshes;
@@ -598,7 +603,6 @@
 			children = (
 				EB41D3C321AA084100869330 /* colliders */,
 				EB41D3C221AA082B00869330 /* game_objects */,
-				EB41D3C121AA082400869330 /* guis */,
 			);
 			path = types;
 			sourceTree = "<group>";
@@ -656,13 +660,6 @@
 			path = font;
 			sourceTree = "<group>";
 		};
-		EB41D3C121AA082400869330 /* guis */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = guis;
-			sourceTree = "<group>";
-		};
 		EB41D3C221AA082B00869330 /* game_objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +668,7 @@
 				EB6A0FF42182B5FF0036DB93 /* SkyboxGameObject.swift */,
 				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
 				EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */,
+				EB2F2F7721B4B8B3003CE964 /* TextObject.swift */,
 			);
 			path = game_objects;
 			sourceTree = "<group>";
@@ -1106,12 +1104,14 @@
 				EBF0E0B121859D590021E67E /* KeyCodes.swift in Sources */,
 				EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */,
 				EB20F60321AF6C170034F639 /* DarkSize.swift in Sources */,
+				EB2E6AC621B4CCAB009DD045 /* TextMeshLibrary.swift in Sources */,
 				EBF0E1002186A0620021E67E /* TerrainLoader.swift in Sources */,
 				EB3D1299217AC49000FD4CF6 /* Types.swift in Sources */,
 				EBF8574321A7487900D629B4 /* Friendly.swift in Sources */,
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
 				EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */,
+				EB2E6AC821B4CE4E009DD045 /* CharacterMesh.swift in Sources */,
 				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
 				EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */,
 				EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */,
@@ -1122,10 +1122,12 @@
 				EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */,
 				EB3D12BC217AF34C00FD4CF6 /* GameObject.swift in Sources */,
 				EBF8574121A7468E00D629B4 /* Enemy.swift in Sources */,
+				EB2E6AC421B4C1FD009DD045 /* FontLibrary.swift in Sources */,
 				EB3D12AF217AE6DB00FD4CF6 /* VertexDescriptorLibrary.swift in Sources */,
 				EBF8572A21A6025400D629B4 /* BasicScene.swift in Sources */,
 				EB6A1009218502050036DB93 /* NSImage.swift in Sources */,
 				EBF0E0FE218691000021E67E /* float4.swift in Sources */,
+				EB2F2F7821B4B8B3003CE964 /* TextObject.swift in Sources */,
 				EB3D1296217AB95D00FD4CF6 /* Colors.swift in Sources */,
 				EB41D3AE21A9A86900869330 /* String.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
@@ -1138,7 +1140,6 @@
 				EB3D130A217D4D1100FD4CF6 /* Cube_CustomMesh.swift in Sources */,
 				EB7AFAF4218008B1001D8172 /* Options.swift in Sources */,
 				EB7EA6B121927399009135E7 /* Globe.swift in Sources */,
-				EB41D3C921AA4A7F00869330 /* FontLoader.swift in Sources */,
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
@@ -1151,7 +1152,6 @@
 				EB5AFF8D2188049A000E30B4 /* ModelShaders.metal in Sources */,
 				EBF8574521A7B82F00D629B4 /* Camera_Ortho.swift in Sources */,
 				EB3D1302217D43E200FD4CF6 /* DepthStencilStateLibrary.swift in Sources */,
-				EB20F60621AFB4770034F639 /* FontCharacter.swift in Sources */,
 				EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */,
 				EB08F5CE218A16E8008E1DC4 /* PirateShip.swift in Sources */,
 				EBF0E0FC218680B50021E67E /* StandingGrass.swift in Sources */,
