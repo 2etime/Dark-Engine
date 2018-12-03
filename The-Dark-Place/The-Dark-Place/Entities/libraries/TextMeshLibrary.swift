@@ -36,6 +36,8 @@ class TextMesh: Mesh {
     var spaceWidth: Float!
     var font: Font!
     
+    var totalWidth: Float = 0
+    
     init(text: String, fontType: FontTypes, fontSize: Float) {
         generateText(text: text, fontType: fontType, fontSize: fontSize)
         generateBuffer()
@@ -53,6 +55,7 @@ class TextMesh: Mesh {
                 let character = font.getCharacter(String(stringCharacter))
                 vertices.append(contentsOf: character.generateVertices(cursor: cursor, fontSize: fontSize))
                 cursor.x += character.xAdvance * fontSize
+                totalWidth += character.xAdvance * fontSize
             }
         }
     }

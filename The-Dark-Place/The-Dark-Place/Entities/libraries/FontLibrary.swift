@@ -19,7 +19,7 @@ class FontLibrary: Library<FontTypes, Font> {
 }
 
 class Font {
-    private let DESIRED_PADDING: Int = 3
+    private let DESIRED_PADDING: Int = 5
     
     private let PAD_TOP: Int = 0
     private let PAD_LEFT: Int = 1

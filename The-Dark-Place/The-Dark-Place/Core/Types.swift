@@ -8,6 +8,7 @@ extension sizeable{
     static func stride(_ count: Int)->Int{ return MemoryLayout<Self>.stride * count }
 }
 
+extension matrix_float4x4: sizeable { }
 extension UInt32: sizeable { }
 extension Int32: sizeable { }
 extension float2: sizeable { }
