@@ -1,20 +1,25 @@
 
 import MetalKit
 
-class TextMeshLibrary {
+class TextMeshLibrary: Library<String, TextMesh>  {
     
     private var library: [String : TextMesh] = [:]
     
-    init(){
-        fillLibrary()
+    override func fillLibrary() {
+        
     }
     
-    func fillLibrary() {
-        library.updateValue(TextMesh(text: "ABCDEFGHIJKL   MNOPQRSTUVWXYZ", fontType: .OperatorFont, fontSize: 3), forKey: "Alphabet")
-    }
-    
-    subscript(_ index: String) -> Mesh {
+    override subscript(_ index: String) -> TextMesh {
         return (library[index])!
+    }
+    
+    subscript(_ text: String, fontType: FontTypes, fontSize: Float)->TextMesh {
+        var result: TextMesh? = library[text]
+        if(result == nil){
+            result = TextMesh(text: text, fontType: fontType, fontSize: fontSize)
+            library.updateValue(result!, forKey: text)
+        }
+        return result!
     }
     
 }
@@ -29,10 +34,15 @@ class TextMesh: Mesh {
     var vertexBuffer: MTLBuffer!
     var vertices: [Vertex] = []
     
-    var spaceWidth: Float! = 0.1
+    var spaceWidth: Float!
     var font: Font!
     
     init(text: String, fontType: FontTypes, fontSize: Float) {
+        generateText(text: text, fontType: fontType, fontSize: fontSize)
+        generateBuffer()
+    }
+    
+    func generateText(text: String, fontType: FontTypes, fontSize: Float) {
         font = Entities.Fonts[fontType]
         self.spaceWidth = font.spaceWidth
         var cursor: float2 = float2(0)
@@ -46,7 +56,6 @@ class TextMesh: Mesh {
                 cursor.x += character.xAdvance * fontSize
             }
         }
-        generateBuffer()
     }
     
     func generateBuffer() {
@@ -58,8 +67,8 @@ class TextMesh: Mesh {
 
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Text])
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
+        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setFragmentTexture(font.texture, index: 0)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount)
     }

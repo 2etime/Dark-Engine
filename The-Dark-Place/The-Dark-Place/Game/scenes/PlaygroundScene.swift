@@ -12,7 +12,7 @@ class PlaygroundScene: Scene {
     var terrain = SingleTextureTerrain(.Grass)
     var lightThing = Cube()
 
-    var textMesh: TextMesh!
+    var textObject: TextObject!
     
     override func buildScene() {
         
@@ -26,15 +26,19 @@ class PlaygroundScene: Scene {
 //        lightThing.setScale(0.2)
 //        addChild(lightThing)
         
-        textMesh = Entities.TextMeshes["Alphabet"] as! TextMesh
+        textObject = TextObject("hello world", fontType: .OperatorFont, fontSize: 3)
+        addChild(textObject)
     }
     
-    override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        textMesh.drawPrimitives(renderCommandEncoder)
-        super.render(renderCommandEncoder   )
-    }
-    
+    var gameTime: Float = 0
+    var time: Int = 10
     override func onUpdate() {
+        gameTime += GameTime.DeltaTime
+        if(gameTime.remainder(dividingBy: 10) >= 1){
+            time += 1
+            gameTime = 0
+            textObject.updateText(String(time))
+        }
         if(Keyboard.IsKeyPressed(.upArrow)){
             currentCamera.moveZ(-GameTime.DeltaTime * 2)
         }
