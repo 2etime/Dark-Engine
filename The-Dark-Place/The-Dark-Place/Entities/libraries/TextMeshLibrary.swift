@@ -10,7 +10,7 @@ class TextMeshLibrary {
     }
     
     func fillLibrary() {
-        library.updateValue(TextMesh(text: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", fontType: .OperatorFont, fontSize: 3), forKey: "Alphabet")
+        library.updateValue(TextMesh(text: "ABCDEFGHIJKL   MNOPQRSTUVWXYZ", fontType: .OperatorFont, fontSize: 3), forKey: "Alphabet")
     }
     
     subscript(_ index: String) -> Mesh {
@@ -34,6 +34,7 @@ class TextMesh: Mesh {
     
     init(text: String, fontType: FontTypes, fontSize: Float) {
         font = Entities.Fonts[fontType]
+        self.spaceWidth = font.spaceWidth
         var cursor: float2 = float2(0)
         for stringCharacter in text {
             if(stringCharacter == " "){

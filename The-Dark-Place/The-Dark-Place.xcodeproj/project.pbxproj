@@ -20,7 +20,6 @@
 		EB20F60321AF6C170034F639 /* DarkSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20F60221AF6C170034F639 /* DarkSize.swift */; };
 		EB2E6AC421B4C1FD009DD045 /* FontLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC321B4C1FD009DD045 /* FontLibrary.swift */; };
 		EB2E6AC621B4CCAB009DD045 /* TextMeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC521B4CCAB009DD045 /* TextMeshLibrary.swift */; };
-		EB2E6AC821B4CE4E009DD045 /* CharacterMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC721B4CE4E009DD045 /* CharacterMesh.swift */; };
 		EB2F2F6F21B4A087003CE964 /* OperatorFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6D21B4A087003CE964 /* OperatorFont.png */; };
 		EB2F2F7021B4A087003CE964 /* OperatorFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */; };
 		EB2F2F7821B4B8B3003CE964 /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2F2F7721B4B8B3003CE964 /* TextObject.swift */; };
@@ -182,7 +181,6 @@
 		EB20F60221AF6C170034F639 /* DarkSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSize.swift; sourceTree = "<group>"; };
 		EB2E6AC321B4C1FD009DD045 /* FontLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontLibrary.swift; sourceTree = "<group>"; };
 		EB2E6AC521B4CCAB009DD045 /* TextMeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMeshLibrary.swift; sourceTree = "<group>"; };
-		EB2E6AC721B4CE4E009DD045 /* CharacterMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMesh.swift; sourceTree = "<group>"; };
 		EB2F2F6D21B4A087003CE964 /* OperatorFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OperatorFont.png; sourceTree = "<group>"; };
 		EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OperatorFont.fnt; sourceTree = "<group>"; };
 		EB2F2F7721B4B8B3003CE964 /* TextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObject.swift; sourceTree = "<group>"; };
@@ -343,12 +341,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB20F60421AFB43A0034F639 /* FontRendering */ = {
+		EB20F60421AFB43A0034F639 /* FileIO */ = {
 			isa = PBXGroup;
 			children = (
 				EB20F60021AF11E20034F639 /* BufferedReader.swift */,
 			);
-			path = FontRendering;
+			path = FileIO;
 			sourceTree = "<group>";
 		};
 		EB3D1261217A9EBE00FD4CF6 = {
@@ -372,7 +370,6 @@
 		EB3D126C217A9EBE00FD4CF6 /* The-Dark-Place */ = {
 			isa = PBXGroup;
 			children = (
-				EB20F60421AFB43A0034F639 /* FontRendering */,
 				EB6A0FFA2184F82C0036DB93 /* Resources */,
 				EB3D1291217AB76200FD4CF6 /* Core */,
 				EBF0E0AB21859D450021E67E /* Input */,
@@ -437,6 +434,7 @@
 			children = (
 				EB3D1295217AB95D00FD4CF6 /* Colors.swift */,
 				EB3D12F0217D257900FD4CF6 /* Math.swift */,
+				EB20F60421AFB43A0034F639 /* FileIO */,
 				EB3D12FD217D353400FD4CF6 /* types */,
 				EB3D12F2217D28CD00FD4CF6 /* extensions */,
 			);
@@ -544,7 +542,6 @@
 				EB3D12CC217D0E7700FD4CF6 /* Mesh.swift */,
 				EBF0E1012186A2B20021E67E /* TerrainMesh.swift */,
 				EB5AFF9821880758000E30B4 /* ModelMesh.swift */,
-				EB2E6AC721B4CE4E009DD045 /* CharacterMesh.swift */,
 				EB3D12D0217D0EA800FD4CF6 /* custom-meshes */,
 			);
 			path = meshes;
@@ -1111,7 +1108,6 @@
 				EB3D12BF217D09FD00FD4CF6 /* MeshLibrary.swift in Sources */,
 				EB3D12B6217AF22A00FD4CF6 /* Node.swift in Sources */,
 				EB08F5DA218AA30F008E1DC4 /* Cruiser.swift in Sources */,
-				EB2E6AC821B4CE4E009DD045 /* CharacterMesh.swift in Sources */,
 				EB3D12FC217D352400FD4CF6 /* Camera.swift in Sources */,
 				EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */,
 				EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */,
