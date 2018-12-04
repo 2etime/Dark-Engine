@@ -5,20 +5,14 @@ class TextMeshLibrary: Library<String, TextMesh>  {
     
     private var library: [String : TextMesh] = [:]
     
-    override func fillLibrary() {
-
+    func addTextMesh(key: String, text: String, fontType: FontTypes, fontSize: Float)->TextMesh {
+        let textMesh = TextMesh(text: text, fontType: fontType, fontSize: fontSize)
+        library.updateValue(textMesh, forKey: key)
+        return textMesh
     }
     
     override subscript(_ index: String) -> TextMesh {
         return (library[index])!
-    }
-    
-    subscript(_ text: String, fontType: FontTypes, fontSize: Float)->TextMesh {
-        var result: TextMesh? = library[text]
-        if(result == nil){
-            result = TextMesh(text: text, fontType: fontType, fontSize: fontSize)
-        }
-        return result!
     }
     
 }
@@ -34,21 +28,38 @@ class TextMesh: Mesh {
     var vertices: [Vertex]!
     
     var spaceWidth: Float!
-    var font: Font!
     
+    var fontType: FontTypes!
+    var fontSize: Float!
+    var currentText: String!
     var totalWidth: Float = 0
     
     init(text: String, fontType: FontTypes, fontSize: Float) {
-        generateText(text: text, fontType: fontType, fontSize: fontSize)
+        self.fontType = fontType
+        self.fontSize = fontSize
+        self.currentText = text
+        generateTextVertices()
         generateBuffer()
     }
     
-    func generateText(text: String, fontType: FontTypes, fontSize: Float) {
+    func updateText(text: String) {
+        self.currentText = text
+        generateTextVertices()
+        updateBuffer()
+    }
+    
+    func updateFont(fontType: FontTypes) {
+        self.fontType = fontType
+        generateTextVertices()
+        updateBuffer()
+    }
+    
+    func generateTextVertices() {
         vertices = []
-        font = Entities.Fonts[fontType]
+        let font = Entities.Fonts[fontType]
         self.spaceWidth = font.spaceWidth
         var cursor: float2 = float2(0)
-        for stringCharacter in text {
+        for stringCharacter in currentText {
             if(stringCharacter == " "){
                 cursor.x += spaceWidth * fontSize
             }else {
@@ -60,6 +71,11 @@ class TextMesh: Mesh {
         }
     }
     
+    private func updateBuffer() {
+        let x = vertexBuffer.contents().bindMemory(to: Vertex.self, capacity: vertexCount)
+        x.assign(from: vertices, count: vertexCount)
+    }
+    
     func generateBuffer() {
         self.vertexCount = vertices.count
         self.vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices,
@@ -69,9 +85,9 @@ class TextMesh: Mesh {
 
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Text])
-        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
+        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Nearest], index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder.setFragmentTexture(font.texture, index: 0)
+        renderCommandEncoder.setFragmentTexture(Entities.Fonts[fontType].texture, index: 0)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount)
     }
 }

@@ -23,6 +23,9 @@
 		EB2E6ACA21B4DA5B009DD045 /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC921B4DA5B009DD045 /* TextObject.swift */; };
 		EB2F2F6F21B4A087003CE964 /* OperatorFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6D21B4A087003CE964 /* OperatorFont.png */; };
 		EB2F2F7021B4A087003CE964 /* OperatorFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */; };
+		EB35ABA221B5ABCE007D31E6 /* Luminari.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */; };
+		EB35ABA321B5ABCE007D31E6 /* Luminari.png in Resources */ = {isa = PBXBuildFile; fileRef = EB35ABA121B5ABCE007D31E6 /* Luminari.png */; };
+		EB35ABA521B5AC4E007D31E6 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35ABA421B5AC4E007D31E6 /* Float.swift */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
 		EB3D1281217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D1280217A9EBF00FD4CF6 /* The_Dark_PlaceTests.swift */; };
@@ -62,8 +65,6 @@
 		EB3D130C217D4D2600FD4CF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130B217D4D2600FD4CF6 /* Cube.swift */; };
 		EB3D130E217EC14E00FD4CF6 /* Quad_CustomMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */; };
 		EB3D1310217EC2B500FD4CF6 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D130F217EC2B500FD4CF6 /* Quad.swift */; };
-		EB41D3A421A9993500869330 /* crazyFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A221A9993400869330 /* crazyFont.fnt */; };
-		EB41D3A521A9993500869330 /* crazyFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB41D3A321A9993500869330 /* crazyFont.png */; };
 		EB41D3AE21A9A86900869330 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3AD21A9A86900869330 /* String.swift */; };
 		EB41D3C521AA08EE00869330 /* FontRendering.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB41D3C421AA08EE00869330 /* FontRendering.metal */; };
 		EB463150219FDEE600F67B66 /* DepthShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EB46314F219FDEE600F67B66 /* DepthShaders.metal */; };
@@ -184,6 +185,9 @@
 		EB2E6AC921B4DA5B009DD045 /* TextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObject.swift; sourceTree = "<group>"; };
 		EB2F2F6D21B4A087003CE964 /* OperatorFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OperatorFont.png; sourceTree = "<group>"; };
 		EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OperatorFont.fnt; sourceTree = "<group>"; };
+		EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Luminari.fnt; sourceTree = "<group>"; };
+		EB35ABA121B5ABCE007D31E6 /* Luminari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Luminari.png; sourceTree = "<group>"; };
+		EB35ABA421B5AC4E007D31E6 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB3D1274217A9EBF00FD4CF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -228,8 +232,6 @@
 		EB3D130B217D4D2600FD4CF6 /* Cube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 		EB3D130D217EC14E00FD4CF6 /* Quad_CustomMesh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad_CustomMesh.swift; sourceTree = "<group>"; };
 		EB3D130F217EC2B500FD4CF6 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
-		EB41D3A221A9993400869330 /* crazyFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crazyFont.fnt; sourceTree = "<group>"; };
-		EB41D3A321A9993500869330 /* crazyFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crazyFont.png; sourceTree = "<group>"; };
 		EB41D3AD21A9A86900869330 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		EB41D3C421AA08EE00869330 /* FontRendering.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FontRendering.metal; sourceTree = "<group>"; };
 		EB46314F219FDEE600F67B66 /* DepthShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = DepthShaders.metal; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 				EB6A1008218502050036DB93 /* NSImage.swift */,
 				EBF0E0FD218691000021E67E /* float4.swift */,
 				EB41D3AD21A9A86900869330 /* String.swift */,
+				EB35ABA421B5AC4E007D31E6 /* Float.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -651,8 +654,8 @@
 			children = (
 				EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */,
 				EB2F2F6D21B4A087003CE964 /* OperatorFont.png */,
-				EB41D3A221A9993400869330 /* crazyFont.fnt */,
-				EB41D3A321A9993500869330 /* crazyFont.png */,
+				EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */,
+				EB35ABA121B5ABCE007D31E6 /* Luminari.png */,
 			);
 			path = font;
 			sourceTree = "<group>";
@@ -1015,9 +1018,11 @@
 				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
+				EB35ABA221B5ABCE007D31E6 /* Luminari.fnt in Resources */,
 				EB2F2F6F21B4A087003CE964 /* OperatorFont.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EBF67912219BBA09004CF536 /* crate.png in Resources */,
+				EB35ABA321B5ABCE007D31E6 /* Luminari.png in Resources */,
 				EBF67911219BBA09004CF536 /* crateNormal.png in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
@@ -1031,9 +1036,7 @@
 				EBEACBA1219A7F45001577B5 /* Tent_Poles_01.obj in Resources */,
 				EB08F5D2218A9824008E1DC4 /* suzanne.obj in Resources */,
 				EBEACBA3219A7F4C001577B5 /* Tent_Poles_01.mtl in Resources */,
-				EB41D3A521A9993500869330 /* crazyFont.png in Resources */,
 				EBEACBAF219A7F71001577B5 /* Tent_01.mtl in Resources */,
-				EB41D3A421A9993500869330 /* crazyFont.fnt in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
 				EB4EA35E219A415800C34DAB /* path.png in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
@@ -1158,6 +1161,7 @@
 				EBF0E0EB218638AA0021E67E /* TerrainShaders.metal in Sources */,
 				EB7EA6BF2192775D009135E7 /* Card.swift in Sources */,
 				EB3D12B1217AEA4100FD4CF6 /* VertexShaderLibrary.swift in Sources */,
+				EB35ABA521B5AC4E007D31E6 /* Float.swift in Sources */,
 				EB3D1290217AB6CB00FD4CF6 /* Renderer.swift in Sources */,
 				EBF0E1022186A2B20021E67E /* TerrainMesh.swift in Sources */,
 				EB3D12B9217AF2C200FD4CF6 /* Renderable.swift in Sources */,

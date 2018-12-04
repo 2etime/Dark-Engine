@@ -19,6 +19,8 @@ class BufferedFileReader {
             }catch{
                 print("ERROR::LOADING::BUFFERED-READER-FILE::__\(bundleFileName)__\n::\(error)")
             }
+        }else {
+            print("NO SUCH FILE NAME__\(bundleFileName)")
         }
     }
     

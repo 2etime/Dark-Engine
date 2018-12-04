@@ -21,7 +21,7 @@ enum TextureTypes {
     case BarrelNormal
     
     //Fonts
-    case CrazyFont
+    case Luminari
     case OperatorFont
 }
 
@@ -47,7 +47,7 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         library.updateValue(Texture("barrelNormal", origin: .BottomLeft), forKey: .BarrelNormal)
         
         //Fonts
-        library.updateValue(Texture("crazyFont"), forKey: .CrazyFont)
+        library.updateValue(Texture("Luminari"), forKey: .Luminari)
         library.updateValue(Texture("OperatorFont"), forKey: .OperatorFont)
     }
     

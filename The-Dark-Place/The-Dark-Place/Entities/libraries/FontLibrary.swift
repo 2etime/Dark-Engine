@@ -2,6 +2,7 @@
 import MetalKit
 
 public enum FontTypes {
+    case Luminari
     case OperatorFont
 }
 
@@ -10,7 +11,8 @@ class FontLibrary: Library<FontTypes, Font> {
     private var library: [FontTypes : Font] = [:]
     
     override func fillLibrary() {
-        library.updateValue(Font("OperatorFont"), forKey: .OperatorFont)
+        library.updateValue(Font("OperatorFont", textureType: .OperatorFont), forKey: .OperatorFont)
+        library.updateValue(Font("Luminari", textureType: .Luminari), forKey: .Luminari)
     }
     
     override subscript(_ type: FontTypes) -> Font {
@@ -19,7 +21,7 @@ class FontLibrary: Library<FontTypes, Font> {
 }
 
 class Font {
-    private let DESIRED_PADDING: Int = 5
+    private let DESIRED_PADDING: Int = 3
     
     private let PAD_TOP: Int = 0
     private let PAD_LEFT: Int = 1
@@ -45,8 +47,8 @@ class Font {
     
     private var characterDict: [Int:CharacterData] = [:]
    
-    init(_ fontFileName: String) {
-        texture = Entities.Textures[.OperatorFont]
+    init(_ fontFileName: String, textureType: TextureTypes) {
+        texture = Entities.Textures[textureType]
         let reader = BufferedFileReader(bundleFileName: fontFileName)
         
         while(reader.hasNextLine){
@@ -100,8 +102,8 @@ class Font {
         }
         let xTex = Float(fontLineData["x"]!.intValue + (self.paddingLeft - DESIRED_PADDING)) / Float(self.imageWidth)
         let yTex = Float(fontLineData["y"]!.intValue + (self.paddingTop - DESIRED_PADDING)) / Float(self.imageHeight)
-        let width = fontLineData["width"]!.intValue - (paddingWidth - (2 * DESIRED_PADDING))
-        let height = fontLineData["height"]!.intValue - (paddingHeight - (2 * DESIRED_PADDING))
+        let width = fontLineData["width"]!.intValue - (paddingWidth - ( DESIRED_PADDING))
+        let height = fontLineData["height"]!.intValue - (paddingHeight - (DESIRED_PADDING))
         
         let quadWidth: Float = Float(width) * horizontalPerPixelSize
         let quadHeight: Float = Float(height) * verticalPerPixelSize
@@ -112,7 +114,7 @@ class Font {
         let xOffset = Float(fontLineData["xoffset"]!.intValue + paddingLeft - DESIRED_PADDING) * Float(horizontalPerPixelSize)
         let yOffset = Float(fontLineData["yoffset"]!.intValue + paddingTop - DESIRED_PADDING) * Float(verticalPerPixelSize)
         
-        let xAdvance = Float(fontLineData["xadvance"]!.intValue - paddingWidth) * horizontalPerPixelSize
+        let xAdvance = Float(fontLineData["xadvance"]!.intValue) * horizontalPerPixelSize
         
         return CharacterData(id: id,
                              xTextureCoord: xTex, yTextureCoord: yTex,
@@ -186,7 +188,7 @@ public class CharacterData {
     }
     
     func generateVertices(cursor: float2, fontSize: Float)->[Vertex] {
-        let xPos: Float = cursor.x + (xOffset * fontSize)
+        let xPos: Float = cursor.x + (xOffset * fontSize) 
         let yPos: Float = cursor.y + (yOffset * fontSize)
         let maxXPos: Float = xPos + (sizeX * fontSize)
         let maxYPos: Float = yPos + (sizeY * fontSize)
