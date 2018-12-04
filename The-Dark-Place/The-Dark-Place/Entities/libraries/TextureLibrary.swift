@@ -23,6 +23,7 @@ enum TextureTypes {
     //Fonts
     case Luminari
     case OperatorFont
+    case CandaraFont
 }
 
 class TextureLibrary: Library<TextureTypes, MTLTexture> {
@@ -49,6 +50,7 @@ class TextureLibrary: Library<TextureTypes, MTLTexture> {
         //Fonts
         library.updateValue(Texture("Luminari"), forKey: .Luminari)
         library.updateValue(Texture("OperatorFont"), forKey: .OperatorFont)
+        library.updateValue(Texture("candara"), forKey: .CandaraFont)
     }
     
     ///Dynamically add textures to the library

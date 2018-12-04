@@ -169,7 +169,7 @@ class TextMesh: Mesh {
 
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Text])
-        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Nearest], index: 0)
+        renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setFragmentTexture(Entities.Fonts[fontType].texture, index: 0)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexCount)

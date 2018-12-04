@@ -28,6 +28,7 @@ class TextObject: Node {
                                                         isCentered: isCentered,
                                                         maxLineLength: maxLineLength,
                                                         margin: margin)
+        self.offset.y -= 0.15
     }
     
     public func updateText(_ text: String) {

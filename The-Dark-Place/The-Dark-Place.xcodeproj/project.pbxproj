@@ -103,6 +103,8 @@
 		EBC3CD45218AB4DF00E905FA /* InstancedGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */; };
 		EBC3CD49218BE7C700E905FA /* InstancedShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */; };
 		EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */; };
+		EBD7D3B421B6460D00250FB0 /* candara.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3B221B6460C00250FB0 /* candara.png */; };
+		EBD7D3B521B6460D00250FB0 /* candara.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3B321B6460D00250FB0 /* candara.fnt */; };
 		EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */; };
 		EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */; };
 		EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */; };
@@ -270,6 +272,8 @@
 		EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancedGameObject.swift; sourceTree = "<group>"; };
 		EBC3CD48218BE7C700E905FA /* InstancedShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InstancedShaders.metal; sourceTree = "<group>"; };
 		EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassPatch.swift; sourceTree = "<group>"; };
+		EBD7D3B221B6460C00250FB0 /* candara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = candara.png; sourceTree = "<group>"; };
+		EBD7D3B321B6460D00250FB0 /* candara.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candara.fnt; sourceTree = "<group>"; };
 		EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTerrainTexture.swift; sourceTree = "<group>"; };
 		EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTextureTerrain.swift; sourceTree = "<group>"; };
 		EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextureTerrain.swift; sourceTree = "<group>"; };
@@ -652,6 +656,8 @@
 		EB41D3A121A998FA00869330 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				EBD7D3B321B6460D00250FB0 /* candara.fnt */,
+				EBD7D3B221B6460C00250FB0 /* candara.png */,
 				EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */,
 				EB2F2F6D21B4A087003CE964 /* OperatorFont.png */,
 				EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */,
@@ -1027,6 +1033,7 @@
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
 				EBF8570E21A4F94F00D629B4 /* bird.png in Resources */,
+				EBD7D3B521B6460D00250FB0 /* candara.fnt in Resources */,
 				EBF6790E219BBA09004CF536 /* boulder.obj in Resources */,
 				EBF0E0F4218645B30021E67E /* grass.png in Resources */,
 				EBEACBAB219A7F63001577B5 /* Mushroom_Red_01.obj in Resources */,
@@ -1038,6 +1045,7 @@
 				EBEACBA3219A7F4C001577B5 /* Tent_Poles_01.mtl in Resources */,
 				EBEACBAF219A7F71001577B5 /* Tent_01.mtl in Resources */,
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
+				EBD7D3B421B6460D00250FB0 /* candara.png in Resources */,
 				EB4EA35E219A415800C34DAB /* path.png in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
 				EB7EA6AB219270E9009135E7 /* statue.obj in Resources */,

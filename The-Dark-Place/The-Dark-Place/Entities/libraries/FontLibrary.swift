@@ -4,6 +4,7 @@ import MetalKit
 public enum FontTypes {
     case Luminari
     case OperatorFont
+    case CandaraFont
 }
 
 class FontLibrary: Library<FontTypes, Font> {
@@ -13,6 +14,7 @@ class FontLibrary: Library<FontTypes, Font> {
     override func fillLibrary() {
         library.updateValue(Font("OperatorFont", textureType: .OperatorFont), forKey: .OperatorFont)
         library.updateValue(Font("Luminari", textureType: .Luminari), forKey: .Luminari)
+        library.updateValue(Font("candara", textureType: .CandaraFont), forKey: .CandaraFont)
     }
     
     override subscript(_ type: FontTypes) -> Font {
@@ -21,7 +23,7 @@ class FontLibrary: Library<FontTypes, Font> {
 }
 
 class Font {
-    private let DESIRED_PADDING: Int = 3
+    private let DESIRED_PADDING: Int = 4
     
     private let PAD_TOP: Int = 0
     private let PAD_LEFT: Int = 1
@@ -101,8 +103,8 @@ class Font {
         }
         let xTex = Float(fontLineData["x"]!.intValue + (self.paddingLeft - DESIRED_PADDING)) / Float(self.imageWidth)
         let yTex = Float(fontLineData["y"]!.intValue + (self.paddingTop - DESIRED_PADDING)) / Float(self.imageHeight)
-        let width = fontLineData["width"]!.intValue - (paddingWidth - ( DESIRED_PADDING))
-        let height = fontLineData["height"]!.intValue - (paddingHeight - (DESIRED_PADDING))
+        let width = fontLineData["width"]!.intValue - (paddingWidth - (2 * DESIRED_PADDING))
+        let height = fontLineData["height"]!.intValue - (paddingHeight - (2 * DESIRED_PADDING))
         
         let quadWidth: Float = Float(width) * horizontalPerPixelSize
         let quadHeight: Float = Float(height) * verticalPerPixelSize
@@ -187,37 +189,37 @@ public class CharacterData {
     }
     
     func generateVertices(cursor: float2, fontSize: Float)->[Vertex] {
-        let xPos: Float = cursor.x + (xOffset * fontSize) - 0.5
-        let yPos: Float = cursor.y + (yOffset * fontSize) + 0.5
-        let maxXPos: Float = xPos + (sizeX * fontSize)
-        let maxYPos: Float = yPos + (sizeY * fontSize)
+        let properX: Float = cursor.x + (xOffset * fontSize) - 0.5
+        let properY: Float = cursor.y + 0.03 + 0.5
+        let properMaxX: Float = properX + (sizeX * fontSize)
+        let properMaxY: Float = properY + (sizeY * fontSize)
         
         let xTex: Float = xTextureCoord
         let yTex: Float = yTextureCoord
         let maxXTex: Float = xMaxTextureCoord
         let maxYTex: Float = yMaxTextureCoord
         
-        let position1 = float3(xPos, yPos, 0)
+        let position1 = float3(properX, properY, 0)
         let textureCoord1 = float2(xTex, maxYTex)
         let vertex1 = Vertex(position: position1, normal: float3(0), textureCoordinate: textureCoord1)
         
-        let position2 = float3(xPos, maxYPos, 0)
+        let position2 = float3(properX, properMaxY, 0)
         let textureCoord2 = float2(xTex, yTex)
         let vertex2 = Vertex(position: position2, normal: float3(0), textureCoordinate: textureCoord2)
         
-        let position3 = float3(maxXPos, maxYPos, 0)
+        let position3 = float3(properMaxX, properMaxY, 0)
         let textureCoord3 = float2(maxXTex, yTex)
         let vertex3 = Vertex(position: position3, normal: float3(0), textureCoordinate: textureCoord3)
         
-        let position4 = float3(maxXPos, maxYPos, 0)
+        let position4 = float3(properMaxX, properMaxY, 0)
         let textureCoord4 = float2(maxXTex, yTex)
         let vertex4 = Vertex(position: position4, normal: float3(0), textureCoordinate: textureCoord4)
         
-        let position5 = float3(xPos, yPos, 0)
+        let position5 = float3(properX, properY, 0)
         let textureCoord5 = float2(xTex, maxYTex)
         let vertex5 = Vertex(position: position5, normal: float3(0), textureCoordinate: textureCoord5)
         
-        let position6 = float3(maxXPos, yPos, 0)
+        let position6 = float3(properMaxX, properY, 0)
         let textureCoord6 = float2(maxXTex, maxYTex)
         let vertex6 = Vertex(position: position6, normal: float3(0), textureCoordinate: textureCoord6)
     

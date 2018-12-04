@@ -26,17 +26,15 @@ class PlaygroundScene: Scene {
 //        lightThing.setScale(0.2)
 //        addChild(lightThing)
         
-        textObject = TextObject(initialText: "0:00",
-                                fontType: .OperatorFont,
-                                fontSize: 2,
-                                margin: float4(0,0,0,0.02))
+        textObject = TextObject(initialText: "Hello World!",
+                                fontType: .CandaraFont,
+                                fontSize: 10,
+                                isCentered: true)
         
         addChild(textObject)
     }
     
     override func onUpdate() {
-        textObject.updateText(String(format: "%.2f", GameTime.TotalGameTime))
-        
         if(Keyboard.IsKeyPressed(.space)){
             textObject.updateFont(.Luminari)
         }
