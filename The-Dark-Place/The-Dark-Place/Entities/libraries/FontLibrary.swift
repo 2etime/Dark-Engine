@@ -75,7 +75,6 @@ class Font {
     
     private func loadLineSizes(fontLineData: FontLineData) {
         let defaultLineHeight: Float = 0.03
-        
         let lineHeightPixels: Float = Float(fontLineData["lineHeight"]!)! - Float(paddingHeight)
         self.verticalPerPixelSize = defaultLineHeight / lineHeightPixels
         self.horizontalPerPixelSize = verticalPerPixelSize / GameView.AspectRatio
@@ -188,8 +187,8 @@ public class CharacterData {
     }
     
     func generateVertices(cursor: float2, fontSize: Float)->[Vertex] {
-        let xPos: Float = cursor.x + (xOffset * fontSize) 
-        let yPos: Float = cursor.y + (yOffset * fontSize)
+        let xPos: Float = cursor.x + (xOffset * fontSize) - 0.5
+        let yPos: Float = cursor.y + (yOffset * fontSize) + 0.5
         let maxXPos: Float = xPos + (sizeX * fontSize)
         let maxYPos: Float = yPos + (sizeY * fontSize)
         

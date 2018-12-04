@@ -9,16 +9,18 @@ class TextObject: Node {
     var fontSize: Float!
     var currentText: String!
     var projectionMatrix: matrix_float4x4!
-    init(initialText: String, fontType: FontTypes, fontSize: Float) {
+    init(initialText: String, fontType: FontTypes, fontSize: Float, maxLineLength: Float = 1.0) {
         super.init()
         self.guid = NSUUID().uuidString
         self.fontType = fontType
         self.fontSize = fontSize
         self.currentText = initialText
         self.projectionMatrix = matrix_float4x4.orthographic(width: 1, height: 1, near: -1, far: 1)
-        self.textMesh = Entities.TextMeshes.addTextMesh(key: guid, text: initialText, fontType: fontType, fontSize: fontSize)
-        self.offset.x = -textMesh.totalWidth / 2  //Need to center better
-        self.offset.y = (-0.03 * fontSize) / 2
+        self.textMesh = Entities.TextMeshes.addTextMesh(key: guid,
+                                                        text: initialText,
+                                                        fontType: fontType,
+                                                        fontSize: fontSize,
+                                                        maxLineLength: maxLineLength)
     }
     
     public func updateText(_ text: String) {
