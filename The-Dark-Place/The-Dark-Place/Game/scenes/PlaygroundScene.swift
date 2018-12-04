@@ -29,9 +29,8 @@ class PlaygroundScene: Scene {
         textObject = TextObject(initialText: "0:00",
                                 fontType: .OperatorFont,
                                 fontSize: 2,
-                                isCentered: true,
-                                maxLineLength: 1.0,
-                                margin: float4(0,0,0,0.5))
+                                margin: float4(0,0,0,0.02))
+        
         addChild(textObject)
     }
     
