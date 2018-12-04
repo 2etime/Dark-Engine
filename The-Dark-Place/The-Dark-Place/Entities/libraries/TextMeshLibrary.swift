@@ -35,14 +35,16 @@ class TextMesh: Mesh {
     var currentText: String!
     var totalWidth: Float = 0
     var maxLineLength: Float!
+    var isCentered: Bool!
     
     var lines: [Line] = []
     
-    init(text: String, fontType: FontTypes, fontSize: Float, maxLineLength: Float = 1.0) {
+    init(text: String, fontType: FontTypes, fontSize: Float, maxLineLength: Float = 1.0, isCentered: Bool = false) {
         self.fontType = fontType
         self.fontSize = fontSize
         self.currentText = text
         self.maxLineLength = maxLineLength
+        self.isCentered = isCentered
         generateLines()
         generateTextVertices()
         generateBuffer()
@@ -111,8 +113,10 @@ class TextMesh: Mesh {
         self.spaceWidth = font.spaceWidth
         var cursor: float2 = float2(0)
         for line in lines {
+            if(self.isCentered){
+                cursor.x = (line.maxLength - line.currentLineLength) / 2
+            }
             cursor.y -= 0.03 * fontSize
-            cursor.x = 0
             for word in line.words {
                 for character in word.characters {
                     vertices.append(contentsOf: character.generateVertices(cursor: cursor,
@@ -121,6 +125,7 @@ class TextMesh: Mesh {
                 }
                 cursor.x += spaceWidth * fontSize
             }
+            cursor.x = 0
         }
     }
     
@@ -130,11 +135,8 @@ class TextMesh: Mesh {
     }
     
     func generateBuffer() {
-        if(vertices.count > 0){
-            self.vertexCount = vertices.count
-        }else{
-            self.vertices.append(Vertex(position: float3(0), normal: float3(0), textureCoordinate: float2(0)))
-        }
+        self.vertexBuffer = nil
+        self.vertexCount = vertices.count
         self.vertexBuffer = DarkEngine.Device.makeBuffer(bytes: vertices,
                                                          length: Vertex.stride(vertices.count),
                                                          options: [])
@@ -169,9 +171,9 @@ class Line {
     
     func addWord(word: Word) {
         var additionalLength = word.wordWidth
-        additionalLength += spaceSize
-        currentLineLength += additionalLength
+        additionalLength += !words.isEmpty ? spaceSize : 0
         words.append(word)
+        currentLineLength += additionalLength
     }
 }
 
