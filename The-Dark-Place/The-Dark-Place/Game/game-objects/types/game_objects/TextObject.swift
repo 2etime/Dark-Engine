@@ -9,7 +9,12 @@ class TextObject: Node {
     var fontSize: Float!
     var currentText: String!
     var projectionMatrix: matrix_float4x4!
-    init(initialText: String, fontType: FontTypes, fontSize: Float, maxLineLength: Float = 1.0) {
+    init(initialText: String,
+         fontType: FontTypes,
+         fontSize: Float,
+         isCentered: Bool = false,
+         maxLineLength: Float = 1.0,
+         margin: float4 = float4(0)) {
         super.init()
         self.guid = NSUUID().uuidString
         self.fontType = fontType
@@ -20,7 +25,9 @@ class TextObject: Node {
                                                         text: initialText,
                                                         fontType: fontType,
                                                         fontSize: fontSize,
-                                                        maxLineLength: maxLineLength)
+                                                        isCentered: isCentered,
+                                                        maxLineLength: maxLineLength,
+                                                        margin: margin)
     }
     
     public func updateText(_ text: String) {

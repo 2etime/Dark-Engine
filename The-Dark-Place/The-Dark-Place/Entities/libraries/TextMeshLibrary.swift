@@ -5,8 +5,19 @@ class TextMeshLibrary: Library<String, TextMesh>  {
     
     private var library: [String : TextMesh] = [:]
     
-    func addTextMesh(key: String, text: String, fontType: FontTypes, fontSize: Float,maxLineLength: Float = 1)->TextMesh {
-        let textMesh = TextMesh(text: text, fontType: fontType, fontSize: fontSize, maxLineLength: maxLineLength)
+    func addTextMesh(key: String,
+                     text: String,
+                     fontType: FontTypes,
+                     fontSize: Float,
+                     isCentered: Bool = false,
+                     maxLineLength: Float = 1,
+                     margin: float4 = float4(0))->TextMesh {
+        let textMesh = TextMesh(text: text,
+                                fontType: fontType,
+                                fontSize: fontSize,
+                                isCentered: isCentered,
+                                maxLineLength: maxLineLength,
+                                margin: margin)
         library.updateValue(textMesh, forKey: key)
         return textMesh
     }
@@ -18,6 +29,7 @@ class TextMeshLibrary: Library<String, TextMesh>  {
 }
 
 class TextMesh: Mesh {
+    
     var instanceCount: Int = 0
     var minBounds: float3 = float3(0)
     var maxBounds: float3 = float3(0)
@@ -36,15 +48,28 @@ class TextMesh: Mesh {
     var totalWidth: Float = 0
     var maxLineLength: Float!
     var isCentered: Bool!
+    var marginLeft: Float = 0
+    var marginRight: Float = 0
+    var marginTop: Float = 0
+    var marginBottom: Float = 0
     
     var lines: [Line] = []
     
-    init(text: String, fontType: FontTypes, fontSize: Float, maxLineLength: Float = 1.0, isCentered: Bool = false) {
+    init(text: String,
+         fontType: FontTypes,
+         fontSize: Float,
+         isCentered: Bool = false,
+         maxLineLength: Float = 1.0,
+         margin: float4 = float4(0)) {
         self.fontType = fontType
         self.fontSize = fontSize
         self.currentText = text
         self.maxLineLength = maxLineLength
         self.isCentered = isCentered
+        self.marginTop = margin.x
+        self.marginRight = margin.y
+        self.marginBottom = margin.z
+        self.marginLeft = margin.w
         generateLines()
         generateTextVertices()
         generateBuffer()
@@ -82,7 +107,7 @@ class TextMesh: Mesh {
                     let character = font.getCharacter(String(stringCharacter))
                     currentWord.addCharacter(character)
                 } else {
-                    if(currentLine.canAddWord(word: currentWord)){
+                    if(currentLine.canAddWord(word: currentWord, marginRight: marginRight)){
                         addedLastLine = true
                         currentLine.addWord(word: currentWord)
                         currentWord = Word(fontSize: fontSize)
@@ -96,7 +121,7 @@ class TextMesh: Mesh {
             }
         }
         if(!addedLastLine) {
-            if(currentLine.canAddWord(word: currentWord)){
+            if(currentLine.canAddWord(word: currentWord, marginRight: marginRight)){
                 currentLine.addWord(word: currentWord)
             }else {
                 lines.append(currentLine)
@@ -111,7 +136,7 @@ class TextMesh: Mesh {
         vertices = []
         let font = Entities.Fonts[fontType]
         self.spaceWidth = font.spaceWidth
-        var cursor: float2 = float2(0)
+        var cursor: float2 = float2(marginLeft, marginTop)
         for line in lines {
             if(self.isCentered){
                 cursor.x = (line.maxLength - line.currentLineLength) / 2
@@ -125,7 +150,7 @@ class TextMesh: Mesh {
                 }
                 cursor.x += spaceWidth * fontSize
             }
-            cursor.x = 0
+            cursor.x = marginLeft
         }
     }
     
@@ -163,10 +188,10 @@ class Line {
         self.spaceSize = spaceWidth * fontSize
     }
     
-    func canAddWord(word: Word)->Bool {
+    func canAddWord(word: Word, marginRight: Float)->Bool {
         var additionalLength = word.wordWidth
         additionalLength += !words.isEmpty ? spaceSize : 0
-        return currentLineLength + additionalLength <= maxLength
+        return currentLineLength + additionalLength + marginRight <= maxLength
     }
     
     func addWord(word: Word) {
