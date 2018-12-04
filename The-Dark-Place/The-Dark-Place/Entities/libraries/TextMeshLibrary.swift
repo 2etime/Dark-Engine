@@ -50,17 +50,20 @@ class TextMesh: Mesh {
     
     func updateText(text: String) {
         self.currentText = text
+        generateLines()
         generateTextVertices()
-        updateBuffer()
+        generateBuffer()
     }
     
     func updateFont(fontType: FontTypes) {
         self.fontType = fontType
+        generateLines()
         generateTextVertices()
         updateBuffer()
     }
     
     func generateLines() {
+        lines = []
         let font = Entities.Fonts[fontType]
         var currentLine: Line = Line(spaceWidth: font.spaceWidth, fontSize: fontSize, maxLineLength: maxLineLength)
         var currentWord: Word = Word(fontSize: fontSize)
@@ -91,48 +94,17 @@ class TextMesh: Mesh {
             }
         }
         if(!addedLastLine) {
+            if(currentLine.canAddWord(word: currentWord)){
+                currentLine.addWord(word: currentWord)
+            }else {
+                lines.append(currentLine)
+                currentLine = Line(spaceWidth: font.spaceWidth, fontSize: fontSize, maxLineLength: maxLineLength)
+                currentLine.addWord(word: currentWord)
+            }
             lines.append(currentLine)
         }
     }
 
-//    private void completeStructure(List<Line> lines, Line currentLine, Word currentWord, GUIText text) {
-//    boolean added = currentLine.attemptToAddWord(currentWord);
-//    if (!added) {
-//    lines.add(currentLine);
-//    currentLine = new Line(metaData.getSpaceWidth(), text.getFontSize(), text.getMaxLineSize());
-//    currentLine.attemptToAddWord(currentWord);
-//    }
-//    lines.add(currentLine);
-//    }
-    
-//    func generateTextVertices() {
-//        vertices = []
-//        var isSpaced: Bool = false
-//        let font = Entities.Fonts[fontType]
-//        self.spaceWidth = font.spaceWidth
-//        var cursor: float2 = float2(0)
-//        for stringCharacter in currentText {
-//            if(stringCharacter == "\n"){
-//                cursor.y -= 0.03 * fontSize
-//                cursor.x = 0
-//            }else if(stringCharacter == " "){
-//                isSpaced = true
-//                cursor.x += spaceWidth * fontSize
-//            }else {
-//                let character = font.getCharacter(String(stringCharacter))
-//                if(isSpaced && (cursor.x + character.xAdvance) * fontSize >= maxLineLength - 0.01){
-//                    cursor.y -= 0.03 * fontSize
-//                    cursor.x = 0
-//                }
-//                isSpaced = false
-//                vertices.append(contentsOf: character.generateVertices(cursor: cursor,
-//                                                                       fontSize: fontSize))
-//                cursor.x += character.xAdvance * fontSize
-//                totalWidth += character.xAdvance * fontSize
-//            }
-//        }
-//    }
-    
     func generateTextVertices() {
         vertices = []
         let font = Entities.Fonts[fontType]
