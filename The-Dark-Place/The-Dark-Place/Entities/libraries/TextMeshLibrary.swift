@@ -89,6 +89,13 @@ class TextMesh: Mesh {
         updateBuffer()
     }
     
+    func updateFontSize(size: Float){
+        self.fontSize = size
+        generateLines()
+        generateTextVertices()
+        updateBuffer()
+    }
+    
     func generateLines() {
         lines = []
         let font = Entities.Fonts[fontType]
@@ -137,11 +144,11 @@ class TextMesh: Mesh {
         let font = Entities.Fonts[fontType]
         self.spaceWidth = font.spaceWidth
         var cursor: float2 = float2(marginLeft, marginTop)
+        cursor.y += 0.15
         for line in lines {
             if(self.isCentered){
                 cursor.x = (line.maxLength - line.currentLineLength) / 2
             }
-            cursor.y -= 0.03 * fontSize
             for word in line.words {
                 for character in word.characters {
                     vertices.append(contentsOf: character.generateVertices(cursor: cursor,
@@ -150,6 +157,7 @@ class TextMesh: Mesh {
                 }
                 cursor.x += spaceWidth * fontSize
             }
+            cursor.y -= 0.03 * fontSize
             cursor.x = marginLeft
         }
     }

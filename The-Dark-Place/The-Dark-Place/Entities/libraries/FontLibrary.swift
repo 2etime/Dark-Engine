@@ -133,7 +133,7 @@ class Font {
         let yTexSize: Float = Float(height) / Float(imageHeight)
         
         let xOffset = Float(fontLineData["xoffset"]!.intValue + paddingLeft - Int(desiredPadding)) * Float(horizontalPerPixelSize)
-        let yOffset = Float(fontLineData["yoffset"]!.intValue + paddingTop - Int(desiredPadding)) * Float(verticalPerPixelSize)
+        let yOffset = -Float(fontLineData["yoffset"]!.intValue + paddingTop - Int(desiredPadding)) * Float(verticalPerPixelSize)
         
         let xAdvance = Float(fontLineData["xadvance"]!.intValue) * horizontalPerPixelSize
         
@@ -211,37 +211,37 @@ public class CharacterData {
     func generateVertices(cursor: float2, fontSize: Float)->[Vertex] {
         
         let properX: Float = cursor.x + (xOffset * fontSize) - 0.5
-        let properY: Float = cursor.y + (yOffset * fontSize) +  0.5
+        let properY: Float = cursor.y + (yOffset * fontSize) + 0.5
         let properMaxX: Float = properX + (sizeX * fontSize)
-        let properMaxY: Float = properY + (sizeY * fontSize)
-        
+        let properMaxY: Float = properY - (sizeY * fontSize)
+
         let xTex: Float = xTextureCoord
         let yTex: Float = yTextureCoord
         let maxXTex: Float = xMaxTextureCoord
         let maxYTex: Float = yMaxTextureCoord
         
         let position1 = float3(properX, properY, 0)
-        let textureCoord1 = float2(xTex, maxYTex)
+        let textureCoord1 = float2(xTex, yTex)
         let vertex1 = Vertex(position: position1, normal: float3(0), textureCoordinate: textureCoord1)
         
         let position2 = float3(properX, properMaxY, 0)
-        let textureCoord2 = float2(xTex, yTex)
+        let textureCoord2 = float2(xTex, maxYTex)
         let vertex2 = Vertex(position: position2, normal: float3(0), textureCoordinate: textureCoord2)
         
         let position3 = float3(properMaxX, properMaxY, 0)
-        let textureCoord3 = float2(maxXTex, yTex)
+        let textureCoord3 = float2(maxXTex, maxYTex)
         let vertex3 = Vertex(position: position3, normal: float3(0), textureCoordinate: textureCoord3)
         
         let position4 = float3(properMaxX, properMaxY, 0)
-        let textureCoord4 = float2(maxXTex, yTex)
+        let textureCoord4 = float2(maxXTex, maxYTex)
         let vertex4 = Vertex(position: position4, normal: float3(0), textureCoordinate: textureCoord4)
         
-        let position5 = float3(properX, properY, 0)
-        let textureCoord5 = float2(xTex, maxYTex)
+        let position5 = float3(properMaxX, properY, 0)
+        let textureCoord5 = float2(maxXTex, yTex)
         let vertex5 = Vertex(position: position5, normal: float3(0), textureCoordinate: textureCoord5)
         
-        let position6 = float3(properMaxX, properY, 0)
-        let textureCoord6 = float2(maxXTex, maxYTex)
+        let position6 = float3(properX, properY, 0)
+        let textureCoord6 = float2(xTex, yTex)
         let vertex6 = Vertex(position: position6, normal: float3(0), textureCoordinate: textureCoord6)
     
         return [vertex1, vertex2, vertex3, vertex4, vertex5, vertex6]

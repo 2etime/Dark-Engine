@@ -43,6 +43,10 @@ class TextObject: Node {
     public func updateFont(_ fontType: FontTypes){
         Entities.TextMeshes[guid].updateFont(fontType: fontType)
     }
+    
+    public func updateFontSize(_ size: Float){
+        Entities.TextMeshes[guid].updateFontSize(size: size)
+    }
 }
 
 extension TextObject: Renderable {
