@@ -9,6 +9,8 @@ class TextObject: Node {
     var fontSize: Float!
     var currentText: String!
     var projectionMatrix: matrix_float4x4!
+    
+    var textData = TextData()
     init(initialText: String,
          fontType: FontTypes,
          fontSize: Float,
@@ -28,6 +30,9 @@ class TextObject: Node {
                                                         isCentered: isCentered,
                                                         maxLineLength: maxLineLength,
                                                         margin: margin)
+        textData = TextData()
+        textData.edge = 0.02
+        textData.width = 0.51
         self.offset.y -= 0.15
     }
     
@@ -38,7 +43,6 @@ class TextObject: Node {
     public func updateFont(_ fontType: FontTypes){
         Entities.TextMeshes[guid].updateFont(fontType: fontType)
     }
-    
 }
 
 extension TextObject: Renderable {
@@ -48,6 +52,7 @@ extension TextObject: Renderable {
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setVertexBytes(&projectionMatrix, length: matrix_float4x4.stride, index: 1)
+        renderCommandEncoder.setFragmentBytes(&textData, length: TextData.stride, index: 1)
         textMesh.drawPrimitives(renderCommandEncoder)
     }
 }

@@ -57,4 +57,10 @@ struct LightData: sizeable {
     var attenuation: float3 = float3(1.0, 0.0, 0.0) //maxes : x y z : 3 10 4
  }
 
+struct TextData: sizeable {
+    var width: Float = 1.0
+    var edge: Float = 0.0
+    var color: float4 = float4(1)
+}
+
 

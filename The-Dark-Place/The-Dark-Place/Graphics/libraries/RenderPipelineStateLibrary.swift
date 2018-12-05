@@ -9,7 +9,8 @@ enum RenderPipelineStateTypes {
     case Instanced
     case TerrainMultiTextured
     case Bounding
-    case Text
+    case BasicFont
+    case FieldDistanceFont
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -25,7 +26,8 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(Instanced_RenderPipelineState(), forKey: .Instanced)
         library.updateValue(TerrainMultiTextured_RenderPipelineState(), forKey: .TerrainMultiTextured)
         library.updateValue(Bounding_RenderPipelineState(), forKey: .Bounding)
-        library.updateValue(Text_RenderPipelineState(), forKey: .Text)
+        library.updateValue(Basic_Font_RenderPipelineState(), forKey: .BasicFont)
+        library.updateValue(Distance_Field_Text_RenderPipelineState(), forKey: .FieldDistanceFont)
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -220,7 +222,35 @@ class Bounding_RenderPipelineState: RenderPipelineState {
     }
 }
 
-class Text_RenderPipelineState: RenderPipelineState {
+class Basic_Font_RenderPipelineState: RenderPipelineState {
+    var name: String = "Text Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+//        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+//        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+//        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+//        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+//        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+//        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+//        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.BasicFont]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.BasicFont]
+        
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+
+class Distance_Field_Text_RenderPipelineState: RenderPipelineState {
     var name: String = "Text Render Pipeline State"
     var renderPipelineState: MTLRenderPipelineState!
     
@@ -238,7 +268,7 @@ class Text_RenderPipelineState: RenderPipelineState {
         renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.BasicFont]
-        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.BasicFont]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.FieldDistanceFont]
         
         do {
             renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)

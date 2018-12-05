@@ -23,8 +23,6 @@
 		EB2E6ACA21B4DA5B009DD045 /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2E6AC921B4DA5B009DD045 /* TextObject.swift */; };
 		EB2F2F6F21B4A087003CE964 /* OperatorFont.png in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6D21B4A087003CE964 /* OperatorFont.png */; };
 		EB2F2F7021B4A087003CE964 /* OperatorFont.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */; };
-		EB35ABA221B5ABCE007D31E6 /* Luminari.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */; };
-		EB35ABA321B5ABCE007D31E6 /* Luminari.png in Resources */ = {isa = PBXBuildFile; fileRef = EB35ABA121B5ABCE007D31E6 /* Luminari.png */; };
 		EB35ABA521B5AC4E007D31E6 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB35ABA421B5AC4E007D31E6 /* Float.swift */; };
 		EB3D126E217A9EBE00FD4CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */; };
 		EB3D1275217A9EBF00FD4CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3D1273217A9EBF00FD4CF6 /* Main.storyboard */; };
@@ -105,6 +103,9 @@
 		EBC3CD4B218BE8C000E905FA /* GrassPatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */; };
 		EBD7D3B421B6460D00250FB0 /* candara.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3B221B6460C00250FB0 /* candara.png */; };
 		EBD7D3B521B6460D00250FB0 /* candara.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3B321B6460D00250FB0 /* candara.fnt */; };
+		EBD7D3B721B788D300250FB0 /* ASCII-Table.svg in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3B621B788D300250FB0 /* ASCII-Table.svg */; };
+		EBD7D3BE21B78AD300250FB0 /* Luminari.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3BC21B78AD300250FB0 /* Luminari.png */; };
+		EBD7D3BF21B78AD300250FB0 /* Luminari.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3BD21B78AD300250FB0 /* Luminari.fnt */; };
 		EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */; };
 		EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */; };
 		EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */; };
@@ -187,8 +188,6 @@
 		EB2E6AC921B4DA5B009DD045 /* TextObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObject.swift; sourceTree = "<group>"; };
 		EB2F2F6D21B4A087003CE964 /* OperatorFont.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OperatorFont.png; sourceTree = "<group>"; };
 		EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OperatorFont.fnt; sourceTree = "<group>"; };
-		EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Luminari.fnt; sourceTree = "<group>"; };
-		EB35ABA121B5ABCE007D31E6 /* Luminari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Luminari.png; sourceTree = "<group>"; };
 		EB35ABA421B5AC4E007D31E6 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		EB3D126A217A9EBE00FD4CF6 /* The-Dark-Place.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Dark-Place.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D126D217A9EBE00FD4CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +273,9 @@
 		EBC3CD4A218BE8C000E905FA /* GrassPatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassPatch.swift; sourceTree = "<group>"; };
 		EBD7D3B221B6460C00250FB0 /* candara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = candara.png; sourceTree = "<group>"; };
 		EBD7D3B321B6460D00250FB0 /* candara.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = candara.fnt; sourceTree = "<group>"; };
+		EBD7D3B621B788D300250FB0 /* ASCII-Table.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ASCII-Table.svg"; sourceTree = "<group>"; };
+		EBD7D3BC21B78AD300250FB0 /* Luminari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Luminari.png; sourceTree = "<group>"; };
+		EBD7D3BD21B78AD300250FB0 /* Luminari.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Luminari.fnt; sourceTree = "<group>"; };
 		EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTerrainTexture.swift; sourceTree = "<group>"; };
 		EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTextureTerrain.swift; sourceTree = "<group>"; };
 		EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextureTerrain.swift; sourceTree = "<group>"; };
@@ -660,8 +662,8 @@
 				EBD7D3B221B6460C00250FB0 /* candara.png */,
 				EB2F2F6E21B4A087003CE964 /* OperatorFont.fnt */,
 				EB2F2F6D21B4A087003CE964 /* OperatorFont.png */,
-				EB35ABA021B5ABCE007D31E6 /* Luminari.fnt */,
-				EB35ABA121B5ABCE007D31E6 /* Luminari.png */,
+				EBD7D3BD21B78AD300250FB0 /* Luminari.fnt */,
+				EBD7D3BC21B78AD300250FB0 /* Luminari.png */,
 			);
 			path = font;
 			sourceTree = "<group>";
@@ -708,6 +710,7 @@
 		EB6A0FFA2184F82C0036DB93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBD7D3B621B788D300250FB0 /* ASCII-Table.svg */,
 				EB41D3A121A998FA00869330 /* font */,
 				EBEACB9D219A7E32001577B5 /* textures */,
 				EBEACB9E219A7E3D001577B5 /* materials */,
@@ -1010,6 +1013,7 @@
 				EB7EA6BA219275A1009135E7 /* globe_compass.mat in Resources */,
 				EB6A10042184F86A0036DB93 /* sky_right.png in Resources */,
 				EB08F5D8218AA1A0008E1DC4 /* cruiser.bmp in Resources */,
+				EBD7D3B721B788D300250FB0 /* ASCII-Table.svg in Resources */,
 				EB08F5D6218AA18B008E1DC4 /* cruiser.obj in Resources */,
 				EB2F2F7021B4A087003CE964 /* OperatorFont.fnt in Resources */,
 				EB4EA360219A417700C34DAB /* grassFlowers.png in Resources */,
@@ -1024,11 +1028,10 @@
 				EBEACBA7219A7F59001577B5 /* Campfire_01.mtl in Resources */,
 				EB6A10052184F86A0036DB93 /* sky_back.png in Resources */,
 				EB4EA35C219A415100C34DAB /* grassy2.png in Resources */,
-				EB35ABA221B5ABCE007D31E6 /* Luminari.fnt in Resources */,
 				EB2F2F6F21B4A087003CE964 /* OperatorFont.png in Resources */,
+				EBD7D3BE21B78AD300250FB0 /* Luminari.png in Resources */,
 				EB08F5CC218A15B6008E1DC4 /* pirate_ship.obj in Resources */,
 				EBF67912219BBA09004CF536 /* crate.png in Resources */,
-				EB35ABA321B5ABCE007D31E6 /* Luminari.png in Resources */,
 				EBF67911219BBA09004CF536 /* crateNormal.png in Resources */,
 				EB08F5CA218A127F008E1DC4 /* armadillo.obj in Resources */,
 				EBEACBA6219A7F59001577B5 /* Campfire_01.obj in Resources */,
@@ -1047,6 +1050,7 @@
 				EBF0E0FA21866F690021E67E /* standing_grass.png in Resources */,
 				EBD7D3B421B6460D00250FB0 /* candara.png in Resources */,
 				EB4EA35E219A415800C34DAB /* path.png in Resources */,
+				EBD7D3BF21B78AD300250FB0 /* Luminari.fnt in Resources */,
 				EB6A1019218519850036DB93 /* sky_bottom.png in Resources */,
 				EB7EA6AB219270E9009135E7 /* statue.obj in Resources */,
 				EB7EA6B321927521009135E7 /* globe_moon.mat in Resources */,

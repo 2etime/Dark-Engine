@@ -168,7 +168,14 @@ class TextMesh: Mesh {
     }
 
     func drawPrimitives(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Text])
+        let font = Entities.Fonts[fontType]
+        switch font.fontGraphicStyle! {
+        case .Basic:
+            renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.BasicFont])
+        case .FieldDistanced:
+            renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.FieldDistanceFont])
+        }
+
         renderCommandEncoder.setFragmentSamplerState(Graphics.SamplerStates[.Linear], index: 0)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.setFragmentTexture(Entities.Fonts[fontType].texture, index: 0)

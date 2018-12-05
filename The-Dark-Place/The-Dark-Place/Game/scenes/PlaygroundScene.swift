@@ -26,9 +26,9 @@ class PlaygroundScene: Scene {
 //        lightThing.setScale(0.2)
 //        addChild(lightThing)
         
-        textObject = TextObject(initialText: "Hello World!",
+        textObject = TextObject(initialText: "abcdefgh",
                                 fontType: .CandaraFont,
-                                fontSize: 10,
+                                fontSize: 5,
                                 isCentered: true)
         
         addChild(textObject)
@@ -36,7 +36,7 @@ class PlaygroundScene: Scene {
     
     override func onUpdate() {
         if(Keyboard.IsKeyPressed(.space)){
-            textObject.updateFont(.Luminari)
+            textObject.updateFont(.OperatorFont)
         }
         if(Keyboard.IsKeyPressed(.upArrow)){
             currentCamera.moveZ(-GameTime.DeltaTime * 2)
