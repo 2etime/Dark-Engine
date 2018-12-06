@@ -8,6 +8,7 @@ enum FragmentShaderTypes {
     case Bounding
     case BasicFont
     case FieldDistanceFont
+    case BasicGui
 }
 
 class FragmentShaderLibrary: Library<FragmentShaderTypes, MTLFunction> {
@@ -35,6 +36,9 @@ class FragmentShaderLibrary: Library<FragmentShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Field Distance Font Fragment Shader",
                                    functionName: "field_distance_font_fragment"),
                             forKey: .FieldDistanceFont)
+        library.updateValue(Shader(label: "Basic Gui Fragment Shader",
+                                   functionName: "basic_gui_fragment"),
+                            forKey: .BasicGui)
     }
     
     override subscript(_ type: FragmentShaderTypes) -> MTLFunction {

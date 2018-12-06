@@ -9,6 +9,7 @@ enum VertexShaderTypes {
     case Shadow
     case Bounding
     case BasicFont
+    case BasicGui
 }
 
 class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
@@ -39,6 +40,9 @@ class VertexShaderLibrary: Library<VertexShaderTypes, MTLFunction> {
         library.updateValue(Shader(label: "Basic Font Vertex Shader",
                                    functionName: "basic_font_vertex"),
                             forKey: .BasicFont)
+        library.updateValue(Shader(label: "Basic Gui Vertex Shader",
+                                   functionName: "basic_gui_vertex"),
+                            forKey: .BasicGui)
     }
     
     override subscript(_ type: VertexShaderTypes) -> MTLFunction {

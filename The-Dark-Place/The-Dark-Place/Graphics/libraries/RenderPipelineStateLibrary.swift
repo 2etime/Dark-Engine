@@ -11,6 +11,7 @@ enum RenderPipelineStateTypes {
     case Bounding
     case BasicFont
     case FieldDistanceFont
+    case BasicGui
 }
 
 class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPipelineState> {
@@ -28,6 +29,8 @@ class RenderPipelineStateLibrary: Library<RenderPipelineStateTypes, MTLRenderPip
         library.updateValue(Bounding_RenderPipelineState(), forKey: .Bounding)
         library.updateValue(Basic_Font_RenderPipelineState(), forKey: .BasicFont)
         library.updateValue(Distance_Field_Text_RenderPipelineState(), forKey: .FieldDistanceFont)
+        library.updateValue(Basic_Gui_RenderPipelineState(), forKey: .BasicGui)
+
     }
     
     override subscript(_ type: RenderPipelineStateTypes) -> MTLRenderPipelineState {
@@ -269,6 +272,34 @@ class Distance_Field_Text_RenderPipelineState: RenderPipelineState {
         renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
         renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.BasicFont]
         renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.FieldDistanceFont]
+        
+        do {
+            renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+        } catch {
+            print("ERROR::CREATING::RENDER_PIPELINE_STATE::\(name)::\(error)")
+        }
+    }
+}
+
+class Basic_Gui_RenderPipelineState: RenderPipelineState {
+    var name: String = "Gui Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init() {
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgr10a2Unorm
+        renderPipelineDescriptor.colorAttachments[0]!.isBlendingEnabled = true
+        renderPipelineDescriptor.colorAttachments[0]!.alphaBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.rgbBlendOperation = .add
+        renderPipelineDescriptor.colorAttachments[0]!.sourceRGBBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.sourceAlphaBlendFactor = .sourceAlpha
+        renderPipelineDescriptor.colorAttachments[0]!.destinationRGBBlendFactor = .one
+        renderPipelineDescriptor.colorAttachments[0]!.destinationAlphaBlendFactor = .one
+        renderPipelineDescriptor.depthAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.stencilAttachmentPixelFormat = .depth32Float_stencil8
+        renderPipelineDescriptor.vertexDescriptor = Graphics.VertexDescriptors[.Basic]
+        renderPipelineDescriptor.vertexFunction = Graphics.VertexShaders[.BasicGui]
+        renderPipelineDescriptor.fragmentFunction = Graphics.FragmentShaders[.BasicGui]
         
         do {
             renderPipelineState = try DarkEngine.Device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)

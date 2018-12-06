@@ -8,7 +8,6 @@ class TextObject: Node {
     var fontType: FontTypes!
     var fontSize: Float!
     var currentText: String!
-    var projectionMatrix: matrix_float4x4!
     
     var textData = TextData()
     init(initialText: String,
@@ -22,7 +21,6 @@ class TextObject: Node {
         self.fontType = fontType
         self.fontSize = fontSize
         self.currentText = initialText
-        self.projectionMatrix = matrix_float4x4.orthographic(width: 1, height: 1, near: -1, far: 1)
         self.textMesh = Entities.TextMeshes.addTextMesh(key: guid,
                                                         text: initialText,
                                                         fontType: fontType,
@@ -55,7 +53,6 @@ extension TextObject: Renderable {
     }
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        renderCommandEncoder.setVertexBytes(&projectionMatrix, length: matrix_float4x4.stride, index: 1)
         renderCommandEncoder.setFragmentBytes(&textData, length: TextData.stride, index: 1)
         textMesh.drawPrimitives(renderCommandEncoder)
     }

@@ -106,6 +106,8 @@
 		EBD7D3B721B788D300250FB0 /* ASCII-Table.svg in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3B621B788D300250FB0 /* ASCII-Table.svg */; };
 		EBD7D3BE21B78AD300250FB0 /* Luminari.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3BC21B78AD300250FB0 /* Luminari.png */; };
 		EBD7D3BF21B78AD300250FB0 /* Luminari.fnt in Resources */ = {isa = PBXBuildFile; fileRef = EBD7D3BD21B78AD300250FB0 /* Luminari.fnt */; };
+		EBD7D3C121B8A86200250FB0 /* GUIObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD7D3C021B8A86200250FB0 /* GUIObject.swift */; };
+		EBD7D3C321B8CB8300250FB0 /* GuiShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = EBD7D3C221B8CB8300250FB0 /* GuiShader.metal */; };
 		EBEACB8F219A60CE001577B5 /* MultiTerrainTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */; };
 		EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */; };
 		EBEACB98219A7C15001577B5 /* SingleTextureTerrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */; };
@@ -276,6 +278,8 @@
 		EBD7D3B621B788D300250FB0 /* ASCII-Table.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "ASCII-Table.svg"; sourceTree = "<group>"; };
 		EBD7D3BC21B78AD300250FB0 /* Luminari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Luminari.png; sourceTree = "<group>"; };
 		EBD7D3BD21B78AD300250FB0 /* Luminari.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Luminari.fnt; sourceTree = "<group>"; };
+		EBD7D3C021B8A86200250FB0 /* GUIObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUIObject.swift; sourceTree = "<group>"; };
+		EBD7D3C221B8CB8300250FB0 /* GuiShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = GuiShader.metal; sourceTree = "<group>"; };
 		EBEACB8E219A60CE001577B5 /* MultiTerrainTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTerrainTexture.swift; sourceTree = "<group>"; };
 		EBEACB95219A796C001577B5 /* MultiTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTextureTerrain.swift; sourceTree = "<group>"; };
 		EBEACB97219A7C15001577B5 /* SingleTextureTerrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTextureTerrain.swift; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 				EB46314F219FDEE600F67B66 /* DepthShaders.metal */,
 				EBF8573321A60AA900D629B4 /* BoundingShaders.metal */,
 				EB41D3C421AA08EE00869330 /* FontRendering.metal */,
+				EBD7D3C221B8CB8300250FB0 /* GuiShader.metal */,
 			);
 			path = shaders;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				EBC3CD44218AB4DF00E905FA /* InstancedGameObject.swift */,
 				EBF0E0E8218617A20021E67E /* TerrainGameObject.swift */,
 				EB2E6AC921B4DA5B009DD045 /* TextObject.swift */,
+				EBD7D3C021B8A86200250FB0 /* GUIObject.swift */,
 			);
 			path = game_objects;
 			sourceTree = "<group>";
@@ -1143,6 +1149,7 @@
 				EB41D3AE21A9A86900869330 /* String.swift in Sources */,
 				EB3D12A0217AD24800FD4CF6 /* RenderPipelineStateLibrary.swift in Sources */,
 				EBEACB96219A796C001577B5 /* MultiTextureTerrain.swift in Sources */,
+				EBD7D3C121B8A86200250FB0 /* GUIObject.swift in Sources */,
 				EB3D1308217D49DF00FD4CF6 /* GameView.swift in Sources */,
 				EBF8572E21A6034400D629B4 /* World.swift in Sources */,
 				EB3D12E0217D1D6900FD4CF6 /* SceneManager.swift in Sources */,
@@ -1154,6 +1161,7 @@
 				EB5AFF9921880758000E30B4 /* ModelMesh.swift in Sources */,
 				EB3D12CD217D0E7700FD4CF6 /* Mesh.swift in Sources */,
 				EB3D12EC217D24B800FD4CF6 /* Triangle.swift in Sources */,
+				EBD7D3C321B8CB8300250FB0 /* GuiShader.metal in Sources */,
 				EB3D12A8217AD94D00FD4CF6 /* Library.swift in Sources */,
 				EB6A0FF52182B5FF0036DB93 /* SkyboxGameObject.swift in Sources */,
 				EB3D1300217D3A7300FD4CF6 /* Camera_Debug.swift in Sources */,
