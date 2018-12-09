@@ -8,12 +8,14 @@ class Node {
     private var _position: float3 = float3(0)
     private var _scale: float3 = float3(1)
     private var _rotation: float3 = float3(0)
+    var isTransparent: Bool = false
+    var transparentObjects: [Node] = []
     
     public var parentModelMatrix = matrix_identity_float4x4
     public var parentOffset = float3(0)
 
     private var _modelConstants = ModelConstants()
-    private var _children: [Node] = []
+    var _children: [Node] = []
     
     var offset: float3 = float3(0)
     
@@ -61,28 +63,36 @@ class Node {
         //Override using this function
     }
     
-    func zPassRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
+    func transparencyRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.pushDebugGroup("Z Passing \(_name)")
         for child in _children {
-            child.zPassRender(renderCommandEncoder)
+            child.transparencyRender(renderCommandEncoder)
         }
         
-        if let renderable = self as? Renderable {
-            renderable.doZPass(renderCommandEncoder)
+        if let renderable = self as? Renderable, isTransparent == true {
+            renderable.doRender(renderCommandEncoder)
         }
         renderCommandEncoder.popDebugGroup()
+    }
+    
+    func addModelConstants(renderCommandEncoder: MTLRenderCommandEncoder) {
+        renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 2)
     }
     
     func render(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.pushDebugGroup("Rendering \(_name)")
         for child in _children {
-            child.render(renderCommandEncoder)
+            if(child.isTransparent) {
+                transparentObjects.append(child)
+            }else {
+                child.render(renderCommandEncoder)
+            }
         }
         
         if let renderable = self as? Renderable {
             renderCommandEncoder.setTriangleFillMode(.fill)
             renderCommandEncoder.setCullMode(.none)
-            renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 2)
+            addModelConstants(renderCommandEncoder: renderCommandEncoder)
             renderable.doRender(renderCommandEncoder)
         }
         renderCommandEncoder.popDebugGroup()

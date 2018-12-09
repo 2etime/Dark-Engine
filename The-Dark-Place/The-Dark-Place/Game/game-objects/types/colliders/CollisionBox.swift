@@ -14,10 +14,7 @@ class CollisionBox: Node {
 }
 
 extension CollisionBox: Renderable {
-    func doZPass(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        
-    }
-    
+
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Bounding])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])

@@ -48,10 +48,7 @@ class TextObject: Node {
 }
 
 extension TextObject: Renderable {
-    func doZPass(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        
-    }
-    
+
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setFragmentBytes(&textData, length: TextData.stride, index: 1)
         textMesh.drawPrimitives(renderCommandEncoder)

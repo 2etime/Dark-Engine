@@ -31,10 +31,6 @@ class ModelGameObject: Node {
 
 extension ModelGameObject: Renderable {
     
-    func doZPass(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        
-    }
-    
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.Model])
         renderCommandEncoder.setDepthStencilState(Graphics.DepthStencilStates[.Less])

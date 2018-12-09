@@ -23,8 +23,8 @@ class SceneManager {
         _currentScene.update()
     }
     
-    public func doSceneZPass(_  renderCommandEncoder: MTLRenderCommandEncoder){
-        _currentScene.zPassRender(renderCommandEncoder)
+    public func doTransparentPass(_  renderCommandEncoder: MTLRenderCommandEncoder){
+        _currentScene.transparencyRender(renderCommandEncoder)
     }
     
     private func renderScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
@@ -35,14 +35,15 @@ class SceneManager {
         
         updateScene()
         
-//        let zPassRenderPassEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: Graphics.RenderPassDescriptors[.Shadow])
-//        zPassRenderPassEncoder?.label = "The Z Pass"
-//        doSceneZPass(zPassRenderPassEncoder!)
-//        zPassRenderPassEncoder?.endEncoding()
-        
         let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
         renderCommandEncoder?.label = "The Render Pass"
         renderScene(renderCommandEncoder!)
+        renderCommandEncoder?.endEncoding()
+        
+        
+        let transparentRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
+        renderCommandEncoder?.label = "The Transparent Render Pass"
+        doTransparentPass(transparentRenderCommandEncoder!)
         renderCommandEncoder?.endEncoding()
     }
 

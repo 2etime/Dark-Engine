@@ -22,13 +22,9 @@ class GUIObject: Node {
         super.init()
         self._mesh = Entities.Meshes[.Quad_Custom]
     }
-
 }
 
 extension GUIObject: Renderable {
-    func doZPass(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        
-    }
     
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         renderCommandEncoder.setRenderPipelineState(Graphics.RenderPipelineStates[.BasicGui])

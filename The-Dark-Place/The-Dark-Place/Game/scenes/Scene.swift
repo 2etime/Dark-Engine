@@ -66,9 +66,9 @@ class Scene: Node {
         renderCommandEncoder.setFragmentBytes(&lightData, length: LightData.stride, index: 1)
     }
     
-    override func zPassRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+    override func transparencyRender(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         setScene(renderCommandEncoder)
-        super.zPassRender(renderCommandEncoder)
+        super.transparencyRender(renderCommandEncoder)
     }
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {

@@ -1,7 +1,12 @@
 
 #include <metal_stdlib>
 #include "SharedMetal.metal"
+#include <simd/simd.h>
 using namespace metal;
+
+struct FragmentOut {
+    half4 color [[ color(0) ]];
+};
 
 vertex RasterizerData basic_gui_vertex(VertexIn vertexIn [[ stage_in ]],
                                         constant float4x4 &projectionMatrix [[ buffer(1) ]],
@@ -15,9 +20,11 @@ vertex RasterizerData basic_gui_vertex(VertexIn vertexIn [[ stage_in ]],
     return rd;
 }
 
-fragment half4 basic_gui_fragment(RasterizerData rd [[ stage_in ]]) {
-    float4 color = float4(1,0,0,0.5);
+fragment FragmentOut basic_gui_fragment(RasterizerData rd [[ stage_in ]]) {
+    FragmentOut fo;
+    float4 color = float4(1,0,0,1);
     
-    return half4(color.r, color.g, color.b, color.a);
+    fo.color = half4(color.r, color.g, color.b, color.a);
+    return fo;
 }
 
