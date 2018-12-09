@@ -18,6 +18,7 @@ class TextObject: Node {
          margin: float4 = float4(0)) {
         super.init()
         self.guid = NSUUID().uuidString
+        self.setPositionZ(0.5)
         self.fontType = fontType
         self.fontSize = fontSize
         self.currentText = initialText

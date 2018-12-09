@@ -9,12 +9,12 @@ struct FragmentOut {
 };
 
 vertex RasterizerData basic_gui_vertex(VertexIn vertexIn [[ stage_in ]],
-                                        constant float4x4 &projectionMatrix [[ buffer(1) ]],
+                                        constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                         constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     RasterizerData rd;
     
     float4 offsetPosition = float4(vertexIn.position, 1) + float4(modelConstants.offset, 0);
-    rd.position = projectionMatrix * modelConstants.modelMatrix * offsetPosition;
+    rd.position = sceneConstants.projectionMatrix * modelConstants.modelMatrix * offsetPosition;
     rd.textureCoordinate = vertexIn.textureCoordinate;
     
     return rd;

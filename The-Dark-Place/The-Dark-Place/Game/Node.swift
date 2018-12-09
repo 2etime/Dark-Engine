@@ -41,11 +41,17 @@ class Node {
         _children.append(child)
     }
     
-    func sortChildren() {
-        
-    }
+//    func sortChildren() {
+//        for child in _children {
+//            child.sortChildren()
+//        }
+//    
+//        _children.sort { (child1, child2) -> Bool in
+//            return child1.getPosition().z < child2.getPosition().z
+//        }
+//    }
     
-    private func updateModelConstants(){
+    func updateModelConstants(){
         self._modelConstants.modelMatrix = self.modelMatrix
         self._modelConstants.offset = self.offset + parentOffset
     }
@@ -70,16 +76,16 @@ class Node {
     
     func render(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.pushDebugGroup("Rendering \(_name)")
-        for child in _children {
-            child.render(renderCommandEncoder)
-        }
-        
         if let renderable = self as? Renderable {
             renderCommandEncoder.setTriangleFillMode(.fill)
             renderCommandEncoder.setCullMode(.none)
             addModelConstants(renderCommandEncoder: renderCommandEncoder)
             renderable.doRender(renderCommandEncoder)
         }
+        for child in _children {
+            child.render(renderCommandEncoder)
+        }
+        
         renderCommandEncoder.popDebugGroup()
     }
     

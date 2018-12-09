@@ -9,11 +9,12 @@ struct TextData {
 };
 
 vertex RasterizerData basic_font_vertex(VertexIn vertexIn [[ stage_in ]],
+                                        constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                         constant ModelConstants &modelConstants [[ buffer(2) ]]) {
     RasterizerData rd;
     
     float4 offsetPosition = float4(vertexIn.position, 1) + float4(modelConstants.offset, 0);
-    rd.position = modelConstants.modelMatrix * offsetPosition;
+    rd.position = sceneConstants.projectionMatrix * modelConstants.modelMatrix * offsetPosition;
     rd.textureCoordinate = vertexIn.textureCoordinate;
     
     return rd;

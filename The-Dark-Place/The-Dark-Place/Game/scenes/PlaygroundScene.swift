@@ -36,7 +36,7 @@ class PlaygroundScene: Scene {
         
         let textObject = TextObject(initialText: "Hello World", fontType: .CandaraFont, fontSize: 16, isCentered: true)
         guiObject.addChild(textObject)
-        addChild(guiObject)
+        addGui(guiObject)
         
 //        addChild(textObject)
     }

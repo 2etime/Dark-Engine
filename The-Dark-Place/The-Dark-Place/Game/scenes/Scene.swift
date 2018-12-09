@@ -15,6 +15,9 @@ class Scene: Node {
     internal var currentCamera: Camera {
         return _currentCamera
     }
+    
+    var lastCamera: CameraTypes!
+    var guis: [Node] = []
 
     override init() {
         super.init(name: "Scene")
@@ -30,7 +33,26 @@ class Scene: Node {
         //Implement on scene classes
     }
     
+    func addGui(_ gui: GUIObject){
+        self.guis.append(gui)
+    }
+    
+    private func updateGuiConstants(){
+        for gui in guis {
+           gui.update()
+        }
+    }
+    
+    func renderGuis(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        setCurrentCamera(.Ortho)
+        for gui in guis {
+            gui.render(renderCommandEncoder)
+        }
+        setCurrentCamera(lastCamera)
+    }
+    
     internal func setCurrentCamera(_ cameraType: CameraTypes) {
+        lastCamera = cameraType
         if(!_cameras.keys.contains(cameraType)) {
             switch cameraType {
             case .Debug:
@@ -57,6 +79,7 @@ class Scene: Node {
     override func update() {
         updateCameras()
         updateSceneConstants()
+        updateGuiConstants()
         super.update()
     }
     
@@ -69,5 +92,6 @@ class Scene: Node {
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         setScene(renderCommandEncoder)
         super.render(renderCommandEncoder)
+        renderGuis(renderCommandEncoder)
     }
 }
