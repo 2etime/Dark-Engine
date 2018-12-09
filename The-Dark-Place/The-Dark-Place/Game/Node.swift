@@ -41,6 +41,10 @@ class Node {
         _children.append(child)
     }
     
+    func sortChildren() {
+        
+    }
+    
     private func updateModelConstants(){
         self._modelConstants.modelMatrix = self.modelMatrix
         self._modelConstants.offset = self.offset + parentOffset
@@ -58,10 +62,6 @@ class Node {
     
     func onUpdate(){
         //Override using this function
-    }
-    
-    func transparencyRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
-        
     }
     
     func addModelConstants(renderCommandEncoder: MTLRenderCommandEncoder) {

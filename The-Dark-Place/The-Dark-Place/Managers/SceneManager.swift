@@ -23,10 +23,6 @@ class SceneManager {
         _currentScene.update()
     }
     
-    public func doTransparentPass(_  renderCommandEncoder: MTLRenderCommandEncoder){
-        _currentScene.transparencyRender(renderCommandEncoder)
-    }
-    
     private func renderScene(_ renderCommandEncoder: MTLRenderCommandEncoder){
         _currentScene.render(renderCommandEncoder)
     }
@@ -38,13 +34,8 @@ class SceneManager {
         let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
         renderCommandEncoder?.label = "The Render Pass"
         renderScene(renderCommandEncoder!)
-        doTransparentPass(renderCommandEncoder!)
         renderCommandEncoder?.endEncoding()
         
-        
-//        let transparentRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
-//        transparentRenderCommandEncoder?.label = "The Transparent Render Pass"
-//        transparentRenderCommandEncoder?.endEncoding()
     }
 
 }
