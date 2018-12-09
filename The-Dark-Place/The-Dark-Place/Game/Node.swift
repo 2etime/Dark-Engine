@@ -8,9 +8,7 @@ class Node {
     private var _position: float3 = float3(0)
     private var _scale: float3 = float3(1)
     private var _rotation: float3 = float3(0)
-    var isTransparent: Bool = false
-    var transparentObjects: [Node] = []
-    
+
     public var parentModelMatrix = matrix_identity_float4x4
     public var parentOffset = float3(0)
 
@@ -40,7 +38,6 @@ class Node {
     }
     
     func addChild(_ child: Node) {
-//        self.id = World.addObject(child)
         _children.append(child)
     }
     
@@ -64,15 +61,7 @@ class Node {
     }
     
     func transparencyRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
-        renderCommandEncoder.pushDebugGroup("Z Passing \(_name)")
-        for child in _children {
-            child.transparencyRender(renderCommandEncoder)
-        }
         
-        if let renderable = self as? Renderable, isTransparent == true {
-            renderable.doRender(renderCommandEncoder)
-        }
-        renderCommandEncoder.popDebugGroup()
     }
     
     func addModelConstants(renderCommandEncoder: MTLRenderCommandEncoder) {
@@ -82,11 +71,7 @@ class Node {
     func render(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.pushDebugGroup("Rendering \(_name)")
         for child in _children {
-            if(child.isTransparent) {
-                transparentObjects.append(child)
-            }else {
-                child.render(renderCommandEncoder)
-            }
+            child.render(renderCommandEncoder)
         }
         
         if let renderable = self as? Renderable {

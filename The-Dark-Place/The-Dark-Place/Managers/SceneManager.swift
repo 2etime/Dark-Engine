@@ -38,13 +38,13 @@ class SceneManager {
         let renderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
         renderCommandEncoder?.label = "The Render Pass"
         renderScene(renderCommandEncoder!)
+        doTransparentPass(renderCommandEncoder!)
         renderCommandEncoder?.endEncoding()
         
         
-        let transparentRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
-        renderCommandEncoder?.label = "The Transparent Render Pass"
-        doTransparentPass(transparentRenderCommandEncoder!)
-        renderCommandEncoder?.endEncoding()
+//        let transparentRenderCommandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: passDescriptor)
+//        transparentRenderCommandEncoder?.label = "The Transparent Render Pass"
+//        transparentRenderCommandEncoder?.endEncoding()
     }
 
 }
